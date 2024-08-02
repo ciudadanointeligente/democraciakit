@@ -5,6 +5,6 @@ Un proyecto para facilitar el trabajo de los equipos interesados en la transpare
 Links para Django
 -----------------
 
-* Django deploy
-https://medium.com/django-unleashed/implement-these-5-essential-practices-to-ready-django-for-production-4da1c053633a
+** Django deploy
+* https://medium.com/django-unleashed/implement-these-5-essential-practices-to-ready-django-for-production-4da1c053633a
 
