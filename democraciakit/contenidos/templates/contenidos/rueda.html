@@ -1,0 +1,179 @@
+{% extends 'contenidos/base.html' %}
+{% load static %}
+{% block title %}DemocraciaKit - Rueda{% endblock %}
+
+{% block content %}
+<main>
+    <!-- íconos -->
+    <section class="container-fluid portada">
+        <div class="iconos-derecha">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
+                </div>
+            </div>
+        </div>
+        <div class="iconos-izquierda">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+    </section>
+    <!-- accesos directos -->
+    <section class="accesos-directos">
+        <a href="{% url 'users:profile' %}" class="btn-rueda">Perfil <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
+        <a href="{% url 'contenidos:mikit' %}" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"> Mi Kit</a>
+    </section>
+
+    <section class="container header-section">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Rueda</li>
+                    </ol>
+                </nav>
+                <h2>¿Tienes un proyecto?</h2>
+                <p>Breve bajada para complementar este texto con una descripción</p>
+            </div>
+        </div>
+    </section>
+    <section class="container rueda-section">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="d-flex align-items-start rueda">
+                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div class="centro-rueda">
+                            <img src="{% static 'img/centro-rueda.png' %}" alt="Titulo de la rueda: Etapas para la creación de un proyecto" class="img-centro-rueda">
+                        </div>
+                        <button class="nav-link active etapa-1" id="v-pills-problemas-tab" data-bs-toggle="pill" data-bs-target="#v-pills-problemas" type="button" role="tab" aria-controls="v-pills-problemas" aria-selected="true">
+                            <img src="{% static 'img/rueda-1.png' %}" alt="Etapa 1: Problemas" class="img-etapa-1 normal">
+                            <img src="{% static 'img/rueda-1-hover.png' %}" alt="" class="img-etapa-1 hover">
+                        </button>
+                        <button class="nav-link etapa-2" id="v-pills-causas-tab" data-bs-toggle="pill" data-bs-target="#v-pills-causas" type="button" role="tab" aria-controls="v-pills-causas" aria-selected="true">
+                            <img src="{% static 'img/rueda-2.png' %}" alt="Etapa 2: Causas" class="img-etapa-2 normal">
+                            <img src="{% static 'img/rueda-2-hover.png' %}" alt="" class="img-etapa-2 hover">
+                        </button>
+                        <button class="nav-link etapa-3" id="v-pills-objetivo-tab" data-bs-toggle="pill" data-bs-target="#v-pills-objetivo" type="button" role="tab" aria-controls="v-pills-objetivo" aria-selected="true">
+                            <img src="{% static 'img/rueda-3.png' %}" alt="Etapa 3: Objetivo" class="img-etapa-3 normal">
+                            <img src="{% static 'img/rueda-3-hover.png' %}" alt="" class="img-etapa-3 hover">
+                        </button>
+                        <button class="nav-link etapa-4" id="v-pills-contexto-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contexto" type="button" role="tab" aria-controls="v-pills-contexto" aria-selected="true">
+                            <img src="{% static 'img/rueda-4.png' %}" alt="Etapa 4: Contexto" class="img-etapa-4 normal">
+                            <img src="{% static 'img/rueda-4-hover.png' %}" alt="" class="img-etapa-4 hover">
+                        </button>
+                        <button class="nav-link etapa-5" id="v-pills-decidir-tab" data-bs-toggle="pill" data-bs-target="#v-pills-decidir" type="button" role="tab" aria-controls="v-pills-decidir" aria-selected="true">
+                            <img src="{% static 'img/rueda-5.png' %}" alt="Etapa 5: Decidir" class="img-etapa-5 normal">
+                            <img src="{% static 'img/rueda-5-hover.png' %}" alt="" class="img-etapa-5 hover">
+                        </button>
+                        <button class="nav-link etapa-6" id="v-pills-empoderar-tab" data-bs-toggle="pill" data-bs-target="#v-pills-empoderar" type="button" role="tab" aria-controls="v-pills-empoderar" aria-selected="true">
+                            <img src="{% static 'img/rueda-6.png' %}" alt="Etapa 6: Empoderar" class="img-etapa-6 normal">
+                            <img src="{% static 'img/rueda-6-hover.png' %}" alt="" class="img-etapa-6 hover">
+                        </button>
+                        <button class="nav-link etapa-7" id="v-pills-evaluar-tab" data-bs-toggle="pill" data-bs-target="#v-pills-evaluar" type="button" role="tab" aria-controls="v-pills-evaluar" aria-selected="true">
+                            <img src="{% static 'img/rueda-7.png' %}" alt="Etapa 7: Evaluar" class="img-etapa-7 normal">
+                            <img src="{% static 'img/rueda-7-hover.png' %}" alt="" class="img-etapa-7 hover">
+                        </button>
+                    </div>
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-problemas" role="tabpanel" aria-labelledby="v-pills-problemas-tab">
+                            <div class="alinear">
+                                <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
+                                <h3>Problemas</h3>
+                            </div>
+                            <h4><span>¿Qué problema</span> vamos a solucionar?</h4>
+                            <p>Aterriza eso que te preocupa a <b>un contexto</b> determinado, es decir, <b>un lugar y período</b> cercanos.</p>
+                            <a href="{% url 'contenidos:etapa1' %}" class="btn-democraciakit">Revisar herramientas</a>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-causas" role="tabpanel" aria-labelledby="v-pills-causas-tab">
+                            <div class="alinear">
+                                <img src="{% static 'img/etapa-numero-2.png' %}" alt="Etapa 2 Causas">
+                                <h3>Causas</h3>
+                            </div>
+                            <h4><span>¿Qué problema</span> vamos a solucionar?</h4>
+                            <p>Aterriza eso que te preocupa a <b>un contexto</b> determinado, es decir, <b>un lugar y período</b> cercanos.</p>
+                            <a href="{% url 'contenidos:etapa1' %}" class="btn-democraciakit">Revisar herramientas</a>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-objetivo" role="tabpanel" aria-labelledby="v-pills-objetivo-tab">
+                            <div class="alinear">
+                                <img src="{% static 'img/etapa-numero-3.png' %}" alt="Etapa 3 Objetivo">
+                                <h3>Objetivo</h3>
+                            </div>
+                            <h4><span>¿Qué problema</span> vamos a solucionar?</h4>
+                            <p>Aterriza eso que te preocupa a <b>un contexto</b> determinado, es decir, <b>un lugar y período</b> cercanos.</p>
+                            <a href="{% url 'contenidos:etapa1' %}" class="btn-democraciakit">Revisar herramientas</a>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-contexto" role="tabpanel" aria-labelledby="v-pills-contexto-tab">
+                            <div class="alinear">
+                                <img src="{% static 'img/etapa-numero-4.png' %}" alt="Etapa 4 Contexto">
+                                <h3>Contexto</h3>
+                            </div>
+                            <h4><span>¿Qué problema</span> vamos a solucionar?</h4>
+                            <p>Aterriza eso que te preocupa a <b>un contexto</b> determinado, es decir, <b>un lugar y período</b> cercanos.</p>
+                            <a href="{% url 'contenidos:etapa1' %}" class="btn-democraciakit">Revisar herramientas</a>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-decidir" role="tabpanel" aria-labelledby="v-pills-decidir-tab">
+                            <div class="alinear">
+                                <img src="{% static 'img/etapa-numero-5.png' %}" alt="Etapa 5 Decidir">
+                                <h3>Decidir</h3>
+                            </div>
+                            <h4><span>¿Qué problema</span> vamos a solucionar?</h4>
+                            <p>Aterriza eso que te preocupa a <b>un contexto</b> determinado, es decir, <b>un lugar y período</b> cercanos.</p>
+                            <a href="{% url 'contenidos:etapa1' %}" class="btn-democraciakit">Revisar herramientas</a>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-empoderar" role="tabpanel" aria-labelledby="v-pills-empoderar-tab">
+                            <div class="alinear">
+                                <img src="{% static 'img/etapa-numero-6.png' %}" alt="Etapa 6 Empoderar">
+                                <h3>Empoderar</h3>
+                            </div>
+                            <h4><span>¿Qué problema</span> vamos a solucionar?</h4>
+                            <p>Aterriza eso que te preocupa a <b>un contexto</b> determinado, es decir, <b>un lugar y período</b> cercanos.</p>
+                            <a href="{% url 'contenidos:etapa1' %}" class="btn-democraciakit">Revisar herramientas</a>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-evaluar" role="tabpanel" aria-labelledby="v-pills-evaluar-tab">
+                            <div class="alinear">
+                                <img src="{% static 'img/etapa-numero-7.png' %}" alt="Etapa 7 Evaluar">
+                                <h3>Evaluar</h3>
+                            </div>
+                            <h4><span>¿Qué problema</span> vamos a solucionar?</h4>
+                            <p>Aterriza eso que te preocupa a <b>un contexto</b> determinado, es decir, <b>un lugar y período</b> cercanos.</p>
+                            <a href="{% url 'contenidos:etapa1' %}" class="btn-democraciakit">Revisar herramientas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="premio">
+        <div class="scrolling-text">
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+        </div>
+    </section>
+    <section class="descargar-toolkit-pdf">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-row justify-content-center align-items-center align-self-center">
+                    <h4>Invitación a descargar Toolkit PDF</h4>
+                    <a href="https://drive.google.com/file/d/1l9rRNGLfrxYm-bzTBPYzd4XQD2U8aV6E/view" class="btn-democraciakit" target="_blank">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>    
+{% endblock %}

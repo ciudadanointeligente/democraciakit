@@ -1,0 +1,239 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Democraciakit una guía práctica e interactiva creada para ayudar a personas líderes innovadores públicos a potenciar la participación ciudadana y fortalecer la democracia local en América Latina.">
+    <meta name="keywords" content="Democraciakit, herramienta interactiva, participación, democracia, ciudadanía, América Latina, Latam, Latinoamérica, latinoamérica, Kit, kit, kit de democracia, Fundación Ciudadnía Inteligente, FCI, Abre Alcaldías">
+    <title>FCI - {% block title %}{% endblock %}</title>
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000F74">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Hoja de estilos css-->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Font icons google-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <!-- Font awesome-->
+    <script src="https://kit.fontawesome.com/791853223d.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/htmx.min.js' %}" defer></script>
+</head>
+
+<!-- Body -->
+<body>
+
+    <!-- Header -->
+    <header class="container-fluid fixed-top">
+        <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+            <div class="container">
+             
+                <!-- Logotipo movil -->
+                <div class="logotipo-movil logotipo">
+                    <a class="navbar-brand" href="https://abrealcaldias.org/">
+                        <span><b>Abre</b></span>Alcaldías<b>&lt;</b>
+                    </a>
+                    <a class="credits" href="https://ciudadaniai.org/" target="_blank">
+                        Un proyecto de Ciudadanía Inteligente
+                    </a>
+                </div>
+             
+                <!-- Boton hamburguesa comprimido movil -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+                </button>
+             
+                <!-- login logout -->
+                <div class="blanco">{% if user.is_authenticated %}
+                    {{ user.username }}
+                    {% else %}
+                    <a href="{% url 'users:user_login' %}" class="nav-link blanco">Entrar</a>
+                    {% endif %}
+                    <a href="{% url 'users:logout' %}" class="nav-link blanco">Salir</a>
+                </div>
+             
+                <!-- Secciones para escritorio -->
+                <div class="collapse navbar-collapse d-none d-lg-flex">
+                    <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
+             
+                        <!-- Aquí irán los items del menú -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="https://abrealcaldias.org/">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://abrealcaldias.org/quienes-somos/">¿Quiénes somos?</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="https://abrealcaldias.org/areas/" id="navbarDropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                Áreas
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="https://abrealcaldias.org/abrealcaldias-latam/">LATAM</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="https://abrealcaldias.org/abrealcaldias-chile/">Chile</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item logotipo logotipo-desktop">
+                            <a class="navbar-brand" href="https://abrealcaldias.org/">
+                                <span><b>Abre</b></span>Alcaldías<b>&lt;</b>
+                            </a>
+                            <a class="credits" href="https://ciudadaniai.org/" target="_blank">
+                                Un proyecto de Ciudadanía Inteligente
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://abrealcaldias.org/metodo/">Método</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://abrealcaldias.org/publicaciones/">Publicaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://abrealcaldias.org/contacto/">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Offcanvas Menu para móvil -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-hidden="true">
+                <div class="offcanvas-header d-flex align-items-start justify-content-start">
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav d-flex align-items-start justify-content-start">
+            
+                        <!-- Aquí irán los items del menú -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="https://abrealcaldias.org/">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://abrealcaldias.org/quienes-somos/">¿Quiénes somos?</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="https://abrealcaldias.org/areas/" id="navbarDropdown2" role="button" aria-expanded="false" aria-haspopup="true">
+                                Áreas
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <li><a class="dropdown-item" href="https://abrealcaldias.org/abrealcaldias-latam/">LATAM</a></li>
+                                <li><a class="dropdown-item" href="https://abrealcaldias.org/abrealcaldias-chile/">Chile</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://abrealcaldias.org/metodo/">Método</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://abrealcaldias.org/publicaciones/">Publicaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://abrealcaldias.org/contacto/">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cuerpo -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Pie -->
+    <footer class="container-fluid">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-3 navegacion-abre">
+                  <ul>
+                      <li><a href="https://abrealcaldias.org/">Home</a></li>
+                      <li><a href="https://abrealcaldias.org/quienes-somos/">¿Quiénes somos?</a></li>
+                      <li><a href="https://abrealcaldias.org/areas/">Áreas</a></li>
+                      <li><a href="#">Método</a></li>
+                      <li><a href="#">Publicaciones</a></li>
+                      <li><a href="#">Contacto</a></li>
+                  </ul>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 enlaces-rrss">
+                  <ul class="justify-content-center">
+                      <li class="logotipo-footer">
+                          <p><span><b>Abre</b></span>Alcaldías<b>&lt;</b></p>
+                      </li>
+                      <li><a href="mailto:info@ciudadaniai.org" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
+                      <li><a href="https://gitlab.com/ciudadaniai" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                      <li><a href="https://twitter.com/ciudadania_i" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                      <li><a href="https://www.instagram.com/ciudadaniai/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                      <li><a href="https://www.facebook.com/ciudadaniai/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                      <li><a href="https://www.youtube.com/channel/UCtiq34lXdXDxo6GhIwnY5Sw" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                      <li><a href="https://ciudadaniai.medium.com/" target="_blank"><i class="fa-brands fa-medium"></i></a></li>
+                      <li><a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank"><i class="fa-brands fa-creative-commons"></i></a></li>
+                  </ul>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-3 creditos-fci">
+                  <p>Un proyecto de</p>
+                  <img src="{% static 'img/logo-fci.svg' %}" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci">
+              </div>
+          </div>
+      </div>
+  </footer>
+  <div class="derechos d-flex flex-row justify-content-center align-items-center align-self-center">
+      <p>© 2024 AbreAlcaldías - Un proyecto de Fundación Ciudadanía Inteligente. Todos los derechos reservados.</p>
+  </div>
+  
+  <!-- JavaScript -->
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+      window.addEventListener('scroll', function() {
+          var scrollPosition = window.scrollY;
+          var maxTranslateY = 70; // Ajusta este valor según sea necesario
+
+          var icons1 = document.querySelectorAll('.iconos-derecha .img-1 img, .iconos-izquierda .img-1 img');
+          var icons2 = document.querySelectorAll('.iconos-derecha .img-2 img, .iconos-izquierda .img-2 img');
+          icons1.forEach(function(icon) {
+              var translateY = Math.min(scrollPosition * 0.3, maxTranslateY);
+              icon.style.transform = 'translateY(' + translateY + 'px)';
+          });
+          icons2.forEach(function(icon) {
+              var translateY = Math.min(scrollPosition * 0.1, maxTranslateY * 0.3);
+              icon.style.transform = 'translateY(' + translateY + 'px)';
+          });
+      });
+  </script>
+  <script>
+      window.addEventListener('scroll', function() {
+          var scrollPosition = window.scrollY;
+          var icon1 = document.querySelector('.icono-decoracion-parallax');
+          var icon2 = document.querySelector('.icono-decoracion-parallax-2');
+
+          icon1.style.transform = 'translateY(' + (scrollPosition * 0.3) + 'px)';
+          icon2.style.transform = 'translateY(' + (scrollPosition * 0.3) + 'px)';
+      });
+  </script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var dropdownToggle = document.getElementById('navbarDropdown');
+          dropdownToggle.addEventListener('click', function(e) {
+              var dropdownMenu = this.nextElementSibling;
+              dropdownMenu.classList.toggle('show');
+          });
+      });
+  </script>
+</body>
+</html>

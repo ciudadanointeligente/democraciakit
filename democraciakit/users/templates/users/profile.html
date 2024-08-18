@@ -1,0 +1,167 @@
+{% extends 'contenidos/base.html' %}
+{% load static %}
+
+{% block title %}DemocraciaKit - Perfil{% endblock %}
+{% block content %}
+
+<main>
+    <!-- íconos -->
+    <section class="container-fluid portada">
+        <div class="iconos-derecha">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
+                </div>
+            </div>
+        </div>
+        <div class="iconos-izquierda">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+    </section>
+    <!-- accesos directos -->
+    <section class="accesos-directos">
+        <a href="{% url 'users:profile' %}" class="btn-rueda">Perfil <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
+        <a href="{% url 'contenidos:mikit' %}" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"> Mi Kit</a>
+    </section>
+    <section class="container header-section">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+                    </ol>
+                </nav>
+                <h2>Mi Perfil</h2>
+                <p>Frase descriptiva o que invite a completar el perfil</p>
+            </div>
+        </div>
+    </section>
+    <section class="container perfil form">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>{{ user.username }}</h3>
+                            {% if user.frase %}
+                            <div class="frase mb-3">
+                                <div class="bocadillo">
+                                    <div class="forma"></div>
+                                    <textarea type="text" class="form-control form-frase" id="exampleFormControlTextarea1" rows="1" 
+                                    placeholder="{{ user.frase }}" 
+                                    aria-label="Frase descriptiva: {{ user.frase }}"></textarea>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-5">
+                            {% if user.foto %}
+                            <img src="{{ user.foto.url }}" alt="Imagen de perfil del usuario" class="img-perfil mb-3 img-fluid">
+                            {% else %}
+                            {% endif %}
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-7">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Nombre usuario</label>
+                                <p>{{ user.username }}</p>
+                            </div>
+                            {% if user.pais %}
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">País</label>
+                                <p>{{ user.pais }}</p>
+                            </div>
+                            {% endif %}
+                            {% if user.municipio %}
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Municipio</label>
+                                <p>{{ user.municipio }}</p>
+                            </div>
+                            {% endif %}
+                            {% if user.cargo %}
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Cargo</label>
+                                <p>{{ user.cargo }}</p>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% if user.descripcion %}
+                        <div class="col-12 mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Descripción</label>
+                            <p>{{ user.descripcion }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 panel">
+                <div class="cambiar-contrasena">
+                    <p>¿Quieres cambiar la contraseña?</p>
+                    <a href="" class="btn-democraciakit btn-rosado">Cambiar contraseña</a>
+                </div>
+
+                <div class="panel-control">
+                   <h4>Panel de control</h4>
+                    <div class="caja-rosada"></div>
+                    <div class="caja-verde"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="premio">
+        <div class="scrolling-text">
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+        </div>
+    </section>
+    <section class="descargar-toolkit-pdf">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-row justify-content-center align-items-center align-self-center">
+                    <h4>Invitación a descargar Toolkit PDF</h4>
+                    <a href="https://drive.google.com/file/d/1l9rRNGLfrxYm-bzTBPYzd4XQD2U8aV6E/view" class="btn-democraciakit" target="_blank">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!-- <div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="mb-4">Perfil de Usuario</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="alert alert-danger">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Actualizar Perfil</button>
+        </form>
+    </div>
+</div> -->
+{% endblock %}
