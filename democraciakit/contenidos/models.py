@@ -2,11 +2,30 @@ from django.db import models
 from users.models import CustomUser
 from tinymce.models import HTMLField
 
+class Etapa(models.Model):
+    nombre = models.CharField(max_length=500, blank=True, null=True)
+    slug = models.CharField(max_length=500, blank=True, null=True)
+    subtitulo = models.CharField(max_length=500, blank=True, null=True)
+    imagenetapa = models.ImageField(upload_to='imgs', blank=True, null=True)
+    class Meta:
+        verbose_name = 'Etapa'
+        verbose_name_plural = 'Etapas'
+
+    def __str__(self):
+        return self.nombre
+
 class Categoria(models.Model):
+    
+    VALOR_CHOICES = (
+        ('metodologias', 'Metodologías'),
+        ('recomendaciones', 'Recomendaciones'),
+        ('casosdeexito', 'Casos de éxito'),
+    )
+
     nombre = models.CharField(max_length=500, blank=True, null=True)
     subtitulo = models.CharField(max_length=500, blank=True, null=True)
     slug = models.CharField(max_length=500, blank=True, null=True)
-    categoria = models.ForeignKey('self', related_name='categorias_hijas', on_delete=models.SET_NULL, null=True, blank=True)
+    etapa = models.ManyToManyField(Etapa, related_name='etapa', blank=True)
     imagencategoria = models.ImageField(upload_to='imgs', blank=True, null=True)
 
     class Meta:
@@ -18,6 +37,8 @@ class Categoria(models.Model):
 
 class Contenido(models.Model):
     titulo = models.CharField(max_length=100)
+    subtitulo = models.CharField(max_length=500, blank=True, null=True)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='categoria', blank=True, null=True)
     contenido = HTMLField()
 
     def __str__(self):
@@ -43,7 +64,7 @@ class Imagen(models.Model):
 class Archivos(models.Model):
     titulo = models.CharField(max_length=500, blank=True, null=True)
     archivo = models.FileField(upload_to='imgs', blank=True, null=True)
-    contenido = models.ManyToManyField(Contenido, related_name='archivo', blank=True)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='archivos', blank=True, null=True)
     class Meta:
         verbose_name = 'Archivo'
         verbose_name_plural = 'Archivos'

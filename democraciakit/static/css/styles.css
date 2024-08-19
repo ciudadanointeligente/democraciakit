@@ -8,10 +8,6 @@ body {
 
 /*Estilos tipograficos*/
 
-.blanco {
-    color: white;
-}
-
 h1 {
     font-family: "Space Mono", monospace;
     font-size: 3rem;
@@ -427,9 +423,7 @@ header .offcanvas-body .dropdown-item:hover {
 }
 
 
-#div_id_usable_password {
-    display: none;
-}
+
 
 
 /*Main*/
@@ -1326,7 +1320,10 @@ footer .creditos-fci img {
 
 /* Adaptación rueda otras pantallas */
 
-/* @media 1200px {} */
+@media 1200px {}
+
+
+
 
 
 /*Contenido rueda*/
@@ -1678,6 +1675,7 @@ footer .creditos-fci img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    border-radius: 20px;
 }
 
 
@@ -1704,31 +1702,50 @@ footer .creditos-fci img {
 
 
 /* Componentes visualizaciones*/
+
+/* Componente post it*/
+
 .visualizacion-post-it {
     margin-top: 100px;
+    padding-bottom: 40px;
 }
 
 .visualizacion-post-it .post-it {
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
-/* .visualizacion-post-it .post-it .contenido {} */
+.visualizacion-post-it .post-it .post-elemento {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.visualizacion-post-it .post-it .post-it-elemento-1 {}
+
+.visualizacion-post-it .post-it .post-it-elemento-2 {
+    padding-top: 50px;
+}
 
 .visualizacion-post-it .post-it .numero {
-    position: absolute;
-    top: -30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    border: 3px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    bottom: -20px;
+    background: transparent;
 }
 
 .visualizacion-post-it .post-it .numero p {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 100%;
+    border: 3px solid white;
     margin-bottom: 0px;
     color: #000F74;
     font-size: 1.5rem;
@@ -1737,12 +1754,28 @@ footer .creditos-fci img {
 }
 
 .visualizacion-post-it .post-it .contenido {
-    padding: 60px 20px;
+    padding: 30px 20px;
 }
 
-.visualizacion-post-it .abajo {
-    margin-top: 40px;
+
+@media (max-width:900px) {
+    .visualizacion-post-it .post-it .post-elemento {
+        width: 50%;
+    }
+
+    .visualizacion-post-it .post-it {
+        justify-content: center;
+    }
 }
+
+
+@media (max-width:600px) {
+    .visualizacion-post-it .post-it .post-elemento {
+        width: 80%;
+    }
+}
+
+
 
 
 /* Texto centrado en herramientas*/
@@ -1789,6 +1822,7 @@ footer .creditos-fci img {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .visualizacion-ejemplo h4 {
@@ -1803,38 +1837,391 @@ footer .creditos-fci img {
 }
 
 
+/* Visualización contenido que continua relato de herramienta despues de algun componente para mostrar visualizaciones */
+
+.visualizacion-contenido-herramienta {
+    margin-top: 50px;
+}
+
+
+.visualizacion-contenido-herramienta .definicion {
+    background: #EFF2FB;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 20px;
+}
+
+
+/* Visualizacion video */
+
+
+.visualizacion-video {
+    margin-top: 50px;
+}
+
+.visualizacion-video .titulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.visualizacion-video h4 {
+    color: white;
+    background: #D500F9;
+    padding: 2px 8px;
+}
+
+
+.visualizacion-video iframe {
+    width: 100%;
+    height: 500px;
+}
+
+
 /* Visualización tabla */
 
 .visualizacion-tabla {
     padding-top: 50px;
 }
 
-.visualizacion-tabla .descripcion p {
+.visualizacion-tabla p.descripcion {
     text-align: center;
     font-weight: bold;
     margin-bottom: 30px;
 }
 
-.visualizacion-tabla .tabla .titulo {
-    background: #D500F9;
+.visualizacion-tabla .tabla th,
+.visualizacion-tabla .tabla td {
+    width: 25%;
+    /* Cada columna ocupará un 25% del ancho total */
+    text-align: center;
+    /* Alineación centrada del texto */
 }
 
-.visualizacion-tabla .tabla .titulo h3 {
-    font-size: 1.2rem;
+.visualizacion-tabla .tabla thead tr th {
+    background: #D500F9;
+    border: 2px solid white !important;
     color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+.visualizacion-tabla .tabla tbody tr td {
+    background: rgba(213, 0, 249, 0.2);
+    border: 2px solid white !important;
+    color: #000F74;
+    font-size: 1rem;
+    padding: 25px 20px;
+}
+
+.visualizacion-tabla .tabla tbody td.tema {
+    font-weight: bold;
+    background: rgba(213, 0, 249, 0.4);
+}
+
+
+
+
+
+/* Componente pregunta */
+
+.visualizacion-pregunta {
+    margin-top: 80px;
+}
+
+.visualizacion-pregunta .pregunta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.visualizacion-pregunta .definicion {
+    background: #EFF2FB;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 20px;
+}
+
+
+/* Componente acordion */
+
+.visualizacion-acordion {
+    margin-top: 80px;
+}
+
+.visualizacion-acordion .acordion .accordion-item {
+    margin-bottom: 10px;
+    border: 0px;
+    background: rgba(184, 236, 252, 0.50);
+    border-radius: 10px;
+}
+
+.visualizacion-acordion .acordion .accordion-item h2.accordion-header button {
+    background: #B8ECFC !important;
+    color: #000F74;
+    font-family: "Space Mono", monospace;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: none;
+}
+
+.visualizacion-acordion .acordion .accordion-item .accordion-body {
+    color: #000F74;
+    font-weight: 400;
+    border-radius: 0px 0px 10px 10px;
+    border: 0px;
+}
+
+.visualizacion-acordion .acordion .accordion-item .accordion-body img {
+    width: 70%;
+    padding: 50px;
+}
+
+
+/* Componente interactivo de tabla que tiene formulario incluido*/
+
+.componente-interactivo-form {
+    margin-top: 50px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    background: #EFF2FB;
+}
+
+
+.componente-interactivo-form .titulo h4 {
+    text-align: center;
+}
+
+
+.componente-interactivo-form .titulo p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.componente-interactivo-form .tabla th,
+.componente-interactivo-form .tabla td {
+    width: 25%;
+    /* Cada columna ocupará un 25% del ancho total */
+    text-align: center;
+    /* Alineación centrada del texto */
+}
+
+.componente-interactivo-form .tabla thead tr th {
+    background: #B1E957;
+    border: 2px solid white !important;
+    color: #000F74;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+.componente-interactivo-form .tabla tbody td.tema {
+    font-weight: bold;
+    background: rgba(213, 0, 249, 0.4);
+}
+
+.componente-interactivo-form .tabla tbody td {
+    padding: 0px;
+}
+
+.componente-interactivo-form .tabla tbody td textarea {
+    background: rgba(177, 233, 87, 0.5);
+    border: 2px solid white !important;
+    color: #000F74;
+    font-size: 1rem;
+    padding: 25px 20px;
+}
+
+.componente-interactivo-form .tabla form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.componente-interactivo-form .tabla form button {
+    margin-top: 20px;
+    position: relative;
+    bottom: -20px;
+}
+
+
+
+/*Sección MI KIT*/
+
+.cabecera-mi-kit {
+    margin-top: 10px;
+}
+
+.cabecera-mi-kit .kit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecera-mi-kit img {
+    width: 70px;
+}
+
+.cabecera-mi-kit h3 {
+    background: #B1E957;
+    color: #000F74;
+    margin-top: 20px;
+}
+
+.cabecera-mi-kit p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000F74;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cabecera-mi-kit p span {
+    color: #D500F9;
+}
+
+.materiales-recopilados {
+    margin-top: 40px;
+}
+
+.materiales-recopilados .etapa-documentos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.materiales-recopilados .etapa-documentos .etapa {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.materiales-recopilados .etapa-documentos .etapa img {
+    width: 100px;
+}
+
+.materiales-recopilados .etapa-documentos .etapa h3 {
+    background: #000F74;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.materiales-recopilados .etapa-documentos .etapa p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000F74;
+}
+
+.materiales-recopilados .etapa-documentos .etapa p span {
+    color: #D500F9;
+}
+
+.materiales-recopilados .etapa-documentos .materiales {
+    width: 70%;
+}
+
+.materiales-recopilados .etapa-documentos .materiales .box {
+    width: 100%;
+    background: #DEE4F8;
+    padding: 20px 20px 10px 20px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.materiales-recopilados .etapa-documentos .materiales .box h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
     padding: 5px 10px;
 }
 
-.visualizacion-tabla .tabla .definicion {
-    background: rgba(213, 0, 249, 0.4);
-    height: 100px;
-    padding: 10px;
+
+.materiales-recopilados .etapa-documentos .materiales .box h4.recomendaciones {
+    color: #000F74;
+    background: #74D9F9;
 }
 
-.visualizacion-tabla .tabla .definicion p {
-    color: white;
-    font-size: 1.1rem;
+.materiales-recopilados .etapa-documentos .materiales .box h4.casos-de-exito {
+    color: #000F74;
+    background: #B1E957;
 }
+
+.materiales-recopilados .etapa-documentos .materiales .box h4.metodologias {
+    color: white;
+    background: #D500F9;
+}
+
+
+.materiales-recopilados .etapa-documentos .materiales .box p {
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+}
+
+.materiales-recopilados .etapa-documentos .materiales .box p a {
+    background: #D500F9;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-left: 10px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: 0.5s all;
+}
+
+.materiales-recopilados .etapa-documentos .materiales .box p a:hover {
+    background: #000F74;
+}
+
+
+.salida-documento {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 80px;
+}
+
+
+.salida-documento .btn-descarga {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.salida-documento .btn-descarga a {
+    margin: 10px;
+}
+
+
+
 
 
 /*Adaptaciones generales Toolkit versión mobile*/
@@ -1897,6 +2284,18 @@ footer .creditos-fci img {
     .siguiente-nivel .informacion .contenido p {
         margin: 20px 0px;
         text-align: center;
+    }
+
+    .materiales-recopilados .etapa-documentos .etapa {
+        width: 100%;
+    }
+
+    .materiales-recopilados .etapa-documentos .etapa {
+        width: 100%;
+    }
+
+    .materiales-recopilados .etapa-documentos .materiales {
+        width: 100%;
     }
 
 }
@@ -1972,3 +2371,8 @@ footer .creditos-fci img {
         padding: 0rem .75rem !important;
     }
 }
+
+#div_id_usable_password {
+    display: none;
+}
+

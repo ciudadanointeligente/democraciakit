@@ -1,388 +1,169 @@
-<!doctype html>
-<html lang="es">
+{% extends 'contenidos/base.html' %}
+{% load static %}
+{% block title %}DemocraciaKit - Etapa #1: Problemas - Conceptos iniciales{% endblock %}
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Democraciakit una guía práctica e interactiva creada para ayudar a personas líderes innovadores públicos a potenciar la participación ciudadana y fortalecer la democracia local en América Latina.">
-    <title>Democraciakit: Un proyecto de ciudadanía inteligente</title>
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#000F74">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Hoja de estilos css-->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- Font icons google-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!-- Font awesome-->
-    <script src="https://kit.fontawesome.com/791853223d.js" crossorigin="anonymous"></script>
-
-</head>
-
-<body>
-
-   <header class="container-fluid fixed-top">
-        <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
-            <div class="container">
-                <!-- Logotipo movil -->
-                <div class="logotipo-movil logotipo">
-                    <a class="navbar-brand" href="https://abrealcaldias.org/">
-                        <span><b>Abre</b></span>Alcaldías<b>&lt;</b>
-                    </a>
-                    <a class="credits" href="https://ciudadaniai.org/" target="_blank">
-                        Un proyecto de Ciudadanía Inteligente
-                    </a>
-                </div>
-
-                <!-- Boton hamburguesa comprimido movil -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
-                </button>
-
-                <!-- Secciones para escritorio -->
-                <div class="collapse navbar-collapse d-none d-lg-flex">
-                    <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
-                        <!-- Aquí irán los items del menú -->
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="https://abrealcaldias.org/">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://abrealcaldias.org/quienes-somos/">¿Quiénes somos?</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="https://abrealcaldias.org/areas/" id="navbarDropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                Áreas
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="https://abrealcaldias.org/abrealcaldias-latam/">LATAM</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="https://abrealcaldias.org/abrealcaldias-chile/">Chile</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item logotipo logotipo-desktop">
-                            <a class="navbar-brand" href="https://abrealcaldias.org/">
-                                <span><b>Abre</b></span>Alcaldías<b>&lt;</b>
-                            </a>
-                            <a class="credits" href="https://ciudadaniai.org/" target="_blank">
-                                Un proyecto de Ciudadanía Inteligente
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://abrealcaldias.org/metodo/">Método</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://abrealcaldias.org/publicaciones/">Publicaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://abrealcaldias.org/contacto/">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Offcanvas Menu para móvil -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-hidden="true">
-                <div class="offcanvas-header d-flex align-items-start justify-content-start">
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav d-flex align-items-start justify-content-start">
-                        <!-- Aquí irán los items del menú -->
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="https://abrealcaldias.org/">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://abrealcaldias.org/quienes-somos/">¿Quiénes somos?</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="https://abrealcaldias.org/areas/" id="navbarDropdown2" role="button" aria-expanded="false" aria-haspopup="true">
-                                Áreas
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <li><a class="dropdown-item" href="https://abrealcaldias.org/abrealcaldias-latam/">LATAM</a></li>
-                                <li><a class="dropdown-item" href="https://abrealcaldias.org/abrealcaldias-chile/">Chile</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://abrealcaldias.org/metodo/">Método</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://abrealcaldias.org/publicaciones/">Publicaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://abrealcaldias.org/contacto/">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-
-        <section class="container-fluid portada">
-            <div class="iconos-derecha">
-                <ul>
-                    <li class="img-1"><img src="img/icono-1-portada.png" alt="imagen decorativa de icono"></li>
-                    <li class="img-2"><img src="img/icono-2-portada.png" alt="imagen decorativa de icono"></li>
-                    <li class="img-1"><img src="img/icono-3-portada.png" alt="imagen decorativa de icono"></li>
-                </ul>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
-                        <p>Construye tu proyecto con</p>
-                        <h1>DemocraciaKit</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="iconos-izquierda">
-                <ul>
-                    <li class="img-1"><img src="img/icono-4-portada.png" alt="imagen decorativa de icono"></li>
-                    <li class="img-2"><img src="img/icono-5-portada.png" alt="imagen decorativa de icono"></li>
-                    <li class="img-1"><img src="img/icono-6-portada.png" alt="imagen decorativa de icono"></li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="accesos-directos">
-            <a href="perfil.html" class="btn-rueda">Perfil <img src="img/icono-perfil.png" class="icono" alt=""></a>
-            <a href="#" class="btn-kit"><img src="img/icono-kit.png" class="icono" alt=""> Mi Kit</a>
-        </section>
-
-        <section class="container header-section">
-            <div class="row">
-                <div class="col-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Toolkit</a></li>
-                            <li class="breadcrumb-item"><a href="rueda.html">Rueda</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Herramientas</li>
-                        </ol>
-                    </nav>
-
-                    <div class="alinear">
-                        <img src="img/etapa-numero.png" alt="Etapa 1 Problemas">
-                        <h3>Problemas</h3>
-                    </div>
-                    <h2>¿Qué <span>problema</span> vamos a solucionar?</h2>
-                    <p>Revisa estos insumos y añádelos a tu kit</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="container herramientas">
-            <div class="row">
-                <div class="col-12 tipologias-herramientas">
-                    <ul>
-                        <li>
-                            <p>Tipo de herramienta:</p>
-                        </li>
-                        <li>
-                            <div class="circulo circulo-rosado"></div>
-                            <p class="tipologia">Metodologías</p>
-                        </li>
-                        <li>
-                            <div class="circulo circulo-celeste"></div>
-                            <p class="tipologia">Recomendaciones</p>
-                        </li>
-                        <li>
-                            <div class="circulo circulo-verde"></div>
-                            <p class="tipologia">Casos de éxito</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row herramientas">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                    <div class="box recomendaciones">
-                        <div class="content">
-                            <p>Conceptos iniciales</p>
-                        </div>
-                        <div class="hover-box">
-                            <a href="#" class="revisar-link">Revisar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                    <div class="box metodologias">
-                        <div class="content">
-                            <p>Definición inicial</p>
-                        </div>
-                        <div class="hover-box">
-                            <a href="#" class="revisar-link">Revisar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                    <div class="box recomendaciones">
-                        <div class="content">
-                            <p>Estrategías de priorización</p>
-                        </div>
-                        <div class="hover-box">
-                            <a href="#" class="revisar-link">Revisar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                    <div class="box recomendaciones">
-                        <div class="content">
-                            <p>Sesgo de solución</p>
-                        </div>
-                        <div class="hover-box">
-                            <a href="#" class="revisar-link">Revisar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container frase-herramientas-destacada">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-12 col-md-8 col-lg-6">
-                    <h4>Una posible frase complementaria al nivel y las herramientas</h4>
-                </div>
-            </div>
-        </section>
-        
-        <section class="container-fluid siguiente-nivel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-9 informacion">
-                        <div class="titulo"><h4>Siguiente nivel:</h4></div>
-                        <div class="alinear">
-                            <img src="img/etapa-numero-2-gris.png" alt="Nivel 2: Causas" class="img-etapa">
-                            <h4>Causas</h4>
-                        </div>
-                        <div class="contenido">
-                            <p>Reúne antecedentes y caracteriza grupos afectados. En esta etapa, poner el enfoque en la ciudadanía permitirá profundizar el entendimiento del problema.</p>
-                            <a href="#" class="btn-democraciakit">Ir a causas</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img src="img/rueda-decorativa-esquina.png" alt="rueda como elemento decorativo que muestra el nivel que sigue" class="rueda-decorativa">
-        </section>
-        
-        <section class="premio">
-            <div class="scrolling-text">
-                <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-                <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-                <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
-                <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-                <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-                <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
-            </div>
-        </section>
-
-        <section class="descargar-toolkit-pdf">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 d-flex flex-row justify-content-center align-items-center align-self-center">
-                        <h4>Invitación a descargar Toolkit PDF</h4>
-                        <a href="https://drive.google.com/file/d/1l9rRNGLfrxYm-bzTBPYzd4XQD2U8aV6E/view" class="btn-democraciakit" target="_blank">Descargar</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 navegacion-abre">
-                    <ul>
-                        <li><a href="https://abrealcaldias.org/">Home</a></li>
-                        <li><a href="https://abrealcaldias.org/quienes-somos/">¿Quiénes somos?</a></li>
-                        <li><a href="https://abrealcaldias.org/areas/">Áreas</a></li>
-                        <li><a href="#">Método</a></li>
-                        <li><a href="#">Publicaciones</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 enlaces-rrss">
-
-                    <ul class="justify-content-center">
-                        <li class="logotipo-footer">
-                            <p><span><b>Abre</b></span>Alcaldías<b>&lt;</b></p>
-                        </li>
-                        <li><a href="mailto:info@ciudadaniai.org" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
-                        <li><a href="https://gitlab.com/ciudadaniai" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-                        <li><a href="https://twitter.com/ciudadania_i" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
-                        <li><a href="https://www.instagram.com/ciudadaniai/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.facebook.com/ciudadaniai/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCtiq34lXdXDxo6GhIwnY5Sw" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                        <li><a href="https://ciudadaniai.medium.com/" target="_blank"><i class="fa-brands fa-medium"></i></a></li>
-                        <li><a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank"><i class="fa-brands fa-creative-commons"></i></a></li>
-
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 creditos-fci">
-                    <p>Un proyecto de</p>
-                    <img src="img/logo-fci.svg" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci">
-                </div>
+{% block content %}
+<main>
+<section class="container-fluid portada">
+    <div class="iconos-derecha">
+        <ul>
+            <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+            <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+            <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                <p>Construye tu proyecto con</p>
+                <h1>DemocraciaKit</h1>
             </div>
         </div>
-    </footer>
-    <div class="derechos d-flex flex-row justify-content-center align-items-center align-self-center">
-        <p>© 2024 AbreAlcaldías - Un proyecto de Fundación Ciudadanía Inteligente. Todos los derechos reservados.</p>
     </div>
+    <div class="iconos-izquierda">
+        <ul>
+            <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+            <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+            <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+        </ul>
+    </div>
+</section>
+<!-- accesos directos -->
+<section class="accesos-directos">
+    <a href="{% url 'users:profile' %}" class="btn-rueda">Perfil <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
+    <a href="{% url 'contenidos:mikit' %}" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"> Mi Kit</a>
+</section>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<section class="container header-section">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Problemas</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Conceptos iniciales</li>
+                </ol>
+            </nav>
+            <div class="alinear">
+                <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
+                <h3>Problemas</h3>
+            </div>
+            <h2>¿Qué <span>problema</span> vamos a solucionar?</h2>
+            <p>Revisa estos insumos y añádelos a tu kit</p>
+        </div>
+    </div>
+</section>
+<section class="volver-herramientas container">
+    <div class="row">
+        <div class="col-12">
+            <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
+        </div>
+    </div>
+</section>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            var scrollPosition = window.scrollY;
-            var maxTranslateY = 70; // Ajusta este valor según sea necesario
 
-            var icons1 = document.querySelectorAll('.iconos-derecha .img-1 img, .iconos-izquierda .img-1 img');
-            var icons2 = document.querySelectorAll('.iconos-derecha .img-2 img, .iconos-izquierda .img-2 img');
+<section class="seccion-herramienta container">
+    <div class="row">
 
-            icons1.forEach(function(icon) {
-                var translateY = Math.min(scrollPosition * 0.3, maxTranslateY);
-                icon.style.transform = 'translateY(' + translateY + 'px)';
-            });
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 etapa-numero">
+            <div class="alinear">
+                <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
+                <h3>Problemas</h3>
+            </div>
+            <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
+        </div>
 
-            icons2.forEach(function(icon) {
-                var translateY = Math.min(scrollPosition * 0.1, maxTranslateY * 0.3);
-                icon.style.transform = 'translateY(' + translateY + 'px)';
-            });
-        });
 
-    </script>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-8">
+            <div class="definicion">
+                <h4 class="recomendacion">Recomendaciones</h4>
+                <h3>Conceptos iniciales</h3>
+                <p>Antes de comenzar a definir hay algunos conceptos clave que debes considerar:</p>
+            </div>
+        </div>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            var scrollPosition = window.scrollY;
-            var icon1 = document.querySelector('.icono-decoracion-parallax');
-            var icon2 = document.querySelector('.icono-decoracion-parallax-2');
+    </div>
+</section>
 
-            icon1.style.transform = 'translateY(' + (scrollPosition * 0.3) + 'px)';
-            icon2.style.transform = 'translateY(' + (scrollPosition * 0.3) + 'px)';
-        });
 
-    </script>
+<section class="visualizacion-post-it container">
+    <div class="row">
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var dropdownToggle = document.getElementById('navbarDropdown');
-            dropdownToggle.addEventListener('click', function(e) {
-                var dropdownMenu = this.nextElementSibling;
-                dropdownMenu.classList.toggle('show');
-            });
-        });
-    </script>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 post-it">
+            <div class="numero bg-verde">
+                <p>1</p>
+            </div>
+            <div class="contenido bg-verde-light">
+                <h4>El qué</h4>
+                <p>Es el problema que queremos abordar.</p>
+            </div>
+        </div>
 
-</body>
-</html>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 post-it abajo">
+            <div class="numero bg-naranjo">
+                <p>2</p>
+            </div>
+            <div class="contenido bg-naranjo-light">
+                <h4>El cómo</h4>
+                <p>Se refiere al motivo que da origen a nuestro problema.</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 post-it">
+            <div class="numero bg-rosado">
+                <p>3</p>
+            </div>
+            <div class="contenido bg-rosado-light">
+                <h4>El porqué</h4>
+                <p>Es la estrategia que desarrollaremos para abordar nuestro problema.</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 post-it abajo">
+            <div class="numero bg-celeste">
+                <p>4</p>
+            </div>
+            <div class="contenido bg-celeste-light">
+                <h4>El para qué</h4>
+                <p>Es el resultado, es decir, el efecto de la incidencia diseñada.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="visualizacion-texto-centrado container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-8">
+            <p>En esta etapa se hará la primera aproximación al qué, es decir, la formulación inicial del problema que será profundizado en las siguientes fases.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="anadir-al-kit container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
+           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
+           <h4>Avanzar</h4>
+            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Marca si terminaste la etapa
+                </label>
+                <div class="invalid-feedback">
+                    Debes marcar para guardar tu avance y recolectar los materiales
+                </div>
+            </p>
+            <button class="btn-democraciakit" type="submit">Añadir y avanzar</button>
+            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
+        </div>
+    </div>
+</section>
+
+
+</main>
+
+{% endblock %}

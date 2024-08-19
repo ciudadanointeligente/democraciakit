@@ -1,6 +1,6 @@
 {% extends 'contenidos/base.html' %}
 {% load static %}
-{% block title %}DemocraciaKit - Kit{% endblock %}
+{% block title %}DemocraciaKit - Etapa #1: Problemas - Mi kit{% endblock %}
 
 {% block content %}
 <main>
@@ -35,20 +35,269 @@
         <a href="#" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"> Mi Kit</a>
     </section>
 
+<main>
     <section class="container header-section">
         <div class="row">
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Mi Kit</li>
+                        <li class="breadcrumb-item"><a href="index.html">Toolkit</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Tu kit</li>
                     </ol>
                 </nav>
-                <h2>Este es tu proyecto</h2>
-                <p>Los contenidos que recogiste se descargan acá</p>
             </div>
         </div>
     </section>
+
+
+    <section class="cabecera-mi-kit container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-12 col-md-10 col-lg-8 kit">
+                <img src="{% static 'img/icono-kit.png' %}" alt="Icono de Kit">
+                <h3>Tu kit</h3>
+                <p class="pregunta"><span>{{user.username}},</span> ¿Ya tienes todas las herramientas necesarias para tu proyecto?</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- Recopilacion de herramientas añadidas en el kit -->
+    <section class="materiales-recopilados container">
+        <div class="row">
+            <!-- Acá se van sumando en función de lo que el usuario añadio al kit por cada etapa y por cada segmentación de la herramienta. Deje simulado todas las etapas visibles, la idea es que cuando una etapa no tenga nada incluido en el kit se quede oculta para que no sea tan saturante de información el desgloce de esta parte del sitio web -->
+
+            <!-- Etapa 1-->
+
+            <div class="col-12 etapa-documentos">
+                <div class="etapa">
+                    <img src="{% static 'img/etapa-numero.png' %}" alt="etapa 1: Problemas" class="etapa-numero">
+                    <h3>Problemas</h3>
+                    <p>¿Qué <span>problema</span> vamos a solucionar?</p>
+                </div>
+                <div class="materiales">
+                    <div class="box recomendaciones">
+                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+
+                    </div>
+
+                    <div class="box casos-de-exito">
+                        <h4 class="casos-de-exito">Casos de exito</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+
+                    <div class="box metodologias">
+                        <h4 class="metodologias">Metodologias</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Etapa 2-->
+
+            <div class="col-12 etapa-documentos">
+                <div class="etapa">
+                    <img src="{% static 'img/etapa-numero-2.png' %}" alt="etapa 2: Causas" class="etapa-numero">
+                    <h3>Causas</h3>
+                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
+                </div>
+                <div class="materiales">
+                    <div class="box recomendaciones">
+                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+
+                    </div>
+
+                    <div class="box casos-de-exito">
+                        <h4 class="casos-de-exito">Casos de exito</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+
+                    <div class="box metodologias">
+                        <h4 class="metodologias">Metodologias</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Etapa 3-->
+
+            <div class="col-12 etapa-documentos">
+                <div class="etapa">
+                    <img src="{% static 'img/etapa-numero-3.png' %}" alt="etapa 3: Objetivos" class="etapa-numero">
+                    <h3>Objetivo</h3>
+                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
+                </div>
+                <div class="materiales">
+                    <div class="box recomendaciones">
+                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+
+                    </div>
+
+                    <div class="box casos-de-exito">
+                        <h4 class="casos-de-exito">Casos de exito</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+
+                    <div class="box metodologias">
+                        <h4 class="metodologias">Metodologias</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Etapa 4-->
+
+            <div class="col-12 etapa-documentos">
+                <div class="etapa">
+                    <img src="{% static 'img/etapa-numero-4.png' %}" alt="etapa 4: Contexto" class="etapa-numero">
+                    <h3>Contexto</h3>
+                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
+                </div>
+                <div class="materiales">
+                    <div class="box recomendaciones">
+                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+
+                    </div>
+
+                    <div class="box casos-de-exito">
+                        <h4 class="casos-de-exito">Casos de exito</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+
+                    <div class="box metodologias">
+                        <h4 class="metodologias">Metodologias</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Etapa 5-->
+
+            <div class="col-12 etapa-documentos">
+                <div class="etapa">
+                    <img src="{% static 'img/etapa-numero-5.png' %}" alt="etapa 5: Decidir" class="etapa-numero">
+                    <h3>Decidir</h3>
+                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
+                </div>
+                <div class="materiales">
+                    <div class="box recomendaciones">
+                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+
+                    </div>
+
+                    <div class="box casos-de-exito">
+                        <h4 class="casos-de-exito">Casos de exito</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+
+                    <div class="box metodologias">
+                        <h4 class="metodologias">Metodologias</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Etapa 6-->
+
+            <div class="col-12 etapa-documentos">
+                <div class="etapa">
+                    <img src="{% static 'img/etapa-numero-6.png' %}" alt="etapa 6: Empoderar" class="etapa-numero">
+                    <h3>Empoderar</h3>
+                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
+                </div>
+                <div class="materiales">
+                    <div class="box recomendaciones">
+                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+
+                    </div>
+
+                    <div class="box casos-de-exito">
+                        <h4 class="casos-de-exito">Casos de exito</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+
+                    <div class="box metodologias">
+                        <h4 class="metodologias">Metodologias</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Etapa 7-->
+
+            <div class="col-12 etapa-documentos">
+                <div class="etapa">
+                    <img src="{% static 'img/etapa-numero-7.png' %}" alt="etapa 7: Evaluar" class="etapa-numero">
+                    <h3>Evaluar</h3>
+                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
+                </div>
+                <div class="materiales">
+                    <div class="box recomendaciones">
+                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+
+                    </div>
+
+                    <div class="box casos-de-exito">
+                        <h4 class="casos-de-exito">Casos de exito</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+
+                    <div class="box metodologias">
+                        <h4 class="metodologias">Metodologias</h4>
+                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
+                        <!-- Acá se van sumando -->
+                    </div>
+                </div>
+            </div>
+            <!-- Acciones de salida del documento kit descargable-->
+        </div>
+    </section>
+    <section class="salida-documento container">
+        <div class="row">
+            <div class="col-12 descargar">
+                <div class="btn-descarga">
+                    <a href="#" class="btn-democraciakit">Descargar</a>
+                    <a href="#" class="btn-democraciakit">Vista previa</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
 
     <section class="premio">
         <div class="scrolling-text">
