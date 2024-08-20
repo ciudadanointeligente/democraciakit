@@ -1,0 +1,197 @@
+{% extends 'contenidos/base.html' %}
+{% load static %}
+{% block title %}DemocraciaKit - Etapa #2: Causas - Identificación{% endblock %}
+
+{% block content %}
+<main>
+    
+    <section class="container-fluid portada">
+        <div class="iconos-derecha">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
+                </div>
+            </div>
+        </div>
+        <div class="iconos-izquierda">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="accesos-directos">
+        <a href="{% url 'users:profile' %}" class="btn-rueda">Perfil <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
+        <a href="{% url 'contenidos:mikit' %}" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"> Mi Kit</a>
+    </section>
+
+    <section class="container header-section">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa2' %}">Etapa #2</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Recomendación</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="volver-herramientas container">
+        <div class="row">
+            <div class="col-12">
+                <a href="{% url 'contenidos:etapa2' %}"> &lt; Volver a herramientas </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-herramienta container">
+        <div class="row">
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+                <div class="alinear">
+
+                    <!--Acá se va a simular la información en función de la etapa 1-->
+
+                    <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+                    <img src="{% static 'img/etapa-numero-2.png' %}" alt="Etapa 2 Causas">
+                    <h3>Causas</h3>
+                </div>
+                <h2 class="pregunta">¿Cuales son las causas de tu problema?</h2>
+            </div>
+
+
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                <div class="definicion">
+
+                    <h4 class="recomendacion">Recomendaciones</h4>
+
+                    <h3>Identificar las causas</h3>
+                    <p>Al igual que cuando sufres un dolor de cabeza y este es síntoma de algo más grande como deshidratación, un resfriado, o un mal sueño, los problemas sociales o dolores también son causados por situaciones más profundas. Es decir, será necesario identificar la causa es la situación que da origen al problema. La causa se entiende como "El por qué" y responde a la pregunta: ¿Por qué existe "el qué"?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visualizacion-ejemplo container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+                <h4>Ejemplo</h4>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                <div class="ejemplo">
+                    <p>En 2022, rellenos sanitarios en las comunas de Talcahuano, Hualpén, Lota y Florida generan emergencia de salubridad y sanitaria en el territorio porque (...)</p>
+                    <ul>
+                        <li>Difusión de enfermedades</li>
+                        <li>Ambiente poco habitable</li>
+                        <li>Colapso del relleno sanitario</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visualizacion-ejemplo container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+                <h4>Otro ejemplo</h4>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                <div class="ejemplo">
+                    <p>En ciertos escenarios es posible hacer una priorización de las causas. En nuestro ejemplo, podríamos inferir que la causa tres influye en gran medida a las otras dos. Si la priorizamos, podemos identificar cuál es la razón por la cual se genera: La causa de las causas</p>
+                    <p>El colapso del relleno sanitario se da porque (...)</p>
+                    <ul>
+                        <li>Pocos incentivos para que la comunidad realice separación de residuos (orgánico e inorgánico, reciclables y de un sólo uso) lo que genera exceso de residuos en el relleno sanitario</li>
+                        <li>No hay información de acciones que puede tener la ciudadanía para disminuir el nivel de residuos</li>
+                        <li>Empresas del territorio generan cantidades de residuos demasiado elevadas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visualizacion-pregunta container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 pregunta">
+                <h4>¿Qué nos aporta identificar las causas?</h4>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
+                <p>Trabajar a partir de las causas implica <b>necesariamente</b> un entendimiento mayor del problema, y por ende, tendremos opciones de soluciones más atingentes y efectivas. Las opciones que podemos implementar tendrán una relación causa y efecto más clara.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="componente-interactivo-form container-fluid">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 titulo">
+                    <h4>¡Ahora tu!</h4>
+                    <p>Intenta formular las causas que dan origen a tu problema</p>
+                </div>
+
+                <div class="col-12 tabla">
+                    <form action="" method="post">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Causa #1</th>
+                                    <th scope="col">Causa #2</th>
+                                    <th scope="col">Causa #3</th>
+                                    <th scope="col">Causa #4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                    <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                    <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                    <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn-democraciakit">Guardar y avanzar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="premio">
+        <div class="scrolling-text">
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+        </div>
+    </section>
+    <section class="descargar-toolkit-pdf">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-row justify-content-center align-items-center align-self-center">
+                    <h4>Invitación a descargar Toolkit PDF</h4>
+                    <a href="https://drive.google.com/file/d/1l9rRNGLfrxYm-bzTBPYzd4XQD2U8aV6E/view" class="btn-democraciakit" target="_blank">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>    
+{% endblock %}
