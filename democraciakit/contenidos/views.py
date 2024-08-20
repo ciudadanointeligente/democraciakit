@@ -18,6 +18,12 @@ class Etapa1ConceptosView(TemplateView):
 
 class Etapa1DefinicionView(TemplateView):
     template_name = 'contenidos/etapa1-definicion.html'
+
+class Etapa1EstrategiaView(TemplateView):
+    template_name = 'contenidos/etapa1-estrategia.html'
+
+class Etapa1SesgoView(TemplateView):
+    template_name = 'contenidos/etapa1-sesgo.html'
     
 class Etapa2View(TemplateView):
     template_name = 'contenidos/etapa2.html'

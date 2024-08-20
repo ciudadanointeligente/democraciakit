@@ -28,11 +28,11 @@
         </ul>
     </div>
 </section>
-<!-- accesos directos -->
 <section class="accesos-directos">
-    <a href="{% url 'users:profile' %}" class="btn-rueda">Perfil <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
-    <a href="{% url 'contenidos:mikit' %}" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"> Mi Kit</a>
+    <a href="{% url 'users:profile' %}" class="btn-rueda">Perfil <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
+    <a href="{% url 'contenidos:mikit' %}" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""> Mi Kit</a>
 </section>
+
 
 <section class="container header-section">
     <div class="row">
@@ -41,22 +41,19 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
                     <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Problemas</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Herramientas</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Conceptos iniciales</li>
                 </ol>
             </nav>
-            <div class="alinear">
-                <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
-                <h3>Problemas</h3>
-            </div>
-            <h2>¿Qué <span>problema</span> vamos a solucionar?</h2>
-            <p>Revisa estos insumos y añádelos a tu kit</p>
         </div>
     </div>
 </section>
+
+
 <section class="volver-herramientas container">
     <div class="row">
         <div class="col-12">
+            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
             <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
         </div>
     </div>
@@ -66,8 +63,12 @@
 <section class="seccion-herramienta container">
     <div class="row">
 
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 etapa-numero">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
             <div class="alinear">
+
+                <!--Acá se va a simular la información en función de la etapa 1-->
+
+                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
                 <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
                 <h3>Problemas</h3>
             </div>
@@ -75,65 +76,74 @@
         </div>
 
 
-        <div class="col-12 col-sm-12 col-md-4 col-lg-8">
+        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
             <div class="definicion">
+
+                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
                 <h4 class="recomendacion">Recomendaciones</h4>
-                <h3>Conceptos iniciales</h3>
-                <p>Antes de comenzar a definir hay algunos conceptos clave que debes considerar:</p>
+
+                <h3>Conceptos para la formulación inicial</h3>
+                <p>Antes de comenzar a definir hay algunos conceptos clave que debes considerar: </p>
             </div>
         </div>
 
     </div>
 </section>
 
+
+
+<!-- Componente: Post-it, para un tipo de forma de visualizar contenido para el toolkit -->
 
 <section class="visualizacion-post-it container">
-    <div class="row">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-12 col-md-10 post-it">
 
-        <div class="col-12 col-sm-12 col-md-6 col-lg-3 post-it">
-            <div class="numero bg-verde">
-                <p>1</p>
+            <div class="post-elemento post-it-elemento-1">
+                <div class="numero">
+                    <p class="bg-verde">1</p>
+                </div>
+                <div class="contenido bg-verde-light">
+                    <h4>El qué</h4>
+                    <p>Es el problema que queremos abordar.</p>
+                </div>
             </div>
-            <div class="contenido bg-verde-light">
-                <h4>El qué</h4>
-                <p>Es el problema que queremos abordar.</p>
+            
+            <div class="post-elemento post-it-elemento-2">
+                <div class="numero">
+                    <p class="bg-naranjo">2</p>
+                </div>
+                <div class="contenido bg-naranjo-light">
+                    <h4>El cómo</h4>
+                    <p>Se refiere al motivo que da origen a nuestro problema.</p>
+                </div>
             </div>
+            
+            <div class="post-elemento post-it-elemento-1">
+                <div class="numero">
+                    <p class="bg-rosado">3</p>
+                </div>
+                <div class="contenido bg-rosado-light">
+                    <h4>El porqué</h4>
+                    <p>Es la estrategia que desarrollaremos para abordar nuestro problema.</p>
+                </div>
+            </div>
+
+            <div class="post-elemento post-it-elemento-2">
+                <div class="numero">
+                    <p class="bg-celeste">4</p>
+                </div>
+                <div class="contenido bg-celeste-light">
+                    <h4>El para qué</h4>
+                    <p>Es el resultado, es decir, el efecto de la incidencia diseñada.</p>
+                </div>
+            </div>
+            
         </div>
-
-        <div class="col-12 col-sm-12 col-md-6 col-lg-3 post-it abajo">
-            <div class="numero bg-naranjo">
-                <p>2</p>
-            </div>
-            <div class="contenido bg-naranjo-light">
-                <h4>El cómo</h4>
-                <p>Se refiere al motivo que da origen a nuestro problema.</p>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-12 col-md-6 col-lg-3 post-it">
-            <div class="numero bg-rosado">
-                <p>3</p>
-            </div>
-            <div class="contenido bg-rosado-light">
-                <h4>El porqué</h4>
-                <p>Es la estrategia que desarrollaremos para abordar nuestro problema.</p>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-12 col-md-6 col-lg-3 post-it abajo">
-            <div class="numero bg-celeste">
-                <p>4</p>
-            </div>
-            <div class="contenido bg-celeste-light">
-                <h4>El para qué</h4>
-                <p>Es el resultado, es decir, el efecto de la incidencia diseñada.</p>
-            </div>
-        </div>
-
     </div>
 </section>
 
 
+<!-- Componente: Mensaje adicional. Para un tipo de forma de visualizar contenido que es auxiliar o que complementa para cerrar una idea -->
 <section class="visualizacion-texto-centrado container">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-12 col-md-10 col-lg-8">
@@ -157,12 +167,11 @@
                     Debes marcar para guardar tu avance y recolectar los materiales
                 </div>
             </p>
-            <button class="btn-democraciakit" type="submit">Añadir y avanzar</button>
+            <a href="{% url 'contenidos:etapa1-definicion' %}"><button class="btn-democraciakit" type="submit">Añadir y avanzar</button></a>
             <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
         </div>
     </div>
 </section>
-
 
 </main>
 
