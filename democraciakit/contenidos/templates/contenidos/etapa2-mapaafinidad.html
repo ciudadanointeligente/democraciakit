@@ -1,0 +1,260 @@
+{% extends 'contenidos/base.html' %}
+{% load static %}
+{% block title %}DemocraciaKit - Etapa #2: Causas - Enfoque Inclusivo{% endblock %}
+
+{% block content %}
+<main>
+    
+    <section class="container-fluid portada">
+        <div class="iconos-derecha">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
+                </div>
+            </div>
+        </div>
+        <div class="iconos-izquierda">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="accesos-directos">
+        <a href="{% url 'users:profile' %}" class="btn-rueda">Perfil <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
+        <a href="{% url 'contenidos:mikit' %}" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"> Mi Kit</a>
+    </section>
+
+    <section class="container header-section">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa2' %}">Etapa #2</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Metodología</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="volver-herramientas container">
+        <div class="row">
+            <div class="col-12">
+                <a href="{% url 'contenidos:etapa2' %}"> &lt; Volver a herramientas </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-herramienta container">
+        <div class="row">
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+                <div class="alinear">
+
+                    <!--Acá se va a simular la información en función de la etapa 1-->
+
+                    <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+                    <img src="{% static 'img/etapa-numero-2.png' %}" alt="Etapa 2 Causas">
+                    <h3>Causas</h3>
+                </div>
+                <h2 class="pregunta">¿Cuales son las <span>causas</span> de tu problema?</h2>
+            </div>
+
+
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                <div class="definicion">
+
+                    <h4 class="metodologias">Metodologías</h4>
+
+                    <h3>Mapa de afinidad</h3>
+                    <p>Es una herramienta de trabajo en equipo, permite que grupos de personas puedan profundizar conversaciones y llegar a conclusiones colectivas.</p>
+                    <p>En este caso, el mapa de afinidad buscará responder  ¿Qué condiciones dan origen al problema priorizado?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Componente: acordion para contenidos extensos que se pueden segmentar y divir para hacer más comoda la lectura -->
+
+       <section class="visualizacion-acordion container">
+        <div class="row justify-content-end">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                #1. Bingo de ideas
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <p>En solitario, las personas participantes reflexionan y escriben respuestas a la pregunta ¿Qué da origen al problema?. Importante: Cada idea debe ir en un post it o papel por separado.</p> 
+                                <p>En grupo, las personas compartirán las ideas que han escrito. Es importante que aquellas ideas similares sean agrupadas en una misma columna. A esto le llamaremos “Bingo”, y permite visibilizar que una idea tiene más apoyo que otra.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                #2. Categorización
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                            <div class="accordion-body">
+                                <p>Una vez que tenemos columnas con ideas similares, se debe poner un título a cada una de ellas. El título debe ser capaz de sintetizar y representar a todos los post-it dentro de su columna.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                #3 - Priorización
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body">
+                                <ul>
+<li>Para priorizar cada podrá votar usando puntos: Puntocracia</li>
+<li>El número de puntos se define según la cantidad de categorías: Dividir el número de categorías en 2 y luego, aproximar al número entero superior más cercano</li>
+<ul>
+<li>Si tenemos 3 categorías, los puntos para cada persona serán 2. (3/2=1.5 -> El número entero superior es 2)</li>
+<li>Si tenemos 7 categorías, los puntos serán 4 (7/2=3.5. -> El número entero superior es 4)</li>
+<li>Si tenemos 10 categorías, el número de puntos es 5.</li>
+</ul>
+<li>Cada participante puede asignar la cantidad de puntos libremente y a cualquier categoría. Es decir, puede repartir sus puntos entre varias categorías o darlos todos a una.</li>
+</ul>
+<p><b>Tip: Al momento de votar, ten en cuenta los siguientes criterios</b></p>
+    <li>Capacidad de impacto: Como equipo ¿Dónde tenemos mayor capacidad de incidir?</li>
+    <li>Relevancia: ¿El tema está presente en la agenda pública, social o política?</li>
+    <li>Relación causa-efecto: ¿Qué tan ligada se encuentra la causa con el problema a solucionar?</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                #4 - Integración del problema
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body">
+                                <p>
+                                    Hecho esto, es momento de integrar la causa <b>más votada</b> a la redacción final del <b>problema</b> que ya has predefinido. El resultado será un <b>nuevo problema</b> más manejable y preciso.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="componente-interactivo-form container-fluid">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 titulo">
+                    <h4>¡Ahora tu!</h4>
+                    <p>Completa los elementos y crea tu propio mapa de afinidad</p>
+                </div>
+
+                <div class="col-12">
+                    <form>
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th width="20%" scope="col">Quién</th>
+                                    <th width="20%" scope="col">Dónde</th>
+                                    <th width="20%" scope="col">Dolor</th>
+                                    <th width="20%" scope="col">Cuando</th>
+                                    <th width="20%" scope="col">Causa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="text-center"><button type="submit" class="btn-democraciakit">Guardar</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- <section class="visualizacion-video container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+                <h4>Mapa de afinidad</h4>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                <iframe src="https://www.youtube.com/embed/s5WJdbdck58?si=vqu3um5NRel5_Ryw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section> -->
+
+        <!-- <section class="visualizacion-ejemplo container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+                <h4>Síntesis</h4>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                <div class="ejemplo">
+                    <p>Aplicar el enfoque interseccional de las desigualdades en la construcción de tu proyecto significa poner atención al cruce de desigualdades de género, raza o pertenencia étnica, ciclo de vida, nivel de ingreso y discapacidad.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="anadir-al-kit container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
+               <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
+               <h4>Avanzar</h4>
+                <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
+                <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Marca si terminaste la etapa
+                    </label>
+                    <div class="invalid-feedback">
+                        Debes marcar para guardar tu avance y recolectar los materiales
+                    </div>
+                </p>
+                <a href="{% url 'contenidos:etapa2-matriz' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
+                <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
+            </div>
+        </div>
+    </section>
+
+
+</main>    
+{% endblock %}
