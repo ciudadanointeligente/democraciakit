@@ -1320,7 +1320,7 @@ footer .creditos-fci img {
 
 /* Adaptación rueda otras pantallas */
 
-@media 1200px {}
+/* @media 1200px {} */
 
 
 
@@ -1726,7 +1726,7 @@ footer .creditos-fci img {
     padding: 20px;
 }
 
-.visualizacion-post-it .post-it .post-it-elemento-1 {}
+/* .visualizacion-post-it .post-it .post-it-elemento-1 {} */
 
 .visualizacion-post-it .post-it .post-it-elemento-2 {
     padding-top: 50px;
