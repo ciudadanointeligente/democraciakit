@@ -61,15 +61,6 @@
                     <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
                 </button>
              
-                <!-- login logout -->
-                <div class="blanco">{% if user.is_authenticated %}
-                    {{ user.username }}
-                    {% else %}
-                    <a href="{% url 'users:user_login' %}" class="nav-link blanco">Entrar</a>
-                    {% endif %}
-                    <a href="{% url 'users:logout' %}" class="nav-link blanco">Salir</a>
-                </div>
-             
                 <!-- Secciones para escritorio -->
                 <div class="collapse navbar-collapse d-none d-lg-flex">
                     <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
@@ -201,6 +192,13 @@
                   <p>Un proyecto de</p>
                   <img src="{% static 'img/logo-fci.svg' %}" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci">
               </div>
+              <div class="blanco">{% if user.is_authenticated %}
+                <div class="nav-link blanco">{{ user.frase }}</div>
+                {% else %}
+                <a href="{% url 'users:user_login' %}" class="nav-link blanco">Entrar</a>
+                {% endif %}
+                <a href="{% url 'users:logout' %}" class="nav-link blanco">Salir</a>
+            </div>
           </div>
       </div>
   </footer>

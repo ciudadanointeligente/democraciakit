@@ -93,7 +93,7 @@
                     <h3>¡Crea <span class="bg-celeste">tu proyecto</span> con <span class="color-rosado">DemocraciaKit!</span></h3>
                     {% endif %}
                     {% if user.is_authenticated %}
-                    <a href="{% url 'contenidos:rueda' %}" class="btn-democraciakit">Hola {{ user.username }}, entra a tu proyecto</a>
+                    <a href="{% url 'contenidos:rueda' %}" class="btn-democraciakit">Hola {{ user.frase }}, entra a tu proyecto</a>
                     {% else %}
                     <a href="{% url 'users:user_login' %}" class="btn-democraciakit">Ir a Democraciakit</a>
                     {% endif %}
