@@ -1895,7 +1895,6 @@ footer .creditos-fci img {
 
 .visualizacion-tabla .tabla th,
 .visualizacion-tabla .tabla td {
-    width: 25%;
     /* Cada columna ocupará un 25% del ancho total */
     text-align: center;
     /* Alineación centrada del texto */
@@ -2010,7 +2009,6 @@ footer .creditos-fci img {
 
 .componente-interactivo-form .tabla th,
 .componente-interactivo-form .tabla td {
-    width: 25%;
     /* Cada columna ocupará un 25% del ancho total */
     text-align: center;
     /* Alineación centrada del texto */

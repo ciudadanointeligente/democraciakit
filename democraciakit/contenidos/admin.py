@@ -1,8 +1,10 @@
 from django.contrib import admin
-from .models import Etapa, Contenido, Imagen, Archivos, Categoria
+from .models import Archivos, Categoria, Definicion1, Causas2, Inclusivo2, Mapadeafinidad2
 
-admin.site.register(Etapa)
-admin.site.register(Contenido)
-admin.site.register(Imagen)
+
 admin.site.register(Archivos)
 admin.site.register(Categoria)
+admin.site.register(Definicion1)
+admin.site.register(Causas2)
+admin.site.register(Inclusivo2)
+admin.site.register(Mapadeafinidad2)

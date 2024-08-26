@@ -1,7 +1,16 @@
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomPasswordResetForm, CustomUserChangeForm
+from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomUserChangeForm
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.views import PasswordChangeView
+from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
+from .forms import CustomPasswordChangeForm
 
 def register(request):
     if request.method == 'POST':
@@ -39,17 +48,20 @@ def profile(request):
         form = CustomUserChangeForm(instance=request.user)
     return render(request, 'users/profile.html', {'form': form})
 
-@login_required
-def password_reset(request):
-    if request.method == 'POST':
-        form = CustomPasswordResetForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('users:password_reset_done')
-    else:
-        form = CustomPasswordResetForm()
-    return render(request, 'users/password_reset.html', {'form': form})
 
 def logout_view(request):
     logout(request)
     return redirect('contenidos:index')
+
+
+
+def password_reset(request):
+    if request.method == 'POST':
+        form = CustomPasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Importante para mantener la sesión activa
+            return redirect('contenidos:index')  # Redirige a una página de éxito
+    else:
+        form = CustomPasswordChangeForm(request.user)
+    return render(request, 'users/password_reset.html', {'form': form})

@@ -138,16 +138,15 @@
     </section>
 
     <section class="componente-interactivo-form container-fluid">
-
         <div class="container">
             <div class="row">
                 <div class="col-12 titulo">
                     <h4>¡Ahora tu!</h4>
                     <p>Intenta formular las causas que dan origen a tu problema</p>
                 </div>
-
                 <div class="col-12 tabla">
-                    <form action="" method="post">
+                    <form method="post">
+                        {% csrf_token %}
                         <table class="table table-responsive">
                             <thead>
                                 <tr>
@@ -159,10 +158,11 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                    {% for field in form %}
+                                    <td>
+                                        {{ field }}
+                                    </td>
+                                    {% endfor %}
                                 </tr>
                             </tbody>
                         </table>

@@ -179,29 +179,29 @@
                     <p>Completa los elementos y crea tu propio mapa de afinidad</p>
                 </div>
 
-                <div class="col-12">
+                <div class="col-12 tabla">
                     <form>
+                        {% csrf_token %}
                         <table class="table table-responsive">
                             <thead>
                                 <tr>
-                                    <th width="20%" scope="col">Quién</th>
-                                    <th width="20%" scope="col">Dónde</th>
-                                    <th width="20%" scope="col">Dolor</th>
-                                    <th width="20%" scope="col">Cuando</th>
-                                    <th width="20%" scope="col">Causa</th>
+                                    <th scope="col">Quién</th>
+                                    <th scope="col">Dónde</th>
+                                    <th scope="col">Dolor</th>
+                                    <th scope="col">Cuando</th>
+                                    <th scope="col">Causa</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    <td width="20%"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                    {% for field in form %}
+                                    <td>
+                                        {{ field }}
+                                    </td>
+                                    {% endfor %}
                                 </tr>
                             </tbody>
                         </table>
-
                         <div class="text-center"><button type="submit" class="btn-democraciakit">Guardar</button></div>
                     </form>
                 </div>

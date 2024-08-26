@@ -32,7 +32,7 @@
         </div>
     </section>
     <section class="accesos-directos">
-        <a href="rueda.html" class="btn-rueda">Rueda <img src="{% static 'img/icono-rueda.png' %}" class="icono" alt=""></a>
+        <a href="{% url 'contenidos:rueda' %}" class="btn-rueda">Rueda <img src="{% static 'img/icono-rueda.png' %}" class="icono" alt=""></a>
         <a href="#" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""> Mi Kit</a>
     </section>
     <section class="container header-section">
@@ -40,12 +40,14 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="rueda.html">Rueda</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Registro</li>
                     </ol>
                 </nav>
                 <h2>Registro</h2>
                 <p>Completa todos los campos para crear tu cuenta e ingresar a DemocraciaKit</p>
+                <p>¡Sólo los campos con * son requeridos!, pero nos gustaría saber más de ti</p>
+                <p>¡Si tienes tiempo completalos todos!</p>
             </div>
         </div>
     </section>
@@ -55,73 +57,20 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <!-- <div class="row">
-                        <div class="col-12">
-                            <h3>Completa los siguientes datos</h3>
-                            <div class="frase mb-3">
-                                <div class="bocadillo">
-                                    <div class="forma"></div>
-                                    <textarea type="text" class="form-control form-frase" id="exampleFormControlTextarea1" rows="1" placeholder="Ingresar una frase que te caracterice" aria-label="Ingresar una frase que te caracterice"></textarea>
-                                    <div class="forma"></div>
-                                    <input type="text" name="frase" class="form-control form-frase" id="exampleFormControlTextarea1" rows="1" placeholder="Ingresar una frase que te caracterice" aria-label="Ingresar una frase que te caracterice">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-5">
-                            {% if user.foto %}
-                            <img src="{{ user.foto.url }}" alt="Imagen de perfil del usuario" class="img-perfil mb-3">
-                            {% else %}
-                            {% endif %}
-                            <label for="formFile" class="form-label">Imagen de perfil</label>
-                            <input class="form-control" type="file" name="foto" id="formFile">
-                        </div>
-
-                        <div class="col-12 col-sm-12 col-md-7">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nombre usuario</label>
-                                <input type="text" name="username" class="form-control" placeholder="Usuario" aria-label="Ingresar nombre de usuario">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Contraseña</label>
-                                <input type="text" name="password1" class="form-control" placeholder="Contraseña" aria-label="Ingresar contraseña">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">País</label>
-                                <input type="text" name="pais" class="form-control" placeholder="Ingresar país" aria-label="País">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Municipio</label>
-                                <input type="text" name="municipio" class="form-control" placeholder="Ingresar municipio" aria-label="Municipio">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Cargo</label>
-                                <input type="text" name="cargo" class="form-control" placeholder="Ingresar cargo" aria-label="Cargo">
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="row">
-                        <div class="col-12 mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Descripción</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresar descripción"></textarea>
-                            <input type="textarea" name="descripcion" class="form-control" placeholder="Ingresar descripción" aria-label="Ingresar descripción">
-                        </div>
-                    </div> -->
+                    
                     <button type="submit" class="btn-democraciakit mb-5">Guardar</button>
                 </form>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 panel">
                 <div class="cambiar-contrasena">
                     <p>¿Quieres cambiar la contraseña?</p>
-                    <a href="" class="btn-democraciakit btn-rosado">Cambiar contraseña</a>
+                    <a href="{% url 'users:password_reset' %}" class="btn-democraciakit btn-rosado">Cambiar contraseña</a>
                 </div>
-
-                <div class="panel-control">
+                <!-- <div class="panel-control">
                    <h4>Panel de control</h4>
                     <div class="caja-rosada"></div>
                     <div class="caja-verde"></div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -146,18 +95,4 @@
         </div>
     </section>
 </main>
-
-
-
-
-<!-- <div class="row justify-content-center">
-    <div class="col-md-6">
-        <h2 class="mb-4">Registrarse</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button type="submit" class="btn btn-primary">Registrarse</button>
-        </form>
-    </div>
-</div> -->
 {% endblock %}

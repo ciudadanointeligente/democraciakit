@@ -49,13 +49,13 @@
                             <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
                         </div>
                         <button type="submit" class="btn-democraciakit mb-5">Entrar</button>
-                        <div class="mb-3 crear">
-                            <a href="{% url 'users:register' %}" class="enlace-crear">&gt; Crear cuenta con correo</a>
-                        </div>
-                        <div class="mb-3 recuperar">
-                            <p>¿Olvidaste tu contraseña? <a href="{% url 'users:password_reset' %}" class="enlace-recuperar">&gt; Recuperar aquí</a></p>
-                        </div>
                     </form>
+                    <div class="mb-3 recuperar">
+                        <p>¿Aún no te has registrado? <a href="{% url 'users:register' %}">&gt; hazlo aquí</a></p>
+                    </div>
+                    <div class="mb-3 recuperar">
+                        <p>¿Olvidaste tu contraseña? <a href="{% url 'users:password_reset' %}" class="enlace-recuperar">&gt; Recuperar aquí</a></p>
+                    </div>
                 </div>
             </div>
         </div>

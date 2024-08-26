@@ -1,8 +1,9 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from .models import Pais
+from django.contrib.auth.forms import PasswordChangeForm
 
 User = get_user_model()
 
@@ -12,6 +13,11 @@ class CustomUserCreationForm(UserCreationForm):
         if 'ldap_password' in self.fields:
             del self.fields['ldap_password']
 
+    frase = forms.CharField(
+        max_length=256,
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingresa un apodo, nombre o frase que te caracterice'}),
+    )
     email = forms.EmailField(
         max_length=254,
         required=True,
@@ -24,11 +30,6 @@ class CustomUserCreationForm(UserCreationForm):
     password2 = forms.CharField(
         label='Confirmar contraseña',
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Repetir contraseña'}),
-    )
-    frase = forms.CharField(
-        max_length=256,
-        required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingresa un apodo, nombre o frase que te caracterice'}),
     )
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
@@ -57,7 +58,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['email', 'password1', 'password2' ,'frase', 'pais', 'municipio', 'cargo', 'foto', 'descripcion']
+        fields = ['frase', 'email', 'password1', 'password2', 'pais', 'municipio', 'cargo', 'foto', 'descripcion']
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -79,17 +80,13 @@ class CustomAuthenticationForm(AuthenticationForm):
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña'}),
     )
 
-class CustomPasswordResetForm(PasswordResetForm):
-    email = forms.EmailField(
-        max_length=254,
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
-    )
 
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        if not User.objects.filter(email=email).exists():
-            raise ValidationError("No existe una cuenta con este email.")
-        return email
+# Formulario para cambiar la contraseña del usuario
+class CustomPasswordChangeForm(PasswordChangeForm):
+    old_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña actual'}))
+    new_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Nueva contraseña'}))
+    confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Repetir nueva contraseña'}))
+
 
 # Formulario adicional para actualizar el perfil del usuario
 class CustomUserChangeForm(forms.ModelForm):

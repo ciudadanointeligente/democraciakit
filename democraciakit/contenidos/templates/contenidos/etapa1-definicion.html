@@ -205,9 +205,9 @@
                     </div>
 
                     <div class="col-12 tabla">
-                        <form>
+                        <form method="post">
+                            {% csrf_token %}
                             <table class="table table-responsive">
-
                                 <thead>
                                     <tr>
                                         <th scope="col">Quién</th>
@@ -216,19 +216,16 @@
                                         <th scope="col">Dolor</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     <tr>
-                                        <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                        <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                        <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                        <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                        {% for field in form %}
+                                        <td>
+                                            {{ field }}
+                                        </td>
+                                        {% endfor %}
                                     </tr>
-
                                 </tbody>
-
                             </table>
-
                             <button type="submit" class="btn-democraciakit">Guardar</button>
                         </form>
                     </div>

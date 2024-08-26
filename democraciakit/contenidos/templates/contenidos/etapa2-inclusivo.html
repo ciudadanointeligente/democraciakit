@@ -92,35 +92,40 @@
                 <div class="row justify-content-end">
                     <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
                         <div class="accordion" id="accordionPanelsStayOpenExample">
-    
-    
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                        Te invitamos a hacer una pausa y revelar las siguientes preguntas (click en la flecha):
+                                        Haz click y reflexiona sobre lo que cambia:
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
                                     <div class="accordion-body">
-        <form action="" method="post">
-            <table class="table table-responsive">                  
-                    <tr>
-                        <td>
-                            <p>¿Cómo cambia el escenario si ahora imaginas que tienes 70 años?</p>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribir aquí"></textarea></td>
-                        <td><p>¿Cómo cambia el escenario si ahora imaginas que no tienes auto?</p>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribir aquí"></textarea></td>
-                        <td><p>¿Cómo cambia si no tienes ahorros o capacidad adquisitiva?</p>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribir aquí"></textarea></td>
-                        <td><p>¿Cambia si en tu comunidad no existen servicios de salud cerca?</p>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribir aquí"></textarea></td>
-                        <td><p>¿Cambia si eres una mujer cuidadora y no puedes acudir?</p>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribir aquí"></textarea></td>
-                    </tr>                          
-            </table>
-                <div class="text-center"><button type="submit" class="btn-democraciakit">Guardar</button></div>
-        </form>
-
+                                        <div class="col-12 tabla">
+                                            <form method="post">
+                                                {% csrf_token %}
+                                                <table class="table table-responsive">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">¿Cómo cambia el escenario si ahora imaginas que tienes 70 años?</th>
+                                                            <th scope="col">¿Cómo cambia el escenario si ahora imaginas que no tienes auto?</th>
+                                                            <th scope="col">¿Cómo cambia si no tienes ahorros o capacidad adquisitiva?</th>
+                                                            <th scope="col">¿Cambia si en tu comunidad no existen servicios de salud cerca?</th>
+                                                            <th scope="col">¿Cambia si eres una mujer cuidadora y no puedes acudir?</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            {% for field in form %}
+                                                            <td>
+                                                                {{ field }}
+                                                            </td>
+                                                            {% endfor %}
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <button type="submit" class="btn-democraciakit">Guardar</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>    
