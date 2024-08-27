@@ -1,4 +1,7 @@
 from django.shortcuts import render, reverse, redirect
+from django.urls import reverse_lazy
+from django.contrib import messages
+from django.views.generic import FormView
 from django.views.generic import TemplateView
 from django.views.generic import CreateView
 from .models import *
@@ -26,17 +29,31 @@ class Etapa1ConceptosView(TemplateView):
     template_name = 'contenidos/etapa1-conceptos.html'
 
 
-class Definicion1CreateView(CreateView):
-    model = Definicion1
+# class Definicion1CreateView(CreateView):
+#     model = Definicion1
+#     form_class = Definicion1Form
+#     template_name = 'contenidos/etapa1-definicion.html'  
+
+#     def form_valid(self, form):
+#         form.instance.usuario = self.request.user  
+#         return super().form_valid(form)
+
+#     def get_success_url(self):
+#         return reverse('contenidos:etapa1-definicion')
+
+
+class Definicion1CreateView(FormView):
     form_class = Definicion1Form
-    template_name = 'contenidos/etapa1-definicion.html'  # Reemplaza 'tu_app' con el nombre de tu aplicación
+    template_name = 'contenidos/etapa1-definicion.html'
+    success_url = reverse_lazy('contenidos:etapa1-definicion')
 
     def form_valid(self, form):
-        form.instance.usuario = self.request.user  # Asigna el usuario actual al objeto Definicion1
-        return super().form_valid(form)
-
-    def get_success_url(self):
-        return reverse('contenidos:index')  # Reemplaza con la URL de éxito deseada
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus definiciones!")
+        return super().form_valid(form)  
 
 
 class Etapa1EstrategiaView(TemplateView):
@@ -61,7 +78,7 @@ class IdentificacionCreateView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('contenidos:index')  # Reemplaza con la URL de conexión deseada
+        return reverse('contenidos:etapa2-identificacion')  # Reemplaza con la URL de conexión deseada
 
 
 class MapaAfinidad2CreateView(CreateView):
@@ -74,7 +91,7 @@ class MapaAfinidad2CreateView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('contenidos:index')
+        return reverse('contenidos:etapa2-mapaafinidad')
 
 
 class Etapa2MatrizView(TemplateView):
@@ -91,7 +108,7 @@ class Inclusivo2CreateView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('contenidos:index')
+        return reverse('contenidos:etapa2-inclusivo')
     
 
 

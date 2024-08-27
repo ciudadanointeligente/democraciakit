@@ -22,4 +22,5 @@ urlpatterns = [
     path('etapa5/', views.Etapa5View.as_view(), name='etapa5'),
     path('etapa6/', views.Etapa6View.as_view(), name='etapa6'),
     path('etapa7/', views.Etapa7View.as_view(), name='etapa7'),
+
 ]
