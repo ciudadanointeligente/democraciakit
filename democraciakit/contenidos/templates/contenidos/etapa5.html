@@ -31,8 +31,8 @@
     </section>
     <!-- accesos directos -->
     <section class="accesos-directos">
-        <a href="{% url 'users:profile' %}" class="btn-rueda">Perfil <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
-        <a href="{% url 'contenidos:mikit' %}" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"> Mi Kit</a>
+        <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
+        <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"></a>
     </section>
 
     <section class="container header-section">
@@ -49,7 +49,7 @@
                     <img src="{% static 'img/etapa-numero-5.png' %}" alt="Etapa #4 Contexto">
                     <h3>Decidir pensando en tod@s</h3>
                 </div>
-                <h2>Descubre las acciones de retroalimentación que puedes ejecutar para integrar a la ciudadanía en esta última definición del proyecto.</span></h2> 
+                <h2>Descubre las acciones de retroalimentación que puedes ejecutar para integrar a la ciudadanía en esta última definición del proyecto</span></h2> 
                 <p>Revisa estos insumos y añádelos a tu kit</p>
             </div>
         </div>
@@ -100,32 +100,12 @@
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                <div class="box metodologias">
+                <div class="box recomendaciones">
                     <div class="content">
                         <p>Testeos</p>
                     </div>
                     <div class="hover-box">
                         <a href="{% url 'contenidos:etapa5-testeos' %}" class="revisar-link">Revisar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                <div class="box metodologias">
-                    <div class="content">
-                        <p>Eventos y acciones</p>
-                    </div>
-                    <div class="hover-box">
-                        <a href="{% url 'contenidos:etapa4-eventos' %}" class="revisar-link">Revisar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                <div class="box metodologias">
-                    <div class="content">
-                        <p>Plan de trabajo</p>
-                    </div>
-                    <div class="hover-box">
-                        <a href="{% url 'contenidos:etapa4-plandetrabajo' %}" class="revisar-link">Revisar</a>
                     </div>
                 </div>
             </div>
@@ -146,17 +126,17 @@
                 <div class="col-12 col-sm-12 col-md-8 col-lg-9 informacion">
                     <div class="titulo"><h4>Siguiente nivel:</h4></div>
                     <div class="alinear">
-                        <img src="{% static 'img/etapa-numero-5.png' %}" alt="Nivel 4: Contexto" class="img-etapa">
+                        <img src="{% static 'img/etapa-numero-6.png' %}" alt="Nivel 4: Contexto" class="img-etapa">
                         <h4>Decidir</h4>
                     </div>
                     <div class="contenido">
-                        <p>En esta etapa, aprende sobre retroalimentación y su importancia.</p>
-                        <a href="{% url 'contenidos:etapa5' %}" class="btn-democraciakit">Ir a decidir</a>
+                        <p>En esta sección encontrarás algunas fórmulas para empoderar a la ciudadanía en la construcción de la solución.</p>
+                        <a href="{% url 'contenidos:etapa6' %}" class="btn-democraciakit">Ir a empoderar</a>
                     </div>
                 </div>
             </div>
         </div>
-        <img src="{% static 'img/rueda-decorativa-esquina-5.png' %}" alt="rueda como elemento decorativo que muestra el nivel que sigue" class="rueda-decorativa">
+        <img src="{% static 'img/rueda-decorativa-esquina-6.png' %}" alt="rueda como elemento decorativo que muestra el nivel que sigue" class="rueda-decorativa">
     </section>
 
     <section class="premio">

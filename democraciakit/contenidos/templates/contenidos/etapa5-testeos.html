@@ -1,6 +1,6 @@
 {% extends 'contenidos/base.html' %}
 {% load static %}
-{% block title %}DemocraciaKit - Etapa #1: Problemas - Conceptos iniciales{% endblock %}
+{% block title %}DemocraciaKit - Etapa #5: Decidir -Testeos{% endblock %}
 
 {% block content %}
 <main>
@@ -41,8 +41,8 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
                     <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Etapa #1</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Conceptos iniciales</li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa5' %}">Etapa #5</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Testeos</li>
                 </ol>
             </nav>
         </div>
@@ -54,7 +54,7 @@
     <div class="row">
         <div class="col-12">
             <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
+            <a href="{% url 'contenidos:etapa5' %}"> &lt; Volver a herramientas </a>
         </div>
     </div>
 </section>
@@ -69,88 +69,64 @@
                 <!--Acá se va a simular la información en función de la etapa 1-->
 
                 <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
-                <h3>Problemas</h3>
+                <img src="{% static 'img/etapa-numero-5.png' %}" alt="Etapa 5 Decidir">
+                <h3>Decidir</h3>
             </div>
-            <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
+            <h2 class="pregunta"><span>Decidir</span> pensando en tod@s</h2>
         </div>
-
 
         <div class="col-12 col-sm-12 col-md-8 col-lg-9">
             <div class="definicion">
-
                 <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
                 <h4 class="recomendacion">Recomendaciones</h4>
-
-                <h3>Conceptos para la formulación inicial</h3>
-                <p>Antes de comenzar a definir hay algunos conceptos clave que debes considerar: </p>
+                <h3>Técnicas y planificación de testeos</h3>
+                <p>El testeo implica animar a un grupo de personas a dar <strong>respuestas diferentes</strong> al problema ya definido, a través de <strong>tres fases</strong> que permitirán obtener los aprendizajes necesarios para iterar: planificar, facilitar y sistematizar.</p>
+                <ul>
+                    <li><strong>Planificar:</strong> Se deben seleccionar a los usuarios que serán parte del testeo, pudiendo ser aquellos que participaron en etapas anteriores para obtener una retroalimentación más específica o nuevos usuarios para comprender aspectos más atractivos o complejos.</li>
+                    <ul>
+                        <li>Se deben definir cuáles son las hipótesis del problema detectado, esto es una suposición o un intento de explicar algo relacionado con el prototipo del cual se tiene poca o ninguna evidencia. Poner a prueba estas hipótesis permite comprender cuál(es) supuestos son correctos o no, permitiendo tomar buenas decisiones sobre el proyecto. </li>
+                        <li>Identificar cómo se medirán los resultados del testeo del prototipo. Para esto se deben construir indicadores que ayuden a identificar si la solución valida o no la hipótesis. </li>
+                        <li>Identificar dónde, cuándo, en cuánto tiempo se realizará lo anterior, y quiénes serán las personas responsables de cada momento. Además, se debe identificar cómo se recibirá la retroalimentación. Puede ser a nivel digital a través de plataformas, o a nivel presencial.</li>
+                    </ul>
+                    <p><strong>Facilitar:</strong> Durante el proceso de testeo, se deben aplicar diversas técnicas para conocer la opinión usuaria, tales como: encuestas, entrevistas y observaciones. </p>
+                    <p><strong>Entrevistas:</strong> Se recomienda tener una pauta de retroalimentación. Esta debe ser completada por el equipo posterior a cada testeo, identificando: ¿Qué funcionó? ¿Qué se podría mejorar? ¿Qué preguntas nuevas surgieron? ¿Qué nuevas ideas surgieron? </p>
+                </ul>
             </div>
-        </div>
-
-    </div>
-</section>
-
-
-
-<!-- Componente: Post-it, para un tipo de forma de visualizar contenido para el toolkit -->
-
-<section class="visualizacion-post-it container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-12 col-md-10 post-it">
-
-            <div class="post-elemento post-it-elemento-1">
-                <div class="numero">
-                    <p class="bg-verde">1</p>
-                </div>
-                <div class="contenido bg-verde-light">
-                    <h4>El qué</h4>
-                    <p>Es el problema que queremos abordar.</p>
-                </div>
-            </div>
-            
-            <div class="post-elemento post-it-elemento-2">
-                <div class="numero">
-                    <p class="bg-naranjo">2</p>
-                </div>
-                <div class="contenido bg-naranjo-light">
-                    <h4>El cómo</h4>
-                    <p>Se refiere al motivo que da origen a nuestro problema.</p>
-                </div>
-            </div>
-            
-            <div class="post-elemento post-it-elemento-1">
-                <div class="numero">
-                    <p class="bg-rosado">3</p>
-                </div>
-                <div class="contenido bg-rosado-light">
-                    <h4>El porqué</h4>
-                    <p>Es la estrategia que desarrollaremos para abordar nuestro problema.</p>
-                </div>
-            </div>
-
-            <div class="post-elemento post-it-elemento-2">
-                <div class="numero">
-                    <p class="bg-celeste">4</p>
-                </div>
-                <div class="contenido bg-celeste-light">
-                    <h4>El para qué</h4>
-                    <p>Es el resultado, es decir, el efecto de la incidencia diseñada.</p>
-                </div>
-            </div>
-            
         </div>
     </div>
 </section>
 
+        <!-- <section class="visualizacion-video container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+                    <h4>Video explicativo</h4>
+                </div>
 
-<!-- Componente: Mensaje adicional. Para un tipo de forma de visualizar contenido que es auxiliar o que complementa para cerrar una idea -->
-<section class="visualizacion-texto-centrado container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-12 col-md-10 col-lg-8">
-            <p>En esta etapa se hará la primera aproximación al qué, es decir, la formulación inicial del problema que será profundizado en las siguientes fases.</p>
-        </div>
-    </div>
-</section>
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                    
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IrsQAtmvlQE?si=ZqQSNGsyDmhVDKQ7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </section> -->
+       
+        <!--Componente: Tabla 2 algunas cajas dentro de la tabla ocupan espacios diversos -->
+       
+
+        <!-- <section class="componente-interactivo-form container-fluid">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 titulo">
+                        <h4>¡Ahora tu!</h4>
+                        <p>Descarga el esquema y completa cada sección de la Proyección del Cambio</p>
+                    </div>
+                    <div class="col-12 btn-descargar">
+                        <a href="#" class="btn-democraciakit">Descargar</a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
 
 
 <section class="anadir-al-kit container">
@@ -167,7 +143,7 @@
                     Debes marcar para guardar tu avance y recolectar los materiales
                 </div>
             </p>
-            <a href="{% url 'contenidos:etapa1-definicion' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
+            <a href="{% url 'contenidos:etapa6' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
             <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
         </div>
     </div>

@@ -1,6 +1,6 @@
 {% extends 'contenidos/base.html' %}
 {% load static %}
-{% block title %}DemocraciaKit - Etapa #3: Objetivos{% endblock %}
+{% block title %}DemocraciaKit - Etapa #6: Empoderar{% endblock %}
 
 {% block content %}
 <main>
@@ -42,14 +42,14 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Etapa #3</li>
+                        <li class="breadcrumb-item active" aria-current="page">Etapa #6</li>
                     </ol>
                 </nav>
                 <div class="alinear">
-                    <img src="{% static 'img/etapa-numero-3.png' %}" alt="Etapa #3 Objetivos">
-                    <h3>Problemas</h3>
+                    <img src="{% static 'img/etapa-numero-6.png' %}" alt="Etapa #4 Contexto">
+                    <h3>Empoderar</h3>
                 </div>
-                <h2>Atrévete a pensar y construir un objetivo que avance hacia la solución del problema</span></h2> 
+                <h2>En esta sección encontrarás algunas fórmulas para <span>empoderar</span> a la ciudadanía en la construcción de la solución</h2> 
                 <p>Revisa estos insumos y añádelos a tu kit</p>
             </div>
         </div>
@@ -66,14 +66,14 @@
                         <div class="circulo circulo-rosado"></div>
                         <p class="tipologia">Metodologías</p>
                     </li>
-                    <li>
+                    <!-- <li>
                         <div class="circulo circulo-celeste"></div>
                         <p class="tipologia">Recomendaciones</p>
-                    </li>
-                    <!-- <li>
+                    </li> -->
+                    <li>
                         <div class="circulo circulo-verde"></div>
                         <p class="tipologia">Casos de éxito</p>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -82,40 +82,20 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
                 <div class="box metodologias">
                     <div class="content">
-                        <p>Criterios SMART</p>
+                        <p>Métodos colaborativos</p>
                     </div>
                     <div class="hover-box">
-                        <a href="{% url 'contenidos:etapa3-smart' %}" class="revisar-link">Revisar</a>
+                        <a href="{% url 'contenidos:etapa6-metodos' %}" class="revisar-link">Revisar</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                <div class="box recomendaciones">
+                <div class="box casos-de-exito">
                     <div class="content">
-                        <p>Para reflexionar</p>
+                        <p>Casos de éxito</p>
                     </div>
                     <div class="hover-box">
-                        <a href="{% url 'contenidos:etapa3-reflexionar' %}" class="revisar-link">Revisar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                <div class="box metodologias">
-                    <div class="content">
-                        <p>3x3x3</p>
-                    </div>
-                    <div class="hover-box">
-                        <a href="{% url 'contenidos:etapa3-3x3x3' %}" class="revisar-link">Revisar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
-                <div class="box metodologias">
-                    <div class="content">
-                        <p>Sombreros para pensar</p>
-                    </div>
-                    <div class="hover-box">
-                        <a href="{% url 'contenidos:etapa3-sombreros' %}" class="revisar-link">Revisar</a>
+                        <a href="{% url 'contenidos:etapa6-casos' %}" class="revisar-link">Revisar</a>
                     </div>
                 </div>
             </div>
@@ -136,17 +116,17 @@
                 <div class="col-12 col-sm-12 col-md-8 col-lg-9 informacion">
                     <div class="titulo"><h4>Siguiente nivel:</h4></div>
                     <div class="alinear">
-                        <img src="{% static 'img/etapa-numero-4.png' %}" alt="Nivel 4: Contexto" class="img-etapa">
-                        <h4>Contexto</h4>
+                        <img src="{% static 'img/etapa-numero-7.png' %}" alt="Nivel 4: Contexto" class="img-etapa">
+                        <h4>Evaluar</h4>
                     </div>
                     <div class="contenido">
-                        <p>En esta etapa, te guiamos para establecer el contexto en el que se desarrolla el problema y la solución.</p>
-                        <a href="{% url 'contenidos:etapa4' %}" class="btn-democraciakit">Ir a contexto</a>
+                        <p>¡Revisa el cumplimiento de los objetivos!</p>
+                        <a href="{% url 'contenidos:etapa7' %}" class="btn-democraciakit">Ir a evaluar</a>
                     </div>
                 </div>
             </div>
         </div>
-        <img src="{% static 'img/rueda-decorativa-esquina-4.png' %}" alt="rueda como elemento decorativo que muestra el nivel que sigue" class="rueda-decorativa">
+        <img src="{% static 'img/rueda-decorativa-esquina-7.png' %}" alt="rueda como elemento decorativo que muestra el nivel que sigue" class="rueda-decorativa">
     </section>
 
     <section class="premio">

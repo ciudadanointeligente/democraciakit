@@ -163,17 +163,37 @@ class Etapa5KeepfixtryView(TemplateView):
     template_name = 'contenidos/etapa5-keepfixtry.html'
 
 
-class Etapa6ImpulsoresView(TemplateView):
-    template_name = 'contenidos/etapa6-impulsores.html'
+class Etapa5ImpulsoresView(TemplateView):
+    template_name = 'contenidos/etapa5-impulsores.html'
 
 
 class Etapa5testView(TemplateView):
-    template_name = 'contenidos/etapa5-test.html'
+    template_name = 'contenidos/etapa5-testeos.html'
 
 
 class Etapa6View(TemplateView):
     template_name = 'contenidos/etapa6.html'
 
 
+class Etapa6MetodosView(TemplateView):
+    template_name = 'contenidos/etapa6-metodos.html'
+
+
+class Etapa6CasosView(TemplateView):
+    template_name = 'contenidos/etapa6-casos.html'
+
+
 class Etapa7View(TemplateView):
     template_name = 'contenidos/etapa7.html'
+
+
+class Etapa7EvaluacionView(TemplateView):
+    template_name = 'contenidos/etapa7-evaluacion.html'
+
+
+class Etapa7IndicadoresView(TemplateView):
+    template_name = 'contenidos/etapa7-indicadores.html'
+
+
+class Etapa7ExitosView(TemplateView):
+    template_name = 'contenidos/etapa7-exito.html'

@@ -1,6 +1,6 @@
 {% extends 'contenidos/base.html' %}
 {% load static %}
-{% block title %}DemocraciaKit - Etapa #1: Problemas - Conceptos iniciales{% endblock %}
+{% block title %}DemocraciaKit - Etapa #7: Evaluar - Indicadores{% endblock %}
 
 {% block content %}
 <main>
@@ -41,8 +41,8 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
                     <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Etapa #1</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Conceptos iniciales</li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa7' %}">Etapa #7</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Indicadores</li>
                 </ol>
             </nav>
         </div>
@@ -54,7 +54,7 @@
     <div class="row">
         <div class="col-12">
             <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
+            <a href="{% url 'contenidos:etapa7' %}"> &lt; Volver a herramientas </a>
         </div>
     </div>
 </section>
@@ -69,10 +69,10 @@
                 <!--Acá se va a simular la información en función de la etapa 1-->
 
                 <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
-                <h3>Problemas</h3>
+                <img src="{% static 'img/etapa-numero-7.png' %}" alt="Etapa 7 Evaluar">
+                <h3>Evaluar</h3>
             </div>
-            <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
+            <h2 class="pregunta">¿Cómo <span>evaluar</span> el impacto?</h2>
         </div>
 
 
@@ -82,72 +82,18 @@
                 <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
                 <h4 class="recomendacion">Recomendaciones</h4>
 
-                <h3>Conceptos para la formulación inicial</h3>
-                <p>Antes de comenzar a definir hay algunos conceptos clave que debes considerar: </p>
+                <h3>Indicadores</h3>
+                <p>Todo proceso de evaluación y monitoreo necesita volver a analizar los objetivos y metas que se planteó, para identificar si está avanzando hacia su consecución. En este sentido, <strong>los indicadores</strong> cumplen con señalar si el camino y acciones tomadas están alineadas con las metas.</p>
+                <p>Un buen indicador considera los siguientes elementos:</p>
+                <ul>
+                    <li>Qué se quiere medir.</li>
+                    <li>La población objeto del proyecto.</li>
+                    <li>Los conceptos a utilizar (conceptos previamente estudiados y definidos, por ejemplo “discriminación” o “igualdad”).</li>
+                    <li>La forma en que se medirá el indicador.</li>
+                    <li>La unidad de medida (razón, porcentaje, tasa o brecha).</li>
+                    <li>El medio de verificación: En la definición de objetivos te recomendamos analizar que estos impactan de igual forma a hombres y mujeres, para que así, los beneficios del proyecto sean distribuidos por igual (de dónde se obtendrán los datos para medir el indicador).</li>
+                </ul>
             </div>
-        </div>
-
-    </div>
-</section>
-
-
-
-<!-- Componente: Post-it, para un tipo de forma de visualizar contenido para el toolkit -->
-
-<section class="visualizacion-post-it container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-12 col-md-10 post-it">
-
-            <div class="post-elemento post-it-elemento-1">
-                <div class="numero">
-                    <p class="bg-verde">1</p>
-                </div>
-                <div class="contenido bg-verde-light">
-                    <h4>El qué</h4>
-                    <p>Es el problema que queremos abordar.</p>
-                </div>
-            </div>
-            
-            <div class="post-elemento post-it-elemento-2">
-                <div class="numero">
-                    <p class="bg-naranjo">2</p>
-                </div>
-                <div class="contenido bg-naranjo-light">
-                    <h4>El cómo</h4>
-                    <p>Se refiere al motivo que da origen a nuestro problema.</p>
-                </div>
-            </div>
-            
-            <div class="post-elemento post-it-elemento-1">
-                <div class="numero">
-                    <p class="bg-rosado">3</p>
-                </div>
-                <div class="contenido bg-rosado-light">
-                    <h4>El porqué</h4>
-                    <p>Es la estrategia que desarrollaremos para abordar nuestro problema.</p>
-                </div>
-            </div>
-
-            <div class="post-elemento post-it-elemento-2">
-                <div class="numero">
-                    <p class="bg-celeste">4</p>
-                </div>
-                <div class="contenido bg-celeste-light">
-                    <h4>El para qué</h4>
-                    <p>Es el resultado, es decir, el efecto de la incidencia diseñada.</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-
-<!-- Componente: Mensaje adicional. Para un tipo de forma de visualizar contenido que es auxiliar o que complementa para cerrar una idea -->
-<section class="visualizacion-texto-centrado container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-12 col-md-10 col-lg-8">
-            <p>En esta etapa se hará la primera aproximación al qué, es decir, la formulación inicial del problema que será profundizado en las siguientes fases.</p>
         </div>
     </div>
 </section>
@@ -167,7 +113,7 @@
                     Debes marcar para guardar tu avance y recolectar los materiales
                 </div>
             </p>
-            <a href="{% url 'contenidos:etapa1-definicion' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
+            <a href="{% url 'contenidos:etapa7-exito' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
             <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
         </div>
     </div>

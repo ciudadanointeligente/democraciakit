@@ -29,7 +29,14 @@ urlpatterns = [
     path('etapa4-oportunidades/', views.Etapa4OportunidadesView.as_view(), name='etapa4-oportunidades'),
     path('etapa4-plandetrabajo/', views.Etapa4PlandetrabajoView.as_view(), name='etapa4-plandetrabajo'),
     path('etapa5/', views.Etapa5View.as_view(), name='etapa5'),
+    path('etapa5-keepfixtry/', views.Etapa5KeepfixtryView.as_view(), name='etapa5-keepfixtry'),
+    path('etapa5-impulsores/', views.Etapa5ImpulsoresView.as_view(), name='etapa5-impulsores'),
+    path('etapa5-testeos/', views.Etapa5testView.as_view(), name='etapa5-testeos'),
     path('etapa6/', views.Etapa6View.as_view(), name='etapa6'),
+    path('etapa6-metodos/', views.Etapa6MetodosView.as_view(), name='etapa6-metodos'),
+    path('etapa6-casos/', views.Etapa6CasosView.as_view(), name='etapa6-casos'),
     path('etapa7/', views.Etapa7View.as_view(), name='etapa7'),
-
+    path('etapa7-evaluacion/', views.Etapa7EvaluacionView.as_view(), name='etapa7-evaluacion'),
+    path('etapa7-indicadores/', views.Etapa7IndicadoresView.as_view(), name='etapa7-indicadores'),
+    path('etapa7-exito/', views.Etapa7ExitosView.as_view(), name='etapa7-exito'),
 ]
