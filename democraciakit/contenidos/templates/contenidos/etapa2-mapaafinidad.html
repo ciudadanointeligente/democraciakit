@@ -217,7 +217,7 @@
         </section>
 
 
-        <section class="componente-interactivo-form container-fluid">
+        <section id="formulario-container" class="componente-interactivo-form container-fluid">
 
             <div class="container">
                 <div class="row">
@@ -227,7 +227,16 @@
                     </div>
     
                     <div class="col-12 tabla">
-                        <form>
+                        {% if messages %}
+                        <div class="messages">
+                            {% for message in messages %}
+                            <div {% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="alert alert-light text-center" role="alert">{{ message }} Recuerda que puedes revisar <a href="{% url 'contenidos:mikit' %}">Mi Kit</a> para ver todos tus materiales guardados. DemocraciaKit sólo guardará tus respuestas más recientes.</div></div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% if messages %}
+                        {% else %}
+                        <form method="post" action="#formulario-container">
                             {% csrf_token %}
                             <table class="table table-responsive">
                                 <thead>
@@ -249,12 +258,15 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="text-center"><button type="submit" class="btn-democraciakit">Guardar</button></div>
-                        </form>
+                            {% if messages %}
+                            {% else %}
+                            <button type="submit" class="btn-democraciakit">Guardar</button>
+                            {% endif %}
+                            </form>
+                            {% endif %}
                     </div>
                 </div>
             </div>
-    
         </section>
 
         <section class="componente-interactivo-form container-fluid">

@@ -88,6 +88,16 @@
     </section>
 
             <!-- Componente: acordion para contenidos extensos que se pueden segmentar y divir para hacer más comoda la lectura -->
+            
+            <section class="seccion-herramienta container" id="formulario-container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+                        <div class="alinear">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             <section class="visualizacion-acordion container">
                 <div class="row justify-content-end">
@@ -102,7 +112,7 @@
                                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
                                     <div class="accordion-body">
                                         <div class="col-12 tabla">
-                                            <form method="post">
+                                            <form method="post" action="#formulario-container">
                                                 {% csrf_token %}
                                                 <table class="table table-responsive">
                                                     <thead>

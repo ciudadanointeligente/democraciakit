@@ -74,24 +74,15 @@
                     <p>¿Qué <span>problema</span> vamos a solucionar?</p>
                 </div>
                 <div class="materiales">
-                    <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
-
-                    </div>
-
-                    <div class="box casos-de-exito">
-                        <h4 class="casos-de-exito">Casos de exito</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
-                    </div>
-
                     <div class="box metodologias">
                         <h4 class="metodologias">Metodologias</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
+                        <p>Esta es tu Definición Inicial del problema: </p>
+                    {% if formulario_reciente1 %}
+                    <p>Quién: {{ formulario_reciente1.uno }}</p>
+                    <p>Dónde: {{ formulario_reciente1.dos }}</p>
+                    <p>Cuando: {{ formulario_reciente1.tres }}</p>
+                    <p>Dolor: {{ formulario_reciente1.cuatro }}</p>
+                    {% endif %}
                     </div>
                 </div>
             </div>
@@ -102,27 +93,41 @@
                 <div class="etapa">
                     <img src="{% static 'img/etapa-numero-2.png' %}" alt="etapa 2: Causas" class="etapa-numero">
                     <h3>Causas</h3>
-                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
+                    <p>¿Cuáles son las <span>causas</span> del problema?</p>
                 </div>
                 <div class="materiales">
                     <div class="box recomendaciones">
                         <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
-
+                        <p>Esta son las causas que identificaste del problema: </p>
+                    {% if formulario_reciente2 %}
+                    <p>Causa #1: {{ formulario_reciente2.uno }}</p>
+                    <p>Causa #2: {{ formulario_reciente2.dos }}</p>
+                    <p>Causa #3: {{ formulario_reciente2.tres }}</p>
+                    <p>Causa #4: {{ formulario_reciente2.cuatro }}</p>
+                    <p>Causa #5: {{ formulario_reciente2.cinco }}</p>
+                    {% endif %}
                     </div>
-
-                    <div class="box casos-de-exito">
-                        <h4 class="casos-de-exito">Casos de exito</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
+                    <div class="box recomendaciones">
+                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <p>Estas son tus reflexiones sobre el enfoque inclusivo: </p>
+                    {% if formulario_reciente3 %}
+                    <p>Reflexión #1: {{ formulario_reciente3.uno }}</p>
+                    <p>Reflexión #2: {{ formulario_reciente3.dos }}</p>
+                    <p>Reflexión #3: {{ formulario_reciente3.tres }}</p>
+                    <p>Reflexión #4: {{ formulario_reciente3.cuatro }}</p>
+                    <p>Reflexión #5: {{ formulario_reciente3.cinco }}</p>
+                    {% endif %}
                     </div>
-
                     <div class="box metodologias">
-                        <h4 class="metodologias">Metodologias</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
+                        <h4 class="metodologias">Metodologías</h4>
+                        <p>Esto consideraste para tu mapa de afinidad: </p>
+                    {% if formulario_reciente4 %}
+                    <p>Quién: {{ formulario_reciente4.uno }}</p>
+                    <p>Dónde: {{ formulario_reciente4.dos }}</p>
+                    <p>Dolor: {{ formulario_reciente4.tres }}</p>
+                    <p>Cuando: {{ formulario_reciente4.cuatro }}</p>
+                    <p>Causa: {{ formulario_reciente4.cinco }}</p>
+                    {% endif %}
                     </div>
                 </div>
             </div>

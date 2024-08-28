@@ -1,6 +1,8 @@
 from django.db import models
 from users.models import CustomUser
 from tinymce.models import HTMLField
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 class Etapa(models.Model):
@@ -176,3 +178,20 @@ class Mapadeafinidad2(models.Model):
     def __str__(self):
         return f"{self.usuario.username} - mapa de afinidad - {self.fecha_mapadeafinidad2}"
 
+
+class Mapadeactores4(models.Model):
+    uno = models.TextField(blank=True, null=True)
+    dos = models.TextField(blank=True, null=True)
+    tres = models.TextField(blank=True, null=True)
+    cuatro = models.TextField(blank=True, null=True)
+    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='mapadeactores2_usuarios')
+    fecha_mapadeactores2 = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('usuario', 'fecha_mapadeactores2')
+        verbose_name = 'Etapa #2 - Mapa de actores'
+        verbose_name_plural = 'Etapa #2 - Mapa de actores'
+        ordering = ['-fecha_mapadeactores2']
+
+    def __str__(self):
+        return f"{self.usuario.username} - mapa de actores - {self.fecha_mapadeactores2}"

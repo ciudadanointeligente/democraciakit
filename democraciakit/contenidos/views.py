@@ -7,14 +7,35 @@ from django.views.generic import CreateView
 from .models import *
 from .forms import *
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import DetailView
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 class IndexView(TemplateView):
     template_name = 'contenidos/index.html'
 
 
-class MikitView(TemplateView):
+class MikitView(LoginRequiredMixin, DetailView):
+    model = User
     template_name = 'contenidos/mikit.html'
+    context_object_name = 'usuario'
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['definicion1_usuarios'] = self.object.definicion1_usuarios.all().order_by('-fecha_definicion1')
+        context['formulario_reciente1'] = self.object.definicion1_usuarios.order_by('-fecha_definicion1').first()
+        context['causas2_usuarios'] = self.object.causas2_usuarios.all().order_by('-fecha_causas2')
+        context['formulario_reciente2'] = self.object.causas2_usuarios.order_by('-fecha_causas2').first()
+        context['inclusivo2_usuarios'] = self.object.inclusivo2_usuarios.all().order_by('-fecha_inclusivo2')
+        context['formulario_reciente3'] = self.object.inclusivo2_usuarios.order_by('-fecha_inclusivo2').first()
+        context['mapadeafinidad2_usuarios'] = self.object.mapadeafinidad2_usuarios.all().order_by('-fecha_mapadeafinidad2')
+        context['formulario_reciente4'] = self.object.mapadeafinidad2_usuarios.order_by('-fecha_mapadeafinidad2').first()
+        return context
 
 
 class RuedaView(TemplateView):
@@ -68,30 +89,32 @@ class Etapa2View(TemplateView):
     template_name = 'contenidos/etapa2.html'
 
 
-class IdentificacionCreateView(CreateView):
-    model = Causas2
+class IdentificacionCreateView(FormView):
     form_class = Causas2Form
-    template_name = 'contenidos/etapa2-identificacion.html'  # Reemplaza 'tu_app' con el nombre de tu aplicación
-
-    def form_valid(self, form):
-        form.instance.usuario = self.request.user  # Asigna el usuario actual al objeto Causas2
-        return super().form_valid(form)
-
-    def get_success_url(self):
-        return reverse('contenidos:etapa2-identificacion')  # Reemplaza con la URL de conexión deseada
-
-
-class MapaAfinidad2CreateView(CreateView):
-    template_name = 'contenidos/etapa2-mapaafinidad.html'
-    model = Mapadeafinidad2
-    form_class = Mapadeafinidad2Form
+    template_name = 'contenidos/etapa2-causas.html'
+    success_url = reverse_lazy('contenidos:etapa2-causas')
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus respuestas!")
         return super().form_valid(form)
 
-    def get_success_url(self):
-        return reverse('contenidos:etapa2-mapaafinidad')
+
+class MapaAfinidad2CreateView(CreateView):
+    form_class = Mapadeafinidad2Form
+    template_name = 'contenidos/etapa2-mapaafinidad.html'
+    success_url = reverse_lazy('contenidos:etapa2-mapaafinidad')
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus respuestas!")
+        return super().form_valid(form)
 
 
 class Etapa2MatrizView(TemplateView):
