@@ -1,5 +1,6 @@
 {% extends 'contenidos/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block title %}DemocraciaKit - Etapa #2: Causas - Enfoque Inclusivo{% endblock %}
 
 {% block content %}
@@ -43,7 +44,7 @@
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa2' %}">Etapa #2</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Recomendación</li>
+                        <li class="breadcrumb-item active" aria-current="page">Enfoque inclusivo</li>
                     </ol>
                 </nav>
             </div>

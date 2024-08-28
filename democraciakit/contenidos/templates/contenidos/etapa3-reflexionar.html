@@ -1,6 +1,6 @@
 {% extends 'contenidos/base.html' %}
 {% load static %}
-{% block title %}DemocraciaKit - Etapa #1: Problemas - Conceptos iniciales{% endblock %}
+{% block title %}DemocraciaKit - Etapa #3: Obejtivos - Reflexionar{% endblock %}
 
 {% block content %}
 <main>
@@ -41,8 +41,8 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
                     <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Etapa #1</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Conceptos iniciales</li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa3' %}">Etapa #3</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Reflexionar</li>
                 </ol>
             </nav>
         </div>
@@ -54,7 +54,7 @@
     <div class="row">
         <div class="col-12">
             <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
+            <a href="{% url 'contenidos:etapa3' %}"> &lt; Volver a herramientas </a>
         </div>
     </div>
 </section>
@@ -69,10 +69,10 @@
                 <!--Acá se va a simular la información en función de la etapa 1-->
 
                 <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
-                <h3>Problemas</h3>
-            </div>
-            <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
+                <img src="{% static 'img/etapa-numero-3.png' %}" alt="Etapa 3 Objetivos">
+                <h3>Objetivo</h3>
+                    </div>
+                <h2 class="pregunta">¿Cuál es nuestro <span>objetivo</span>?</h2>
         </div>
 
 
@@ -82,8 +82,18 @@
                 <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
                 <h4 class="recomendacion">Recomendaciones</h4>
 
-                <h3>Conceptos para la formulación inicial</h3>
-                <p>Antes de comenzar a definir hay algunos conceptos clave que debes considerar: </p>
+                <h3>Para reflexionar</h3>
+                <p>Existen diversos puntos de vista que se pueden considerar a la hora de crear objetivos. Detente un momento a <strong>reflexionar</strong> sobre tus objetivos y si es que están respondiendo estas preguntas.</p>
+                <ul>
+                    <li>¿Los objetivos responden a las necesidades de mujeres, hombres, pueblos originarios, migrantes, otro/a?</li>
+                    <li>¿Especifican quiénes se espera que se beneficien?</li>
+                    <li>¿Existe igualdad en la participación?</li>
+                    <li>¿Apuntan a mejorar las condiciones de vida de todos y todas?</li>
+                    <li>¿Contribuyen a la igualdad de oportunidades y derechos?</li>
+                    <li>¿Qué caracteriza a mi comunidad?</li>
+                    <li>¿Qué podría dificultar o facilitar la realización de objetivos, al considerar el territorio en donde estamos?
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -91,66 +101,19 @@
 </section>
 
 
-
-<!-- Componente: Post-it, para un tipo de forma de visualizar contenido para el toolkit -->
-
-<section class="visualizacion-post-it container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-12 col-md-10 post-it">
-
-            <div class="post-elemento post-it-elemento-1">
-                <div class="numero">
-                    <p class="bg-verde">1</p>
-                </div>
-                <div class="contenido bg-verde-light">
-                    <h4>El qué</h4>
-                    <p>Es el problema que queremos abordar.</p>
+        <!-- <section class="componente-interactivo-form container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 titulo">
+                        <h4>¡Ahora tu!</h4>
+                        <p>Descarga el recuadro y redacta tu objetivo</p>
+                    </div>
+                    <div class="col-12 btn-descargar">
+                        <a href="#" class="btn-democraciakit">Descargar</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="post-elemento post-it-elemento-2">
-                <div class="numero">
-                    <p class="bg-naranjo">2</p>
-                </div>
-                <div class="contenido bg-naranjo-light">
-                    <h4>El cómo</h4>
-                    <p>Se refiere al motivo que da origen a nuestro problema.</p>
-                </div>
-            </div>
-            
-            <div class="post-elemento post-it-elemento-1">
-                <div class="numero">
-                    <p class="bg-rosado">3</p>
-                </div>
-                <div class="contenido bg-rosado-light">
-                    <h4>El porqué</h4>
-                    <p>Es la estrategia que desarrollaremos para abordar nuestro problema.</p>
-                </div>
-            </div>
-
-            <div class="post-elemento post-it-elemento-2">
-                <div class="numero">
-                    <p class="bg-celeste">4</p>
-                </div>
-                <div class="contenido bg-celeste-light">
-                    <h4>El para qué</h4>
-                    <p>Es el resultado, es decir, el efecto de la incidencia diseñada.</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-
-<!-- Componente: Mensaje adicional. Para un tipo de forma de visualizar contenido que es auxiliar o que complementa para cerrar una idea -->
-<section class="visualizacion-texto-centrado container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-12 col-md-10 col-lg-8">
-            <p>En esta etapa se hará la primera aproximación al qué, es decir, la formulación inicial del problema que será profundizado en las siguientes fases.</p>
-        </div>
-    </div>
-</section>
+        </section> -->
 
 
 <section class="anadir-al-kit container">
@@ -167,7 +130,7 @@
                     Debes marcar para guardar tu avance y recolectar los materiales
                 </div>
             </p>
-            <a href="{% url 'contenidos:etapa1-definicion' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
+            <a href="{% url 'contenidos:etapa3-3x3x3' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
             <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
         </div>
     </div>

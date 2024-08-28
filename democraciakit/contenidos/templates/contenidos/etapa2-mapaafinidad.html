@@ -43,7 +43,7 @@
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa2' %}">Etapa #2</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Metodología</li>
+                        <li class="breadcrumb-item active" aria-current="page">Mapa de afinidad</li>
                     </ol>
                 </nav>
             </div>
@@ -80,9 +80,7 @@
                     <h4 class="metodologias">Metodologías</h4>
 
                     <h3>Mapa de afinidad</h3>
-                    <p>Es una herramienta de trabajo en equipo, permite que grupos de personas puedan profundizar conversaciones y llegar a conclusiones colectivas.</p>
-                    <p>En este caso, el mapa de afinidad buscará responder  ¿Qué condiciones dan origen al problema priorizado?
-                    </p>
+                    <p>Mapa de Afinidad: ¡Trabajo en equipo!</p>
                 </div>
             </div>
         </div>
@@ -90,150 +88,190 @@
 
        <!-- Componente: acordion para contenidos extensos que se pueden segmentar y divir para hacer más comoda la lectura -->
 
-       <section class="visualizacion-acordion container">
-        <div class="row justify-content-end">
-            <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+        <!-- Componente: acordion para contenidos extensos que se pueden segmentar y divir para hacer más comoda la lectura -->
 
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                #1. Bingo de ideas
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                            <div class="accordion-body">
-                                <p>En solitario, las personas participantes reflexionan y escriben respuestas a la pregunta ¿Qué da origen al problema?. Importante: Cada idea debe ir en un post it o papel por separado.</p> 
-                                <p>En grupo, las personas compartirán las ideas que han escrito. Es importante que aquellas ideas similares sean agrupadas en una misma columna. A esto le llamaremos “Bingo”, y permite visibilizar que una idea tiene más apoyo que otra.</p>
+        <section class="visualizacion-acordion container">
+            <div class="row justify-content-end">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    ¿Qué es un mapa de afinidad?
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <p>Es una <strong>herramienta de trabajo</strong> en equipo, permite que grupos de personas puedan profundizar conversaciones y llegar a conclusiones colectivas. En este caso, el mapa de afinidad buscará responder ¿Qué condiciones dan origen al problema priorizado?</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                #2. Categorización
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                            <div class="accordion-body">
-                                <p>Una vez que tenemos columnas con ideas similares, se debe poner un título a cada una de ellas. El título debe ser capaz de sintetizar y representar a todos los post-it dentro de su columna.</p>
+                        <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                    Pasos
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>En solitario, las personas participantes reflexionan y escriben respuestas a la pregunta ¿Qué da origen al problema?. Importante: Cada idea debe ir en un post it o papel por separado.</li>
+                                        <li>En grupo, las personas compartirán las ideas que han escrito. Es importante que aquellas ideas similares sean agrupadas en una misma columna. A esto le llamaremos “Bingo”, y permite visibilizar que una idea tiene más apoyo que otra.</li>
+                                    </ul>
+                                    <img src="{% static 'img/mapa-afinidad-1.png' %}" alt="imagen para el acordíón acá deberia ir una descripción de la imagen" class="img-acordion">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+                        <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
 
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                #3 - Priorización
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                            <div class="accordion-body">
-                                <ul>
-<li>Para priorizar cada podrá votar usando puntos: Puntocracia</li>
-<li>El número de puntos se define según la cantidad de categorías: Dividir el número de categorías en 2 y luego, aproximar al número entero superior más cercano</li>
-<ul>
-<li>Si tenemos 3 categorías, los puntos para cada persona serán 2. (3/2=1.5 -> El número entero superior es 2)</li>
-<li>Si tenemos 7 categorías, los puntos serán 4 (7/2=3.5. -> El número entero superior es 4)</li>
-<li>Si tenemos 10 categorías, el número de puntos es 5.</li>
-</ul>
-<li>Cada participante puede asignar la cantidad de puntos libremente y a cualquier categoría. Es decir, puede repartir sus puntos entre varias categorías o darlos todos a una.</li>
-</ul>
-<p><b>Tip: Al momento de votar, ten en cuenta los siguientes criterios</b></p>
-    <li>Capacidad de impacto: Como equipo ¿Dónde tenemos mayor capacidad de incidir?</li>
-    <li>Relevancia: ¿El tema está presente en la agenda pública, social o política?</li>
-    <li>Relación causa-efecto: ¿Qué tan ligada se encuentra la causa con el problema a solucionar?</li>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                    Categorización
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <p>Una vez que tenemos columnas con ideas similares, se debe poner un título a cada una de ellas. El título debe ser capaz de sintetizar y representar a todos los post-it dentro de su columna.</p>
+                                    <img src="{% static 'img/mapa-afinidad-2.png' %}" alt="imagen para el acordíón acá deberia ir una descripción de la imagen" class="img-acordion">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                #4 - Integración del problema
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                            <div class="accordion-body">
-                                <p>
-                                    Hecho esto, es momento de integrar la causa <b>más votada</b> a la redacción final del <b>problema</b> que ya has predefinido. El resultado será un <b>nuevo problema</b> más manejable y preciso.
-                                </p>
+                        <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFor">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFor" aria-expanded="false" aria-controls="panelsStayOpen-collapseFor">
+                                    Priorización
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFor" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFor">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Para priorizar cada podrá votar usando puntos: Puntocracia.</li>
+                                        <li>El número de puntos se define según la cantidad de categorías: Dividir el número de categorías en 2 y luego, aproximar al número entero superior más cercano</li>
+                                        <li>
+                                            <ul>
+                                                <li>Si tenemos 3 categorías, los puntos para cada persona serán 2. (3/2=1.5 -> El número entero superior es 2)</li>
+                                                <li>Si tenemos 7 categorías, los puntos serán 4 (7/2=3.5. -> El número entero superior es 4)</li>
+                                                <li>Si tenemos 10 categorías, el número de puntos es 5.</li>
+                                            </ul>
+                                        </li>
+                                        <li>Cada participante puede asignar la cantidad de puntos libremente y a cualquier categoría. Es decir, puede repartir sus puntos entre varias categorías o darlos todos a una.</li>
+                                    </ul>
+                                    <div class="destacado">
+                                        <p>Tip: Al momento de votar, ten en cuenta los siguientes criterios</p>
+                                        <ul>
+                                            <li>Capacidad de impacto: Como equipo ¿Dónde tenemos mayor capacidad de incidir?</li>
+                                            <li>Relevancia: ¿El tema está presente en la agenda pública, social o política?</li>
+                                            <li>Relación causa-efecto: ¿Qué tan ligada se encuentra la causa con el problema a solucionar?</li>
+                                        </ul>
+
+                                        <img src="{% static 'img/mapa-afinidad-3.png' %}" alt="imagen para el acordíón acá deberia ir una descripción de la imagen" class="img-acordion">
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
+
+                        <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                                    Integrar al problema
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+                                <div class="accordion-body">
+                                    <p>Hecho esto, es momento de <strong>integrar</strong> la causa más votada a la <strong>redacción final del problema</strong> que ya has predefinido. El resultado será un nuevo problema más <strong>manejable y preciso.</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="componente-interactivo-form container-fluid">
 
-        <div class="container">
+
+        <!-- Componente video auxiliar para mostrar o profundizar contenidos de forma más dinamica -->
+
+        <section class="visualizacion-video container">
             <div class="row">
-                <div class="col-12 titulo">
-                    <h4>¡Ahora tu!</h4>
-                    <p>Completa los elementos y crea tu propio mapa de afinidad</p>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+                    <h4>Video explicativo</h4>
                 </div>
 
-                <div class="col-12 tabla">
-                    <form>
-                        {% csrf_token %}
-                        <table class="table table-responsive">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Quién</th>
-                                    <th scope="col">Dónde</th>
-                                    <th scope="col">Dolor</th>
-                                    <th scope="col">Cuando</th>
-                                    <th scope="col">Causa</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    {% for field in form %}
-                                    <td>
-                                        {{ field }}
-                                    </td>
-                                    {% endfor %}
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="text-center"><button type="submit" class="btn-democraciakit">Guardar</button></div>
-                    </form>
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YjUTehWPvn0?si=yr1wq3yevaqb1a57" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="componente-interactivo-form container-fluid">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 titulo">
+                        <h4>¡Ahora tu!</h4>
+                        <p>Guarda las ideas para tu Mapa de Afinidad</p>
+                    </div>
+    
+                    <div class="col-12 tabla">
+                        <form>
+                            {% csrf_token %}
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Quién</th>
+                                        <th scope="col">Dónde</th>
+                                        <th scope="col">Dolor</th>
+                                        <th scope="col">Cuando</th>
+                                        <th scope="col">Causa</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% for field in form %}
+                                        <td>
+                                            {{ field }}
+                                        </td>
+                                        {% endfor %}
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center"><button type="submit" class="btn-democraciakit">Guardar</button></div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+    
+        </section>
 
-    </section>
-    <!-- <section class="visualizacion-video container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-                <h4>Mapa de afinidad</h4>
-            </div>
-            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                <iframe src="https://www.youtube.com/embed/s5WJdbdck58?si=vqu3um5NRel5_Ryw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </section> -->
+        <section class="componente-interactivo-form container-fluid">
 
-        <!-- <section class="visualizacion-ejemplo container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-                <h4>Síntesis</h4>
-            </div>
-
-            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                <div class="ejemplo">
-                    <p>Aplicar el enfoque interseccional de las desigualdades en la construcción de tu proyecto significa poner atención al cruce de desigualdades de género, raza o pertenencia étnica, ciclo de vida, nivel de ingreso y discapacidad.</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 titulo">
+                        <p>Descarga el paso a paso y haz tu propio Mapa de Afinidad</p>
+                    </div>
+                    <div class="col-12 btn-descargar text-center">
+                        <a href="#" class="btn-democraciakit">Descargar</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section> -->
+
+        </section>
+
 
     <section class="anadir-al-kit container">
         <div class="row justify-content-center">

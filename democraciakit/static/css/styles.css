@@ -1834,6 +1834,7 @@ footer .creditos-fci img {
 .visualizacion-ejemplo .ejemplo {
     padding: 30px 50px;
     background: rgba(177, 233, 87, 0.22);
+    border-radius: 20px;
 }
 
 
@@ -1953,7 +1954,7 @@ footer .creditos-fci img {
 /* Componente acordion */
 
 .visualizacion-acordion {
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 .visualizacion-acordion .acordion .accordion-item {
@@ -2030,6 +2031,16 @@ footer .creditos-fci img {
 
 .componente-interactivo-form .tabla tbody td {
     padding: 0px;
+}
+
+.componente-interactivo-form .tabla thead textarea {
+    background: rgba(177, 233, 87, 0.5);
+    border: 0px solid white !important;
+    color: #000F74;
+    font-size: 1rem;
+    padding: 0px 20px;
+    height: 30px;
+    overflow: hidden;
 }
 
 .componente-interactivo-form .tabla tbody td textarea {
@@ -2374,3 +2385,81 @@ footer .creditos-fci img {
     display: none;
 }
 
+
+.componente-interactivo-form .btn-descargar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: -20px;
+}
+
+/* Visualizaciones en herramientas - imagenes usadas */
+
+.visualizacion-matriz-de-priorizacion {
+    margin: 20px 0px;
+    width: 500px;
+}
+
+.visualizacion-criterio-smart {
+    width: 100%;
+}
+
+ul.visualizacion-criterio-smart-simbologia {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+ul.visualizacion-criterio-smart-simbologia li {
+    padding-right: 20px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.9rem;
+}
+
+ul.visualizacion-criterio-smart-simbologia li span {
+    padding: 5px 11px;
+    background: #D500F9;
+    color: white;
+    border-radius: 100%;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.visualizacion-3x3x3{
+    width: 500px;
+    margin: 20px 0px 0px 30px;
+}
+
+.visualizacion-keep-fix-try{
+    width: 500px;
+    margin: 20px 0px;
+}
+
+.proyeccion-del-cambio-tabla td{
+    text-align: left!important;
+}
+
+.visualizacion-proyeccion-del-cambio{
+    width: 500px;
+    margin: 20px 0px;
+}
+
+.visualizacion-prototipo{
+    width: 400px;
+    margin: 30px 0px;
+}
+
+.influencia {
+    background-color: rgba(177, 233, 87, 0.8)!important;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 3px solid white;
+    color:#000F74;
+}

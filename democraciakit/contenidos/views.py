@@ -111,17 +111,64 @@ class Inclusivo2CreateView(CreateView):
         return reverse('contenidos:etapa2-inclusivo')
     
 
-
 class Etapa3View(TemplateView):
     template_name = 'contenidos/etapa3.html'
+
+
+class Etapa3SmartView(TemplateView):
+    template_name = 'contenidos/etapa3-smart.html'
+
+
+class Etapa3ReflexionarView(TemplateView):
+    template_name = 'contenidos/etapa3-reflexionar.html'
+
+
+class Etapa33x3x3View(TemplateView):
+    template_name = 'contenidos/etapa3-3x3x3.html'
+
+
+class Etapa3SombrerosView(TemplateView):
+    template_name = 'contenidos/etapa3-sombreros.html'
 
 
 class Etapa4View(TemplateView):
     template_name = 'contenidos/etapa4.html'
 
 
+class Etapa4ProyeccionView(TemplateView):
+    template_name = 'contenidos/etapa4-proyeccion.html'
+
+
+class Etapa4MapaactoresView(TemplateView):
+    template_name = 'contenidos/etapa4-mapaactores.html'
+
+
+class Etapa4OportunidadesView(TemplateView):
+    template_name = 'contenidos/etapa4-oportunidades.html'
+
+
+class Etapa4EventosView(TemplateView):
+    template_name = 'contenidos/etapa4-eventos.html'
+
+
+class Etapa4PlandetrabajoView(TemplateView):
+    template_name = 'contenidos/etapa4-plandetrabajo.html'
+
+
 class Etapa5View(TemplateView):
     template_name = 'contenidos/etapa5.html'
+
+
+class Etapa5KeepfixtryView(TemplateView):
+    template_name = 'contenidos/etapa5-keepfixtry.html'
+
+
+class Etapa6ImpulsoresView(TemplateView):
+    template_name = 'contenidos/etapa6-impulsores.html'
+
+
+class Etapa5testView(TemplateView):
+    template_name = 'contenidos/etapa5-test.html'
 
 
 class Etapa6View(TemplateView):

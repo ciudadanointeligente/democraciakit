@@ -140,11 +140,11 @@ class Causas2(models.Model):
 
 
 class Inclusivo2(models.Model):
-    uno = models.TextField(blank=True, null=True)
-    dos = models.TextField(blank=True, null=True)
-    tres = models.TextField(blank=True, null=True)
-    cuatro = models.TextField(blank=True, null=True)
-    cinco = models.TextField(blank=True, null=True)
+    uno = models.CharField(max_length=500, blank=True, null=True)
+    dos = models.CharField(max_length=500, blank=True, null=True)
+    tres = models.CharField(max_length=500, blank=True, null=True)
+    cuatro = models.CharField(max_length=500, blank=True, null=True)
+    cinco = models.CharField(max_length=500, blank=True, null=True)
     usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='inclusivo2_usuarios')
     fecha_inclusivo2 = models.DateTimeField(auto_now_add=True)
 

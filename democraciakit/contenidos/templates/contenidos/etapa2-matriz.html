@@ -43,7 +43,7 @@
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa2' %}">Etapa #2</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Metodología</li>
+                        <li class="breadcrumb-item active" aria-current="page">Matriz de priorización</li>
                     </ol>
                 </nav>
             </div>
@@ -96,27 +96,28 @@
 
             <div class="col-12 col-sm-12 col-md-8 col-lg-9">
                 <div class="ejemplo">
-                    <ul>
-                        <li>Realizar un levantamiento inicial de las causas al problema priorizado. Para ello, se pueden realizar investigaciones, entrevistas, u otras formas de levantamiento de información.</li>
-                        
+                    <ol>
+                        <li>Realizar un levantamiento inicial de las causas al problema priorizado. Para ello, se pueden realizar investigaciones, entrevistas, u otras formas de levantamiento de información. </li>
                         <li>Escribir cada una de las causas en un post it distinto.</li>
-                        
                         <li>Definir dos criterios que se utilizarán para realizar la priorización. Algunas alternativas frecuentemente utilizadas son:</li>
-                        <ul>
-                            <li>Posibilidad de impactar directamente en el proceso</li>
-                            <li>Factibilidad: Capacidad de realizar un proyecto en este ámbito, considerando la disponibilidad de tiempos, recursos humanos, técnicos o financieros.</li>
-                        </ul>
+                        <li>
+                            <ul>
+                                <li><strong>Impacto:</strong> Posibilidad de impactar directamente en el proceso.</li>
+                                <li><strong>Factibilidad:</strong> Capacidad de realizar un proyecto en este ámbito, considerando la disponibilidad de tiempos, recursos humanos, técnicos o financieros.</li>
+                            </ul>
+                        </li>
                         <li>Escribir los dos criterios seleccionados en cada eje, tal como se visualiza en la imagen.</li>
-                        
-                        
-                        <li>Posicionar cada post it con las ideas identificadas. Mientras más cerca del signo (+), cumplirá de mejor manera con el criterio.</li>
-                         
+                        <img src="{% static 'img/visualizacion-matriz-de-priorizacion.png' %}" alt="Imagen ilustrativa de los criterios seleccionados en cada eje" class="visualizacion-matriz-de-priorizacion">
+                        <li>
+                          Posicionar cada post it con las ideas identificadas. Mientras más cerca del signo (+), cumplirá de mejor manera con el criterio.  
+                        </li>
                         <li>Seleccionar de entre los post-it que quedan en el cuadrante superior derecho, pues serán los más relevantes de abordar. Si más de un post-it quedó en ese cuadrante, se puede volver a realizar una priorización entre ellos integrando otros criterios como el nivel de urgencia de atender la problemática.</li>
-                        </ul>  
+                
+                    </ol>
                 </div>
             </div>
         </div>
-    </section>   
+    </section>
 
     <section class="anadir-al-kit container">
         <div class="row justify-content-center">
