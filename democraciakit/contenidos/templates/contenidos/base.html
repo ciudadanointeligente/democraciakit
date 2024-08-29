@@ -191,13 +191,6 @@
                   <p>Un proyecto de</p>
                   <img src="{% static 'img/logo-fci.svg' %}" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci">
               </div>
-              <div class="blanco">{% if user.is_authenticated %}
-                <div class="nav-link blanco">{{ user.frase }}</div>
-                {% else %}
-                <a href="{% url 'users:user_login' %}" class="nav-link blanco">Entrar</a>
-                {% endif %}
-                <a href="{% url 'users:logout' %}" class="nav-link blanco">Salir</a>
-            </div>
           </div>
       </div>
   </footer>
