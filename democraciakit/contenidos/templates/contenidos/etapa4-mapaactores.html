@@ -90,40 +90,50 @@
 </section>
 
         <!--Componente: Tabla 1 todo en linea por definición -->
-        <section class="componente-interactivo-form container-fluid">
+        <section id="formulario-container" class="componente-interactivo-form container-fluid">
+
             <div class="container">
                 <div class="row">
                     <div class="col-12 titulo">
-                        <h4>Influencia de Agentes</h4>
-                        <p>Analiza la influencia de los agentes a favor y en contra.</p>
+                        <h4>¡Ahora tu!</h4>
+                        <p>Sigue la tabla de redacción de problema para generar tu propia formulación inicial</p>
                     </div>
 
                     <div class="col-12 tabla">
-                        <form>
+                        {% if messages %}
+                        <div class="messages">
+                            {% for message in messages %}
+                            <div {% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="alert alert-light text-center" role="alert">{{ message }} Recuerda que puedes revisar <a href="{% url 'contenidos:mikit' %}">Mi Kit</a> para ver todos tus materiales guardados. DemocraciaKit sólo guardará tus respuestas más recientes.</div></div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% if messages %}
+                        {% else %}
+                        <form method="post" action="#formulario-container">
+                            {% csrf_token %}
                             <table class="table table-responsive">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Agentes</th>
                                         <th scope="col">A favor</th>
                                         <th scope="col">En contra</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="influencia">Alta influencia</td>
-                                        <td><textarea class="form-control" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                        <td><textarea class="form-control" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="influencia">Baja influencia</td>
-                                        <td><textarea class="form-control" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                        <td><textarea class="form-control" rows="3" placeholder="Escribir aquí"></textarea></td>
+                                        {% for field in form %}
+                                        <td>
+                                            {{ field }}
+                                        </td>
+                                        {% endfor %}
                                     </tr>
                                 </tbody>
                             </table>
-
+                            {% if messages %}
+                            {% else %}
                             <button type="submit" class="btn-democraciakit">Guardar</button>
+                            {% endif %}
                         </form>
+                            {% endif %}
                     </div>
                 </div>
             </div>

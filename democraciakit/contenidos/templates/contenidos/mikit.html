@@ -132,7 +132,7 @@
                 </div>
             </div>
 
-            <!-- Etapa 3-->
+            <!-- Etapa 3
 
             <div class="col-12 etapa-documentos">
                 <div class="etapa">
@@ -145,23 +145,23 @@
                         <h4 class="recomendaciones">Recomendaciones</h4>
                         <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
                         <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
+                       
 
                     </div>
 
                     <div class="box casos-de-exito">
                         <h4 class="casos-de-exito">Casos de exito</h4>
                         <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
+                        
                     </div>
 
                     <div class="box metodologias">
                         <h4 class="metodologias">Metodologias</h4>
                         <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
+                        
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Etapa 4-->
 
@@ -169,31 +169,35 @@
                 <div class="etapa">
                     <img src="{% static 'img/etapa-numero-4.png' %}" alt="etapa 4: Contexto" class="etapa-numero">
                     <h3>Contexto</h3>
-                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
+                    <p>¿Cuál es el <span>contexto</span> del problema?</p>
                 </div>
                 <div class="materiales">
-                    <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
-
-                    </div>
-
-                    <div class="box casos-de-exito">
-                        <h4 class="casos-de-exito">Casos de exito</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
-                    </div>
-
                     <div class="box metodologias">
-                        <h4 class="metodologias">Metodologias</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <!-- Acá se van sumando -->
+                        <h4 class="metodologias">Metodologías</h4>
+                        <p>Estos actores identificaste: </p>
+                    {% if formulario_reciente4 %}
+                    <p>A favor: {{ formulario_reciente4.uno }}</p>
+                    <p>En contra: {{ formulario_reciente4.dos }}</p>
+                    {% endif %}
+                    </div>
+                    <div class="box metodologias">
+                        <h4 class="metodologias">Metodologías</h4>
+                        <p>Estos actores identificaste: </p>
+                    {% if formulario_reciente41 %}
+                    <p>Oportunidades: {{ formulario_reciente41.uno }}</p>
+                    <p>Amenazas: {{ formulario_reciente41.dos }}</p>
+                    {% endif %}
+                    </div>
+                    <div class="box metodologias">
+                        <h4 class="metodologias">Metodologías</h4>
+                        <p>Los eventos y acciones que formulaste: </p>
+                    {% if formulario_reciente42 %}
+                    <p>Eventos: {{ formulario_reciente42.uno }}</p>
+                    <p>Acciones: {{ formulario_reciente42.dos }}</p>
+                    {% endif %}
                     </div>
                 </div>
             </div>
-
 
             <!-- Etapa 5-->
 

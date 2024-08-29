@@ -51,3 +51,37 @@ class Mapadeafinidad2Form(forms.ModelForm):
             'cuatro': forms.Textarea(attrs={'class': 'form-control'}),
             'cinco': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+
+class Mapadeactores4Form(forms.ModelForm):
+    class Meta:
+        model = Mapadeactores4
+        fields = ['uno', 'dos']
+        widgets = {
+            'uno': forms.Textarea(attrs={'class': 'form-control'}),
+            'dos': forms.Textarea(attrs={'class': 'form-control'}),
+            'tres': forms.Textarea(attrs={'class': 'form-control'}),
+            'cuatro': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+
+class Oportunidades4Form(forms.ModelForm):
+    class Meta:
+        model = Oportunidades4
+        fields = ['uno', 'dos']
+        widgets = {
+            'uno': forms.Textarea(attrs={'class': 'form-control'}),
+            'dos': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+
+class Eventos4Form(forms.ModelForm):
+    class Meta:
+        model = Eventos4
+        fields = ['uno', 'dos']
+        widgets = {
+            'uno': forms.Textarea(attrs={'class': 'form-control'}),
+            'dos': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+

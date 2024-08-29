@@ -90,36 +90,54 @@
     </div>
 </section>
        
-       <!--Componente: Tabla 1 todo en linea por definición -->
-        <section class="componente-interactivo-form container-fluid">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 titulo">
-                        <h4>¿Qué acciones podemos realizar para avanzar hacia lograr nuestros objetivos?</h4>
-                        <p>Te recomendamos pensar en acciones y eventos para 3 a 6 meses en el futuro.</p>
-                    </div>
+<section id="formulario-container" class="componente-interactivo-form container-fluid">
 
-                    <div class="col-12 tabla">
-                        <form>
-                            <table class="table table-responsive">
-                                <tbody>
-                                    <tr>
-                                        <td class="influencia">Eventos</td>
-                                        <td><textarea class="form-control" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="influencia">Acciones</td>
-                                        <td><textarea class="form-control" rows="3" placeholder="Escribir aquí"></textarea></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <button type="submit" class="btn-democraciakit">Guardar</button>
-                        </form>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 titulo">
+                <h4>¡Ahora tu!</h4>
+                <p>Completa los eventos y acciones</p>
             </div>
-        </section>
+
+            <div class="col-12 tabla">
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                    <div {% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="alert alert-light text-center" role="alert">{{ message }} Recuerda que puedes revisar <a href="{% url 'contenidos:mikit' %}">Mi Kit</a> para ver todos tus materiales guardados. DemocraciaKit sólo guardará tus respuestas más recientes.</div></div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if messages %}
+                {% else %}
+                <form method="post" action="#formulario-container">
+                    {% csrf_token %}
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th scope="col">Oportunidades</th>
+                                <th scope="col">Amenazas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {% for field in form %}
+                                <td>
+                                    {{ field }}
+                                </td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                    {% if messages %}
+                    {% else %}
+                    <button type="submit" class="btn-democraciakit">Guardar</button>
+                    {% endif %}
+                </form>
+                    {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- <section class="componente-interactivo-form container-fluid">
             <div class="container">

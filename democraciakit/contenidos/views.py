@@ -35,6 +35,12 @@ class MikitView(LoginRequiredMixin, DetailView):
         context['formulario_reciente3'] = self.object.inclusivo2_usuarios.order_by('-fecha_inclusivo2').first()
         context['mapadeafinidad2_usuarios'] = self.object.mapadeafinidad2_usuarios.all().order_by('-fecha_mapadeafinidad2')
         context['formulario_reciente4'] = self.object.mapadeafinidad2_usuarios.order_by('-fecha_mapadeafinidad2').first()
+        context['mapadeactores4_usuarios'] = self.object.mapadeactores4_usuarios.all().order_by('-fecha_mapadeactores4')
+        context['formulario_reciente4'] = self.object.mapadeactores2_usuarios.order_by('-fecha_mapadeactores4').first()
+        context['oportunidades4_usuarios'] = self.object.oportunidades4_usuarios.all().order_by('-fecha_oportunidades4')
+        context['formulario_reciente41'] = self.object.oportunidades4_usuarios.order_by('-fecha_oportunidades4').first()
+        context['eventos4_usuarios'] = self.object.eventos4_usuarios.all().order_by('-fecha_eventos4')
+        context['formulario_reciente42'] = self.object.eventos4_usuarios.order_by('-fecha_eventos4').first()
         return context
 
 
@@ -48,19 +54,6 @@ class Etapa1View(TemplateView):
 
 class Etapa1ConceptosView(TemplateView):
     template_name = 'contenidos/etapa1-conceptos.html'
-
-
-# class Definicion1CreateView(CreateView):
-#     model = Definicion1
-#     form_class = Definicion1Form
-#     template_name = 'contenidos/etapa1-definicion.html'  
-
-#     def form_valid(self, form):
-#         form.instance.usuario = self.request.user  
-#         return super().form_valid(form)
-
-#     def get_success_url(self):
-#         return reverse('contenidos:etapa1-definicion')
 
 
 class Definicion1CreateView(FormView):
@@ -103,7 +96,7 @@ class IdentificacionCreateView(FormView):
         return super().form_valid(form)
 
 
-class MapaAfinidad2CreateView(CreateView):
+class MapaAfinidad2CreateView(FormView):
     form_class = Mapadeafinidad2Form
     template_name = 'contenidos/etapa2-mapaafinidad.html'
     success_url = reverse_lazy('contenidos:etapa2-mapaafinidad')
@@ -162,16 +155,46 @@ class Etapa4ProyeccionView(TemplateView):
     template_name = 'contenidos/etapa4-proyeccion.html'
 
 
-class Etapa4MapaactoresView(TemplateView):
+class Etapa4MapaactoresView(FormView):
+    form_class = Mapadeactores4Form
     template_name = 'contenidos/etapa4-mapaactores.html'
+    success_url = reverse_lazy('contenidos:etapa4-mapadeactores')
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus respuestas!")
+        return super().form_valid(form)
 
 
-class Etapa4OportunidadesView(TemplateView):
+class Etapa4OportunidadesView(FormView):
+    form_class = Oportunidades4Form
     template_name = 'contenidos/etapa4-oportunidades.html'
+    success_url = reverse_lazy('contenidos:etapa4-oportunidades')
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus respuestas!")
+        return super().form_valid(form)
 
 
-class Etapa4EventosView(TemplateView):
+class Etapa4EventosView(FormView):
+    form_class = Eventos4Form
     template_name = 'contenidos/etapa4-eventos.html'
+    success_url = reverse_lazy('contenidos:etapa4-eventos')
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de válido
+        messages.success(self.request, "¡Se han guardado tus respuestas!")
+        return super().form_valid(form)
 
 
 class Etapa4PlandetrabajoView(TemplateView):

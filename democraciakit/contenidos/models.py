@@ -184,14 +184,49 @@ class Mapadeactores4(models.Model):
     dos = models.TextField(blank=True, null=True)
     tres = models.TextField(blank=True, null=True)
     cuatro = models.TextField(blank=True, null=True)
-    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='mapadeactores2_usuarios')
+    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='mapadeactores4_usuarios')
     fecha_mapadeactores2 = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         unique_together = ('usuario', 'fecha_mapadeactores2')
-        verbose_name = 'Etapa #2 - Mapa de actores'
-        verbose_name_plural = 'Etapa #2 - Mapa de actores'
+        verbose_name = 'Etapa #4 - Mapa de actores'
+        verbose_name_plural = 'Etapa #4 - Mapa de actores'
         ordering = ['-fecha_mapadeactores2']
 
     def __str__(self):
         return f"{self.usuario.username} - mapa de actores - {self.fecha_mapadeactores2}"
+
+
+class Oportunidades4(models.Model):
+    uno = models.TextField(blank=True, null=True)
+    dos = models.TextField(blank=True, null=True)
+    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='oportunidades4_usuarios')
+    fecha_oportunidades4 = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('usuario', 'fecha_oportunidades4')
+        verbose_name = 'Etapa #4 - Oportunidades'
+        verbose_name_plural = 'Etapa #4 - Oportunidades'
+        ordering = ['-fecha_oportunidades4']
+
+    def __str__(self):
+        return f"{self.usuario.username} - oportunidades - {self.fecha_oportunidades4}"
+
+
+class Eventos4(models.Model):
+    uno = models.TextField(blank=True, null=True)
+    dos = models.TextField(blank=True, null=True)
+    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='eventos4_usuarios')
+    fecha_eventos4 = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('usuario', 'fecha_eventos4')
+        verbose_name = 'Etapa #4 - Eventos'
+        verbose_name_plural = 'Etapa #4 - Eventos'
+        ordering = ['-fecha_eventos4']
+
+    def __str__(self):
+        return f"{self.usuario.username} - eventos - {self.fecha_eventos4}"
+
+
+        
