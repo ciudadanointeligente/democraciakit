@@ -16,6 +16,7 @@ class CustomUserCreationForm(UserCreationForm):
     frase = forms.CharField(
         max_length=256,
         required=False,
+        label='Apodo, nombre o frase',
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingresa un apodo, nombre o frase que te caracterice'}),
     )
     email = forms.EmailField(
