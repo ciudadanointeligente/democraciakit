@@ -137,7 +137,7 @@
         </div>
     </section>
 
-    <section class="componente-interactivo-form container-fluid">
+    <section id="anchor" class="componente-interactivo-form container-fluid">
         <div class="container">
             <div class="row">
                 <div class="col-12 titulo">
@@ -145,7 +145,7 @@
                     <p>Intenta formular las causas que dan origen a tu problema</p>
                 </div>
                 <div class="col-12 tabla">
-                    <form method="post">
+                    <form method="post" action="#anchor">
                         {% csrf_token %}
                         <table class="table table-responsive">
                             <thead>
