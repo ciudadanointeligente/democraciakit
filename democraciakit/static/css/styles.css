@@ -2089,6 +2089,8 @@ footer .creditos-fci img {
     background: #B1E957;
     color: #000F74;
     margin-top: 20px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .cabecera-mi-kit p {
@@ -2131,6 +2133,8 @@ footer .creditos-fci img {
     background: #000F74;
     color: white;
     font-size: 1.5rem;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .materiales-recopilados .etapa-documentos .etapa p {

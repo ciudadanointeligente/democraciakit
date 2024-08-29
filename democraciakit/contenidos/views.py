@@ -84,8 +84,8 @@ class Etapa2View(TemplateView):
 
 class IdentificacionCreateView(FormView):
     form_class = Causas2Form
-    template_name = 'contenidos/etapa2-causas.html'
-    success_url = reverse_lazy('contenidos:etapa2-causas')
+    template_name = 'contenidos/etapa2-identificacion.html'
+    success_url = reverse_lazy('contenidos:etapa2-identificacion')
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
@@ -158,7 +158,7 @@ class Etapa4ProyeccionView(TemplateView):
 class Etapa4MapaactoresView(FormView):
     form_class = Mapadeactores4Form
     template_name = 'contenidos/etapa4-mapaactores.html'
-    success_url = reverse_lazy('contenidos:etapa4-mapadeactores')
+    success_url = reverse_lazy('contenidos:etapa4-mapaactores')
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
