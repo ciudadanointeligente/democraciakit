@@ -16,7 +16,7 @@ h1 {
 
 h2 {
     font-family: "Space Mono", monospace;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     color: #000F74;
 }
@@ -2321,11 +2321,11 @@ footer .creditos-fci img {
     }
 
     h1 {
-        font-size: 2.6rem;
+        font-size: 2rem;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     h3 {
