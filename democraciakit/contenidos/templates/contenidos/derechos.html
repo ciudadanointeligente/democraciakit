@@ -1,0 +1,63 @@
+{% extends 'contenidos/base.html' %}
+{% load static %}
+{% block title %}DemocraciaKit de AbreAlcaldías - Privacidad{% endblock %}
+
+{% block content %}
+<main>
+    <!-- íconos -->
+    <section class="container-fluid portada">
+        <div class="iconos-derecha">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
+                </div>
+            </div>
+        </div>
+        <div class="iconos-izquierda">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+    </section>
+    <section class="frase">
+        <div class="container">
+            <div class="row justify-content-center texto">
+                <div class="col-12 col-sm-12 col-md-10 col-lg-8 d-flex flex-column justify-content-center align-items-center">
+                    <h2 class="text-center">Privacidad, confidencialidad y seguridad</h2>
+<p>En DemocraciaKit y Fundación Ciudadanía Inteligente, valoramos tu privacidad y nos comprometemos a proteger tus datos personales.  Nos tomamos muy en serio la seguridad de tu información y queremos asegurarte que la manejamos con el mayor cuidado y responsabilidad.</p>
+<p>¿Cómo protegemos tus datos?</p>
+<p>Recopilación mínima: Solo recopilamos la información necesaria para brindarte nuestros servicios de manera efectiva, en el marco de la aplicación de DemocraciaKit.</p>
+<p>Almacenamiento seguro: Implementamos medidas de seguridad avanzadas para proteger tus datos contra accesos no autorizados, pérdida o alteración. Esta plataforma está alojada en un servidor de la Fundación, no en un hosting compartido de ningún tipo.</p>
+<p>Uso responsable: Utilizamos tus datos únicamente para los fines especificados en DemocraciaKit, y <b>nunca</b> los compartiremos con terceros sin tu consentimiento explícito.</p>
+<p>No usaremos tus datos para spam de ningún tipo, ni a través de e-mail o de redes sociales.</p>
+<p>Tu confianza es importante para nosotros</p>
+<p>Queremos que te sientas segur@ al utilizar nuestros servicios. Si tienes alguna pregunta o inquietud sobre cómo manejamos tus datos, <a href="mailto:escuelavistual@ciudadaniai.org">no dudes en contactarnos</a>. Estamos aquí para ayudarte.</p>
+                </div>
+            </div>
+        </div>
+        <div class="img">
+            <img src="{% static 'img/collage-personas.png' %}" class="collage-personas" alt="Imagen tipo collage decorativa de personas trabajando en un proyecto público" width="100%" />
+        </div>
+    </section>
+    <section class="premio">
+        <div class="scrolling-text">
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+        </div>
+    </section>
+</main>    
+{% endblock %}

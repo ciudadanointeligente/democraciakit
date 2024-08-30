@@ -17,6 +17,10 @@ class IndexView(TemplateView):
     template_name = 'contenidos/index.html'
 
 
+class DerechosView(TemplateView):
+    template_name = 'contenidos/derechos.html'
+    
+
 class MikitView(LoginRequiredMixin, DetailView):
     model = User
     template_name = 'contenidos/mikit.html'
