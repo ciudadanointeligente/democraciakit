@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . import views
+from .views import *
 
 app_name = 'contenidos'
 
@@ -40,4 +41,12 @@ urlpatterns = [
     path('etapa7-evaluacion/', views.Etapa7EvaluacionView.as_view(), name='etapa7-evaluacion'),
     path('etapa7-indicadores/', views.Etapa7IndicadoresView.as_view(), name='etapa7-indicadores'),
     path('etapa7-exito/', views.Etapa7ExitosView.as_view(), name='etapa7-exito'),
+    path("films/", views.FilmList.as_view(), name='film-list')
 ]
+
+htmx_urlpatterns = [
+    path("add-film/", views.add_film, name="add-film"),
+]
+
+
+urlpatterns += htmx_urlpatterns

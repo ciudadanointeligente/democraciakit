@@ -229,4 +229,6 @@ class Eventos4(models.Model):
         return f"{self.usuario.username} - eventos - {self.fecha_eventos4}"
 
 
-        
+class Film(models.Model):
+    name = models.CharField(max_length=128, unique=True)
+    users= models.ManyToManyField(User, related_name='films')

@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.views.generic import FormView
 from django.views.generic import TemplateView
 from django.views.generic import CreateView
+from django.views.generic.list import ListView
 from .models import *
 from .forms import *
 from django.http import HttpResponseRedirect
@@ -19,6 +20,16 @@ class IndexView(TemplateView):
 
 class DerechosView(TemplateView):
     template_name = 'contenidos/derechos.html'
+    model = Film
+    context_object_name = 'films'
+
+    def get_queryset(self):
+        user = self.request.user
+        return user.films.all()
+
+        peliculas = request.user.films.all()
+        return render(request, 'contenidos/derechos.html', {'peliculas': peliculas})
+
 
 
 class MikitView(LoginRequiredMixin, DetailView):
@@ -247,3 +258,38 @@ class Etapa7IndicadoresView(TemplateView):
 
 class Etapa7ExitosView(TemplateView):
     template_name = 'contenidos/etapa7-exito.html'
+
+
+class RegisterView(FormView):
+    form_class = RegisterForm
+    template_name = 'contenidos/derechos.html'
+    success_url = reverse_lazy('login')
+
+    def form_valid(self, form):
+        form.save()  # save the user
+        return super().form_valid(form)
+
+
+class FilmList(ListView):
+    template_name = 'contenidos/films.html'
+    model = Film
+    context_object_name = 'films'
+
+    def get_queryset(self):
+        user = self.request.user
+        return user.films.all() 
+
+
+def add_film(request):
+    # extract the film's name from the input field
+    name = request.POST.get('filmname')
+
+    # get or create the Film with the given name
+    film = Film.objects.get_or_create(name=name)[0]
+
+    # add the film to the user's list
+    request.user.films.add(film)
+
+    # return template with all of the user's films
+    films = request.user.films.all()
+    return render(request, 'contenidos/film-list.html', {'films': films})

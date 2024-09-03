@@ -65,3 +65,13 @@ def password_reset(request):
     else:
         form = CustomPasswordChangeForm(request.user)
     return render(request, 'users/password_reset.html', {'form': form})
+
+
+def check_username(request):
+    username = request.POST.get("username")
+    if get_user_model().objects.filter(username=username).exists():
+        return HttpResponse(
+            "<div id='username-error' class='error'>This username is already taken</div>")
+    else:
+        return HttpResponse(
+            "<div id='username-error' class='success'>This username is available</div>")

@@ -11,3 +11,9 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('password_reset/', views.password_reset, name='password_reset'),
 ]
+
+htmx_urlpatterns = [
+    path("check_username/", views.check_username, name="check_username"),
+]
+
+urlpatterns += htmx_urlpatterns
