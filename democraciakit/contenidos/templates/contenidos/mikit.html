@@ -79,26 +79,22 @@
                         <p>Revisa la definición inicial de tu problema y agrega otras: </p>
                     {% if formulario_reciente1 %}
                     <p>Quién: {{ formulario_reciente1.uno }}  /... 
-                        <form>
-                            {% csrf_token %}
-                            <input type="text" 
-                                   name="filmname" 
-                                   class="input" 
-                                   placeholder="Enter a film" />
-                        
-                            <button hx-post="{% url 'contenidos:add-film' %}" 
-                                    hx-target="#film-list" 
-                                    type="submit" 
-                                    class="btn btn-primary">Add Film</button>
-                        </form> 
-                        <i class="fa-solid fa-circle-plus"></i></p>
                     <p>Dónde: {{ formulario_reciente1.dos }}  /...  
-                        <i class="fa-solid fa-circle-plus"></i></p>
                     <p>Cuando: {{ formulario_reciente1.tres }}  /...  
-                        <i class="fa-solid fa-circle-plus"></i></p>
                     <p>Dolor: {{ formulario_reciente1.cuatro }}  /...  
-                        <i class="fa-solid fa-circle-plus"></i></p>
                     {% endif %}
+                    <form>
+                        {% csrf_token %}
+                        <input type="text" 
+                               name="filmname" 
+                               class="input" 
+                               placeholder="Enter a film" />
+                    
+                        <button hx-post="{% url 'contenidos:add-film' %}" 
+                                hx-target="#film-list" 
+                                type="submit" 
+                                class="btn btn-primary">Add Film</button>
+                    </form> 
                     </div>
                 </div>
             </div>

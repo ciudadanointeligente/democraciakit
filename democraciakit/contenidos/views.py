@@ -11,6 +11,10 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView
 from django.contrib.auth import get_user_model
+from django.conf import settings
+from django.http import HttpResponse
+
+
 User = get_user_model()
 
 
@@ -57,6 +61,7 @@ class MikitView(LoginRequiredMixin, DetailView):
         context['eventos4_usuarios'] = self.object.eventos4_usuarios.all().order_by('-fecha_eventos4')
         context['formulario_reciente42'] = self.object.eventos4_usuarios.order_by('-fecha_eventos4').first()
         return context
+
 
 
 class RuedaView(TemplateView):
