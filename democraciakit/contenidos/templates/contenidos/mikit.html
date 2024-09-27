@@ -76,12 +76,12 @@
                 <div class="materiales">
                     <div class="box metodologias">
                         <h4 class="metodologias">Metodologías</h4>
-                        <p>Esta es la definición inicial de tu problema: </p>
+                        <h4><u>Esta es la definición inicial de tu problema</u>: </h4>
                     {% if formulario_reciente1 %}
-                    <p>Quién: {{ formulario_reciente1.uno|linebreaks }}</p>
-                    <p>Dónde: {{ formulario_reciente1.dos|linebreaks }}</p>
-                    <p>Cuando: {{ formulario_reciente1.tres|linebreaks }}</p>
-                    <p>Dolor: {{ formulario_reciente1.cuatro|linebreaks }}</p>
+                    <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
+                    <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
+                    <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
+                    <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
                     {% endif %}
                     </div>
                 </div>
@@ -98,23 +98,23 @@
                 <div class="materiales">
                     <div class="box recomendaciones">
                         <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p>Esta son las causas que identificaste del problema: </p>
+                        <h4><u>Estas son las causas que identificaste de tu problema</u>: </h4>
                     {% if formulario_reciente2 %}
-                    <p>Causa #1: {{ formulario_reciente2.uno|linebreaks }}</p>
-                    <p>Causa #2: {{ formulario_reciente2.dos|linebreaks }}</p>
-                    <p>Causa #3: {{ formulario_reciente2.tres|linebreaks }}</p>
-                    <p>Causa #4: {{ formulario_reciente2.cuatro|linebreaks }}</p>
+                    <h4>Causa #1:</h4> <p>{{ formulario_reciente2.uno|linebreaks }}</p>
+                    <h4>Causa #2:</h4> <p>{{ formulario_reciente2.dos|linebreaks }}</p>
+                    <h4>Causa #3:</h4> <p>{{ formulario_reciente2.tres|linebreaks }}</p>
+                    <h4>Causa #4:</h4> <p>{{ formulario_reciente2.cuatro|linebreaks }}</p>
                     {% endif %}
                     </div>
                     <div class="box recomendaciones">
                         <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p>Estas son tus reflexiones sobre el enfoque inclusivo: </p>
+                        <h4><u>Estas son tus reflexiones sobre el enfoque inclusivo en relación a tu problema</u>: </h4>
                     {% if formulario_reciente3 %}
-                    <p>Reflexión #1: {{ formulario_reciente3.uno|linebreaks }}</p>
-                    <p>Reflexión #2: {{ formulario_reciente3.dos|linebreaks }}</p>
-                    <p>Reflexión #3: {{ formulario_reciente3.tres|linebreaks }}</p>
-                    <p>Reflexión #4: {{ formulario_reciente3.cuatro|linebreaks }}</p>
-                    <p>Reflexión #5: {{ formulario_reciente3.cinco|linebreaks }}</p>
+                    <h4>Reflexión #1:</h4> <p>{{ formulario_reciente3.uno|linebreaks }}</p>
+                    <h4>Reflexión #2:</h4> <p>{{ formulario_reciente3.dos|linebreaks }}</p>
+                    <h4>Reflexión #3:</h4> <p>{{ formulario_reciente3.tres|linebreaks }}</p>
+                    <h4>Reflexión #4:</h4> <p>{{ formulario_reciente3.cuatro|linebreaks }}</p>
+                    <h4>Reflexión #5:</h4> <p>{{ formulario_reciente3.cinco|linebreaks }}</p>
                     {% endif %}
                     </div>
                     <div class="box metodologias">
