@@ -119,13 +119,13 @@
                     </div>
                     <div class="box metodologias">
                         <h4 class="metodologias">Metodologías</h4>
-                        <p>Esto consideraste para tu mapa de afinidad: </p>
+                        <h4><u>Esto consideraste para tu mapa de afinidad: </u></h4>
                     {% if formulario_reciente4 %}
-                    <p>Quién: {{ formulario_reciente4.uno|linebreaks }}</p>
-                    <p>Dónde: {{ formulario_reciente4.dos|linebreaks }}</p>
-                    <p>Dolor: {{ formulario_reciente4.tres|linebreaks }}</p>
-                    <p>Cuando: {{ formulario_reciente4.cuatro|linebreaks }}</p>
-                    <p>Causa: {{ formulario_reciente4.cinco|linebreaks }}</p>
+                    <h4>Quién:</h4> <p>{{ formulario_reciente4.uno|linebreaks }}</p>
+                    <h4>Dónde:</h4> <p>{{ formulario_reciente4.dos|linebreaks }}</p>
+                    <h4>Dolor:</h4> <p>{{ formulario_reciente4.tres|linebreaks }}</p>
+                    <h4>Cuando:</h4><p>{{ formulario_reciente4.cuatro|linebreaks }}</p>
+                    <h4>Causa:</h4> <p>{{ formulario_reciente4.cinco|linebreaks }}</p>
                     {% endif %}
                     </div>
                 </div>
@@ -168,7 +168,7 @@
                 <div class="etapa">
                     <img src="{% static 'img/etapa-numero-4.png' %}" alt="etapa 4: Contexto" class="etapa-numero">
                     <h3>Contexto</h3>
-                    <p>¿Cuál es el <span>contexto</span> del problema?</p>
+                    <h4>¿Cuál es el <span>contexto</span> del problema?</h4>
                 </div>
                 <div class="materiales">
                     <!-- <div class="box metodologias">
@@ -181,18 +181,18 @@
                     </div> -->
                     <div class="box metodologias">
                         <h4 class="metodologias">Metodologías</h4>
-                        <p>Estas son las opportunidades y amenazas que identificaste: </p>
+                        <p><u>Estas son las opportunidades y amenazas que identificaste: </u></p>
                     {% if formulario_reciente41 %}
-                    <p>Oportunidades: {{ formulario_reciente41.uno }}</p>
-                    <p>Amenazas: {{ formulario_reciente41.dos }}</p>
+                    <h4>Oportunidades:</h4> <p>{{ formulario_reciente41.uno }}</p>
+                    <h4>Amenazas:</h4> <p>{{ formulario_reciente41.dos }}</p>
                     {% endif %}
                     </div>
                     <div class="box metodologias">
                         <h4 class="metodologias">Metodologías</h4>
-                        <p>Los eventos y acciones que formulaste: </p>
+                        <p><u>Los eventos y acciones que formulaste: </u></p>
                     {% if formulario_reciente42 %}
-                    <p>Eventos: {{ formulario_reciente42.uno }}</p>
-                    <p>Acciones: {{ formulario_reciente42.dos }}</p>
+                    <h4>Eventos:</h4> <p>{{ formulario_reciente42.uno }}</p>
+                    <h4>Acciones:</h4> <p>{{ formulario_reciente42.dos }}</p>
                     {% endif %}
                     </div>
                 </div>
