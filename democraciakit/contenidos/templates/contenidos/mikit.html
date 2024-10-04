@@ -1,6 +1,6 @@
 {% extends 'contenidos/base.html' %}
 {% load static %}
-{% block title %}DemocraciaKit - Etapa #1: Problemas - Mi kit{% endblock %}
+{% block title %}DemocraciaKit - Mi kit{% endblock %}
 
 {% block content %}
 <main>
@@ -56,6 +56,7 @@
                 <img src="{% static 'img/icono-kit.png' %}" alt="Icono de Kit">
                 <h3>Tu kit</h3>
                 <p class="pregunta"><span>{{user.frase}},</span> ¿Ya tienes todas las herramientas necesarias para tu proyecto?</p>
+                <a href="{% url 'contenidos:reporte' %}" class="btn-kit" target="_blank">Ver para imprimir</a>
             </div>
 
         </div>
