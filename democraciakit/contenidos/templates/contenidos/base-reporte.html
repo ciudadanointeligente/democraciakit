@@ -61,10 +61,10 @@ var pdfreport = document.getElementById('main-report');
 var opt = {
   margin:       0,
   filename:     'myfile.pdf',
-  pagebreak:    { before: '.etapa-documentos', mode: ['css', 'legacy', 'avoid-all'] },
-  image:        { type: 'jpeg', quality: 0.80 },
+  pagebreak:    { before: '#quiebre', mode: ['css', 'legacy', 'avoid-all'] },
+  image:        { type: 'jpeg', quality: 0.99 },
   html2canvas:  { scale: 1 },
-  jsPDF:        { unit: 'in', format: 'A4', orientation: 'landscape' }
+  jsPDF:        { unit: 'in', format: 'A4', orientation: 'portrait' }
 };
 html2pdf().set(opt).from(pdfreport).output().save();
 </script>
