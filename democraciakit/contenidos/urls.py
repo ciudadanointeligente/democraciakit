@@ -48,5 +48,4 @@ htmx_urlpatterns = [
     path("add-film/", views.add_film, name="add-film"),
 ]
 
-
 urlpatterns += htmx_urlpatterns

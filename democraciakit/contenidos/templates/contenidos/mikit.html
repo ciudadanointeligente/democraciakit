@@ -78,81 +78,42 @@
                         <h4 class="metodologias">Metodologías</h4>
                         <p>Revisa la definición inicial de tu problema y agrega otras: </p>
                     {% if formulario_reciente1 %}
-                    <p>Quién: {{ formulario_reciente1.uno }}  /... 
-                    <p>Dónde: {{ formulario_reciente1.dos }}  /...  
-                    <p>Cuando: {{ formulario_reciente1.tres }}  /...  
-                    <p>Dolor: {{ formulario_reciente1.cuatro }}  /...  
+                    <p>Quién: {{ formulario_reciente1.uno }}
+                    <p>Dónde: {{ formulario_reciente1.dos }} 
+                    <p>Cuando: {{ formulario_reciente1.tres }} 
+                    <p>Dolor: {{ formulario_reciente1.cuatro }} 
                     {% endif %}
                     </div>
-                    <!-- htmx exp -->
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías</h4>
-                        <p>Revisa la definición inicial de tu problema y agrega otras: </p>
+                </div>
+            </div>
 
 
-                        {% if formulario_reciente1 %}
-                        
-                        <div hx-target="this" hx-swap="outerHTML">
-                            <div><label>Quién</label>: {{ formulario_reciente1.uno }}</div>
-                            <div><label>Dónde</label>: {{ formulario_reciente1.dos }}</div>
-                            <div><label>Cuando</label>: {{ formulario_reciente1.tres }}</div>
-                            <div><label>Dolor</label>: {{ formulario_reciente1.cuatro }}</div>
-                            <button hx-get="/mikit/1/edit" class="btn btn-primary">
-                            Click To Edit
-                            </button>
-                        </div>
-                       
-                        <form hx-put="/mikit/1" hx-target="this" hx-swap="outerHTML">
-                          <div>
-                            <label>Quién</label>
-                            <textarea type="text" name="firstName" value="{{ formulario_reciente1.uno }}">
-                                {{ formulario_reciente1.uno }}</textarea>
-                          </div>
-                          <div class="form-group">
-                            <label>Dónde</label>
-                            <textarea type="text" name="lastName" value="{{ formulario_reciente1.dos }}">
-                                {{ formulario_reciente1.dos }}</textarea>
-                          </div>
-                          <div class="form-group">
-                            <label>Cuando</label>
-                            <textarea type="text" name="email" value="{{ formulario_reciente1.tres }}">
-                                {{ formulario_reciente1.tres }}</textarea>
-                          </div>
-                          <div class="form-group">
-                            <label>Dolor</label>
-                            <textarea type="text" name="email" value="{{ formulario_reciente1.cuatro }}">
-                                {{ formulario_reciente1.cuatro }}</textarea>
-                          </div>
-                          <button class="btn btn-primary">Guardar</button>
-                          <button class="btn btn-secondary" hx-get="/mikit/1">Cancelar</button>
-                        </form>
 
-                        {% endif %}
-
-                    {% if formulario_reciente1 %}
-                    <p>Quién: {{ formulario_reciente1.uno }}  /... 
-                    <p>Dónde: {{ formulario_reciente1.dos }}  /...  
-                    <p>Cuando: {{ formulario_reciente1.tres }}  /...  
-                    <p>Dolor: {{ formulario_reciente1.cuatro }}  /...  
-                    {% endif %}
+            <!-- htmx exp -->
+            <div id="film-list">
+                {% include 'contenidos/film-list.html' %}
+            </div>
+                <div class="col-12 etapa-documentos">
                     <form>
                         {% csrf_token %}
-                        <textarea type="text" 
+                        <input type="text" 
                                name="filmname" 
-                               class="input" 
-                               placeholder="Enter a film" />
-                        </textarea>
-                    
+                               class="form-control" 
+                               placeholder="Agrega un elemento..." />
+            
                         <button hx-post="{% url 'contenidos:add-film' %}" 
                                 hx-target="#film-list" 
                                 type="submit" 
-                                class="btn btn-primary">Add Film
-                        </button>
-                    </form> 
-                    </div>
-
+                                class="btn btn-primary">Add Film</button>
+                    </form>
                 </div>
-            </div>
+                <hr/>
+            
+                
+
+            <!-- fin htmx exp -->
+
+
 
             <!-- Etapa 2-->
 

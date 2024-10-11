@@ -22,8 +22,8 @@ class IndexView(TemplateView):
     template_name = 'contenidos/index.html'
 
 
-class DerechosView(TemplateView):
-    template_name = 'contenidos/derechos.html'
+class FilmView(ListView):
+    template_name = 'contenidos/films.html'
     model = Film
     context_object_name = 'films'
 
@@ -31,9 +31,29 @@ class DerechosView(TemplateView):
         user = self.request.user
         return user.films.all()
 
-        peliculas = request.user.films.all()
-        return render(request, 'contenidos/derechos.html', {'peliculas': peliculas})
 
+def add_film(request):
+    # extract the film's name from the input field
+    name = request.POST.get('filmname')
+
+    # get or create the Film with the given name
+    film = Film.objects.get_or_create(name=name)[0]
+
+    # add the film to the user's list
+    request.user.films.add(film)
+
+    # return template with all of the user's films
+    films = request.user.films.all()
+    return render(request, 'partials/film-list.html', {'films': films})
+
+
+class DerechosView(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = 'contenidos/derechos.html'
+    context_object_name = 'usuario'
+
+    def get_object(self):
+        return self.request.user
 
 
 class MikitView(LoginRequiredMixin, DetailView):
