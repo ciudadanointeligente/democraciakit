@@ -1474,6 +1474,15 @@ footer .creditos-fci img {
     z-index: 1;
 }
 
+.materiales p {
+    font-weight: normal;
+    font-size: 1.3rem;
+    font-family: "Work Sans", sans-serif;
+    text-align: left;
+    margin-left: 10px;
+    z-index: 1;
+}
+
 .herramientas .box-herramienta .box .hover-box {
     position: absolute;
     left: 0;

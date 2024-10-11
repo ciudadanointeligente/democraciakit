@@ -79,10 +79,12 @@
                         <h4 class="metodologias">Metodologías</h4>
                         <h4><u>Esta es la definición inicial de tu problema</u>: </h4>
                     {% if formulario_reciente1 %}
+                    
                     <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
                     <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
                     <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
                     <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
+                    
                     {% endif %}
                     </div>
                 </div>
@@ -184,16 +186,16 @@
                         <h4 class="metodologias">Metodologías</h4>
                         <h4><u>Estas son las opportunidades y amenazas que identificaste: </u></h4>
                     {% if formulario_reciente41 %}
-                    <h4>Oportunidades:</h4> <p>{{ formulario_reciente41.uno }}</p>
-                    <h4>Amenazas:</h4> <p>{{ formulario_reciente41.dos }}</p>
+                    <h4>Oportunidades:</h4> <p>{{ formulario_reciente41.uno|linebreaks }}</p>
+                    <h4>Amenazas:</h4> <p>{{ formulario_reciente41.dos|linebreaks }}</p>
                     {% endif %}
                     </div>
                     <div class="box metodologias">
                         <h4 class="metodologias">Metodologías</h4>
                         <h4><u>Los eventos y acciones que formulaste: </u></h4>
                     {% if formulario_reciente42 %}
-                    <h4>Eventos:</h4> <p>{{ formulario_reciente42.uno }}</p>
-                    <h4>Acciones:</h4> <p>{{ formulario_reciente42.dos }}</p>
+                    <h4>Eventos:</h4> <p>{{ formulario_reciente42.uno|linebreaks }}</p>
+                    <h4>Acciones:</h4> <p>{{ formulario_reciente42.dos|linebreaks }}</p>
                     {% endif %}
                     </div>
                 </div>
