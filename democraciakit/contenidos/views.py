@@ -23,13 +23,13 @@ class IndexView(TemplateView):
 
 
 class FilmView(ListView):
-    template_name = 'contenidos/films.html'
+    template_name = 'contenidos/films-list.html'
     model = Film
     context_object_name = 'films'
 
     def get_queryset(self):
         user = self.request.user
-        return user.films.all()
+        return user.films.first()
 
 
 def add_film(request):

@@ -78,16 +78,35 @@
                         <h4 class="metodologias">Metodologías</h4>
                         <p>Revisa la definición inicial de tu problema y agrega otras: </p>
                     {% if formulario_reciente1 %}
-                    <p>Quién: {{ formulario_reciente1.uno }}
-                    <p>Dónde: {{ formulario_reciente1.dos }} 
-                    <p>Cuando: {{ formulario_reciente1.tres }} 
-                    <p>Dolor: {{ formulario_reciente1.cuatro }} 
+                    <p>Quién: <br>{{ formulario_reciente1.uno|linebreaks }}
+                    <p>Dónde: <br>{{ formulario_reciente1.dos|linebreaks }} 
+                    <p>Cuando: <br>{{ formulario_reciente1.tres|linebreaks }} 
+                    <p>Dolor: <br>{{ formulario_reciente1.cuatro|linebreaks }}
+                        <div id="film-list">
+                            {% include 'contenidos/film-list.html' %}
+                        </div>
+                            <div class="col-12 etapa-documentos">
+                                <form>
+                                    {% csrf_token %}
+                                    <textarea type="text" 
+                                           name="filmname" 
+                                           class="form-control" 
+                                           placeholder="Agrega un elemento..."
+                                           rows="3"
+                                           cols="60" />
+                                    </textarea>
+                                    <br>
+                                    <button hx-post="{% url 'contenidos:add-film' %}" 
+                                            hx-target="#film-list" 
+                                            type="submit" 
+                                            class="button btn-democraciakit">Añadir
+                                    </button>
+                                </form>
+                            </div> 
                     {% endif %}
                     </div>
                 </div>
             </div>
-
-
 
             <!-- htmx exp -->
             <div id="film-list">
@@ -96,23 +115,22 @@
                 <div class="col-12 etapa-documentos">
                     <form>
                         {% csrf_token %}
-                        <input type="text" 
+                        <textarea type="text" 
                                name="filmname" 
                                class="form-control" 
                                placeholder="Agrega un elemento..." />
+                        </textarea>
             
                         <button hx-post="{% url 'contenidos:add-film' %}" 
                                 hx-target="#film-list" 
                                 type="submit" 
-                                class="btn btn-primary">Add Film</button>
+                                class="btn btn-primary">Añadir
+                        </button>
                     </form>
                 </div>
-                <hr/>
-            
-                
 
+            <hr/>
             <!-- fin htmx exp -->
-
 
 
             <!-- Etapa 2-->
