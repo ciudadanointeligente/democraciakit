@@ -1,6 +1,11 @@
 {% extends 'contenidos/base.html' %}
 {% load static %}
 {% block title %}DemocraciaKit - Etapa #1: Problemas - Mi kit{% endblock %}
+{% load partials %}
+
+{% partialdef test-partial %}
+TEST-PARTIAL-CONTENT
+{% endpartialdef test-partial %}
 
 {% block content %}
 <main>
@@ -78,58 +83,23 @@
                         <h4 class="metodologias">Metodologías</h4>
                         <p>Revisa la definición inicial de tu problema y agrega otras: </p>
                     {% if formulario_reciente1 %}
+                    
                     <p>Quién: <br>{{ formulario_reciente1.uno|linebreaks }}
                     <p>Dónde: <br>{{ formulario_reciente1.dos|linebreaks }} 
                     <p>Cuando: <br>{{ formulario_reciente1.tres|linebreaks }} 
                     <p>Dolor: <br>{{ formulario_reciente1.cuatro|linebreaks }}
-                        <div id="film-list">
-                            {% include 'contenidos/film-list.html' %}
-                        </div>
-                            <div class="col-12 etapa-documentos">
-                                <form>
-                                    {% csrf_token %}
-                                    <textarea type="text" 
-                                           name="filmname" 
-                                           class="form-control" 
-                                           placeholder="Agrega un elemento..."
-                                           rows="3"
-                                           cols="60" />
-                                    </textarea>
-                                    <br>
-                                    <button hx-post="{% url 'contenidos:add-film' %}" 
-                                            hx-target="#film-list" 
-                                            type="submit" 
-                                            class="button btn-democraciakit">Añadir
-                                    </button>
-                                </form>
-                            </div> 
-                    {% endif %}
+                    
                     </div>
+                    {% endif %}
                 </div>
+                    
             </div>
+        </div>
 
             <!-- htmx exp -->
-            <div id="film-list">
-                {% include 'contenidos/film-list.html' %}
-            </div>
-                <div class="col-12 etapa-documentos">
-                    <form>
-                        {% csrf_token %}
-                        <textarea type="text" 
-                               name="filmname" 
-                               class="form-control" 
-                               placeholder="Agrega un elemento..." />
-                        </textarea>
-            
-                        <button hx-post="{% url 'contenidos:add-film' %}" 
-                                hx-target="#film-list" 
-                                type="submit" 
-                                class="btn btn-primary">Añadir
-                        </button>
-                    </form>
-                </div>
 
-            <hr/>
+            {% partial test-partial %}
+
             <!-- fin htmx exp -->
 
 

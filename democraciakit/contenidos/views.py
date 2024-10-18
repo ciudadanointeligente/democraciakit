@@ -107,8 +107,22 @@ class Definicion1CreateView(FormView):
         form.save()
         # Añade un mensaje de éxito
         messages.success(self.request, "¡Se han guardado tus definiciones!")
-        return super().form_valid(form)  
+        return super().form_valid(form)
 
+
+class Definicion1EditView(FormView):
+    form_class = Definicion1Form
+    template_name = 'contenidos/etapa1-definicion1.html'
+    success_url = reverse_lazy('contenidos:etapa1-definicion1')
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus definiciones!")
+        return super().form_valid(form)    
+    
 
 class Etapa1EstrategiaView(TemplateView):
     template_name = 'contenidos/etapa1-estrategia.html'
