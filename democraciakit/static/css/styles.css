@@ -64,6 +64,51 @@ button.btn-democraciakit {
     border: 0px;
 }
 
+
+a.btn-editar-metodologias,
+button.btn-editar-metodologias {
+    font-family: "Space Mono", monospace;
+    background: white;
+    color: #D500F9;
+    padding: 8px 20px;
+    border-radius: 3px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s all;
+    border: 0px;
+}
+
+
+a.btn-editar-recomendaciones,
+button.btn-editar-recomendaciones {
+    font-family: "Space Mono", monospace;
+    background: white;
+    color: #000F74;
+    padding: 8px 20px;
+    border-radius: 3px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s all;
+    border: 0px;
+}
+
+
+a.btn-editar-metodologia:hover,
+button.btn-editar-metodologias:hover {
+    background: #D500F9;
+    color: white
+}
+
+
+a.btn-editar-recomendaciones:hover,
+button.btn-editar-recomendaciones:hover {
+    background: #000F74;
+    color: white
+}
+
+
 a.btn-democraciakit:hover,
 button.btn-democraciakit:hover {
     background: #D500F9;

@@ -7,6 +7,7 @@ app_name = 'contenidos'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('mikit/', views.MikitView.as_view(), name='mikit'),
+    path('mikit2/', views.MikitView2.as_view(), name='mikit2'),
     path('derechos/', views.DerechosView.as_view(), name='derechos'),
     path('rueda/', views.RuedaView.as_view(), name='rueda'),
     path('etapa1/', views.Etapa1View.as_view(), name='etapa1'),
@@ -41,7 +42,7 @@ urlpatterns = [
     path('etapa7-evaluacion/', views.Etapa7EvaluacionView.as_view(), name='etapa7-evaluacion'),
     path('etapa7-indicadores/', views.Etapa7IndicadoresView.as_view(), name='etapa7-indicadores'),
     path('etapa7-exito/', views.Etapa7ExitosView.as_view(), name='etapa7-exito'),
-    path("films/", views.FilmList.as_view(), name='film-list'),
+
 ]
 
 htmx_urlpatterns = [
