@@ -42,11 +42,7 @@ urlpatterns = [
     path('etapa7-evaluacion/', views.Etapa7EvaluacionView.as_view(), name='etapa7-evaluacion'),
     path('etapa7-indicadores/', views.Etapa7IndicadoresView.as_view(), name='etapa7-indicadores'),
     path('etapa7-exito/', views.Etapa7ExitosView.as_view(), name='etapa7-exito'),
+    path('definicion/', views.DefiniciondetalleView.as_view(), name='definiciondetalle'),
+    path('definicion/edit/', views.DefinicioneditView.as_view(), name='definicionedit'),
 
 ]
-
-htmx_urlpatterns = [
-    path('etapa1-definicion1/', views.Definicion1EditView.as_view(), name='etapa1-definicion1'),
-]
-
-urlpatterns += htmx_urlpatterns

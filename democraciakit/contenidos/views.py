@@ -125,6 +125,46 @@ class MikitView2(LoginRequiredMixin, DetailView):
         return context
 
 
+class DefiniciondetalleView(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = "contenidos/partials/definiciondetalle.html"
+    context_object_name = "usuario"
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["definicion1_usuarios"] = (
+            self.object.definicion1_usuarios.all().order_by("-fecha_definicion1")
+        )
+        context["formulario_reciente1"] = self.object.definicion1_usuarios.order_by(
+            "-fecha_definicion1"
+        ).first()
+        return context
+
+
+class DefinicioneditView(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = "contenidos/partials/definicionedit.html"
+    context_object_name = "usuario"
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["definicion1_usuarios"] = (
+            self.object.definicion1_usuarios.all().order_by("-fecha_definicion1")
+        )
+        context["formulario_reciente1"] = self.object.definicion1_usuarios.order_by(
+            "-fecha_definicion1"
+        ).first()
+        return context
+
+
+
+
 class RuedaView(TemplateView):
     template_name = "contenidos/rueda.html"
 

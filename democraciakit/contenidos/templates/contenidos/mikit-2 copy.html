@@ -70,30 +70,55 @@
         <div class="row">
 
             <div class="col-12 etapa-documentos">
+                
                 <div class="etapa">
                     <img src="{% static 'img/etapa-numero.png' %}" alt="etapa 1: Problemas" class="etapa-numero">
                     <h3>Problemas</h3>
                     <p>¿Qué <span>problema</span> vamos a solucionar?</p>
                 </div>
+
                 <div class="materiales">
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías 
-                        <button 
-                        type="button" 
-                        class="btn-editar-metodologias">Editar</button></h4>
-                        <h4><u>Esta es la definición inicial de tu problema</u>: </h4>
-                    {% if formulario_reciente1 %}
+
+                    <div id="etapa-1">
                     
-                    <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
+                    <div class="box metodologias">
+                        <!-- <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
+                        <h4><u>Esta es la definición inicial de tu problema</u>: </h4> -->
+                    {% if formulario_reciente1 %}
+                    <!-- <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
                     <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
                     <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
-                    <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
-                    
+                    <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p> -->
+
+                    {% include 'contenidos/partials/definicion.html' %}
                     {% endif %}
                     </div>
-                </div>
-            </div>
+                    
+                    </div>
 
+                    <div id="etapa-1-form">
+                    
+                        <div class="box metodologias">
+                            <h4 class="metodologias">Metodologías</h4>
+                            <h4><u>Esta es la definición inicial de tu problema</u>: </h4>
+                        {% if formulario_reciente1 %}
+                        <h4>Quién:</h4>
+                        <p><textarea cols="80" rows="5" value="{{ formulario_reciente1.uno }}">{{ formulario_reciente1.uno }}</textarea></p>
+                        <h4>Dónde:</h4>
+                        <p><textarea cols="80" rows="5" value="{{ formulario_reciente1.dos|linebreaks }}">{{ formulario_reciente1.dos }}</textarea></p>
+                        <h4>Cuando:</h4>
+                        <p><textarea cols="80" rows="5" value="{{ formulario_reciente1.tres|linebreaks }}">{{ formulario_reciente1.tres }}</textarea></p>
+                        <h4>Dolor:</h4>
+                        <p><textarea cols="80" rows="5" value="{{ formulario_reciente1.cuatro|linebreaks }}">{{ formulario_reciente1.cuatro }}</textarea></p>
+                        {% endif %}
+                        <h4 class="metodologias">Guarda la nueva versión <button class="btn-editar-metodologias">Guardar</button></h4>
+                        </div>
+                        
+                    </div>
+                
+                </div>
+
+            </div>
 
             
 
