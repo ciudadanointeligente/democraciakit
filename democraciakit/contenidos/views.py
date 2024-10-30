@@ -1,4 +1,4 @@
-from django.shortcuts import reverse
+from django.shortcuts import reverse, render
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views.generic import FormView
@@ -9,6 +9,7 @@ from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView
 from django.contrib.auth import get_user_model
+from django.http import HttpResponseRedirect
 
 
 User = get_user_model()
@@ -25,6 +26,10 @@ class DerechosView(LoginRequiredMixin, DetailView):
 
     def get_object(self):
         return self.request.user
+
+
+class QueesView(TemplateView):
+    template_name = "contenidos/partials/quees.html"
 
 
 class MikitView(LoginRequiredMixin, DetailView):
@@ -125,9 +130,9 @@ class MikitView2(LoginRequiredMixin, DetailView):
         return context
 
 
-class DefiniciondetalleView(LoginRequiredMixin, DetailView):
+class Definicion1(LoginRequiredMixin, DetailView):
     model = User
-    template_name = "contenidos/partials/definiciondetalle.html"
+    template_name = "contenidos/partials/definicion1.html"
     context_object_name = "usuario"
 
     def get_object(self):
@@ -144,25 +149,35 @@ class DefiniciondetalleView(LoginRequiredMixin, DetailView):
         return context
 
 
-class DefinicioneditView(LoginRequiredMixin, DetailView):
-    model = User
+class Definicion1EditView(FormView):
+    form_class = Definicion1Edit
     template_name = "contenidos/partials/definicionedit.html"
-    context_object_name = "usuario"
+    def get_success_url(self):
+        return reverse('contenidos:mikit2') + '#swap1'
 
-    def get_object(self):
-        return self.request.user
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["definicion1_usuarios"] = (
-            self.object.definicion1_usuarios.all().order_by("-fecha_definicion1")
-        )
-        context["formulario_reciente1"] = self.object.definicion1_usuarios.order_by(
-            "-fecha_definicion1"
-        ).first()
-        return context
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus definiciones!")
+        return super().form_valid(form)
 
 
+
+class Causas2EditView(FormView):
+    form_class = Causas2Edit
+    template_name = "contenidos/partials/causasedit.html"
+    def get_success_url(self):
+        return reverse('contenidos:mikit2') + '#swap2'
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus definiciones!")
+        return super().form_valid(form)
 
 
 class RuedaView(TemplateView):
@@ -190,19 +205,6 @@ class Definicion1CreateView(FormView):
         messages.success(self.request, "¡Se han guardado tus definiciones!")
         return super().form_valid(form)
 
-
-class Definicion1EditView(FormView):
-    form_class = Definicion1Form
-    template_name = "contenidos/etapa1-definicion1.html"
-    success_url = reverse_lazy("contenidos:etapa1-definicion1")
-
-    def form_valid(self, form):
-        form.instance.usuario = self.request.user
-        # Guarda el formulario
-        form.save()
-        # Añade un mensaje de éxito
-        messages.success(self.request, "¡Se han guardado tus definiciones!")
-        return super().form_valid(form)
 
 
 class Etapa1EstrategiaView(TemplateView):

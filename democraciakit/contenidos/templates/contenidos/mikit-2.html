@@ -68,7 +68,6 @@
     <section class="materiales-recopilados container">
 
         <div class="row">
-
             <div class="col-12 etapa-documentos">
                 <div class="etapa">
                     <img src="{% static 'img/etapa-numero.png' %}" alt="etapa 1: Problemas" class="etapa-numero">
@@ -76,46 +75,75 @@
                     <p>¿Qué <span>problema</span> vamos a solucionar?</p>
                 </div>
                 <div class="materiales">
+                    <div id="swap1"></div>
                     <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías 
-                        <button 
-                        type="button" 
-                        class="btn-editar-metodologias">Editar</button></h4>
-                        <h4><u>Esta es la definición inicial de tu problema</u>: </h4>
-                    {% if formulario_reciente1 %}
-                    
+                        <h4 class="metodologias">Metodologías</h4> 
+                        <p><u>Esta es la definición inicial de tu problema</u></p>   
+                    <!-- {% if formulario_reciente1 %}                
                     <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
                     <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
                     <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
                     <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
-                    
+                    {% endif %} -->
+                    <!-- <button class="btn-editar-metodologias" hx-get="{% url 'contenidos:definicion1' %}" hx-target="#swap1" hx-swap="innerHTML">Revisar definiciones</button>
+                    <button class="btn-editar-metodologias" hx-get="{% url 'contenidos:definicionedit' %}" hx-target="#swap1" hx-swap="innerHTML">Editar definiciones</button> -->
+                    <!-- Nav tabs -->
+                    <p>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDefiniciones" aria-expanded="false" aria-controls="collapseDefiniciones">
+                          Revisar definiciones actuales
+                        </button>
+                        <button class="btn-editar-metodologias" hx-get="{% url 'contenidos:definicionedit' %}" hx-target="#swap1" hx-swap="innerHTML">Editar definiciones</button>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDescargables" aria-expanded="false" aria-controls="collapseDescargables">
+                        Material descargable
+                        </button>
+                    </p>
+                      <div class="collapse" id="collapseDefiniciones">
+                        <div class="card card-body">
+                                   
+                    {% if formulario_reciente1 %}                
+                    <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
+                    <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
+                    <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
+                    <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
                     {% endif %}
+
+                        </div>
+                      </div>
+                      <div class="collapse" id="collapseDescargables">
+                      <div class="card card-body">
+                        {% if formulario_reciente1 %}                
+                  <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
+                  <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
+                  <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
+                  <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
+                  {% endif %}
+                      </div>
+                    </div>
+  
+
                     </div>
                 </div>
             </div>
-
-
-            
-
+        </div>
             <div class="col-12 etapa-documentos">
-                
                 <div class="etapa">
                     <img src="{% static 'img/etapa-numero-2.png' %}" alt="etapa 2: Causas" class="etapa-numero">
                     <h3>Causas</h3>
                     <p>¿Cuáles son las <span>causas</span> del problema?</p>
                 </div>
-
                 <div class="materiales">
-
+                    <div id="swap2"></div>
                     <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones <button class="btn-editar-recomendaciones">Editar</button></h4>
-                        <h4><u>Estas son las causas que identificaste de tu problema</u>: </h4>
+                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <p><u>Estas son las causas que identificaste de tu problema</u></p>
                     {% if formulario_reciente2 %}
                     <h4>Causa #1:</h4> <p>{{ formulario_reciente2.uno|linebreaks }}</p>
                     <h4>Causa #2:</h4> <p>{{ formulario_reciente2.dos|linebreaks }}</p>
                     <h4>Causa #3:</h4> <p>{{ formulario_reciente2.tres|linebreaks }}</p>
                     <h4>Causa #4:</h4> <p>{{ formulario_reciente2.cuatro|linebreaks }}</p>
                     {% endif %}
+                    <div id="swap2"></div>
+                    <button class="btn-editar-metodologias" hx-get="{% url 'contenidos:causasedit' %}" hx-target="#swap2" hx-swap="innerHTML">Editar</button>
                     </div>
 
                     <div class="box recomendaciones">
@@ -178,6 +206,7 @@
                 </div>
 
             </div>
+            
 
         </div>
 

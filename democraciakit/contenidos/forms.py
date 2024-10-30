@@ -16,6 +16,19 @@ class Definicion1Form(forms.ModelForm):
         }
 
 
+class Definicion1Edit(forms.ModelForm):
+    class Meta:
+        model = Definicion1
+        fields = ['uno', 'dos', 'tres', 'cuatro']
+        widgets = {
+            'uno': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
+            'dos': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
+            'tres': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
+            'cuatro': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
+        }
+
+
+
 class Causas2Form(forms.ModelForm):
     class Meta:
         model = Causas2
@@ -25,6 +38,18 @@ class Causas2Form(forms.ModelForm):
             'dos': forms.Textarea(attrs={'class': 'form-control'}),
             'tres': forms.Textarea(attrs={'class': 'form-control'}),
             'cuatro': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+
+class Causas2Edit(forms.ModelForm):
+    class Meta:
+        model = Causas2
+        fields = ['uno', 'dos', 'tres', 'cuatro']
+        widgets = {
+            'uno': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
+            'dos': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
+            'tres': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
+            'cuatro': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
         }
 
 

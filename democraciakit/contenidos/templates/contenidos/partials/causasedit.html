@@ -2,15 +2,15 @@
 
     <div id="modal" class="modal modal-dialog-center" _="on closeModal add .closing then wait for animationend then remove me">
         <div class="modal-content modal-dialog-scrollable" role="document">
-            <h4 class="metodologias">Edita tu defición</h4>
-            <form action="{% url 'contenidos:definicionedit' %}" method="post">
+            <h4 class="metodologias">Edita las causas de tu problema</h4>
+            <form action="{% url 'contenidos:causasedit' %}" method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button 
                 class="btn-democraciakit"
                 hx-post="{% url 'contenidos:mikit2' %}"
                 hx-trigger="submit"
-                hx-target="#swap1"
+                hx-target="#swap2"
                 hx-swap="afterend">Guardar</button>
             </form>
             <br> 

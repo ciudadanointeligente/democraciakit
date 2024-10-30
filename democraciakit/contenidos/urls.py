@@ -11,6 +11,7 @@ urlpatterns = [
     path('derechos/', views.DerechosView.as_view(), name='derechos'),
     path('rueda/', views.RuedaView.as_view(), name='rueda'),
     path('etapa1/', views.Etapa1View.as_view(), name='etapa1'),
+    path('quees/', views.QueesView.as_view(), name='quees'),
     path('etapa1-conceptos/', views.Etapa1ConceptosView.as_view(), name='etapa1-conceptos'),
     path('etapa1-definicion/', views.Definicion1CreateView.as_view(), name='etapa1-definicion'),
     path('etapa1-estrategia/', views.Etapa1EstrategiaView.as_view(), name='etapa1-estrategia'),
@@ -42,7 +43,7 @@ urlpatterns = [
     path('etapa7-evaluacion/', views.Etapa7EvaluacionView.as_view(), name='etapa7-evaluacion'),
     path('etapa7-indicadores/', views.Etapa7IndicadoresView.as_view(), name='etapa7-indicadores'),
     path('etapa7-exito/', views.Etapa7ExitosView.as_view(), name='etapa7-exito'),
-    path('definicion/', views.DefiniciondetalleView.as_view(), name='definiciondetalle'),
-    path('definicion/edit/', views.DefinicioneditView.as_view(), name='definicionedit'),
-
+    path('definicionedit/', views.Definicion1EditView.as_view(), name='definicionedit'),
+    path('causasedit/', views.Causas2EditView.as_view(), name='causasedit'),
+    path('definicion1/', views.Definicion1.as_view(), name='definicion1'),
 ]
