@@ -30,7 +30,7 @@
             </ul>
         </div>
     </section>
-    
+
 <!-- Accesos directos -->
     <section class="accesos-directos">
         <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
@@ -53,7 +53,6 @@
         </div>
     </section>
 
-
     <section class="cabecera-mi-kit container">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-12 col-md-10 col-lg-8 kit">
@@ -66,7 +65,6 @@
     </section>
 
     <section class="materiales-recopilados container">
-
         <div class="row">
             <div class="col-12 etapa-documentos">
                 <div class="etapa">
@@ -77,30 +75,37 @@
                 <div class="materiales">
                     <div id="swap1"></div>
                     <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías</h4> 
-                        <p><u>Esta es la definición inicial de tu problema</u></p>   
-                    <!-- {% if formulario_reciente1 %}                
-                    <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
-                    <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
-                    <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
-                    <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
-                    {% endif %} -->
-                    <!-- <button class="btn-editar-metodologias" hx-get="{% url 'contenidos:definicion1' %}" hx-target="#swap1" hx-swap="innerHTML">Revisar definiciones</button>
-                    <button class="btn-editar-metodologias" hx-get="{% url 'contenidos:definicionedit' %}" hx-target="#swap1" hx-swap="innerHTML">Editar definiciones</button> -->
-                    <!-- Nav tabs -->
-                    <p>
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDefiniciones" aria-expanded="false" aria-controls="collapseDefiniciones">
-                          Revisar definiciones actuales
-                        </button>
-                        <button class="btn-editar-metodologias" hx-get="{% url 'contenidos:definicionedit' %}" hx-target="#swap1" hx-swap="innerHTML">Editar definiciones</button>
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDescargables" aria-expanded="false" aria-controls="collapseDescargables">
-                        Material descargable
-                        </button>
-                    </p>
-                      <div class="collapse" id="collapseDefiniciones">
+                    <h4 class="metodologias">Metodologías</h4> 
+                    <p><u>Esta es la definición inicial de tu problema</u></p>
+                <p>
+                    <button class="btn btn-primary" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#collapseDefiniciones" 
+                    aria-expanded="false" 
+                    aria-controls="collapseDefiniciones">
+                    Revisar definiciones actuales
+                    </button>
+                    <button class="btn btn-primary" 
+                    hx-get="{% url 'contenidos:definicionedit' %}" 
+                    hx-target="#swap1" 
+                    hx-swap="innerHTML">
+                    Editar definiciones
+                    </button>
+                    <!--<button class="btn btn-primary" -->
+                    <!--type="button" -->
+                    <!--data-bs-toggle="collapse" -->
+                    <!--data-bs-target="#collapseDescargables" -->
+                    <!--aria-expanded="false" -->
+                    <!--aria-controls="collapseDescargables">-->
+                    <!--Material descargable-->
+                    <!--</button>-->
+                </p>
+
+                    <div class="collapse" id="collapseDefiniciones">
                         <div class="card card-body">
-                                   
-                    {% if formulario_reciente1 %}                
+
+                    {% if formulario_reciente1 %}
                     <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
                     <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
                     <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
@@ -111,15 +116,15 @@
                       </div>
                       <div class="collapse" id="collapseDescargables">
                       <div class="card card-body">
-                        {% if formulario_reciente1 %}                
-                  <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
-                  <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
-                  <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
-                  <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
+
+                    {% if formulario_reciente1 %}
+                    <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
+                    <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
+                    <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
+                    <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
                   {% endif %}
                       </div>
                     </div>
-  
 
                     </div>
                 </div>
@@ -174,7 +179,6 @@
 
             </div>
 
-
             <div class="col-12 etapa-documentos">
 
                 <div class="etapa">
@@ -204,26 +208,9 @@
                     </div>
 
                 </div>
-
             </div>
-            
-
         </div>
-
-    </section>
-            
+    </section> 
 </main>
 
-    <!-- <section class="premio">
-        <div class="scrolling-text">
-            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
-        </div>
-    </section> -->
-
-</main>    
 {% endblock %}

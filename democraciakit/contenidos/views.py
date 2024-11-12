@@ -164,7 +164,6 @@ class Definicion1EditView(FormView):
         return super().form_valid(form)
 
 
-
 class Causas2EditView(FormView):
     form_class = Causas2Edit
     template_name = "contenidos/partials/causasedit.html"
