@@ -130,25 +130,6 @@ class MikitView2(LoginRequiredMixin, DetailView):
         return context
 
 
-class Definicion1(LoginRequiredMixin, DetailView):
-    model = User
-    template_name = "contenidos/partials/definicion1.html"
-    context_object_name = "usuario"
-
-    def get_object(self):
-        return self.request.user
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["definicion1_usuarios"] = (
-            self.object.definicion1_usuarios.all().order_by("-fecha_definicion1")
-        )
-        context["formulario_reciente1"] = self.object.definicion1_usuarios.order_by(
-            "-fecha_definicion1"
-        ).first()
-        return context
-
-
 class Definicion1EditView(FormView):
     form_class = Definicion1Edit
     template_name = "contenidos/partials/definicionedit.html"
@@ -177,6 +158,22 @@ class Causas2EditView(FormView):
         # Añade un mensaje de éxito
         messages.success(self.request, "¡Se han guardado tus definiciones!")
         return super().form_valid(form)
+
+
+class ReflexionesEditView(FormView):
+    form_class = Inclusivo2Edit
+    template_name = "contenidos/partials/reflexionesedit.html"
+    def get_success_url(self):
+        return reverse('contenidos:mikit2') + '#swap2'
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus definiciones!")
+        return super().form_valid(form)
+
 
 
 class RuedaView(TemplateView):

@@ -66,6 +66,19 @@ class Inclusivo2Form(forms.ModelForm):
         }
 
 
+class Inclusivo2Edit(forms.ModelForm):
+    class Meta:
+        model = Inclusivo2
+        fields = ['uno', 'dos', 'tres', 'cuatro', 'cinco']
+        widgets = {
+            'uno': forms.Textarea(attrs={'class': 'form-control'}),
+            'dos': forms.Textarea(attrs={'class': 'form-control'}),
+            'tres': forms.Textarea(attrs={'class': 'form-control'}),
+            'cuatro': forms.Textarea(attrs={'class': 'form-control'}),
+            'cinco': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+
 class Mapadeafinidad2Form(forms.ModelForm):
     class Meta:
         model = Mapadeafinidad2

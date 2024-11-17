@@ -1,216 +1,244 @@
 {% extends 'contenidos/base.html' %}
 {% load static %}
-{% block title %}DemocraciaKit - Mi kit{% endblock %}
+  {% block title %}DemocraciaKit - Mi kit{% endblock %}
 
-{% block content %}
-<main>
+  {% block content %}
+  <main>
 
-<!-- Post cabecera -->
+    <!-- Post cabecera -->
     <section class="container-fluid portada">
-        <div class="iconos-derecha">
-            <ul>
-                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
-                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
-                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
-            </ul>
+      <div class="iconos-derecha">
+        <ul>
+          <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+          <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+          <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+            <p>Construye tu proyecto con</p>
+            <h1>DemocraciaKit</h1>
+          </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
-                    <p>Construye tu proyecto con</p>
-                    <h1>DemocraciaKit</h1>
-                </div>
-            </div>
-        </div>
-        <div class="iconos-izquierda">
-            <ul>
-                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
-                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
-                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
-            </ul>
-        </div>
+      </div>
+      <div class="iconos-izquierda">
+        <ul>
+          <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+          <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+          <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+        </ul>
+      </div>
     </section>
 
-<!-- Accesos directos -->
+    <!-- Accesos directos -->
     <section class="accesos-directos">
-        <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
-        <a href="#" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"></a>
+      <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
+      <a href="#" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"></a>
     </section>
 
-<!-- Contenido principal -->
-<main>
+    <!-- Contenido principal -->
+    <main>
 
-    <section class="container header-section">
+      <section class="container header-section">
         <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tu kit</li>
-                    </ol>
-                </nav>
-            </div>
+          <div class="col-12">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Tu kit</li>
+              </ol>
+            </nav>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section class="cabecera-mi-kit container">
+      <section class="cabecera-mi-kit container">
         <div class="row justify-content-center">
-            <div class="col-12 col-sm-12 col-md-10 col-lg-8 kit">
-                <img src="{% static 'img/icono-kit.png' %}" alt="Icono de Kit">
-                <h3>Tu kit</h3>
-                <p class="pregunta"><span>{{user.frase}},</span> ¿Ya tienes todas las herramientas necesarias para tu proyecto?</p>
-            </div>
+          <div class="col-12 col-sm-12 col-md-10 col-lg-8 kit">
+            <img src="{% static 'img/icono-kit.png' %}" alt="Icono de Kit">
+            <h3>Tu kit</h3>
+            <p class="pregunta"><span>{{user.frase}},</span> ¿Ya tienes todas las herramientas necesarias para tu proyecto?</p>
+          </div>
 
         </div>
-    </section>
+      </section>
 
-    <section class="materiales-recopilados container">
+      <section class="materiales-recopilados container">
         <div class="row">
-            <div class="col-12 etapa-documentos">
-                <div class="etapa">
-                    <img src="{% static 'img/etapa-numero.png' %}" alt="etapa 1: Problemas" class="etapa-numero">
-                    <h3>Problemas</h3>
-                    <p>¿Qué <span>problema</span> vamos a solucionar?</p>
-                </div>
-                <div class="materiales">
-                    <div id="swap1"></div>
-                    <div class="box metodologias">
-                    <h4 class="metodologias">Metodologías</h4> 
-                    <p><u>Esta es la definición inicial de tu problema</u></p>
+          <div class="col-12 etapa-documentos">
+            <div class="etapa">
+              <img src="{% static 'img/etapa-numero.png' %}" alt="etapa 1: Problemas" class="etapa-numero">
+              <h3>Problemas</h3>
+              <p>¿Qué <span>problema</span> vamos a solucionar?</p>
+            </div>
+            <div class="materiales">
+              <div id="swap1"></div>
+              <div class="box metodologias">
+                <h4 class="metodologias">Metodologías</h4> 
+                <p><u>Esta es la definición inicial de tu problema</u></p>
                 <p>
-                    <button class="btn btn-primary" 
+                  <button class="btn btn-primary" 
                     type="button" 
                     data-bs-toggle="collapse" 
                     data-bs-target="#collapseDefiniciones" 
                     aria-expanded="false" 
                     aria-controls="collapseDefiniciones">
                     Revisar definiciones actuales
-                    </button>
-                    <button class="btn btn-primary" 
+                  </button>
+                  <button class="btn btn-primary" 
                     hx-get="{% url 'contenidos:definicionedit' %}" 
                     hx-target="#swap1" 
                     hx-swap="innerHTML">
                     Editar definiciones
-                    </button>
-                    <!--<button class="btn btn-primary" -->
-                    <!--type="button" -->
-                    <!--data-bs-toggle="collapse" -->
-                    <!--data-bs-target="#collapseDescargables" -->
-                    <!--aria-expanded="false" -->
-                    <!--aria-controls="collapseDescargables">-->
-                    <!--Material descargable-->
-                    <!--</button>-->
+                  </button>
                 </p>
-
-                    <div class="collapse" id="collapseDefiniciones">
-                        <div class="card card-body">
-
+                <div class="collapse" id="collapseDefiniciones">
+                  <div class="card card-body">
                     {% if formulario_reciente1 %}
                     <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
                     <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
                     <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
                     <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
                     {% endif %}
-
-                        </div>
-                      </div>
-                      <div class="collapse" id="collapseDescargables">
-                      <div class="card card-body">
-
-                    {% if formulario_reciente1 %}
-                    <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
-                    <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
-                    <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
-                    <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
-                  {% endif %}
-                      </div>
-                    </div>
-
-                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-            <div class="col-12 etapa-documentos">
-                <div class="etapa">
-                    <img src="{% static 'img/etapa-numero-2.png' %}" alt="etapa 2: Causas" class="etapa-numero">
-                    <h3>Causas</h3>
-                    <p>¿Cuáles son las <span>causas</span> del problema?</p>
-                </div>
-                <div class="materiales">
-                    <div id="swap2"></div>
-                    <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p><u>Estas son las causas que identificaste de tu problema</u></p>
-                    {% if formulario_reciente2 %}
-                    <h4>Causa #1:</h4> <p>{{ formulario_reciente2.uno|linebreaks }}</p>
-                    <h4>Causa #2:</h4> <p>{{ formulario_reciente2.dos|linebreaks }}</p>
-                    <h4>Causa #3:</h4> <p>{{ formulario_reciente2.tres|linebreaks }}</p>
-                    <h4>Causa #4:</h4> <p>{{ formulario_reciente2.cuatro|linebreaks }}</p>
-                    {% endif %}
-                    <div id="swap2"></div>
-                    <button class="btn-editar-metodologias" hx-get="{% url 'contenidos:causasedit' %}" hx-target="#swap2" hx-swap="innerHTML">Editar</button>
-                    </div>
+		<div class="row">
+        <div class="col-12 etapa-documentos">
+          <div class="etapa">
+            <img src="{% static 'img/etapa-numero-2.png' %}" alt="etapa 2: Causas" class="etapa-numero">
+            <h3>Causas</h3>
+            <p>¿Cuáles son las <span>causas</span> del problema?</p>
+          </div>
+          <div class="materiales">
+            <div id="swap2"></div>
+            <div class="box recomendaciones">
+              <h4 class="recomendaciones">Recomendaciones</h4>
+              <p><u>Estas son las causas que identificaste de tu problema</u></p>
+		<p>
+			<button class="btn btn-primary" 
+			  type="button" 
+			  data-bs-toggle="collapse" 
+			  data-bs-target="#collapseCausas" 
+			  aria-expanded="false" 
+			  aria-controls="collapseCausas">
+			  Revisar causas actuales
+			</button>
+			<button class="btn btn-primary" 
+			  hx-get="{% url 'contenidos:causasedit' %}" 
+			  hx-target="#swap2" 
+			  hx-swap="innerHTML">
+			  Editar causas
+			</button>
+		</p>
+		<div class="collapse" id="collapseCausas">
+			<div class="card card-body">
+			{% if formulario_reciente2 %}
+			<h4>Causa #1:</h4> <p>{{ formulario_reciente2.uno|linebreaks }}</p>
+			<h4>Causa #2:</h4> <p>{{ formulario_reciente2.dos|linebreaks }}</p>
+			<h4>Causa #3:</h4> <p>{{ formulario_reciente2.tres|linebreaks }}</p>
+			<h4>Causa #4:</h4> <p>{{ formulario_reciente2.cuatro|linebreaks }}</p>
+			{% endif %}
+			</div>
+		</div>
+            </div>
+			<div id="swap3"></div>
+            <div class="box recomendaciones">
+				<h4 class="recomendaciones">Recomendaciones <button class="btn-editar-recomendaciones">Editar</button></h4>
+				<p><u>Estas son tus reflexiones sobre el enfoque inclusivo en relación a tu problema</u></p>
+				<p>
+					<button class="btn btn-primary" 
+					type="button" 
+					data-bs-toggle="collapse" 
+					data-bs-target="#collapseReflexiones" 
+					aria-expanded="false"                i
+					aria-controls="collapseReflexiones">
+					Revisar causas actuales
+					</button>
+					<button class="btn btn-primary" 
+					hx-get="{% url 'contenidos:reflexionesedit' %}" 
+					hx-target="#swap2" 
+					hx-swap="innerHTML">
+					Editar causas
+					</button>
+				</p>
+		<div class="collapse" id="collapseReflexiones">
+			<div class="card card-body">
+			{% if formulario_reciente3 %}
+			<h4>Reflexión #1:</h4> <p>{{ formulario_reciente2.uno|linebreaks }}</p>
+			<h4>Reflexión #2:</h4> <p>{{ formulario_reciente2.dos|linebreaks }}</p>
+			<h4>Reflexión #3:</h4> <p>{{ formulario_reciente2.tres|linebreaks }}</p>
+			<h4>Reflexión #4:</h4> <p>{{ formulario_reciente2.cuatro|linebreaks }}</p>
+			{% endif %}
+			</div>
+		</div>
+    </div>	
 
-                    <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones <button class="btn-editar-recomendaciones">Editar</button></h4>
-                        <h4><u>Estas son tus reflexiones sobre el enfoque inclusivo en relación a tu problema</u>: </h4>
-                    {% if formulario_reciente3 %}
-                    <h4>Reflexión #1:</h4> <p>{{ formulario_reciente3.uno|linebreaks }}</p>
-                    <h4>Reflexión #2:</h4> <p>{{ formulario_reciente3.dos|linebreaks }}</p>
-                    <h4>Reflexión #3:</h4> <p>{{ formulario_reciente3.tres|linebreaks }}</p>
-                    <h4>Reflexión #4:</h4> <p>{{ formulario_reciente3.cuatro|linebreaks }}</p>
-                    <h4>Reflexión #5:</h4> <p>{{ formulario_reciente3.cinco|linebreaks }}</p>
-                    {% endif %}
-                    </div>
-
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
-                        <h4><u>Esto consideraste para tu mapa de afinidad: </u></h4>
-                    {% if formulario_reciente4 %}
-                    <h4>Quién:</h4> <p>{{ formulario_reciente4.uno|linebreaks }}</p>
-                    <h4>Dónde:</h4> <p>{{ formulario_reciente4.dos|linebreaks }}</p>
-                    <h4>Dolor:</h4> <p>{{ formulario_reciente4.tres|linebreaks }}</p>
-                    <h4>Cuando:</h4><p>{{ formulario_reciente4.cuatro|linebreaks }}</p>
-                    <h4>Causa:</h4> <p>{{ formulario_reciente4.cinco|linebreaks }}</p>
-                    {% endif %}
-                    </div>
-
-                </div>
-
+            <div class="box recomendaciones">
+              <h4 class="recomendaciones">Recomendaciones <button class="btn-editar-recomendaciones">Editar</button></h4>
+              <h4><u>Estas son tus reflexiones sobre el enfoque inclusivo en relación a tu problema</u>: </h4>
+              {% if formulario_reciente3 %}
+              <h4>Reflexión #1:</h4> <p>{{ formulario_reciente3.uno|linebreaks }}</p>
+              <h4>Reflexión #2:</h4> <p>{{ formulario_reciente3.dos|linebreaks }}</p>
+              <h4>Reflexión #3:</h4> <p>{{ formulario_reciente3.tres|linebreaks }}</p>
+              <h4>Reflexión #4:</h4> <p>{{ formulario_reciente3.cuatro|linebreaks }}</p>
+              <h4>Reflexión #5:</h4> <p>{{ formulario_reciente3.cinco|linebreaks }}</p>
+              {% endif %}
             </div>
 
-            <div class="col-12 etapa-documentos">
-
-                <div class="etapa">
-                    <img src="{% static 'img/etapa-numero-4.png' %}" alt="etapa 4: Contexto" class="etapa-numero">
-                    <h3>Contexto</h3>
-                    <h4>¿Cuál es el <span>contexto</span> del problema?</h4>
-                </div>
-
-                <div class="materiales">
-
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
-                        <h4><u>Estas son las opportunidades y amenazas que identificaste: </u></h4>
-                    {% if formulario_reciente41 %}
-                    <h4>Oportunidades:</h4> <p>{{ formulario_reciente41.uno|linebreaks }}</p>
-                    <h4>Amenazas:</h4> <p>{{ formulario_reciente41.dos|linebreaks }}</p>
-                    {% endif %}
-                    </div>
-
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
-                        <h4><u>Los eventos y acciones que formulaste: </u></h4>
-                    {% if formulario_reciente42 %}
-                    <h4>Eventos:</h4> <p>{{ formulario_reciente42.uno|linebreaks }}</p>
-                    <h4>Acciones:</h4> <p>{{ formulario_reciente42.dos|linebreaks }}</p>
-                    {% endif %}
-                    </div>
-
-                </div>
+            <div class="box metodologias">
+              <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
+              <h4><u>Esto consideraste para tu mapa de afinidad: </u></h4>
+              {% if formulario_reciente4 %}
+              <h4>Quién:</h4> <p>{{ formulario_reciente4.uno|linebreaks }}</p>
+              <h4>Dónde:</h4> <p>{{ formulario_reciente4.dos|linebreaks }}</p>
+              <h4>Dolor:</h4> <p>{{ formulario_reciente4.tres|linebreaks }}</p>
+              <h4>Cuando:</h4><p>{{ formulario_reciente4.cuatro|linebreaks }}</p>
+              <h4>Causa:</h4> <p>{{ formulario_reciente4.cinco|linebreaks }}</p>
+              {% endif %}
             </div>
+
+          </div>
+
         </div>
-    </section> 
-</main>
+		</div>
 
-{% endblock %}
+        <div class="col-12 etapa-documentos">
+
+          <div class="etapa">
+            <img src="{% static 'img/etapa-numero-4.png' %}" alt="etapa 4: Contexto" class="etapa-numero">
+            <h3>Contexto</h3>
+            <h4>¿Cuál es el <span>contexto</span> del problema?</h4>
+          </div>
+
+          <div class="materiales">
+
+            <div class="box metodologias">
+              <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
+              <h4><u>Estas son las opportunidades y amenazas que identificaste: </u></h4>
+              {% if formulario_reciente41 %}
+              <h4>Oportunidades:</h4> <p>{{ formulario_reciente41.uno|linebreaks }}</p>
+              <h4>Amenazas:</h4> <p>{{ formulario_reciente41.dos|linebreaks }}</p>
+              {% endif %}
+            </div>
+
+            <div class="box metodologias">
+              <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
+              <h4><u>Los eventos y acciones que formulaste: </u></h4>
+              {% if formulario_reciente42 %}
+              <h4>Eventos:</h4> <p>{{ formulario_reciente42.uno|linebreaks }}</p>
+              <h4>Acciones:</h4> <p>{{ formulario_reciente42.dos|linebreaks }}</p>
+              {% endif %}
+            </div>
+
+          </div>
+        </div>
+        </div>
+      </section> 
+    </main>
+
+  {% endblock %}

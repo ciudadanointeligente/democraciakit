@@ -45,5 +45,5 @@ urlpatterns = [
     path('etapa7-exito/', views.Etapa7ExitosView.as_view(), name='etapa7-exito'),
     path('definicionedit/', views.Definicion1EditView.as_view(), name='definicionedit'),
     path('causasedit/', views.Causas2EditView.as_view(), name='causasedit'),
-    path('definicion1/', views.Definicion1.as_view(), name='definicion1'),
+    path('reflexionesedit/', views.ReflexionesEditView.as_view(), name='reflexionesedit'),
 ]
