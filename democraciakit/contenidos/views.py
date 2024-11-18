@@ -133,8 +133,9 @@ class MikitView2(LoginRequiredMixin, DetailView):
 class Definicion1EditView(FormView):
     form_class = Definicion1Edit
     template_name = "contenidos/partials/definicionedit.html"
+
     def get_success_url(self):
-        return reverse('contenidos:mikit2') + '#swap1'
+        return reverse("contenidos:mikit2") + "#swap1"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
@@ -148,8 +149,9 @@ class Definicion1EditView(FormView):
 class Causas2EditView(FormView):
     form_class = Causas2Edit
     template_name = "contenidos/partials/causasedit.html"
+
     def get_success_url(self):
-        return reverse('contenidos:mikit2') + '#swap2'
+        return reverse("contenidos:mikit2") + "#swap2"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
@@ -163,8 +165,9 @@ class Causas2EditView(FormView):
 class ReflexionesEditView(FormView):
     form_class = Inclusivo2Edit
     template_name = "contenidos/partials/reflexionesedit.html"
+
     def get_success_url(self):
-        return reverse('contenidos:mikit2') + '#swap2'
+        return reverse("contenidos:mikit2") + "#swap3"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
@@ -173,7 +176,6 @@ class ReflexionesEditView(FormView):
         # Añade un mensaje de éxito
         messages.success(self.request, "¡Se han guardado tus definiciones!")
         return super().form_valid(form)
-
 
 
 class RuedaView(TemplateView):
@@ -200,7 +202,6 @@ class Definicion1CreateView(FormView):
         # Añade un mensaje de éxito
         messages.success(self.request, "¡Se han guardado tus definiciones!")
         return super().form_valid(form)
-
 
 
 class Etapa1EstrategiaView(TemplateView):

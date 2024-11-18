@@ -1,34 +1,24 @@
 {% load crispy_forms_tags %}
 
-<div
-  id="modal"
-  class="modal modal-dialog-center"
-  _="on closeModal add .closing then wait for animationend then remove me"
->
-  <div class="modal-content modal-dialog-scrollable" role="document">
-    <h4 class="metodologias">Edita las causas de tu problema</h4>
-    <form action="{% url 'contenidos:reflexionesedit' %}" method="post">
-      {% csrf_token %} {{ form|crispy }}
-      <button
-        class="btn-democraciakit"
-        hx-post="{% url 'contenidos:mikit2' %}"
-        hx-trigger="submit"
-        hx-target="#swap3"
-        hx-swap="afterend"
-      >
-        Guardar
-      </button>
-    </form>
-    <br />
-    <p>
-      Debes completar todas las reflexiones para que queden guardadas correctamente.
-    </p>
-    <br />
-    <br />
-    <div class="modal-footer">
-      <button class="btn-editar-metodologias" _="on click trigger closeModal">
-        Cerrar
-      </button>
+    <div id="modal" class="modal modal-dialog-center" _="on closeModal add .closing then wait for animationend then remove me">
+        <div class="modal-content modal-dialog-scrollable" role="document">
+            <h4 class="metodologias">Edita tus reflexiones sobre inclusividad</h4>
+            <form action="{% url 'contenidos:reflexionesedit' %}" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button 
+                class="btn-democraciakit"
+                hx-post="{% url 'contenidos:mikit2' %}"
+                hx-trigger="submit"
+                hx-target="#swap3"
+                hx-swap="afterend">Guardar</button>
+            </form>
+            <br> 
+            <p>Debes completar todas las reflexiones para que queden guardadas correctamente.</p>
+            <br> 
+            <br> 
+            <div class="modal-footer">  
+            <button class="btn-editar-metodologias" _="on click trigger closeModal">Cerrar</button>
+           </div>
+        </div>
     </div>
-  </div>
-</div>
