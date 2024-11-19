@@ -70,11 +70,11 @@ class Inclusivo2Edit(forms.ModelForm):
         model = Inclusivo2
         fields = ["uno", "dos", "tres", "cuatro", "cinco"]
         widgets = {
-            "uno": forms.Textarea(attrs={"class": "form-control", "rows": "3"}),
-            "dos": forms.Textarea(attrs={"class": "form-control", "rows": "3"}),
-            "tres": forms.Textarea(attrs={"class": "form-control", "rows": "3"}),
-            "cuatro": forms.Textarea(attrs={"class": "form-control", "rows": "3"}),
-            "cinco": forms.Textarea(attrs={"class": "form-control", "rows": "3"}),
+            "uno": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
+            "dos": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
+            "tres": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
+            "cuatro": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
+            "cinco": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
         }
 
 
