@@ -178,9 +178,9 @@ class ReflexionesEditView(FormView):
         return super().form_valid(form)
 
 
-class MapaEditView(FormView):
-    form_class = Mapa2Edit
-    template_name = "contenidos/partials/mapaedit.html"
+class MapaAfinidad2EditView(FormView):
+    form_class = Mapadeafinidad2Edit
+    template_name = "contenidos/partials/mapaafinidadedit.html"
 
     def get_success_url(self):
         return reverse("contenidos:mikit2") + "#swap4"
@@ -194,12 +194,28 @@ class MapaEditView(FormView):
         return super().form_valid(form)
 
 
-class AmenazasEditView(FormView):
-    form_class = Amenazas2Edit
-    template_name = "contenidos/partials/mapaedit.html"
+class OportunidadesEditView(FormView):
+    form_class = Oportunidades2Edit
+    template_name = "contenidos/partials/oportunidades.html"
 
     def get_success_url(self):
-        return reverse("contenidos:mikit2") + "#swap4"
+        return reverse("contenidos:mikit2") + "#swap5"
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        # Guarda el formulario
+        form.save()
+        # Añade un mensaje de éxito
+        messages.success(self.request, "¡Se han guardado tus definiciones!")
+        return super().form_valid(form)
+
+
+class EventosEditView(FormView):
+    form_class = Eventos4Edit
+    template_name = "contenidos/partials/eventosedit.html"
+
+    def get_success_url(self):
+        return reverse("contenidos:mikit2") + "#swap6"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user

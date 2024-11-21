@@ -91,6 +91,19 @@ class Mapadeafinidad2Form(forms.ModelForm):
         }
 
 
+class Mapadeafinidad2Edit(forms.ModelForm):
+    class Meta:
+        model = Mapadeafinidad2
+        fields = ["uno", "dos", "tres", "cuatro", "cinco"]
+        widgets = {
+            "uno": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
+            "dos": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
+            "tres": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
+            "cuatro": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
+            "cinco": forms.Textarea(attrs={"class": "form-control", "rows": "2"}),
+        }
+
+
 class Mapadeactores4Form(forms.ModelForm):
     class Meta:
         model = Mapadeactores4
@@ -113,6 +126,16 @@ class Oportunidades4Form(forms.ModelForm):
         }
 
 
+class Oportunidades2Edit(forms.ModelForm):
+    class Meta:
+        model = Oportunidades4
+        fields = ["uno", "dos"]
+        widgets = {
+            "uno": forms.Textarea(attrs={"class": "form-control", "rows": "4"}),
+            "dos": forms.Textarea(attrs={"class": "form-control", "rows": "4"}),
+        }
+
+
 class Eventos4Form(forms.ModelForm):
     class Meta:
         model = Eventos4
@@ -120,6 +143,16 @@ class Eventos4Form(forms.ModelForm):
         widgets = {
             "uno": forms.Textarea(attrs={"class": "form-control"}),
             "dos": forms.Textarea(attrs={"class": "form-control"}),
+        }
+
+
+class Eventos4Edit(forms.ModelForm):
+    class Meta:
+        model = Eventos4
+        fields = ["uno", "dos"]
+        widgets = {
+            "uno": forms.Textarea(attrs={"class": "form-control", "rows": "4"}),
+            "dos": forms.Textarea(attrs={"class": "form-control", "rows": "4"}),
         }
 
 

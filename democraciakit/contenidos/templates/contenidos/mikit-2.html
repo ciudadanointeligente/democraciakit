@@ -73,6 +73,8 @@
             <p>¿Qué <span>problema</span> vamos a solucionar?</p>
           </div>
           <div class="materiales">
+
+            <!-- Definiciones  iniciales -->
             <div id="swap1"></div>
             <div class="box metodologias">
               <h4 class="metodologias">Metodologías</h4> 
@@ -94,7 +96,7 @@
               </button>
               </p>
               <div class="collapse" id="collapseDefiniciones">
-                <div class="card card-body">
+                <div class="cuadro">
                   {% if formulario_reciente1 %}
                   <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
                   <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
@@ -115,6 +117,8 @@
             <p>¿Cuáles son las <span>causas</span> del problema?</p>
           </div>
           <div class="materiales">
+
+            <!-- Causas del problema -->
             <div id="swap2"></div>
             <div class="box recomendaciones">
               <h4 class="recomendaciones">Recomendaciones</h4>
@@ -136,7 +140,7 @@
               </button>
               </p>
               <div class="collapse" id="collapseCausas">
-                <div class="card card-body">
+                  <div class="cuadro">
                   {% if formulario_reciente2 %}
                   <h4>Causa #1:</h4> <p>{{ formulario_reciente2.uno|linebreaks }}</p>
                   <h4>Causa #2:</h4> <p>{{ formulario_reciente2.dos|linebreaks }}</p>
@@ -146,6 +150,8 @@
                 </div>
               </div>
             </div>
+
+            <!-- Reflexiones del enfoque inclusivo -->
             <div id="swap3"></div>
             <div class="box recomendaciones">
               <h4 class="recomendaciones">Recomendaciones </h4>
@@ -167,7 +173,7 @@
               </button>
               </p>
               <div class="collapse" id="collapseReflexiones">
-                <div class="card card-body">
+                <div class="cuadro">
                   {% if formulario_reciente3 %}
                   <h4>Reflexión #1:</h4> <p>{{ formulario_reciente3.uno|linebreaks }}</p>
                   <h4>Reflexión #2:</h4> <p>{{ formulario_reciente3.dos|linebreaks }}</p>
@@ -179,29 +185,37 @@
               </div>
             </div>
 
-            <div class="box recomendaciones">
-              <h4 class="recomendaciones">Recomendaciones <button class="btn-editar-recomendaciones">Editar</button></h4>
-              <h4><u>Estas son tus reflexiones sobre el enfoque inclusivo en relación a tu problema</u>: </h4>
-              {% if formulario_reciente3 %}
-              <h4>Reflexión #1:</h4> <p>{{ formulario_reciente3.uno|linebreaks }}</p>
-              <h4>Reflexión #2:</h4> <p>{{ formulario_reciente3.dos|linebreaks }}</p>
-              <h4>Reflexión #3:</h4> <p>{{ formulario_reciente3.tres|linebreaks }}</p>
-              <h4>Reflexión #4:</h4> <p>{{ formulario_reciente3.cuatro|linebreaks }}</p>
-              <h4>Reflexión #5:</h4> <p>{{ formulario_reciente3.cinco|linebreaks }}</p>
-              {% endif %}
-            </div>
-
+            <div id="swap4"></div>
             <div class="box metodologias">
-              <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
-              <h4><u>Esto consideraste para tu mapa de afinidad: </u></h4>
-              {% if formulario_reciente3 %}
+              <h4 class="metodologias">Metodologías </h4>
+              <p>Estos elementos consideraste para tu mapa de afinidad: </p>
+              <p>
+              <button class="btn btn-primary" 
+                      type="button"
+                      data-bs-toggle="collapse" 
+                      data-bs-target="#collapseMapaAfinidad" 
+                      aria-expanded="false"                i
+                      aria-controls="collapseMapaAfinidad">
+                Revisar los elementos actuales
+              </button></p><p>
+              <button class="btn btn-primary" 
+                      hx-get="{% url 'contenidos:mapaafinidadedit' %}" 
+                      hx-target="#swap4" 
+                      hx-swap="innerHTML">
+                Reescribir los elementos
+              </button>
+              </p>
+              <div class="collapse" id="collapseMapaAfinidad">
+              <div class="cuadro">
+              {% if formulario_reciente4 %}
               <h4>Quién:</h4> <p>{{ formulario_reciente4.uno|linebreaks }}</p>
               <h4>Dónde:</h4> <p>{{ formulario_reciente4.dos|linebreaks }}</p>
               <h4>Dolor:</h4> <p>{{ formulario_reciente4.tres|linebreaks }}</p>
               <h4>Cuando:</h4><p>{{ formulario_reciente4.cuatro|linebreaks }}</p>
               <h4>Causa:</h4> <p>{{ formulario_reciente4.cinco|linebreaks }}</p>
               {% endif %}
-            </div>
+              </div>
+              </div>
 
           </div>
 
@@ -218,22 +232,65 @@
 
         <div class="materiales">
 
+          <div id="swap5"></div>
           <div class="box metodologias">
-            <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
-            <h4><u>Estas son las opportunidades y amenazas que identificaste: </u></h4>
+            <h4 class="metodologias">Metodologías </h4>
+            <p>Estas son las opportunidades y amenazas que identificaste: </p>
+              <p>
+              <button class="btn btn-primary" 
+                      type="button"
+                      data-bs-toggle="collapse" 
+                      data-bs-target="#collapseOportunidades" 
+                      aria-expanded="false"
+                      aria-controls="collapseOportunidades">
+                Revisar las actuales
+              </button></p><p>
+              <button class="btn btn-primary" 
+                      hx-get="{% url 'contenidos:oportunidadesedit' %}" 
+                      hx-target="#swap5" 
+                      hx-swap="innerHTML">
+                Reescribir
+              </button>
+              </p>
+            <div class="collapse" id="collapseOportunidades">
+            <div class="cuadro">
             {% if formulario_reciente41 %}
             <h4>Oportunidades:</h4> <p>{{ formulario_reciente41.uno|linebreaks }}</p>
             <h4>Amenazas:</h4> <p>{{ formulario_reciente41.dos|linebreaks }}</p>
             {% endif %}
+            </div>
+          </div>
           </div>
 
+          <div id="swap6"></div>
           <div class="box metodologias">
-            <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
-            <h4><u>Los eventos y acciones que formulaste: </u></h4>
+            <h4 class="metodologias">Metodologías </h4>
+            <p>Los eventos y acciones que formulaste: </p>
+              <p>
+              <button class="btn btn-primary" 
+                      type="button"
+                      data-bs-toggle="collapse" 
+                      data-bs-target="#collapseEventos"
+                      aria-expanded="false"                i
+                      aria-controls="collapseEventos">
+                Revisar los actuales
+              </button></p><p>
+              <button class="btn btn-primary" 
+                      hx-get="{% url 'contenidos:eventosedit' %}" 
+                      hx-target="#swap6" 
+                      hx-swap="innerHTML">
+                Reescribir
+              </button>
+              </p>
+            <div class="collapse" id="collapseEventos">
+            <div class="cuadro">
             {% if formulario_reciente42 %}
             <h4>Eventos:</h4> <p>{{ formulario_reciente42.uno|linebreaks }}</p>
             <h4>Acciones:</h4> <p>{{ formulario_reciente42.dos|linebreaks }}</p>
             {% endif %}
+            </div>
+          </div>
+          </div>
           </div>
 
         </div>

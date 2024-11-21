@@ -6,14 +6,14 @@
   _="on closeModal add .closing then wait for animationend then remove me"
 >
   <div class="modal-content modal-dialog-scrollable" role="document">
-    <h4 class="metodologias">Edita eventos y acciones</h4>
-    <form action="{% url 'contenidos:eventosedit' %}" method="post">
+    <h4 class="metodologias">Edita tu mapa de afinidad </h4>
+    <form action="{% url 'contenidos:mapaafinidadedit' %}" method="post">
       {% csrf_token %} {{ form|crispy }}
       <button
         class="btn-democraciakit"
         hx-post="{% url 'contenidos:mikit2' %}"
         hx-trigger="submit"
-        hx-target="#swap5"
+        hx-target="#swap4"
         hx-swap="afterend"
       >
         Guardar
@@ -21,8 +21,7 @@
     </form>
     <br />
     <p>
-      Debes completar todas los elementos para que queden guardados
-      correctamente.
+      Debes completar todas los elementos para que queden guardados correctamente.
     </p>
     <div class="modal-footer">
       <button class="btn-editar-metodologias" _="on click trigger closeModal">
