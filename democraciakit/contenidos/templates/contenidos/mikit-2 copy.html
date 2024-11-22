@@ -4,7 +4,8 @@
 
 {% block content %}
 <main>
-    <!-- íconos -->
+
+<!-- Post cabecera -->
     <section class="container-fluid portada">
         <div class="iconos-derecha">
             <ul>
@@ -29,13 +30,16 @@
             </ul>
         </div>
     </section>
-    <!-- accesos directos -->
+    
+<!-- Accesos directos -->
     <section class="accesos-directos">
         <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
         <a href="#" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"></a>
     </section>
 
+<!-- Contenido principal -->
 <main>
+
     <section class="container header-section">
         <div class="row">
             <div class="col-12">
@@ -56,55 +60,80 @@
                 <img src="{% static 'img/icono-kit.png' %}" alt="Icono de Kit">
                 <h3>Tu kit</h3>
                 <p class="pregunta"><span>{{user.frase}},</span> ¿Ya tienes todas las herramientas necesarias para tu proyecto?</p>
-<<<<<<< HEAD
-                <a href="{% url 'contenidos:reporte' %}" class="btn-kit" target="_blank">Ver para imprimir</a>
-=======
-                <p class="pregunta"><a href="{% url 'contenidos:mikit2' %}">Mikit2</a></p>
->>>>>>> experimental
             </div>
 
         </div>
     </section>
-    <!-- Recopilacion de herramientas añadidas en el kit -->
-    <section class="materiales-recopilados container">
-        <div class="row">
-            <!-- Acá se van sumando en función de lo que el usuario añadio al kit por cada etapa y por cada segmentación de la herramienta. Deje simulado todas las etapas visibles, la idea es que cuando una etapa no tenga nada incluido en el kit se quede oculta para que no sea tan saturante de información el desgloce de esta parte del sitio web -->
 
-            <!-- Etapa 1-->
+    <section class="materiales-recopilados container">
+
+        <div class="row">
 
             <div class="col-12 etapa-documentos">
+                
                 <div class="etapa">
                     <img src="{% static 'img/etapa-numero.png' %}" alt="etapa 1: Problemas" class="etapa-numero">
                     <h3>Problemas</h3>
                     <p>¿Qué <span>problema</span> vamos a solucionar?</p>
                 </div>
+
                 <div class="materiales">
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías</h4>
-                        <h4><u>Esta es la definición inicial de tu problema</u>: </h4>
-                    {% if formulario_reciente1 %}
+
+                    <div id="etapa-1">
                     
-                    <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
+                    <div class="box metodologias">
+                        <!-- <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
+                        <h4><u>Esta es la definición inicial de tu problema</u>: </h4> -->
+                    {% if formulario_reciente1 %}
+                    <!-- <h4>Quién:</h4> <p>{{ formulario_reciente1.uno|linebreaks }}</p>
                     <h4>Dónde:</h4> <p>{{ formulario_reciente1.dos|linebreaks }}</p>
                     <h4>Cuando:</h4><p>{{ formulario_reciente1.tres|linebreaks }}</p>
-                    <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
-                    
+                    <h4>Dolor:</h4> <p>{{ formulario_reciente1.cuatro|linebreaks }}</p> -->
+
+                    {% include 'contenidos/partials/definicion.html' %}
                     {% endif %}
                     </div>
+                    
+                    </div>
+
+                    <div id="etapa-1-form">
+                    
+                        <div class="box metodologias">
+                            <h4 class="metodologias">Metodologías</h4>
+                            <h4><u>Esta es la definición inicial de tu problema</u>: </h4>
+                        {% if formulario_reciente1 %}
+                        <h4>Quién:</h4>
+                        <p><textarea cols="80" rows="5" value="{{ formulario_reciente1.uno }}">{{ formulario_reciente1.uno }}</textarea></p>
+                        <h4>Dónde:</h4>
+                        <p><textarea cols="80" rows="5" value="{{ formulario_reciente1.dos|linebreaks }}">{{ formulario_reciente1.dos }}</textarea></p>
+                        <h4>Cuando:</h4>
+                        <p><textarea cols="80" rows="5" value="{{ formulario_reciente1.tres|linebreaks }}">{{ formulario_reciente1.tres }}</textarea></p>
+                        <h4>Dolor:</h4>
+                        <p><textarea cols="80" rows="5" value="{{ formulario_reciente1.cuatro|linebreaks }}">{{ formulario_reciente1.cuatro }}</textarea></p>
+                        {% endif %}
+                        <h4 class="metodologias">Guarda la nueva versión <button class="btn-editar-metodologias">Guardar</button></h4>
+                        </div>
+                        
+                    </div>
+                
                 </div>
+
             </div>
 
-            <!-- Etapa 2-->
+            
 
             <div class="col-12 etapa-documentos">
+                
                 <div class="etapa">
                     <img src="{% static 'img/etapa-numero-2.png' %}" alt="etapa 2: Causas" class="etapa-numero">
                     <h3>Causas</h3>
                     <p>¿Cuáles son las <span>causas</span> del problema?</p>
                 </div>
+
                 <div class="materiales">
+
                     <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <h4 class="recomendaciones">Recomendaciones <button class="btn-editar-recomendaciones">Editar</button></h4>
                         <h4><u>Estas son las causas que identificaste de tu problema</u>: </h4>
                     {% if formulario_reciente2 %}
                     <h4>Causa #1:</h4> <p>{{ formulario_reciente2.uno|linebreaks }}</p>
@@ -113,8 +142,9 @@
                     <h4>Causa #4:</h4> <p>{{ formulario_reciente2.cuatro|linebreaks }}</p>
                     {% endif %}
                     </div>
+
                     <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones</h4>
+                        <h4 class="recomendaciones">Recomendaciones <button class="btn-editar-recomendaciones">Editar</button></h4>
                         <h4><u>Estas son tus reflexiones sobre el enfoque inclusivo en relación a tu problema</u>: </h4>
                     {% if formulario_reciente3 %}
                     <h4>Reflexión #1:</h4> <p>{{ formulario_reciente3.uno|linebreaks }}</p>
@@ -124,8 +154,9 @@
                     <h4>Reflexión #5:</h4> <p>{{ formulario_reciente3.cinco|linebreaks }}</p>
                     {% endif %}
                     </div>
+
                     <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías</h4>
+                        <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
                         <h4><u>Esto consideraste para tu mapa de afinidad: </u></h4>
                     {% if formulario_reciente4 %}
                     <h4>Quién:</h4> <p>{{ formulario_reciente4.uno|linebreaks }}</p>
@@ -135,182 +166,48 @@
                     <h4>Causa:</h4> <p>{{ formulario_reciente4.cinco|linebreaks }}</p>
                     {% endif %}
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- Etapa 3
 
             <div class="col-12 etapa-documentos">
-                <div class="etapa">
-                    <img src="{% static 'img/etapa-numero-3.png' %}" alt="etapa 3: Objetivos" class="etapa-numero">
-                    <h3>Objetivo</h3>
-                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
-                </div>
-                <div class="materiales">
-                    <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                       
 
-                    </div>
-
-                    <div class="box casos-de-exito">
-                        <h4 class="casos-de-exito">Casos de exito</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-                    </div>
-
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologias</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Etapa 4-->
-
-            <div class="col-12 etapa-documentos">
                 <div class="etapa">
                     <img src="{% static 'img/etapa-numero-4.png' %}" alt="etapa 4: Contexto" class="etapa-numero">
                     <h3>Contexto</h3>
                     <h4>¿Cuál es el <span>contexto</span> del problema?</h4>
                 </div>
+
                 <div class="materiales">
-                    <!-- <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías</h4>
-                        <p>Estos actores identificaste: </p>
-                    {% if formulario_reciente4 %}
-                    <p>A favor: {{ formulario_reciente4.uno }}</p>
-                    <p>En contra: {{ formulario_reciente4.dos }}</p>
-                    {% endif %}
-                    </div> -->
+
                     <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías</h4>
+                        <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
                         <h4><u>Estas son las opportunidades y amenazas que identificaste: </u></h4>
                     {% if formulario_reciente41 %}
                     <h4>Oportunidades:</h4> <p>{{ formulario_reciente41.uno|linebreaks }}</p>
                     <h4>Amenazas:</h4> <p>{{ formulario_reciente41.dos|linebreaks }}</p>
                     {% endif %}
                     </div>
+
                     <div class="box metodologias">
-                        <h4 class="metodologias">Metodologías</h4>
+                        <h4 class="metodologias">Metodologías <button class="btn-editar-metodologias">Editar</button></h4>
                         <h4><u>Los eventos y acciones que formulaste: </u></h4>
                     {% if formulario_reciente42 %}
                     <h4>Eventos:</h4> <p>{{ formulario_reciente42.uno|linebreaks }}</p>
                     <h4>Acciones:</h4> <p>{{ formulario_reciente42.dos|linebreaks }}</p>
                     {% endif %}
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- Etapa 5-->
-
-            <!-- <div class="col-12 etapa-documentos">
-                <div class="etapa">
-                    <img src="{% static 'img/etapa-numero-5.png' %}" alt="etapa 5: Decidir" class="etapa-numero">
-                    <h3>Decidir</h3>
-                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
-                </div>
-                <div class="materiales">
-                    <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-                    </div>
-
-                    <div class="box casos-de-exito">
-                        <h4 class="casos-de-exito">Casos de exito</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                       
-                    </div>
-
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologias</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-                    </div>
-                </div>
-            </div> -->
-
-
-            <!-- Etapa 6-->
-
-            <!-- <div class="col-12 etapa-documentos">
-                <div class="etapa">
-                    <img src="{% static 'img/etapa-numero-6.png' %}" alt="etapa 6: Empoderar" class="etapa-numero">
-                    <h3>Empoderar</h3>
-                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
-                </div>
-                <div class="materiales">
-                    <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-
-                    </div>
-
-                    <div class="box casos-de-exito">
-                        <h4 class="casos-de-exito">Casos de exito</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-                    </div>
-
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologias</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Etapa 7-->
-
-            <!-- <div class="col-12 etapa-documentos">
-                <div class="etapa">
-                    <img src="{% static 'img/etapa-numero-7.png' %}" alt="etapa 7: Evaluar" class="etapa-numero">
-                    <h3>Evaluar</h3>
-                    <p>¿Acá va la <span>pregunta</span> de la etapa?</p>
-                </div>
-                <div class="materiales">
-                    <div class="box recomendaciones">
-                        <h4 class="recomendaciones">Recomendaciones</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-
-                    </div>
-
-                    <div class="box casos-de-exito">
-                        <h4 class="casos-de-exito">Casos de exito</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-                    </div>
-
-                    <div class="box metodologias">
-                        <h4 class="metodologias">Metodologias</h4>
-                        <p>Nombre herramienta <a href="#" class="eliminar">X</a></p>
-                        
-                    </div>
-                </div>
-            </div> -->
-            <!-- Acciones de salida del documento kit descargable-->
         </div>
+
     </section>
-    <!-- <section class="salida-documento container">
-        <div class="row">
-            <div class="col-12 descargar">
-                <div class="btn-descarga">
-                    <a href="#" class="btn-democraciakit">Descargar</a>
-                    <a href="#" class="btn-democraciakit">Vista previa</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
+            
 </main>
 
     <!-- <section class="premio">

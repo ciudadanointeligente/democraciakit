@@ -1,0 +1,22 @@
+{% load crispy_forms_tags %}
+
+    <div id="modal" class="modal modal-dialog-center" _="on closeModal add .closing then wait for animationend then remove me">
+        <div class="modal-content modal-dialog-scrollable" role="document">
+            <h4 class="metodologias">Edita tu defición</h4>
+            <form action="{% url 'contenidos:definicionedit' %}" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button 
+                class="btn-democraciakit"
+                hx-post="{% url 'contenidos:mikit2' %}"
+                hx-trigger="submit"
+                hx-target="#swap1"
+                hx-swap="afterend">Guardar</button>
+            </form>
+            <br> 
+            <p>Debes completar todas las definiciones para que queden guardadas correctamente.</p>
+            <div class="modal-footer">  
+            <button class="btn-editar-metodologias" _="on click trigger closeModal">Cerrar</button>
+           </div>
+        </div>
+    </div>
