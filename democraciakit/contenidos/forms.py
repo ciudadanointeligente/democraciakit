@@ -162,9 +162,6 @@ class RegisterForm(UserCreationForm):
         fields = ["username", "password1", "password2"]
 
 
-# Formularios individuales para click to edit htmx en Mikit
-
-
 class MikitDefinicion1Form(forms.ModelForm):
     class Meta:
         model = Definicion1
