@@ -1,0 +1,145 @@
+{% extends 'contenidos/base.html' %}
+{% load static %}
+{% block title %}DemocraciaKit - Etapa #7: Evaluar - Casos de éxito{% endblock %}
+
+{% block content %}
+<main>
+    <section class="container-fluid portada">
+        <div class="iconos-derecha">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
+                </div>
+            </div>
+        </div>
+        <div class="iconos-izquierda">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+    </section>
+<section class="accesos-directos">
+    <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
+    <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
+</section>
+
+
+<section class="container header-section">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa7' %}">Etapa #7</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Casos de éxito</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="volver-herramientas container">
+    <div class="row">
+        <div class="col-12">
+            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+            <a href="{% url 'contenidos:etapa7' %}"> &lt; Volver a herramientas </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="seccion-herramienta container">
+    <div class="row">
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+            <div class="alinear">
+
+                <!--Acá se va a simular la información en función de la etapa 1-->
+
+                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+                <img src="{% static 'img/etapa-numero-7.png' %}" alt="Etapa 7 Evaluar">
+                <h3>Evaluar</h3>
+            </div>
+            <h2 class="pregunta">¿Cómo <span>evaluar</span> el impacto?</h2>
+        </div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+            <div class="definicion">
+
+                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+
+                <h4 class="casos-de-exito">Casos de éxito</h4>
+
+                <h3>Impacto regional de Abre Alcaldías: Ecuador</h3>
+                <p>Desde 2018 Abre Alcaldías trabaja junto a líderes locales de municipios latinoamericanos para impulsar proyectos participativos y coherentes con las necesidades de la ciudadanía. ¡Conecta con sus historias y motívate!</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="visualizacion-video container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+                    <h4>Experiencia Cantón Ibarra</h4>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tyHkPgMz1Mo?si=8jB5UaOpYCeBTaJ-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="visualizacion-acordion container">
+            <div class="row justify-content-end">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    Experiencia Cantón Ibarra
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <p>Abre Alcaldías Ibarra se realizó por un equipo intersectorial compuesto de privados y servidores públicos. Se impulsó un proceso de vinculación con la ciudadanía para diseñar una plataforma de levantamiento de información, comunicación directa y acción rápida ante problemáticas del sistema de agua potable.</p>
+
+                                    <p>De esta manera, e integrando una perspectiva eco sistémica y una gestión integrada de aguas, generaron instancias que permitieran fortalecer la voz e incidencia de la ciudadanía en el proceso de toma de decisión, estableciendo además, el acceso al agua potable y su calidad como un derecho.</p>
+
+                                    <p>Durante la participación en Abre Alcaldías se estudiaron formas de implementación del proyecto innovadoras, abordando así los bajos recursos disponibles. De esta manera, al diseñar el proyecto con enfoque de usuario y en conjunto con consideraciones ciudadanas, se utilizaron herramientas ya utilizadas por la ciudadanía, como whatsapp y se gestionaron procesos de difusión y sensibilización.</p>
+                                    
+                                    <p><strong>Claves de su etapa evaluativa:</strong></p>
+                                    
+                                    <p>En materia de agua, el equipo intersectorial evidenció  que los problemas del municipio se asocian a la falta de cultura de reuso, pero por sobre todo, a la poca rapidez de respuesta en torno a problemáticas y <strong>la dificultad de comunicación entre los actores involucrados</strong>. Por lo tanto, se generó <strong>un canal de atención inmediata a través de whatsapp y telegram</strong>, los cuales se han mantenido desde su participación hasta la fecha. De acuerdo a las mediciones de percepción, estos han dado buenos resultados de acuerdo a procesos.</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p> </p>
+                    <p> </p>
+                    <p> </p>
+                </div>
+            </div>
+        </section>
+
+
+
+</main>
+
+{% endblock %}

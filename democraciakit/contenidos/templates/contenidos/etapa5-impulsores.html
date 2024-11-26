@@ -1,0 +1,145 @@
+{% extends 'contenidos/base.html' %}
+{% load static %}
+{% block title %}DemocraciaKit - Etapa #5: Decidir - Impulsores de mejora{% endblock %}
+
+{% block content %}
+<main>
+    <section class="container-fluid portada">
+        <div class="iconos-derecha">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
+                </div>
+            </div>
+        </div>
+        <div class="iconos-izquierda">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+    </section>
+<section class="accesos-directos">
+    <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
+    <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
+</section>
+
+
+<section class="container header-section">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa5' %}">Etapa #5</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Impulsores de mejora</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="volver-herramientas container">
+    <div class="row">
+        <div class="col-12">
+            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+            <a href="{% url 'contenidos:etapa5' %}"> &lt; Volver a herramientas </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="seccion-herramienta container">
+    <div class="row">
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+            <div class="alinear">
+
+                <!--Acá se va a simular la información en función de la etapa 1-->
+
+                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+                <img src="{% static 'img/etapa-numero-5.png' %}" alt="Etapa 5 Decidir">
+                <h3>Decidir</h3>
+            </div>
+            <h2 class="pregunta"><span>Decidir</span> pensando en tod@s</h2>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+            <div class="definicion">
+
+                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+                <h4 class="metodologias">Metodologías</h4>
+
+                <h3>Impulsores de mejora</h3>
+                <p>Es una técnica de ideación que se utiliza cuando ya existen ideas creadas. Para ello, se utilizan conceptos que estimulan nuevas formas de pensar desde distintos ángulos. Los conceptos que se utilizan para modificar las ideas son:</p>
+                <ul>
+                    <li><strong>Sustituye:</strong> ¿Qué elementos se pueden cambiar para mejorar la idea?</li>
+                    <li><strong>Combina:</strong> ¿Qué pasaría si combinas la idea con otra?</li>
+                    <li><strong>Adapta:</strong> ¿Cómo se puede reajustar la idea?</li>
+                    <li><strong>Modifica:</strong> ¿Qué se le puede agregar para crear más valor?</li>
+                    <li><strong>Elimina:</strong> ¿Cómo se puede agilizar o simplificar la idea? ¿Qué pasaría sí eliminamos un componente central de la idea?</li>
+                    <li><strong>Reacomoda:</strong> ¿Qué pasaría si se invierten los componentes de la idea en una secuencia o forma distinta? ¿Qué pasaría si la idea consistiera en lo opuesto a lo que propone ahora?</li>
+                </ul>
+                <h4>¿Cómo hacerlo?</h4>
+                <p>Se tiene por un lado todas las ideas en post it, y se anotan cada uno de los conceptos en una hoja de papel.</p>
+                <p>Aleatoriamente, se selecciona una de las ideas y uno de los conceptos, ante lo cual se debe crear una nueva idea que combine a ambos. Esto se repite muchas veces hasta tener una nueva cantidad de ideas.</p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+       
+        <!--Componente: Tabla 2 algunas cajas dentro de la tabla ocupan espacios diversos -->
+       
+
+
+        <!-- <section class="componente-interactivo-form container-fluid">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 titulo">
+                        <h4>¡Ahora tu!</h4>
+                        <p>Descarga el esquema y completa cada sección de la Proyección del Cambio</p>
+                    </div>
+                    <div class="col-12 btn-descargar">
+                        <a href="#" class="btn-democraciakit">Descargar</a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+<section class="anadir-al-kit container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
+           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
+           <h4>Avanzar</h4>
+            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Marca si terminaste la etapa
+                </label>
+                <div class="invalid-feedback">
+                    Debes marcar para guardar tu avance y recolectar los materiales
+                </div>
+            </p>
+            <a href="{% url 'contenidos:etapa5-testeos' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
+            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
+        </div>
+    </div>
+</section>
+
+</main>
+
+{% endblock %}

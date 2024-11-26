@@ -1,0 +1,190 @@
+{% extends 'contenidos/base.html' %}
+{% load static %}
+{% block title %}DemocraciaKit - Etapa #4: Contexto - Proyección del cambio{% endblock %}
+
+{% block content %}
+<main>
+    <section class="container-fluid portada">
+        <div class="iconos-derecha">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
+                </div>
+            </div>
+        </div>
+        <div class="iconos-izquierda">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+    </section>
+<section class="accesos-directos">
+    <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
+    <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
+</section>
+
+
+<section class="container header-section">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa4' %}">Etapa #4</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Proyección del cambio</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="volver-herramientas container">
+    <div class="row">
+        <div class="col-12">
+            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+            <a href="{% url 'contenidos:etapa4' %}"> &lt; Volver a herramientas </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="seccion-herramienta container">
+    <div class="row">
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+            <div class="alinear">
+
+                <!--Acá se va a simular la información en función de la etapa 1-->
+
+                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+                <img src="{% static 'img/etapa-numero-4.png' %}" alt="Etapa 4 Contexto">
+                <h3>Contexto</h3>
+            </div>
+            <h2 class="pregunta">¿En que <span>contextos</span> vamos a actuar?</h2>
+        </div>
+
+
+        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+            <div class="definicion">
+
+                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+                <h4 class="metodologias">Metodologías</h4>
+
+                <h3>Proyección del cambio</h3>
+                <p><strong>¡Trabajo en Equipo!</strong></p>
+                <p>La proyección es el <strong>proceso de identificar eventos</strong> que deben ocurrir y <strong>definir las actividades </strong>futuras a realizar para alcanzar los objetivos definidos. Además, este proceso permite <strong>identificar el contexto</strong> en el que se desarrollarán estas actividades, evidenciando oportunidades, amenazas y agentes clave. </p>
+            </div>
+        </div>
+    </div>
+</section>
+       
+        <!--Componente: Tabla 2 algunas cajas dentro de la tabla ocupan espacios diversos -->
+       
+       <section class="visualizacion-tabla container proyeccion-del-cambio-tabla">
+        <div class="row justify-content-end">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9 tabla">
+
+                <table class="table table-responsive">
+                    <tbody>
+                        <!-- Fila 1: Agentes clave -->
+                        <tr>
+                            <td class="tema">Agentes clave</td>
+                            <td>
+                                <p>En esta sección, buscamos mapear a los agentes clave que se vinculan de forma directa con el tema. Estos pueden ser:</p>
+                                <ul>
+                                    <li>Una persona</li>
+                                    <li>Una organización</li>
+                                    <li>Una empresa</li>
+                                    <li>Un cargo</li>
+                                    <li>Un órgano gubernamental</li>
+                                </ul>
+                                <p>Además, el mapeo se debe realizar rastreando agentes clave en: Movimientos sociales, sociedad civil, movimientos o partidos políticos, Estado y/o medios de comunicación.</p>
+                                <p>En el esquema tendrás la posibilidad de caracterizar a cada agente clave de acuerdo a su nivel de influencia (política y/o social) y su postura frente al tema (a favor/oposición).</p>
+                            </td>
+                        </tr>
+
+                        <!-- Fila 2: Oportunidades -->
+                        <tr>
+                            <td class="tema">Oportunidades</td>
+                            <td>Son aquellos elementos que hacen posible o más fácil alcanzar el objetivo.</td>
+                        </tr>
+
+                        <!-- Fila 3: Amenazas -->
+                        <tr>
+                            <td class="tema">Amenazas</td>
+                            <td>Son obstáculos que dificultan alcanzar el objetivo.</td>
+                        </tr>
+
+                        <!-- Fila 4: Eventos / Actividades -->
+                        <tr>
+                            <td class="tema">Eventos / Actividades</td>
+                            <td>Entendemos como evento aquellos hechos o hitos que no dependen de nuestros esfuerzos y que son clave y/o influyen en la línea de tiempo para que nuestro objetivo se haga realidad. Entendemos como actividades las acciones que dependen de nuestro trabajo y que son clave para conseguir nuestro objetivo.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+        <!-- Componente: Contenido que continua relatando la herramienta -->
+        <section class="visualizacion-contenido-herramienta container">
+            <div class="row justify-content-end">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
+                   <p><strong>Esquema de proyección del cambio</strong></p>
+                    <img src="{% static 'img/visualizacion-proyeccion-del-cambio.png' %}" alt="Esquema de proyeccion del cambio" class="visualizacion-proyeccion-del-cambio">
+                </div>
+            </div>
+        </section>
+
+        <section class="componente-interactivo-form container-fluid">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 titulo">
+                        <h4>¡Ahora tu!</h4>
+                        <p>Descarga el esquema y completa cada sección de la Proyección del Cambio</p>
+                    </div>
+                    <div class="col-12 btn-descargar text-center">
+                        <a href="{% static 'img/proyeccion-del-cambio.pdf' %}" target="_blank" class="btn-democraciakit">Descargar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<section class="anadir-al-kit container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
+           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
+           <h4>Avanzar</h4>
+            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Marca si terminaste la etapa
+                </label>
+                <div class="invalid-feedback">
+                    Debes marcar para guardar tu avance y recolectar los materiales
+                </div>
+            </p>
+            <a href="{% url 'contenidos:etapa4-mapaactores' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
+            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
+        </div>
+    </div>
+</section>
+
+</main>
+
+{% endblock %}

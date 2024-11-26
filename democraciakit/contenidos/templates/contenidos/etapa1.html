@@ -1,0 +1,164 @@
+{% extends 'contenidos/base.html' %}
+{% load static %}
+{% block title %}DemocraciaKit - Etapa #1: Problemas{% endblock %}
+
+{% block content %}
+<main>
+    <!-- íconos -->
+    <section class="container-fluid portada">
+        <div class="iconos-derecha">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
+                </div>
+            </div>
+        </div>
+        <div class="iconos-izquierda">
+            <ul>
+                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
+                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
+            </ul>
+        </div>
+    </section>
+    <!-- accesos directos -->
+    <section class="accesos-directos">
+        <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
+        <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"></a>
+    </section>
+
+    <section class="container header-section">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Rueda</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Etapa #1</li>
+                    </ol>
+                </nav>
+                <div class="alinear">
+                    <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
+                    <h3>Problemas</h3>
+                </div>
+                <h2>Aterriza eso que te preocupa a un <span>problema</span>, es decir, <span>lugar y período cercanos</span></h2> 
+                <p>Revisa estos insumos y añádelos a tu kit</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container herramientas">
+        <div class="row">
+            <div class="col-12 tipologias-herramientas">
+                <ul>
+                    <li>
+                        <p>Tipo de herramienta:</p>
+                    </li>
+                    <li>
+                        <div class="circulo circulo-rosado"></div>
+                        <p class="tipologia">Metodologías</p>
+                    </li>
+                    <li>
+                        <div class="circulo circulo-celeste"></div>
+                        <p class="tipologia">Recomendaciones</p>
+                    </li>
+                    <!-- <li>
+                        <div class="circulo circulo-verde"></div>
+                        <p class="tipologia">Casos de éxito</p>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="row herramientas">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
+                <div class="box recomendaciones">
+                    <div class="content">
+                        <p>Conceptos iniciales</p>
+                    </div>
+                    <div class="hover-box">
+                        <a href="{% url 'contenidos:etapa1-conceptos' %}" class="revisar-link">Revisar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
+                <div class="box metodologias">
+                    <div class="content">
+                        <p>Definición inicial</p>
+                    </div>
+                    <div class="hover-box">
+                        <a href="{% url 'contenidos:etapa1-definicion' %}" class="revisar-link">Revisar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
+                <div class="box recomendaciones">
+                    <div class="content">
+                        <p>Estrategias de priorización</p>
+                    </div>
+                    <div class="hover-box">
+                        <a href="{% url 'contenidos:etapa1-estrategia' %}" class="revisar-link">Revisar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 box-herramienta">
+                <div class="box recomendaciones">
+                    <div class="content">
+                        <p>Sesgo de solución</p>
+                    </div>
+                    <div class="hover-box">
+                        <a href="{% url 'contenidos:etapa1-sesgo' %}" class="revisar-link">Revisar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container frase-herramientas-destacada">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-6">
+                <h4>Revisa y comparte tu aprendizaje</h4>
+            </div>
+        </div>
+    </section>
+        
+    <section class="container-fluid siguiente-nivel">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9 informacion">
+                    <div class="titulo"><h4>Siguiente nivel:</h4></div>
+                    <div class="alinear">
+                        <img src="{% static 'img/etapa-numero-2.png' %}" alt="Nivel 2: Causas" class="img-etapa">
+                        <h4>Causas</h4>
+                    </div>
+                    <div class="contenido">
+                        <p>Reúne antecedentes y caracteriza grupos afectados. En esta etapa, poner el enfoque en la ciudadanía permitirá profundizar el entendimiento del problema.</p>
+                        <a href="{% url 'contenidos:etapa2' %}" class="btn-democraciakit">Ir a causas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'img/rueda-decorativa-esquina.png' %}" alt="rueda como elemento decorativo que muestra el nivel que sigue" class="rueda-decorativa">
+    </section>
+
+    <!-- <section class="premio">
+        <div class="scrolling-text">
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
+            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+        </div>
+    </section> -->
+
+</main>    
+{% endblock %}

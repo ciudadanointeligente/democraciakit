@@ -1,0 +1,56 @@
+<div
+  id="modal"
+  class="modal modal-dialog-center"
+  _="on closeModal add .closing then wait for animationend then remove me"
+>
+  <div class="modal-content modal-dialog" role="document">
+    <div class="modal-content">
+      <button class="btn-editar-metodologias" _="on click trigger closeModal">
+        Cerrar
+      </button>
+      <div class="modal-body">
+        <h3>¿Qué encontraré aquí?</h3>
+        <p>
+          Un viaje a través de <b>múltiples herramientas</b> que permiten el
+          diseño de un proyecto participativo.
+        </p>
+        <h3 class="titular-destacado">
+          <span class="bg-verde"
+            >¡Explora cómo involucrar a la ciudadanía en cada etapa del
+            proceso!</span
+          >
+        </h3>
+        <h3>¿Por qué es necesario?</h3>
+        <p>
+          Para fortalecer las democracias en Latinoamérica y el Caribe es
+          necesario que las demandas ciudadanas sean escuchadas y transformadas
+          en decisiones públicas. Para esto, se vuelve urgente capacitar a
+          distintos actores territoriales con herramientas que les permitan:
+        </p>
+        <ul>
+          <li>
+            <p>
+              Promover una gestión pública participativa, abierta e innovadora.
+            </p>
+          </li>
+          <li>
+            <p>
+              Organizar demandas sociales e impulsarlas en el espacio público
+              utilizando diversas acciones para la incidencia.
+            </p>
+          </li>
+          <li>
+            <p>Construir capacidad de fiscalización ciudadana.</p>
+          </li>
+        </ul>
+        <div class="cta">
+          <h4 class="color-rosado">¡Comienza el viaje!</h4>
+          <a href="{% url 'users:user_login' %}" class="btn-democraciakit"
+            >Ir a DemocraciaKit</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
