@@ -5,30 +5,6 @@
 {% block content %}
 <main>
     <!-- íconos -->
-    <section class="container-fluid portada">
-        <div class="iconos-derecha">
-            <ul>
-                <li class="img-1"><img src="{% static 'img/icono-1-portada.png' %}" alt="imagen decorativa de icono"></li>
-                <li class="img-2"><img src="{% static 'img/icono-2-portada.png' %}" alt="imagen decorativa de icono"></li>
-                <li class="img-1"><img src="{% static 'img/icono-3-portada.png' %}" alt="imagen decorativa de icono"></li>
-            </ul>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex flex-column justify-content-center align-items-center titulos-portada">
-                    <p>Construye tu proyecto con</p>
-                    <h1>DemocraciaKit</h1>
-                </div>
-            </div>
-        </div>
-        <div class="iconos-izquierda">
-            <ul>
-                <li class="img-1"><img src="{% static 'img/icono-4-portada.png' %}" alt="imagen decorativa de icono"></li>
-                <li class="img-2"><img src="{% static 'img/icono-5-portada.png' %}" alt="imagen decorativa de icono"></li>
-                <li class="img-1"><img src="{% static 'img/icono-6-portada.png' %}" alt="imagen decorativa de icono"></li>
-            </ul>
-        </div>
-    </section>
     <section class="presentacion-toolkit">
         <div class="icono-decoracion-parallax">
             <img src="{% static 'img/collage-figura-1.png' %}" alt="">
@@ -37,7 +13,6 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-5 xl-5 xxl-5">
                     <h2>¿Qué es <br><span class="color-rosado">DemocraciaKit?</span></h2>
-                    <!-- <a href="#" class="enlace" data-bs-toggle="modal" data-bs-target="#informacion-democraciakit"><i class="fa-solid fa-circle-info"></i><span class="texto">Más información</span></a> -->
                     <div id="swapx"></div>
                     <button class="btn-editar-metodologias" hx-get="{% url 'contenidos:quees' %}" hx-target="#swapx" hx-swap="innerHTML">Más información</button>
                 </div>
@@ -83,15 +58,6 @@
             <img src="{% static 'img/collage-personas.png' %}" class="collage-personas" alt="Imagen tipo collage decorativa de personas trabajando en un proyecto público" width="100%" />
         </div>
     </section>
-    <!-- <section class="premio">
-        <div class="scrolling-text">
-            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
-        </div>
-    </section> -->
-</main>    
+
+</main>
 {% endblock %}
