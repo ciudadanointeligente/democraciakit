@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from .views import *
 
@@ -127,4 +127,12 @@ urlpatterns = [
         views.EventosEditView.as_view(),
         name="eventosedit",
     ),
+    path(
+        "accounts/", 
+        include("django.contrib.auth.urls")
+    ),
+    path(
+        "logout/",
+        views.logout_view, 
+        name="logout"),
 ]

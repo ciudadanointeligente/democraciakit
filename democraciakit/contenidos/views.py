@@ -1,4 +1,4 @@
-from django.shortcuts import reverse
+from django.shortcuts import reverse, redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views.generic import FormView
@@ -7,6 +7,7 @@ from django.views.generic import CreateView
 from .models import *
 from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import login, logout,authenticate
 from django.views.generic import DetailView
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
@@ -435,3 +436,7 @@ class RegisterView(FormView):
     def form_valid(self, form):
         form.save()  # save the user
         return super().form_valid(form)
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
