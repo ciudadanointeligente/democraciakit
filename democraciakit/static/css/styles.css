@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 /*Estilos generales*/
 body {
   background: #000f74;
@@ -44,7 +48,7 @@ li {
 
 a.enlace {
   color: #000f74;
-  text-decoration: underline;
+  text-decoration: none;
   display: flex;
   align-items: center;
 }
@@ -193,7 +197,7 @@ header nav ul li a {
   color: white !important;
   font-family: "Space Mono", monospace;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   padding: 2px 10px !important;
 }
 
@@ -463,13 +467,14 @@ main {
 .portada {
   background-color: #000f74;
   position: relative;
-  padding-top: 100px;
+  padding-top: 10px;
 }
 
 .portada .iconos-derecha,
 .portada .iconos-izquierda {
   position: absolute;
   bottom: 0;
+  font-size: 16px;
 }
 
 .portada .iconos-derecha {
@@ -583,6 +588,11 @@ main {
 
 /*Secciones*/
 
+.espacio {
+  margin-top: 100px;
+}
+
+
 .presentacion-toolkit {
   margin-top: 100px;
   padding-bottom: 0px;
@@ -610,7 +620,7 @@ main {
 
 .presentacion-toolkit a.enlace span.texto {
   font-size: 1rem;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .presentacion-toolkit .cta {
@@ -748,7 +758,7 @@ footer .navegacion-abre ul li a {
 }
 
 footer .navegacion-abre ul li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 footer .enlaces-rrss ul {
@@ -1023,11 +1033,11 @@ footer .creditos-fci img {
 }
 
 .form form .crear .enlace-crear:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .form form .recuperar .enlace-recuperar:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .form form img {
@@ -1071,7 +1081,7 @@ footer .creditos-fci img {
 }
 
 .volver a.volver:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Accesos directos */
@@ -1150,7 +1160,7 @@ footer .creditos-fci img {
 }
 
 .header-section .breadcrumb li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .header-section .breadcrumb-item + .breadcrumb-item::before {
@@ -1398,6 +1408,7 @@ footer .creditos-fci img {
 
 .header-section h2 span {
   color: #d500f9;
+  text-decoration: none;
 }
 
 /*Tipologias de herramientas*/
@@ -1664,7 +1675,7 @@ footer .creditos-fci img {
 }
 
 .volver-herramientas a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .seccion-herramienta .etapa-numero {

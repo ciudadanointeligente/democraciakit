@@ -53,89 +53,67 @@
 
 </head>
 
-<!-- Body -->
 <body>
-
-    <!-- Header -->
-    <header class="container-fluid fixed-top">
-        <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
-            <div class="container">
-
-                <!-- Logotipo movil -->
-                <div class="logotipo-movil logotipo">
-                    <a class="navbar-brand" href="https://abrealcaldias.org/">
-                        <span><b>Abre</b></span>Alcaldías<b>&lt;</b>
-                    </a>
-                    <a class="credits" href="https://ciudadaniai.org/" target="_blank">
-                        Un proyecto de Ciudadanía Inteligente
-                    </a>
-                </div>
-
-                <!-- Boton hamburguesa comprimido movil -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
-                </button>
-
-                <!-- Secciones para escritorio -->
-                <div class="collapse navbar-collapse d-none d-lg-flex">
-                    <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
-
-                        <!-- Aquí irán los items del menú -->
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="https://abrealcaldias.org/"> < Volver a Abre Alcaldías</a>
-                        </li>
-                        <li class="nav-item logotipo logotipo-desktop">
-                            <a class="navbar-brand" href="https://abrealcaldias.org/">
-                                <span><b>Abre</b></span>Alcaldías<b>&lt;</b>
-                            </a>
-                        </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="https://democraciakit.abrealcaldias.org/">Inicio</a>
-                        </li>
-                    </ul>
+<header class="container-fluid">
+    <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+    <section class="container-fluid portada">
+        <div class="iconos-derecha col-4">
+                <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="https://abrealcaldias.org/">< Volver a AbreAlcaldías</a>
+                    </li>
+                </ul>
+        </div>
+        <div class="container col-4">
+            <div class="row">
+                <div class="d-flex flex-column justify-content-center align-items-center titulos-portada">
+                    <p>Construye tu proyecto con</p>
+                    <h1>DemocraciaKit</h1>
                 </div>
             </div>
+        </div>
+        <div class="iconos-izquierda col-4">
+            <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
+                <li class="nav-item">
+                    <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}Mi Perfil{% else %}</a>
+                    <a class="nav-link" href="https://democraciakit.abrealcaldias.org/rueda">Inicio</a>{% endif %}
+                </li>
+            </ul>
+        </div>
+    </section>
+    </nav>
+</header>
 
-            <!-- Offcanvas Menu para móvil -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-hidden="true">
-                <div class="offcanvas-header d-flex align-items-start justify-content-start">
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                <div class="offcanvas-body">
-                    
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Cuerpo -->
     {% block content %}
     {% endblock %}
 
-    <!-- Pie -->
-
     <footer class="container-fluid">
-      <div class="container">
-          <div class="row">
-              <div class="col-12 col-sm-12 col-md-12 col-lg-3 navegacion-abre">
-              </div>
-              <div class="col-12 col-sm-12 col-md-12 col-lg-6 enlaces-rrss">
-                  <ul class="justify-content-center">
-                      <li class="logotipo-footer">
-                          <p><span><b>Abre</b></span>Alcaldías<b>&lt;</b></p>
-                      </li>
-                  </ul>
-              </div>
-              <div class="col-12 col-sm-12 col-md-12 col-lg-3 creditos-fci">
-                  <p>Un proyecto de</p>
-                  <img src="{% static 'img/logo-fci.svg' %}" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci">
-              </div>
-          </div>
-      </div>
-  </footer>
-  <div class="derechos d-flex flex-row justify-content-center align-items-center align-self-center">
-      <p>© 2024 AbreAlcaldías - Un proyecto de Fundación Ciudadanía Inteligente. Todos los derechos reservados.</p>
-  </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-3 col-md-3 col-lg-3 enlaces-rrss">
+                    
+                        <ul class="justify-content-center">
+
+                            <li><a href="mailto:info@ciudadaniai.org" target="_blank"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+                            <li><a href="https://gitlab.com/ciudadaniai" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank"><i class="fa-brands fa-creative-commons" aria-hidden="true"></i></a></li>
+                        </ul>
+                     
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 enlaces-rrss">
+                    <ul class="justify-content-center">
+                        <li class="logotipo-footer">
+                            <p><span><b>Democracia</b></span>Kit<b>&lt;</b></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 creditos-fci">
+                    <p>Un proyecto de</p>
+                    <img src="/static/img/logo-fci.svg" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci">
+                </div>
+            </div>
+        </div>
+    </footer>
   
   <!-- JavaScript -->
   <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
