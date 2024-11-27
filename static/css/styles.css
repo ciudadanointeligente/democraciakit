@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 /*Estilos generales*/
 body {
   background: #000f74;
@@ -44,7 +48,7 @@ li {
 
 a.enlace {
   color: #000f74;
-  text-decoration: underline;
+  text-decoration: none;
   display: flex;
   align-items: center;
 }
@@ -616,7 +620,7 @@ main {
 
 .presentacion-toolkit a.enlace span.texto {
   font-size: 1rem;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .presentacion-toolkit .cta {
@@ -754,7 +758,7 @@ footer .navegacion-abre ul li a {
 }
 
 footer .navegacion-abre ul li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 footer .enlaces-rrss ul {
@@ -1029,11 +1033,11 @@ footer .creditos-fci img {
 }
 
 .form form .crear .enlace-crear:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .form form .recuperar .enlace-recuperar:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .form form img {
@@ -1077,7 +1081,7 @@ footer .creditos-fci img {
 }
 
 .volver a.volver:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Accesos directos */
@@ -1156,7 +1160,7 @@ footer .creditos-fci img {
 }
 
 .header-section .breadcrumb li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .header-section .breadcrumb-item + .breadcrumb-item::before {
@@ -1671,7 +1675,7 @@ footer .creditos-fci img {
 }
 
 .volver-herramientas a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .seccion-herramienta .etapa-numero {
