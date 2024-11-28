@@ -31,13 +31,15 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-8">
                     <div class="row">
                         <div class="col-12">
-                            <h3>{{ user.frase }} // {{ user.username }}</h3>
+                            <h3>{{ user.username }}</h3>
                             {% if user.frase %}
                             <div class="frase mb-3">
-                                <!-- <div class="bocadillo">
+                                <div class="bocadillo">
                                     <div class="forma"></div>
-                                    {{ user.frase }}
-                                </div> -->
+                                    <textarea type="text" class="form-control form-frase" id="exampleFormControlTextarea1" rows="1" 
+                                    placeholder="{{ user.frase }}" 
+                                    aria-label="Frase descriptiva: {{ user.frase }}"></textarea>
+                                </div>
                             </div>
                             {% endif %}
                         </div>
@@ -49,7 +51,7 @@
                         </div>
 
                         <div class="col-12 col-sm-12 col-md-7">
-                            <!-- <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nombre usuario</label>
                                 <p>{{ user.username }}</p>
                             </div>
@@ -70,7 +72,7 @@
                                 <label for="exampleInputEmail1" class="form-label">Cargo</label>
                                 <p>{{ user.cargo }}</p>
                             </div>
-                            {% endif %} -->
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row">
@@ -82,51 +84,9 @@
                         {% endif %}
                     </div>
             </div>
-            <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-4 panel">
-                <div class="cambiar-contrasena">
-                    <p>¿Quieres cambiar la contraseña?</p>
-                    <a href="" class="btn-democraciakit btn-rosado">Cambiar contraseña</a>
-                </div>
-
-                <div class="panel-control">
-                   <h4>Panel de control</h4>
-                    <div class="caja-rosada"></div>
-                    <div class="caja-verde"></div>
-                </div>
-            </div>
-        </div> -->
     </section>
-    <!-- <section class="premio">
-        <div class="scrolling-text">
-            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
-        </div>
-    </section> -->
+
 </main>
 
 
-<!-- <div class="row justify-content-center">
-    <div class="col-md-6">
-        <h2 class="mb-4">Perfil de Usuario</h2>
-        <form method="post">
-            {% csrf_token %}
-            {% for field in form %}
-                <div class="mb-3">
-                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                    {{ field }}
-                    {% if field.errors %}
-                        <div class="alert alert-danger">
-                            {{ field.errors }}
-                        </div>
-                    {% endif %}
-                </div>
-            {% endfor %}
-            <button type="submit" class="btn btn-primary">Actualizar Perfil</button>
-        </form>
-    </div>
-</div> -->
 {% endblock %}

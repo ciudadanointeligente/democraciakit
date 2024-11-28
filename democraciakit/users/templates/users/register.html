@@ -7,10 +7,7 @@
 {% block content %}
 
 <main>
-
-    <section class="accesos-directos">
-        <a href="{% url 'contenidos:rueda' %}" class="btn-rueda">Rueda <img src="{% stati
-    <section class="accesos-directos">
+        <section class="accesos-directos">
         <a href="{% url 'contenidos:rueda' %}" class="btn-rueda">Rueda <img src="{% static 'img/icono-rueda.png' %}" class="icono" alt=""></a>
         <a href="#" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""> Mi Kit</a>
     </section>
@@ -36,7 +33,7 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    
+
                     <button type="submit" class="btn-democraciakit mb-5">Guardar</button>
                 </form>
             </div>
@@ -48,24 +45,18 @@
                 <div class="mb-3 recuperar">
                     <p><a href="{% url 'contenidos:derechos' %}">Protegemos tu privacidad y seguridad</a></p>
                 </div>
-                <!-- <div class="panel-control">
-                   <h4>Panel de control</h4>
-                    <div class="caja-rosada"></div>
-                    <div class="caja-verde"></div>
-                </div> -->
+
             </div>
         </div>
     </section>
-    <!-- <section class="premio">
-        <div class="scrolling-text">
-            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-white">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-blue">Premio latinoamericano democracia digital 2da edición</p>
-            <p class="text-green">Premio latinoamericano democracia digital 2da edición</p>
+
+    <section class="descargar-toolkit-pdf">
+        <div class="container">
+
+            </div>
         </div>
-    </section> -->
+    </section>
+
     <section class="descargar-toolkit-pdf">
         <div class="container">
             <div class="row">
