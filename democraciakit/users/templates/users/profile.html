@@ -5,9 +5,6 @@
 {% block content %}
 
 <main>
-    <!-- íconos -->
-    
-    <!-- accesos directos -->
     <section class="accesos-directos">
         <a href="{% url 'users:profile' %}" class="btn-rueda">Perfil <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
         <a href="{% url 'contenidos:mikit' %}" class="btn-kit"><img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"> Mi Kit</a>
@@ -49,7 +46,6 @@
                             {% else %}
                             {% endif %}
                         </div>
-
                         <!-- <div class="col-12 col-sm-12 col-md-7">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nombre usuario</label>
