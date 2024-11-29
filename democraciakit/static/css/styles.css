@@ -60,11 +60,65 @@ button.btn-democraciakit {
   color: white;
   padding: 8px 20px;
   border-radius: 20px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-decoration: none;
   font-weight: bold;
   transition: 0.5s all;
   border: 0px;
+}
+
+a.btn-menuheader,
+button.btn-menuheader {
+  font-family: "Space Mono", monospace;
+  background: #000f74;
+  color: white;
+  border-radius: 0px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5s all;
+  border: 0px;
+}
+
+a.btn-menuheader:hover,
+button.btn-menuheader:hover {
+  font-family: "Space Mono", monospace;
+  background: #b1e957;
+  color: #000f74;
+  border-radius: 0px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5s all;
+  border: 0px;
+}
+
+.menuheader a {
+  font-family: "Space Mono", monospace;
+  background: white;
+  color: #000f74;
+  border-radius: 0px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5s all;
+  border: 0px;
+}
+
+.menuheader a:hover {
+  font-family: "Space Mono", monospace;
+  background: #74d9f9;
+  color: #000f74;
+  border-radius: 0px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5s all;
+  border: 0px;
+}
+
+.menuetapas {
+  margin-top: 0px;
 }
 
 a.btn-editar-metodologias,
