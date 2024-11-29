@@ -73,6 +73,16 @@
             </div>
         </div>
         <div class="iconos-izquierda col-4">
+          <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
             <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
                 <li class="nav-item">
                     {% if user.is_authenticated %}
@@ -95,12 +105,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-3 col-md-3 col-lg-3 enlaces-rrss">
-                    
-                        <ul class="justify-content-center">
-
-                            <li><a href="mailto:info@ciudadaniai.org" target="_blank"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
-                            <li><a href="https://gitlab.com/ciudadaniai" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
-                            <li><a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank"><i class="fa-brands fa-creative-commons" aria-hidden="true"></i></a></li>
+                         <ul class="justify-content-center">
+                            <li><a href="mailto:info@ciudadaniai.org">¡Queremos conocer tu opinión!</a></li>
                         </ul>
                      
                 </div>
@@ -109,11 +115,13 @@
                         <li class="logotipo-footer">
                             <p><span><b>Democracia</b></span>Kit<b>&lt;</b></p>
                         </li>
+                        <li><a href="https://gitlab.com/ciudadaniai" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank"><i class="fa-brands fa-creative-commons" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-3 creditos-fci">
                     <p>Un proyecto de</p>
-                    <img src="/static/img/logo-fci.svg" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci">
+                    <a href="https://ciudadaniai.org/" target="_blank"><img src="/static/img/logo-fci.svg" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci"></a>
                 </div>
             </div>
         </div>

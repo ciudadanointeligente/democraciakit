@@ -772,6 +772,15 @@ footer .enlaces-rrss ul {
   flex-wrap: wrap;
 }
 
+footer .enlaces-rrss p {
+  color: white;
+  font-size: 0.9em;
+  font-weight: 800;
+  line-height: 1.2em;
+  font-family: "Space Mono", monospace;
+  margin-bottom: 30px;
+}
+
 footer .enlaces-rrss ul .logotipo-footer {
   width: 100%;
 }
@@ -795,10 +804,14 @@ footer .enlaces-rrss ul li a {
   color: white;
   font-size: 1.5em;
   transition: 0.5s all;
+  font-family: "Space Mono", monospace;
 }
 
 footer .enlaces-rrss ul li a:hover {
-  color: #d500f9;
+  color: #000f74;
+  text-decoration: none;
+  background-color: #b1e957;
+  font-family: "Space Mono", monospace;
 }
 
 footer .creditos-fci {
