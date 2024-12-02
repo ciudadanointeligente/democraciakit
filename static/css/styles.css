@@ -650,7 +650,6 @@ main {
   margin-top: 100px;
 }
 
-
 .presentacion-toolkit {
   margin-top: 50px;
   padding-bottom: 0px;
@@ -854,7 +853,6 @@ footer .enlaces-rrss ul li {
   list-style: none;
   text-align: center;
   margin: 0px 10px;
-
 }
 
 footer .enlaces-rrss ul li a {
@@ -1550,12 +1548,12 @@ footer .creditos-fci img {
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: visible;
+  /* overflow: visible; */
   /* Permitir que los elementos sobresalgan */
-  transition: all 0.5s ease;
-  perspective: 1000px;
+  /* transition: all 0.5s ease; */
+  /* perspective: 1000px; */
   /* Agregar perspectiva */
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .herramientas .box-herramienta .box .content {
@@ -1568,12 +1566,12 @@ footer .creditos-fci img {
   position: absolute;
   top: 0;
   left: 0;
-  transition:
-    transform 0.5s ease,
-    background-color 0.5s ease,
-    opacity 0.5s ease;
-  transform-origin: top;
-  z-index: 2;
+  /* transition: */
+  /*   transform 0.5s ease, */
+  /*   background-color 0.5s ease, */
+  /*   opacity 0.5s ease; */
+  /* transform-origin: top; */
+  /* z-index: 2; */
   border-radius: 22px;
 }
 
@@ -1621,7 +1619,7 @@ footer .creditos-fci img {
 }
 
 .herramientas .box-herramienta .box:hover .content {
-  transform: translateY(90%) rotateX(75deg);
+  transform: none;
   /* Inclinar hacia abajo en perspectiva */
   z-index: 1;
 }
