@@ -35,112 +35,113 @@
     <script src="https://kit.fontawesome.com/791853223d.js" crossorigin="anonymous"></script>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DLMEMZW3JN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLMEMZW3JN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-DLMEMZW3JN');
-</script>   
+      gtag('config', 'G-DLMEMZW3JN');
+    </script>   
 
     <!-- HTMX -->
 
     <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/hyperscript.org@0.9.13"></script>
 
-</head>
+  </head>
 
-<body>
-<header class="container-fluid">
-    <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
-    <section class="container-fluid portada">
-        <div class="iconos-derecha col-4">
-                <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="https://abrealcaldias.org/">< Volver a AbreAlcaldías</a>
-                    </li>
-                </ul>
-        </div>
-        <div class="container col-4">
-            <div class="row">
-                <div class="d-flex flex-column justify-content-center align-items-center titulos-portada">
-                    <p>Construye tu proyecto con</p>
-                    <h1>DemocraciaKit</h1>
-                </div>
-            </div>
-        </div>
-        <div class="iconos-izquierda col-4">
+  <body>
+    <header class="container-fluid">
+      <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+        <section class="container-fluid portada">
+          <div class="iconos-derecha col-4">
             <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
-                <div class="dropdown menuetapas">
-                    <button class="btn btn-menuheader dropdown-toggle" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Etapas
-                    </button>
-                    <div class="dropdown-menu menuheader" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa1' %}">1 Problemas</a>
-                      <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa2' %}">2 Causas</a>
-                      <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa3' %}">3 Objetivos</a>
-                      <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa4' %}">4 Contexto</a>
-                      <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa5' %}">5 Decisión</a>
-                      <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa6' %}">6 Empoderar</a>
-                      <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa7' %}">7 Evaluar</a>
-                    </div>
-                </div>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contenidos:mikit' %}">Mi Kit</a>
-                </li>
-                <li class="nav-item">
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'users:profile' %}" class="btn-rueda">
-                    Mi Perfil</a> <a class="nav-link" href="{% url 'contenidos:logout' %}">Salir</a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'contenidos:index' %}">Inicio</a>
-                    {% endif %}
-                </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="https://abrealcaldias.org/">< Volver a AbreAlcaldías</a>
+              </li>
+              <li>
+                {% if user.is_authenticated %}
+                <a href="{% url 'users:profile' %}" class="btn-rueda">
+                  Mi Perfil</a> <a class="nav-link" href="{% url 'contenidos:logout' %}">Salir</a>
+                {% else %}
+                <a class="nav-link" href="{% url 'contenidos:index' %}">Inicio</a>
+                {% endif %}
+              </li>
             </ul>
-        </div>
-    </section>
-    </nav>
-</header>
+          </div>
+          <div class="container col-4">
+            <div class="row">
+              <div class="d-flex flex-column justify-content-center align-items-center titulos-portada">
+                <p>Construye tu proyecto con</p>
+                <h1>DemocraciaKit</h1>
+              </div>
+            </div>
+          </div>
+          <div class="iconos-izquierda col-4">
+            <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
+              <div class="dropdown menuetapas">
+                <button class="btn btn-menuheader dropdown-toggle" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Etapas
+                </button>
+                <div class="dropdown-menu menuheader" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa1' %}">1 Problemas</a>
+                  <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa2' %}">2 Causas</a>
+                  <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa3' %}">3 Objetivos</a>
+                  <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa4' %}">4 Contexto</a>
+                  <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa5' %}">5 Decisión</a>
+                  <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa6' %}">6 Empoderar</a>
+                  <a class="dropdown-item menuheader" href="{% url 'contenidos:etapa7' %}">7 Evaluar</a>
+                </div>
+              </div>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contenidos:mikit' %}">Mi Kit</a>
+              </li>
+
+            </ul>
+          </div>
+        </section>
+      </nav>
+    </header>
 
     {% block content %}
     {% endblock %}
 
     <footer class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-3 col-md-3 col-lg-3 enlaces-rrss">
-                         <ul class="justify-content-center">
-                            <li><a href="mailto:info@ciudadaniai.org">¡Queremos conocer tu opinión!</a></li>
-                        </ul>
-                     
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-6 enlaces-rrss">
-                    <ul class="justify-content-center">
-                        <li class="logotipo-footer">
-                            <p><span><b>Democracia</b></span>Kit<b>&lt;</b></p>
-                        </li>
-                        <li><a href="https://gitlab.com/ciudadaniai" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
-                            <li><a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank"><i class="fa-brands fa-creative-commons" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 creditos-fci">
-                    <p>Un proyecto de</p>
-                    <a href="https://ciudadaniai.org/" target="_blank"><img src="/static/img/logo-fci.svg" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci"></a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-3 col-md-3 col-lg-3 enlaces-rrss">
+            <ul class="justify-content-center">
+              <li><a href="mailto:info@ciudadaniai.org">¡Queremos conocer tu opinión!</a></li>
+            </ul>
+
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6 enlaces-rrss">
+            <ul class="justify-content-center">
+              <li class="logotipo-footer">
+                <p><span><b>Democracia</b></span>Kit<b>&lt;</b></p>
+              </li>
+              <li><a href="https://gitlab.com/ciudadaniai" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+              <li><a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank"><i class="fa-brands fa-creative-commons" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-3 creditos-fci">
+            <p>Un proyecto de</p>
+            <a href="https://ciudadaniai.org/" target="_blank"><img src="/static/img/logo-fci.svg" alt="logotipo de fundación Ciudadanía Inteligente" class="logo-fci"></a>
+          </div>
         </div>
+      </div>
     </footer>
-  
-  <!-- JavaScript -->
-  <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
- <script>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
       document.addEventListener('DOMContentLoaded', function() {
-          var dropdownToggle = document.getElementById('navbarDropdown');
-          dropdownToggle.addEventListener('click', function(e) {
-              var dropdownMenu = this.nextElementSibling;
-              dropdownMenu.classList.toggle('show');
-          });
+        var dropdownToggle = document.getElementById('navbarDropdown');
+        dropdownToggle.addEventListener('click', function(e) {
+          var dropdownMenu = this.nextElementSibling;
+          dropdownMenu.classList.toggle('show');
+        });
       });
-  </script>
-</body>
+    </script>
+  </body>
