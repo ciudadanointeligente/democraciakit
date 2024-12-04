@@ -5,9 +5,6 @@
 >
   <div class="modal-content modal-dialog" role="document">
     <div class="modal-content">
-      <button class="btn-editar-metodologias" _="on click trigger closeModal">
-        Cerrar
-      </button>
       <div class="modal-body">
         <h3>¿Qué encontraré aquí?</h3>
         <p>
@@ -48,9 +45,17 @@
           <a href="{% url 'users:user_login' %}" class="btn-democraciakit"
             >Ir a DemocraciaKit</a
           >
+          <div class="align-items-center">
+            <br /><br />
+            <button
+              class="btn-editar-metodologias"
+              _="on click trigger closeModal"
+            >
+              Cerrar
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
