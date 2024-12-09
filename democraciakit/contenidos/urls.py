@@ -127,12 +127,7 @@ urlpatterns = [
         views.EventosEditView.as_view(),
         name="eventosedit",
     ),
-    path(
-        "accounts/", 
-        include("django.contrib.auth.urls")
-    ),
-    path(
-        "logout/",
-        views.logout_view, 
-        name="logout"),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("logout/", views.logout_view, name="logout"),
+    path("pdfmikit/", views.pdfmikit, name="pdfmikit"),
 ]

@@ -7,13 +7,55 @@ from django.views.generic import CreateView
 from .models import *
 from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import login, logout,authenticate
+from django.contrib.auth import login, logout, authenticate
 from django.views.generic import DetailView
 from django.contrib.auth import get_user_model
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.units import inch
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 
 
 User = get_user_model()
+
+
+# pdf para imprimir mi kit
+
+
+def pdfmikit(request):
+    preguntas = Definicion1.objects.all()
+
+    # Crear una lista de datos para la tabla
+    data = []
+    for pregunta in preguntas:
+        data.append([pregunta.uno, pregunta.dos, pregunta.tres, pregunta.cuatro])
+
+    # Crear el documento PDF
+    response = HttpResponse(content_type="application/pdf")
+    response["Content-Disposition"] = 'attachment; filename="mikit.pdf"'
+    doc = SimpleDocTemplate(response, pagesize=letter)
+
+    # Crear la tabla
+    elements = []
+    table = Table(data)
+    style = TableStyle(
+        [
+            ("ALIGN", (1, 1), (-2, -2), "RIGHT"),
+            ("FONTNAME", (0, 0), (-1, -1), "Helvetica"),
+            ("FONTSIZE", (0, 0), (-1, -1), 10),
+            ("BOTTOMMARGIN", (0, 0), (-1, -1), 2),
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+            ("GRID", (0, 0), (-1, -1), 1, "grey"),
+        ]
+    )
+    table.setStyle(style)
+    elements.append(table)
+
+    # Construir el documento
+    doc.build(elements)
+
+    return response
 
 
 class IndexView(TemplateView):
@@ -437,6 +479,7 @@ class RegisterView(FormView):
         form.save()  # save the user
         return super().form_valid(form)
 
+
 def logout_view(request):
     logout(request)
-    return redirect('/')
+    return redirect("/")
