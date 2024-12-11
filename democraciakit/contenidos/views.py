@@ -20,42 +20,38 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 User = get_user_model()
 
 
-# pdf para imprimir mi kit
-
-
 def pdfmikit(request):
-    preguntas = Definicion1.objects.all()
+    user = request.user  # Get the currently logged-in user
 
-    # Crear una lista de datos para la tabla
-    data = []
-    for pregunta in preguntas:
-        data.append([pregunta.uno, pregunta.dos, pregunta.tres, pregunta.cuatro])
-
-    # Crear el documento PDF
-    response = HttpResponse(content_type="application/pdf")
-    response["Content-Disposition"] = 'attachment; filename="mikit.pdf"'
-    doc = SimpleDocTemplate(response, pagesize=letter)
-
-    # Crear la tabla
-    elements = []
-    table = Table(data)
-    style = TableStyle(
-        [
-            ("ALIGN", (1, 1), (-2, -2), "RIGHT"),
-            ("FONTNAME", (0, 0), (-1, -1), "Helvetica"),
-            ("FONTSIZE", (0, 0), (-1, -1), 10),
-            ("BOTTOMMARGIN", (0, 0), (-1, -1), 2),
-            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-            ("GRID", (0, 0), (-1, -1), 1, "grey"),
-        ]
+    # Filter the queryset to get the last object for the current user
+    definicion_problema = (
+        Definicion1.objects.filter(usuario=user).order_by("-id").first()
     )
-    table.setStyle(style)
-    elements.append(table)
 
-    # Construir el documento
-    doc.build(elements)
+    # Check if there's a last object
+    if definicion_problema:
+        problema_uno = definicion_problema.uno
+        problema_dos = definicion_problema.dos  # Replace with your actual field names
+        problema_tres = definicion_problema.tres
+        problema_cuatro = definicion_problema.cuatro
 
-    return response
+        # Create the PDF
+        response = HttpResponse(content_type="application/pdf")
+        response["Content-Disposition"] = 'attachment; filename="user_report.pdf"'
+        p = canvas.Canvas(response, pagesize=letter)
+
+        # Add the last object's data to the PDF
+        p.drawString(100, 700, f"Quién: {problema_uno}")
+        p.drawString(100, 680, f"Dónde: {problema_dos}")
+        p.drawString(100, 660, f"Cuándo: {problema_tres}")
+        p.drawString(100, 640, f"Dolor: {problema_cuatro}")
+
+        p.showPage()
+        p.save()
+        return response
+    else:
+        # Handle the case where no last object is found
+        return HttpResponse("No tienes guardadas definiciones.")
 
 
 class IndexView(TemplateView):
