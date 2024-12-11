@@ -10,11 +10,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login, logout, authenticate
 from django.views.generic import DetailView
 from django.contrib.auth import get_user_model
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
-from reportlab.lib.units import inch
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from reportlab.platypus import SimpleDocTemplate
 
 
 User = get_user_model()
