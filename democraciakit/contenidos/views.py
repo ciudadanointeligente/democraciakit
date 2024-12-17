@@ -12,44 +12,54 @@ from django.views.generic import DetailView
 from django.contrib.auth import get_user_model
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
+from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate
-
+from reportlab.platypus import SimpleDocTemplate, Paragraph
+from reportlab.lib.styles import getSampleStyleSheet
+from django.http import Http404
 
 User = get_user_model()
 
 
-def pdfmikit(request):
-    user = request.user  # Get the currently logged-in user
+def pdfmikit1(request):
+    user = request.user
+    try:
+        definicion_problema = Definicion1.objects.filter(usuario=user).latest()
+    except Definicion1.DoesNotExist:
+        raise Http404("No tienes guardadas definiciones.")
 
-    # Filter the queryset to get the last object for the current user
-    definicion_problema = (
-        Definicion1.objects.filter(usuario=user).order_by("-id").first()
-    )
+    response = HttpResponse(content_type="application/pdf")
+    response["Content-Disposition"] = 'attachment; filename="midemocraciakit.pdf"'
+    doc = SimpleDocTemplate(response, pagesize=letter)
 
-    # Check if there's a last object
+    styles = getSampleStyleSheet()
+    style = styles["Normal"]
+    story = []
+
     if definicion_problema:
         problema_uno = definicion_problema.uno
-        problema_dos = definicion_problema.dos  # Replace with your actual field names
+        problema_dos = definicion_problema.dos
         problema_tres = definicion_problema.tres
         problema_cuatro = definicion_problema.cuatro
 
-        # Create the PDF
-        response = HttpResponse(content_type="application/pdf")
-        response["Content-Disposition"] = 'attachment; filename="user_report.pdf"'
-        p = canvas.Canvas(response, pagesize=letter)
+        t1 = f"Quién: {problema_uno}"
+        p1 = Paragraph(t1, style)
 
-        # Add the last object's data to the PDF
-        p.drawString(100, 700, f"Quién: {problema_uno}")
-        p.drawString(100, 680, f"Dónde: {problema_dos}")
-        p.drawString(100, 660, f"Cuándo: {problema_tres}")
-        p.drawString(100, 640, f"Dolor: {problema_cuatro}")
+        t2 = f"Dónde: {problema_dos}"
+        p2 = Paragraph(t2, style)
 
-        p.showPage()
-        p.save()
+        t3 = f"Cuándo: {problema_tres}"
+        p3 = Paragraph(t3, style)
+
+        t4 = f"Dolor: {problema_cuatro}"
+        p4 = Paragraph(t4, style)
+
+        story.extend([p1, p2, p3, p4])
+
+        doc.build(story)
+
         return response
     else:
-        # Handle the case where no last object is found
         return HttpResponse("No tienes guardadas definiciones.")
 
 

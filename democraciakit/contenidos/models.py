@@ -20,6 +20,7 @@ class Definicion1(models.Model):
         verbose_name = "Etapa #1 - Definición inicial"
         verbose_name_plural = "Etapa #1 - Definiciones iniciales"
         ordering = ["-fecha_definicion1"]
+        get_latest_by = "fecha_definicion1"
 
     def __str__(self):
         return f"{self.usuario.username} - definiciones iniciales - {self.fecha_definicion1}"

@@ -4,10 +4,7 @@
 
 {% block content %}
 <main>
-    
-    
-    
-    <section class="accesos-directos">
+   <section class="accesos-directos">
         <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
         <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"></a>
     </section>

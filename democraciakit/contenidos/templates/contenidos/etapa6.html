@@ -5,6 +5,7 @@
 {% block content %}
 <main>
     
+   
     <!-- accesos directos -->
     <section class="accesos-directos">
         <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
