@@ -4,177 +4,156 @@
 
 {% block content %}
 <main>
-   
-<section class="accesos-directos">
+
+  <section class="accesos-directos">
     <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
     <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-</section>
+  </section>
 
 
-<section class="container header-section">
+  <section class="container header-section">
     <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa3' %}">Etapa #3</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">SMART</li>
-                </ol>
-            </nav>
-        </div>
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa3' %}">Etapa #3</a></li>
+            <li class="breadcrumb-item active" aria-current="page">SMART</li>
+          </ol>
+        </nav>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="volver-herramientas container">
+  <section class="volver-herramientas container">
     <div class="row">
-        <div class="col-12">
-            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa3' %}"> &lt; Volver a herramientas </a>
-        </div>
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa3' %}"> &lt; Volver a herramientas </a>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="seccion-herramienta container">
+  <section class="seccion-herramienta container">
     <div class="row">
 
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-            <div class="alinear">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
 
-                <!--Acá se va a simular la información en función de la etapa 1-->
+          <!--Acá se va a simular la información en función de la etapa 1-->
 
-                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero-3.png' %}" alt="Etapa 1 Problemas">
-                <h3>Objetivo</h3>
-                    </div>
-                <h2 class="pregunta">¿Cuál es nuestro <span>objetivo</span>?</h2>
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero-3.png' %}" alt="Etapa 1 Problemas">
+          <h3>Objetivo</h3>
         </div>
+        <h2 class="pregunta">¿Cuál es nuestro <span>objetivo</span>?</h2>
+      </div>
 
 
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <div class="definicion">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
 
-                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-                <h4 class="metodologias">Metodologías</h4>
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+          <h4 class="metodologias">Metodologías</h4>
 
-                <h3>Criterios SMART</h3>
-                        <p>Un objetivo es un fin último para alcanzar un estado deseado, por tanto, es la sumatoria de una serie de acciones o pasos. El objetivo responde a la pregunta: ¿qué queremos lograr con este proceso? </p>
-                        <p>Los objetivos pueden comenzar a pensarse como grandes acciones que queremos hacer o lograr en mediano o largo plazo. Luego de identificar estas grandes acciones, se pueden transformar en el o los objetivos, haciendolo cumplir los siguientes criterios SMART (Specific, Measurable, Achievable, Relevant and Temporary):</p>
-            </div>
+          <h3>Criterios SMART</h3>
+          <p>Un objetivo es un fin último para alcanzar un estado deseado, por tanto, es la sumatoria de una serie de acciones o pasos. El objetivo responde a la pregunta: ¿qué queremos lograr con este proceso? </p>
+          <p>Los objetivos pueden comenzar a pensarse como grandes acciones que queremos hacer o lograr en mediano o largo plazo. Luego de identificar estas grandes acciones, se pueden transformar en el o los objetivos, haciendolo cumplir los siguientes criterios SMART (Specific, Measurable, Achievable, Relevant and Temporary):</p>
         </div>
+      </div>
 
     </div>
-</section>
+  </section>
 
 
 
-        <!--Componente: Tabla 2 algunas cajas dentro de la tabla ocupan espacios diversos -->
-        <section class="visualizacion-tabla container">
-            <div class="row justify-content-end">
+  <!--Componente: Tabla 2 algunas cajas dentro de la tabla ocupan espacios diversos -->
+  <section class="visualizacion-tabla container">
+    <div class="row justify-content-end">
 
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9 tabla">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 tabla">
 
-                    <table class="table table-responsive">
-                        <thead>
-                            <tr>
-                                <!-- Primera columna -->
-                                <th scope="col">Criterio</th>
-                                <!-- Segunda columna -->
-                                <th scope="col">Descripción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- Primera fila con criterio "Específico" -->
-                                <td class="tema">Específico</td>
-                                <td>Debe ser lo más concreto posible. Considera incluir: grupo clave al que se dirige, zona geográfica en que se trabaja y/o temática que aborda.</td>
-                            </tr>
-                            <tr>
-                                <!-- Segunda fila con criterio "Medible" -->
-                                <td class="tema">Medible</td>
-                                <td>Debe ser cuantificable. Considera incluir: # personas, comunidades o instituciones que beneficia, # talleres, eventos o campañas que realiza, # de propuestas, programas o leyes que posicionan.</td>
-                            </tr>
-                            <tr>
-                                <!-- Tercera fila con criterio "Alcanzable" -->
-                                <td class="tema">Alcanzable</td>
-                                <td>Considera si las personas e instituciones que respaldan el proyecto tienen la capacidad humana y financiera para lograr el objetivo.</td>
-                            </tr>
-                            <tr>
-                                <!-- Cuarta fila con criterio "Relevante" -->
-                                <td class="tema">Relevante</td>
-                                <td>Debe aportar a transformar el contexto actual. Considera si atiende un grupo marginado, un problema público o una contingencia.</td>
-                            </tr>
-                            <tr>
-                                <!-- Quinta fila con criterio "Acotado temporalmente" -->
-                                <td class="tema">Acotado temporalmente</td>
-                                <td>Debe considerar un tiempo de término. Considera incluir: el mes o año en que el objetivo será alcanzado.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <!-- Primera columna -->
+              <th scope="col">Criterio</th>
+              <!-- Segunda columna -->
+              <th scope="col">Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- Primera fila con criterio "Específico" -->
+              <td class="tema">Específico</td>
+              <td>Debe ser lo más concreto posible. Considera incluir: grupo clave al que se dirige, zona geográfica en que se trabaja y/o temática que aborda.</td>
+            </tr>
+            <tr>
+              <!-- Segunda fila con criterio "Medible" -->
+              <td class="tema">Medible</td>
+              <td>Debe ser cuantificable. Considera incluir: # personas, comunidades o instituciones que beneficia, # talleres, eventos o campañas que realiza, # de propuestas, programas o leyes que posicionan.</td>
+            </tr>
+            <tr>
+              <!-- Tercera fila con criterio "Alcanzable" -->
+              <td class="tema">Alcanzable</td>
+              <td>Considera si las personas e instituciones que respaldan el proyecto tienen la capacidad humana y financiera para lograr el objetivo.</td>
+            </tr>
+            <tr>
+              <!-- Cuarta fila con criterio "Relevante" -->
+              <td class="tema">Relevante</td>
+              <td>Debe aportar a transformar el contexto actual. Considera si atiende un grupo marginado, un problema público o una contingencia.</td>
+            </tr>
+            <tr>
+              <!-- Quinta fila con criterio "Acotado temporalmente" -->
+              <td class="tema">Acotado temporalmente</td>
+              <td>Debe considerar un tiempo de término. Considera incluir: el mes o año en que el objetivo será alcanzado.</td>
+            </tr>
+          </tbody>
+        </table>
 
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Componente: Contenido que continua relatando la herramienta -->
-        <section class="visualizacion-contenido-herramienta container">
-            <div class="row justify-content-end">
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
-                   
-                   <p><strong>Ejemplo aplicando criterios SMART</strong></p>
-                    <img src="{% static 'img/visualizacion-criterio-smart.png' %}" alt="ejemplo aplicando criterio smart" class="visualizacion-criterio-smart">
-
-                    <ul class="visualizacion-criterio-smart-simbologia">
-                        <li><span>1</span>Especifico</li>
-                        <li><span>2</span>Medible</li>
-                        <li><span>3</span>Alcanzable</li>
-                        <li><span>4</span>Relevante</li>
-                        <li><span>5</span> Acotado temporalmente</li>
-                    </ul>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="componente-interactivo-form container-fluid">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 titulo">
-                        <h4>¡Ahora tu!</h4>
-                        <p>Descarga el recuadro y redacta tu objetivo</p>
-                    </div>
-                    <div class="col-12 btn-descargar">
-                        <a href="{% static 'img/criterios-smart.pdf' %}" target="_blank" class="btn-democraciakit">Descargar</a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-<section class="anadir-al-kit container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-           <h4>Avanzar</h4>
-            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                    Marca si terminaste la etapa
-                </label>
-                <div class="invalid-feedback">
-                    Debes marcar para guardar tu avance y recolectar los materiales
-                </div>
-            </p>
-            <a href="{% url 'contenidos:etapa3-reflexionar' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
-            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-        </div>
+      </div>
     </div>
-</section>
+  </section>
+
+
+  <!-- Componente: Contenido que continua relatando la herramienta -->
+  <section class="visualizacion-contenido-herramienta container">
+    <div class="row justify-content-end">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
+
+        <p><strong>Ejemplo aplicando criterios SMART</strong></p>
+        <img src="{% static 'img/visualizacion-criterio-smart.png' %}" alt="ejemplo aplicando criterio smart" class="visualizacion-criterio-smart">
+
+        <ul class="visualizacion-criterio-smart-simbologia">
+          <li><span>1</span>Especifico</li>
+          <li><span>2</span>Medible</li>
+          <li><span>3</span>Alcanzable</li>
+          <li><span>4</span>Relevante</li>
+          <li><span>5</span> Acotado temporalmente</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="componente-interactivo-form container-fluid">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 titulo">
+          <h4>¡Ahora tu!</h4>
+          <p>Descarga el recuadro y redacta tu objetivo</p>
+        </div>
+        <div class="col-12 btn-descargar">
+          <a href="{% static 'img/criterios-smart.pdf' %}" target="_blank" class="btn-democraciakit">Descargar</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
 </main>
 

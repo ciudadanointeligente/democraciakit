@@ -4,97 +4,76 @@
 
 {% block content %}
 <main>
-    
-<section class="accesos-directos">
+
+  <section class="accesos-directos">
     <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
     <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-</section>
+  </section>
 
 
-<section class="container header-section">
+  <section class="container header-section">
     <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa7' %}">Etapa #7</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Indicadores</li>
-                </ol>
-            </nav>
-        </div>
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa7' %}">Etapa #7</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Indicadores</li>
+          </ol>
+        </nav>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="volver-herramientas container">
+  <section class="volver-herramientas container">
     <div class="row">
-        <div class="col-12">
-            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa7' %}"> &lt; Volver a herramientas </a>
-        </div>
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa7' %}"> &lt; Volver a herramientas </a>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="seccion-herramienta container">
+  <section class="seccion-herramienta container">
     <div class="row">
 
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-            <div class="alinear">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
 
-                <!--Acá se va a simular la información en función de la etapa 1-->
+          <!--Acá se va a simular la información en función de la etapa 1-->
 
-                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero-7.png' %}" alt="Etapa 7 Evaluar">
-                <h3>Evaluar</h3>
-            </div>
-            <h2 class="pregunta">¿Cómo <span>evaluar</span> el impacto?</h2>
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero-7.png' %}" alt="Etapa 7 Evaluar">
+          <h3>Evaluar</h3>
         </div>
+        <h2 class="pregunta">¿Cómo <span>evaluar</span> el impacto?</h2>
+      </div>
 
 
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <div class="definicion">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
 
-                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-                <h4 class="recomendacion">Recomendaciones</h4>
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+          <h4 class="recomendacion">Recomendaciones</h4>
 
-                <h3>Indicadores</h3>
-                <p>Todo proceso de evaluación y monitoreo necesita volver a analizar los objetivos y metas que se planteó, para identificar si está avanzando hacia su consecución. En este sentido, <strong>los indicadores</strong> cumplen con señalar si el camino y acciones tomadas están alineadas con las metas.</p>
-                <p>Un buen indicador considera los siguientes elementos:</p>
-                <ul>
-                    <li>Qué se quiere medir.</li>
-                    <li>La población objeto del proyecto.</li>
-                    <li>Los conceptos a utilizar (conceptos previamente estudiados y definidos, por ejemplo “discriminación” o “igualdad”).</li>
-                    <li>La forma en que se medirá el indicador.</li>
-                    <li>La unidad de medida (razón, porcentaje, tasa o brecha).</li>
-                    <li>El medio de verificación: En la definición de objetivos te recomendamos analizar que estos impactan de igual forma a hombres y mujeres, para que así, los beneficios del proyecto sean distribuidos por igual (de dónde se obtendrán los datos para medir el indicador).</li>
-                </ul>
-            </div>
+          <h3>Indicadores</h3>
+          <p>Todo proceso de evaluación y monitoreo necesita volver a analizar los objetivos y metas que se planteó, para identificar si está avanzando hacia su consecución. En este sentido, <strong>los indicadores</strong> cumplen con señalar si el camino y acciones tomadas están alineadas con las metas.</p>
+          <p>Un buen indicador considera los siguientes elementos:</p>
+          <ul>
+            <li>Qué se quiere medir.</li>
+            <li>La población objeto del proyecto.</li>
+            <li>Los conceptos a utilizar (conceptos previamente estudiados y definidos, por ejemplo “discriminación” o “igualdad”).</li>
+            <li>La forma en que se medirá el indicador.</li>
+            <li>La unidad de medida (razón, porcentaje, tasa o brecha).</li>
+            <li>El medio de verificación: En la definición de objetivos te recomendamos analizar que estos impactan de igual forma a hombres y mujeres, para que así, los beneficios del proyecto sean distribuidos por igual (de dónde se obtendrán los datos para medir el indicador).</li>
+          </ul>
         </div>
+      </div>
     </div>
-</section>
-
-
-<section class="anadir-al-kit container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-           <h4>Avanzar</h4>
-            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                    Marca si terminaste la etapa
-                </label>
-                <div class="invalid-feedback">
-                    Debes marcar para guardar tu avance y recolectar los materiales
-                </div>
-            </p>
-            <a href="{% url 'contenidos:etapa7-exito' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
-            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-        </div>
-    </div>
-</section>
+  </section>
 
 </main>
 

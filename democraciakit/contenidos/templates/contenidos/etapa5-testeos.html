@@ -4,127 +4,88 @@
 
 {% block content %}
 <main>
-   
-<section class="accesos-directos">
+
+  <section class="accesos-directos">
     <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
     <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-</section>
+  </section>
 
 
-<section class="container header-section">
+  <section class="container header-section">
     <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa5' %}">Etapa #5</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Testeos</li>
-                </ol>
-            </nav>
-        </div>
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa5' %}">Etapa #5</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Testeos</li>
+          </ol>
+        </nav>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="volver-herramientas container">
+  <section class="volver-herramientas container">
     <div class="row">
-        <div class="col-12">
-            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa5' %}"> &lt; Volver a herramientas </a>
-        </div>
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa5' %}"> &lt; Volver a herramientas </a>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="seccion-herramienta container">
+  <section class="seccion-herramienta container">
     <div class="row">
 
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-            <div class="alinear">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
 
-                <!--Acá se va a simular la información en función de la etapa 1-->
+          <!--Acá se va a simular la información en función de la etapa 1-->
 
-                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero-5.png' %}" alt="Etapa 5 Decidir">
-                <h3>Decidir</h3>
-            </div>
-            <h2 class="pregunta"><span>Decidir</span> pensando en tod@s</h2>
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero-5.png' %}" alt="Etapa 5 Decidir">
+          <h3>Decidir</h3>
         </div>
+        <h2 class="pregunta"><span>Decidir</span> pensando en tod@s</h2>
+      </div>
 
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <div class="definicion">
-                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-                <h4 class="recomendacion">Recomendaciones</h4>
-                <h3>Técnicas y planificación de testeos</h3>
-                <p>El testeo implica animar a un grupo de personas a dar <strong>respuestas diferentes</strong> al problema ya definido, a través de <strong>tres fases</strong> que permitirán obtener los aprendizajes necesarios para iterar: planificar, facilitar y sistematizar.</p>
-                <ul>
-                    <li><strong>Planificar:</strong> Se deben seleccionar a los usuarios que serán parte del testeo, pudiendo ser aquellos que participaron en etapas anteriores para obtener una retroalimentación más específica o nuevos usuarios para comprender aspectos más atractivos o complejos.</li>
-                    <ul>
-                        <li>Se deben definir cuáles son las hipótesis del problema detectado, esto es una suposición o un intento de explicar algo relacionado con el prototipo del cual se tiene poca o ninguna evidencia. Poner a prueba estas hipótesis permite comprender cuál(es) supuestos son correctos o no, permitiendo tomar buenas decisiones sobre el proyecto. </li>
-                        <li>Identificar cómo se medirán los resultados del testeo del prototipo. Para esto se deben construir indicadores que ayuden a identificar si la solución valida o no la hipótesis. </li>
-                        <li>Identificar dónde, cuándo, en cuánto tiempo se realizará lo anterior, y quiénes serán las personas responsables de cada momento. Además, se debe identificar cómo se recibirá la retroalimentación. Puede ser a nivel digital a través de plataformas, o a nivel presencial.</li>
-                    </ul>
-                    <p><strong>Facilitar:</strong> Durante el proceso de testeo, se deben aplicar diversas técnicas para conocer la opinión usuaria, tales como: encuestas, entrevistas y observaciones. </p>
-                    <p><strong>Entrevistas:</strong> Se recomienda tener una pauta de retroalimentación. Esta debe ser completada por el equipo posterior a cada testeo, identificando: ¿Qué funcionó? ¿Qué se podría mejorar? ¿Qué preguntas nuevas surgieron? ¿Qué nuevas ideas surgieron? </p>
-                </ul>
-            </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+          <h4 class="recomendacion">Recomendaciones</h4>
+          <h3>Técnicas y planificación de testeos</h3>
+          <p>El testeo implica animar a un grupo de personas a dar <strong>respuestas diferentes</strong> al problema ya definido, a través de <strong>tres fases</strong> que permitirán obtener los aprendizajes necesarios para iterar: planificar, facilitar y sistematizar.</p>
+          <ul>
+            <li><strong>Planificar:</strong> Se deben seleccionar a los usuarios que serán parte del testeo, pudiendo ser aquellos que participaron en etapas anteriores para obtener una retroalimentación más específica o nuevos usuarios para comprender aspectos más atractivos o complejos.</li>
+            <ul>
+              <li>Se deben definir cuáles son las hipótesis del problema detectado, esto es una suposición o un intento de explicar algo relacionado con el prototipo del cual se tiene poca o ninguna evidencia. Poner a prueba estas hipótesis permite comprender cuál(es) supuestos son correctos o no, permitiendo tomar buenas decisiones sobre el proyecto. </li>
+              <li>Identificar cómo se medirán los resultados del testeo del prototipo. Para esto se deben construir indicadores que ayuden a identificar si la solución valida o no la hipótesis. </li>
+              <li>Identificar dónde, cuándo, en cuánto tiempo se realizará lo anterior, y quiénes serán las personas responsables de cada momento. Además, se debe identificar cómo se recibirá la retroalimentación. Puede ser a nivel digital a través de plataformas, o a nivel presencial.</li>
+            </ul>
+            <p><strong>Facilitar:</strong> Durante el proceso de testeo, se deben aplicar diversas técnicas para conocer la opinión usuaria, tales como: encuestas, entrevistas y observaciones. </p>
+            <p><strong>Entrevistas:</strong> Se recomienda tener una pauta de retroalimentación. Esta debe ser completada por el equipo posterior a cada testeo, identificando: ¿Qué funcionó? ¿Qué se podría mejorar? ¿Qué preguntas nuevas surgieron? ¿Qué nuevas ideas surgieron? </p>
+          </ul>
         </div>
+      </div>
     </div>
-</section>
-
-        <!-- <section class="visualizacion-video container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-                    <h4>Video explicativo</h4>
-                </div>
-
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                    
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IrsQAtmvlQE?si=ZqQSNGsyDmhVDKQ7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-
-            </div>
-        </section> -->
-       
-        <!--Componente: Tabla 2 algunas cajas dentro de la tabla ocupan espacios diversos -->
-       
-
-        <!-- <section class="componente-interactivo-form container-fluid">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 titulo">
-                        <h4>¡Ahora tu!</h4>
-                        <p>Descarga el esquema y completa cada sección de la Proyección del Cambio</p>
-                    </div>
-                    <div class="col-12 btn-descargar">
-                        <a href="#" class="btn-democraciakit">Descargar</a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-
-<section class="anadir-al-kit container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-           <h4>Avanzar</h4>
-            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                    Marca si terminaste la etapa
-                </label>
-                <div class="invalid-feedback">
-                    Debes marcar para guardar tu avance y recolectar los materiales
-                </div>
-            </p>
-            <a href="{% url 'contenidos:etapa6' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
-            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-        </div>
-    </div>
-</section>
+  </section>
+  <!--<section class="componente-interactivo-form container-fluid">-->
+  <!---->
+  <!--    <div class="container">-->
+  <!--        <div class="row">-->
+  <!--            <div class="col-12 titulo">-->
+  <!--                <h4>¡Ahora tu!</h4>-->
+  <!--                <p>Descarga el esquema y completa cada sección de la Proyección del Cambio</p>-->
+  <!--            </div>-->
+  <!--            <div class="col-12 btn-descargar">-->
+  <!--                <a href="#" class="btn-democraciakit">Descargar</a>-->
+  <!--            </div>-->
+  <!--        </div>-->
+  <!--    </div>-->
+  <!--</section>-->
 
 </main>
 

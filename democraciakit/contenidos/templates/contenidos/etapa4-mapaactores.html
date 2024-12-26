@@ -4,153 +4,132 @@
 
 {% block content %}
 <main>
-    
-<section class="accesos-directos">
+
+  <section class="accesos-directos">
     <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
     <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-</section>
+  </section>
 
 
-<section class="container header-section">
+  <section class="container header-section">
     <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa4' %}">Etapa #4</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Mapeo de actores</li>
-                </ol>
-            </nav>
-        </div>
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa4' %}">Etapa #4</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Mapeo de actores</li>
+          </ol>
+        </nav>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="volver-herramientas container">
+  <section class="volver-herramientas container">
     <div class="row">
-        <div class="col-12">
-            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa4' %}"> &lt; Volver a herramientas </a>
-        </div>
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa4' %}"> &lt; Volver a herramientas </a>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="seccion-herramienta container">
+  <section class="seccion-herramienta container">
     <div class="row">
 
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-            <div class="alinear">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
 
-                <!--Acá se va a simular la información en función de la etapa 1-->
+          <!--Acá se va a simular la información en función de la etapa 1-->
 
-                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero-4.png' %}" alt="Etapa 4 Contexto">
-                <h3>Contexto</h3>
-            </div>
-            <h2 class="pregunta">¿En que <span>contextos</span> vamos a actuar?</h2>
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero-4.png' %}" alt="Etapa 4 Contexto">
+          <h3>Contexto</h3>
         </div>
+        <h2 class="pregunta">¿En que <span>contextos</span> vamos a actuar?</h2>
+      </div>
 
 
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <div class="definicion">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
 
-                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-                <h4 class="metodologias">Metodologías</h4>
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+          <h4 class="metodologias">Metodologías</h4>
 
-                <h3>Mapeo de actores / Agentes Clave</h3>
-                <p>Aprovecha de tomarte unos minutos y pensar ¿Qué actores participan o tienen relación con el problema? ¿Quienes tienen posibilidades de influir a favor o encontra de tu plan?</p>
-                <p>Identifica los actores y los agentes clave que están a favor de la solución que estas formulando y también los que tienen posibilidad de influir negativamente.</p>
-            </div>
+          <h3>Mapeo de actores / Agentes Clave</h3>
+          <p>Aprovecha de tomarte unos minutos y pensar ¿Qué actores participan o tienen relación con el problema? ¿Quienes tienen posibilidades de influir a favor o encontra de tu plan?</p>
+          <p>Identifica los actores y los agentes clave que están a favor de la solución que estas formulando y también los que tienen posibilidad de influir negativamente.</p>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-        <!--Componente: Tabla 1 todo en linea por definición -->
-        <!-- <section id="formulario-container" class="componente-interactivo-form container-fluid">
+  <!--Componente: Tabla 1 todo en linea por definición -->
+  <!-- <section id="formulario-container" class="componente-interactivo-form container-fluid">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 titulo">
-                        <h4>¡Ahora tu!</h4>
-                        <p>Sigue la tabla de redacción de problema para generar tu propia formulación inicial</p>
-                    </div>
-
-                    <div class="col-12 tabla">
-                        {% if messages %}
-                        <div class="messages">
-                            {% for message in messages %}
-                            <div {% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="alert alert-light text-center" role="alert">{{ message }} Recuerda que puedes revisar <a href="{% url 'contenidos:mikit' %}">Mi Kit</a> para ver todos tus materiales guardados. DemocraciaKit sólo guardará tus respuestas más recientes.</div></div>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        {% if messages %}
-                        {% else %}
-                        <form method="post" action="#formulario-container">
-                            {% csrf_token %}
-                            <table class="table table-responsive">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">A favor</th>
-                                        <th scope="col">En contra</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        {% for field in form %}
-                                        <td>
-                                            {{ field }}
-                                        </td>
-                                        {% endfor %}
-                                    </tr>
-                                </tbody>
-                            </table>
-                            {% if messages %}
-                            {% else %}
-                            <button type="submit" class="btn-democraciakit">Guardar</button>
-                            {% endif %}
-                        </form>
-                            {% endif %}
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- <section class="componente-interactivo-form container-fluid">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 titulo">
-                        <h4>¡Ahora tu!</h4>
-                        <p>Descarga el esquema y completa cada sección de la Proyección del Cambio</p>
-                    </div>
-                    <div class="col-12 btn-descargar">
-                        <a href="#" class="btn-democraciakit">Descargar</a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-
-<section class="anadir-al-kit container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-           <h4>Avanzar</h4>
-            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                    Marca si terminaste la etapa
-                </label>
-                <div class="invalid-feedback">
-                    Debes marcar para guardar tu avance y recolectar los materiales
-                </div>
-            </p>
-            <a href="{% url 'contenidos:etapa4-oportunidades' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
-            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-        </div>
+    <div class="container">
+    <div class="row">
+    <div class="col-12 titulo">
+    <h4>¡Ahora tu!</h4>
+    <p>Sigue la tabla de redacción de problema para generar tu propia formulación inicial</p>
     </div>
-</section>
+
+    <div class="col-12 tabla">
+    {% if messages %}
+    <div class="messages">
+    {% for message in messages %}
+    <div {% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="alert alert-light text-center" role="alert">{{ message }} Recuerda que puedes revisar <a href="{% url 'contenidos:mikit' %}">Mi Kit</a> para ver todos tus materiales guardados. DemocraciaKit sólo guardará tus respuestas más recientes.</div></div>
+    {% endfor %}
+    </div>
+    {% endif %}
+    {% if messages %}
+    {% else %}
+    <form method="post" action="#formulario-container">
+    {% csrf_token %}
+    <table class="table table-responsive">
+    <thead>
+    <tr>
+    <th scope="col">A favor</th>
+    <th scope="col">En contra</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    {% for field in form %}
+    <td>
+    {{ field }}
+    </td>
+    {% endfor %}
+    </tr>
+    </tbody>
+    </table>
+    {% if messages %}
+    {% else %}
+    <button type="submit" class="btn-democraciakit">Guardar</button>
+    {% endif %}
+    </form>
+    {% endif %}
+    </div>
+    </div>
+    </div>
+    </section> -->
+
+    <section class="componente-interactivo-form container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 titulo">
+            <h4>¡Ahora tu!</h4>
+            <p>Descarga el esquema y completa cada sección de la Proyección del Cambio</p>
+          </div>
+          <div class="col-12 btn-descargar">
+            <a href="https://drive.google.com/file/d/1NUyeLbzjuCKwtjmTcTIMTfiuGp5xBGOy/view" class="btn-democraciakit">Descargar</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
 </main>
 

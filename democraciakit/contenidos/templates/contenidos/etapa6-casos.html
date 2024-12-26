@@ -4,288 +4,267 @@
 
 {% block content %}
 <main>
-    
-   
-<section class="accesos-directos">
+
+
+  <section class="accesos-directos">
     <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
     <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-</section>
+  </section>
 
 
-<section class="container header-section">
+  <section class="container header-section">
     <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa6' %}">Etapa #6</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Casos de éxito</li>
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa6' %}">Etapa #6</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Casos de éxito</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="volver-herramientas container">
+    <div class="row">
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa6' %}"> &lt; Volver a herramientas </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="seccion-herramienta container">
+    <div class="row">
+
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
+
+          <!--Acá se va a simular la información en función de la etapa 1-->
+
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero-6.png' %}" alt="Etapa 6 Metodos colaborativos">
+          <h3>Empoderar</h3>
+        </div>
+        <h2 class="pregunta">¿Cómo <span>empoderar</span> al territorio?</h2>
+      </div>
+
+
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
+
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+
+          <h4 class="casos-de-exito">Casos de éxito</h4>
+
+          <h3>Impacto regional de Abre Alcaldías</h3>
+          <p>Desde 2018 Abre Alcaldías trabaja junto a líderes locales de municipios latinoamericanos para impulsar proyectos participativos y coherentes con las necesidades de la ciudadanía. ¡Conecta con sus historias y motívate!</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="visualizacion-video container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+        <h4>Experiencia Benito Juárez </h4>
+      </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jwTgpuuBxDA?si=9SSYgCdqcfcz4K9w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="visualizacion-acordion container">
+    <div class="row justify-content-end">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Experiencia Benito Juárez - México
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <p>Benito Juárez enfrenta la existencia de asentamientos irregulares que, al no ser “municipalizados”, no cuentan con los servicios básicos que suele brindar el gobierno local. Ante este escenario, el equipo municipal impulsó un <strong>presupuesto participativo</strong> con el objetivo de abordar la falta de servicios básicos.</p>
+
+                <p>El segundo desafío que se propuso el municipio es <strong>simplificar los trámites administrativos</strong> en torno a la licencia de funcionamiento para establecimientos comerciales, industriales o de servicio. </p>
+
+                <p>La implementación de un presupuesto participativo es un hecho histórico en el municipio, más aún bajo los estándares con los que se implementó: con total transparencia de montos y mayores facultades de deliberación ciudadana. </p>
+
+                <p>Durante 2022 el “Comité de ampliación en la 237”, ganó el primer lugar del presupuesto con el proyecto denominado “Una Colonia de Acciones Concretas Región 237”. De esta forma, se <strong>mejoraron las condiciones</strong> de su colonia que tuvo años sin drenaje, calles y transporte, pero ahora cuenta con una mejor imagen, pavimentación, banquetas y servicios sanitarios.</p>
+
+                <p>En el caso de la simplificación administrativa, el gobierno local presentó la plataforma construida, donde se pueden consultar distintos permisos entregados y solicitar nuevos, digitalizando el trámite. Además, se han generado <strong>instancias consultivas y testeos con la ciudadanía, </strong>incorporando métodos adicionales de <strong>evaluación</strong>, gobernanza participativa y vinculantes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visualizacion-video container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+        <h4>Experiencia San Luis de Potosí</h4>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wd1E7m2Lt24?si=S7ZSZZUrSo0eODqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="visualizacion-acordion container">
+    <div class="row justify-content-end">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                Experiencia San Luis de Potosí - México
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+                <p>El desempleo provocado por la pandemia de COVID-19 causó que muchas personas tuvieran la intención de formalizar una empresa, enfrentando la imposibilidad de realizar el trámite de manera <strong>digital.</strong> </p>
+
+                <p>A raíz de ello, se generaron dos procesos de <strong>modernización del gobierno local.</strong> En primer lugar, un proceso de integración y consolidación de los trámites municipales para abrir pequeñas y medianas empresas en territorio municipal. En segundo lugar, se impulsó la implementación de una “ventanilla de construcción simplificada” y “un sistema de protesta ciudadana”, como <strong>mecanismo de coordinación</strong> de todas las gestiones necesarias para la emisión de licencias de construcción y uso de plataforma para <strong>emitir inconformidades</strong> respecto a la realización de una solicitud de servicio.</p>
+
+                <p>A través de las metodologías proporcionadas por Abre Alcaldías se incorporaron <strong>procesos participativos de identificación de necesidades y evaluación del diseño metodológico de la política pública a implementar.</strong></p>
+
+                <p>Un año después de su participación, el Director de Comercio del Ayuntamiento indicó una serie de avances a partir de los procesos impulsados. Lo que demuestra una mayor apertura y eficiencia en sus procesos, a saber:</p>
+
+                <ol>
+                  <li>Avance desde el penúltimo lugar a estar entre los primeros 10 en torno a la Mejora Regulatoria.</li>
+                  <li>El logro de la Certificación PROSARE gracias a la transparencia y eficientización de los procesos; pasando de 151 trámites a solamente 11.</li>
+                  <li>Aumento en el número de licencias de funcionamiento de comercio activas que pasaron de 8 mil a duplicarse hasta 17 mil.</li>
+                  <li>Realización, por primera vez en la historia del municipio de espacios de comunicación con directivos de empresas instaladas en la Zona Industrial para hacer un presupuesto participativo.
+                  </li>
                 </ol>
-            </nav>
-        </div>
-    </div>
-</section>
-
-
-<section class="volver-herramientas container">
-    <div class="row">
-        <div class="col-12">
-            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa6' %}"> &lt; Volver a herramientas </a>
-        </div>
-    </div>
-</section>
-
-
-<section class="seccion-herramienta container">
-    <div class="row">
-
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-            <div class="alinear">
-
-                <!--Acá se va a simular la información en función de la etapa 1-->
-
-                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero-6.png' %}" alt="Etapa 6 Metodos colaborativos">
-                <h3>Empoderar</h3>
+              </div>
             </div>
-            <h2 class="pregunta">¿Cómo <span>empoderar</span> al territorio?</h2>
+          </div>
         </div>
-
-
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <div class="definicion">
-
-                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-
-                <h4 class="casos-de-exito">Casos de éxito</h4>
-
-                <h3>Impacto regional de Abre Alcaldías</h3>
-                <p>Desde 2018 Abre Alcaldías trabaja junto a líderes locales de municipios latinoamericanos para impulsar proyectos participativos y coherentes con las necesidades de la ciudadanía. ¡Conecta con sus historias y motívate!</p>
-            </div>
-        </div>
-
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="visualizacion-video container">
+  <section class="visualizacion-video container">
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-            <h4>Experiencia Benito Juárez </h4>
-        </div>
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/jwTgpuuBxDA?si=9SSYgCdqcfcz4K9w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </div>
-</section>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+        <h4>Experiencia Veracruz</h4>
+      </div>
 
-<section class="visualizacion-acordion container">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/u5laP3IoUNU?si=gUFeq2NesS0Hx60L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="visualizacion-acordion container">
     <div class="row justify-content-end">
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                            Experiencia Benito Juárez - México
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-                        <div class="accordion-body">
-                            <p>Benito Juárez enfrenta la existencia de asentamientos irregulares que, al no ser “municipalizados”, no cuentan con los servicios básicos que suele brindar el gobierno local. Ante este escenario, el equipo municipal impulsó un <strong>presupuesto participativo</strong> con el objetivo de abordar la falta de servicios básicos.</p>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
 
-                            <p>El segundo desafío que se propuso el municipio es <strong>simplificar los trámites administrativos</strong> en torno a la licencia de funcionamiento para establecimientos comerciales, industriales o de servicio. </p>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTree">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTree" aria-expanded="true" aria-controls="panelsStayOpen-collapseTree">
+                Experiencia Veracruz - México
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTree">
+              <div class="accordion-body">
+                <p>En abril de 2020 México decretó medidas preventivas para atender la pandemia de COVID-19. En este escenario, se priorizó más que nunca la promoción de herramientas digitales que simplificaran la comunicación con el gobierno local y el acceso a servicios municipales. </p>
 
-                            <p>La implementación de un presupuesto participativo es un hecho histórico en el municipio, más aún bajo los estándares con los que se implementó: con total transparencia de montos y mayores facultades de deliberación ciudadana. </p>
+                <p>El municipio ya tenía contemplada la realización de un plan de gobierno abierto. Sin embargo, a través de su participación en Abre Alcaldías, incorporaron iniciativas que permitieron combatir la desigualdad digital y facilitar el acceso a Decide Veracruz. A su vez, dentro de la herramienta se integraron mecanismos participativos de priorización en la digitalización de procesos.</p>
 
-                            <p>Durante 2022 el “Comité de ampliación en la 237”, ganó el primer lugar del presupuesto con el proyecto denominado “Una Colonia de Acciones Concretas Región 237”. De esta forma, se <strong>mejoraron las condiciones</strong> de su colonia que tuvo años sin drenaje, calles y transporte, pero ahora cuenta con una mejor imagen, pavimentación, banquetas y servicios sanitarios.</p>
+                <p>En ese sentido, Decide Veracruz es una plataforma digital que tiene por objetivo promover la participación ciudadana y la democracia en la ciudad a través de formas de interacción directa y abierta entre el Ayuntamiento, la ciudadanía, y los diferentes agentes sociales de la ciudad.</p>
 
-                            <p>En el caso de la simplificación administrativa, el gobierno local presentó la plataforma construida, donde se pueden consultar distintos permisos entregados y solicitar nuevos, digitalizando el trámite. Además, se han generado <strong>instancias consultivas y testeos con la ciudadanía, </strong>incorporando métodos adicionales de <strong>evaluación</strong>, gobernanza participativa y vinculantes.</p>
-                        </div>
-                    </div>
-                </div>
+                <p>En 2023 el gobierno local ganó el segundo lugar en el concurso “Ayuntamiento transparente” por su página web de gobierno abierto.</p>
+
+              </div>
             </div>
-        </div>
-    </div>
-</section>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Experiencia Portoviejo - Ecuador
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <p>El equipo parte de Abre Alcaldías investigó acerca de la falta de participación ciudadana en el cantón Portoviejo. Para ello, realizó instancias de intercambio intersectorial con el fin de generar <strong>diagnósticos colaborativos</strong> de percepción en torno a las políticas de transparencia y acceso a la información en el cantón. De esta manera, la comunidad <strong>definió que el problema</strong> surge por la falta de información que impide la participación ciudadana y además, que el bajo nivel de incidencia de la ciudadanía es un desincentivo para la participación activa.</p>
 
-<section class="visualizacion-video container">
-    <div class="row">
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-            <h4>Experiencia San Luis de Potosí</h4>
-        </div>
+                <p>A partir de los <strong>talleres colaborativos</strong> implementados con las metodologías de Abre Alcaldías, se generaron distintas propuestas de solución entre las cuales destacan:</p>
 
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/wd1E7m2Lt24?si=S7ZSZZUrSo0eODqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+                <p><strong>Para el gobierno local:</strong></p>
+                <ul>
+                  <li>Considerar representación de diversidades en los diferentes eventos realizados por parte del gobierno local.</li>
+                  <li>Generar procesos de educación y sensibilización en torno a la gestión pública.</li>
+                  <li>Propiciar mecanismos para la participación ciudadana.</li>
+                </ul>
+                <p><strong>Para la ciudadanía:</strong></p>
+                <ul>
+                  <li>Generar procesos colaborativos y coordinados de solicitudes al gobierno local.</li>
+                </ul>
+                <p>Finalmente, el proceso logró que todos los actores involucrados asumieran el compromiso de <strong>implementar</strong> las distintas propuestas de solución co-construidas. Posterior a los talleres, se realizaron instancias desde el gobierno local que buscaban comprender las brechas o principales problemáticas de grupos excluidos sistemáticamente, en un proceso de diálogo permanente.</p>
 
-    </div>
-</section>
-
-<section class="visualizacion-acordion container">
-    <div class="row justify-content-end">
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-                            Experiencia San Luis de Potosí - México
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                        <div class="accordion-body">
-                            <p>El desempleo provocado por la pandemia de COVID-19 causó que muchas personas tuvieran la intención de formalizar una empresa, enfrentando la imposibilidad de realizar el trámite de manera <strong>digital.</strong> </p>
-
-                            <p>A raíz de ello, se generaron dos procesos de <strong>modernización del gobierno local.</strong> En primer lugar, un proceso de integración y consolidación de los trámites municipales para abrir pequeñas y medianas empresas en territorio municipal. En segundo lugar, se impulsó la implementación de una “ventanilla de construcción simplificada” y “un sistema de protesta ciudadana”, como <strong>mecanismo de coordinación</strong> de todas las gestiones necesarias para la emisión de licencias de construcción y uso de plataforma para <strong>emitir inconformidades</strong> respecto a la realización de una solicitud de servicio.</p>
-
-                            <p>A través de las metodologías proporcionadas por Abre Alcaldías se incorporaron <strong>procesos participativos de identificación de necesidades y evaluación del diseño metodológico de la política pública a implementar.</strong></p>
-
-                            <p>Un año después de su participación, el Director de Comercio del Ayuntamiento indicó una serie de avances a partir de los procesos impulsados. Lo que demuestra una mayor apertura y eficiencia en sus procesos, a saber:</p>
-
-                            <ol>
-                                <li>Avance desde el penúltimo lugar a estar entre los primeros 10 en torno a la Mejora Regulatoria.</li>
-                                <li>El logro de la Certificación PROSARE gracias a la transparencia y eficientización de los procesos; pasando de 151 trámites a solamente 11.</li>
-                                <li>Aumento en el número de licencias de funcionamiento de comercio activas que pasaron de 8 mil a duplicarse hasta 17 mil.</li>
-                                <li>Realización, por primera vez en la historia del municipio de espacios de comunicación con directivos de empresas instaladas en la Zona Industrial para hacer un presupuesto participativo.
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </div>
-    </div>
-</section>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                San Antonio de Sacatepéquez - Guatemala
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <p>El equipo de gobierno local compuesto en conjunto con concejalas del territorio se propusieron crear instancias participativas para identificar las barreras para el <strong>uso de la ley de acceso a la información pública</strong> en el Municipio de San Antonio Sacatepéquez.</p>
 
-<section class="visualizacion-video container">
-    <div class="row">
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-            <h4>Experiencia Veracruz</h4>
-        </div>
+                <p>Los <strong>objetivos</strong> se orientaron hacia el fortalecimiento y la promoción de la participación de las juventudes en instancias municipales y abordar la falta de interés en informarse. </p>
 
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/u5laP3IoUNU?si=gUFeq2NesS0Hx60L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+                <p>La propuesta del equipo consistió en realizar una serie de <strong>talleres dirigidos a la juventud</strong> coordinado con el Alcalde y Concejo Municipal. A través de ellos, se buscó promover la reflexión y el trabajo colaborativo para socialización de la ley y la priorización de las problemáticas que limitan que la ciudadanía se interese o reciba información sobre ella.</p>
 
-    </div>
-</section>
+                <p>A partir de la información recopilada en los encuentros, el equipo participante en Abre Alcaldías generó una <strong>propuesta</strong> de funcionamiento de las secretarías de juventudes para integrar en el municipio una mayor la participación ciudadana y la implementación de procesos de difusión y sensibilización sobre dicha ley. </p>
 
-<section class="visualizacion-acordion container">
-    <div class="row justify-content-end">
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingTree">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTree" aria-expanded="true" aria-controls="panelsStayOpen-collapseTree">
-                            Experiencia Veracruz - México
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseTree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTree">
-                        <div class="accordion-body">
-                            <p>En abril de 2020 México decretó medidas preventivas para atender la pandemia de COVID-19. En este escenario, se priorizó más que nunca la promoción de herramientas digitales que simplificaran la comunicación con el gobierno local y el acceso a servicios municipales. </p>
-
-                            <p>El municipio ya tenía contemplada la realización de un plan de gobierno abierto. Sin embargo, a través de su participación en Abre Alcaldías, incorporaron iniciativas que permitieron combatir la desigualdad digital y facilitar el acceso a Decide Veracruz. A su vez, dentro de la herramienta se integraron mecanismos participativos de priorización en la digitalización de procesos.</p>
-
-                            <p>En ese sentido, Decide Veracruz es una plataforma digital que tiene por objetivo promover la participación ciudadana y la democracia en la ciudad a través de formas de interacción directa y abierta entre el Ayuntamiento, la ciudadanía, y los diferentes agentes sociales de la ciudad.</p>
-
-                            <p>En 2023 el gobierno local ganó el segundo lugar en el concurso “Ayuntamiento transparente” por su página web de gobierno abierto.</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                Experiencia Portoviejo - Ecuador
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-                            <div class="accordion-body">
-                                <p>El equipo parte de Abre Alcaldías investigó acerca de la falta de participación ciudadana en el cantón Portoviejo. Para ello, realizó instancias de intercambio intersectorial con el fin de generar <strong>diagnósticos colaborativos</strong> de percepción en torno a las políticas de transparencia y acceso a la información en el cantón. De esta manera, la comunidad <strong>definió que el problema</strong> surge por la falta de información que impide la participación ciudadana y además, que el bajo nivel de incidencia de la ciudadanía es un desincentivo para la participación activa.</p>
-
-                                <p>A partir de los <strong>talleres colaborativos</strong> implementados con las metodologías de Abre Alcaldías, se generaron distintas propuestas de solución entre las cuales destacan:</p>
-
-                                <p><strong>Para el gobierno local:</strong></p>
-                                <ul>
-                                    <li>Considerar representación de diversidades en los diferentes eventos realizados por parte del gobierno local.</li>
-                                    <li>Generar procesos de educación y sensibilización en torno a la gestión pública.</li>
-                                    <li>Propiciar mecanismos para la participación ciudadana.</li>
-                                </ul>
-                                <p><strong>Para la ciudadanía:</strong></p>
-                                <ul>
-                                    <li>Generar procesos colaborativos y coordinados de solicitudes al gobierno local.</li>
-                                </ul>
-                                <p>Finalmente, el proceso logró que todos los actores involucrados asumieran el compromiso de <strong>implementar</strong> las distintas propuestas de solución co-construidas. Posterior a los talleres, se realizaron instancias desde el gobierno local que buscaban comprender las brechas o principales problemáticas de grupos excluidos sistemáticamente, en un proceso de diálogo permanente.</p>
-                                
-                            </div>
-                        </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                            San Antonio de Sacatepéquez - Guatemala
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-                        <div class="accordion-body">
-                            <p>El equipo de gobierno local compuesto en conjunto con concejalas del territorio se propusieron crear instancias participativas para identificar las barreras para el <strong>uso de la ley de acceso a la información pública</strong> en el Municipio de San Antonio Sacatepéquez.</p>
-
-                            <p>Los <strong>objetivos</strong> se orientaron hacia el fortalecimiento y la promoción de la participación de las juventudes en instancias municipales y abordar la falta de interés en informarse. </p>
-
-                            <p>La propuesta del equipo consistió en realizar una serie de <strong>talleres dirigidos a la juventud</strong> coordinado con el Alcalde y Concejo Municipal. A través de ellos, se buscó promover la reflexión y el trabajo colaborativo para socialización de la ley y la priorización de las problemáticas que limitan que la ciudadanía se interese o reciba información sobre ella.</p>
-
-                            <p>A partir de la información recopilada en los encuentros, el equipo participante en Abre Alcaldías generó una <strong>propuesta</strong> de funcionamiento de las secretarías de juventudes para integrar en el municipio una mayor la participación ciudadana y la implementación de procesos de difusión y sensibilización sobre dicha ley. </p>
-
-                            <p>Este plan se presentó ante el Consejo Municipal de Desarrollo (COMUDE), el gobierno municipal y a organizaciones de la sociedad civil. Finalmente, <strong>el plan se integró</strong> parcialmente a las oficinas de juventud y de niñez y adolescencia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-                            Ciudad de Guatemala - Guatemala
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                        <div class="accordion-body">
-                            <p>El equipo de Ciudad de Guatemala creó un proyecto en el marco de las elecciones presidenciales a celebrarse en junio de 2023. El objetivo planteado consistió en <strong>entrevistar</strong> candidatos y candidatas para <strong>promover la transparencia</strong> de propuestas y la comprensión de necesidades ciudadanas.</p>
-
-                            <p>Se establecieron una serie de <strong>desafíos</strong> a enfrentar para lograr el objetivo, como lo son la ausencia de espacios de comunicación e interconexión con los candidatos, falta de interés en llegar a las personas, apatía entre sectores y poca voluntad política.</p>
-
-                            <p>Dentro de las <strong>actividades</strong> a corto y mediano plazo se definió una campaña de comunicación en redes sociales, entrevistas con candidatos a municipalidades y lograr el compromiso de candidatos sobre puntos importantes para la ciudadanía. </p>
-
-                            <p>A partir de esto, los participantes concretaron alrededor de 16 entrevistas a distintos candidatos, los cuales se han difundido a través del facebook e instagram de <strong>“Lidera Guatemala”</strong>, que ha servido como canalizador para lograr favorecer a las candidaturas más vinculadas con las necesidades de la ciudadanía.</p>
-                        </div>
-                    </div>
-                </div>
-
+                <p>Este plan se presentó ante el Consejo Municipal de Desarrollo (COMUDE), el gobierno municipal y a organizaciones de la sociedad civil. Finalmente, <strong>el plan se integró</strong> parcialmente a las oficinas de juventud y de niñez y adolescencia.</p>
+              </div>
             </div>
-        </div>
-    </div>
-</section>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                Ciudad de Guatemala - Guatemala
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+                <p>El equipo de Ciudad de Guatemala creó un proyecto en el marco de las elecciones presidenciales a celebrarse en junio de 2023. El objetivo planteado consistió en <strong>entrevistar</strong> candidatos y candidatas para <strong>promover la transparencia</strong> de propuestas y la comprensión de necesidades ciudadanas.</p>
 
+                <p>Se establecieron una serie de <strong>desafíos</strong> a enfrentar para lograr el objetivo, como lo son la ausencia de espacios de comunicación e interconexión con los candidatos, falta de interés en llegar a las personas, apatía entre sectores y poca voluntad política.</p>
 
-<section class="anadir-al-kit container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-           <h4>Avanzar</h4>
-            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                    Marca si terminaste la etapa
-                </label>
-                <div class="invalid-feedback">
-                    Debes marcar para guardar tu avance y recolectar los materiales
-                </div>
-            </p>
-            <a href="{% url 'contenidos:etapa7' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
-            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
+                <p>Dentro de las <strong>actividades</strong> a corto y mediano plazo se definió una campaña de comunicación en redes sociales, entrevistas con candidatos a municipalidades y lograr el compromiso de candidatos sobre puntos importantes para la ciudadanía. </p>
+
+                <p>A partir de esto, los participantes concretaron alrededor de 16 entrevistas a distintos candidatos, los cuales se han difundido a través del facebook e instagram de <strong>“Lidera Guatemala”</strong>, que ha servido como canalizador para lograr favorecer a las candidaturas más vinculadas con las necesidades de la ciudadanía.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
 </main>
 

@@ -5,168 +5,147 @@
 
 {% block content %}
 <main>
-    
-    <section class="accesos-directos">
-        <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
-        <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"></a>
-    </section>
 
-    <section class="container header-section">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                        <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                        <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa2' %}">Etapa #2</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Enfoque inclusivo</li>
-                    </ol>
-                </nav>
-            </div>
+  <section class="accesos-directos">
+    <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt="Entrar a mi perfil"></a>
+    <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt="Entrar a mi kit"></a>
+  </section>
+
+  <section class="container header-section">
+    <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa2' %}">Etapa #2</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Enfoque inclusivo</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="volver-herramientas container">
+    <div class="row">
+      <div class="col-12">
+        <a href="{% url 'contenidos:etapa2' %}"> &lt; Volver a herramientas </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion-herramienta container">
+    <div class="row">
+
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
+
+          <!--Acá se va a simular la información en función de la etapa 1-->
+
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero-2.png' %}" alt="Etapa 2 Causas">
+          <h3>Causas</h3>
         </div>
-    </section>
+        <h2 class="pregunta">¿Cuáles son las <span>causas</span> de tu problema?</h2>
+      </div>
 
-    <section class="volver-herramientas container">
-        <div class="row">
-            <div class="col-12">
-                <a href="{% url 'contenidos:etapa2' %}"> &lt; Volver a herramientas </a>
-            </div>
+
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
+
+          <h4 class="recomendacion">Recomendaciones</h4>
+
+          <h3>Enfoque inclusivo</h3>
+          <p>Imagina que requieres asistir a un establecimiento de salud para realizar un chequeo de rutina. Por tu trabajo, tienes capacidad de asistir a una entidad privada y pagar por tus servicios. Puedes manejar hasta el recinto y finalmente, luego de horas de exámenes, puedes almorzar en algún local cercano.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="seccion-herramienta container">
-        <div class="row">
+  <!-- Componente: acordion para contenidos extensos que se pueden segmentar y divir para hacer más comoda la lectura -->
 
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-                <div class="alinear">
-
-                    <!--Acá se va a simular la información en función de la etapa 1-->
-
-                    <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                    <img src="{% static 'img/etapa-numero-2.png' %}" alt="Etapa 2 Causas">
-                    <h3>Causas</h3>
-                </div>
-                <h2 class="pregunta">¿Cuáles son las <span>causas</span> de tu problema?</h2>
-            </div>
-
-
-            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                <div class="definicion">
-
-                    <h4 class="recomendacion">Recomendaciones</h4>
-
-                    <h3>Enfoque inclusivo</h3>
-                    <p>Imagina que requieres asistir a un establecimiento de salud para realizar un chequeo de rutina. Por tu trabajo, tienes capacidad de asistir a una entidad privada y pagar por tus servicios. Puedes manejar hasta el recinto y finalmente, luego de horas de exámenes, puedes almorzar en algún local cercano.</p>
-                </div>
-            </div>
+  <section class="seccion-herramienta container" id="formulario-container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-            <!-- Componente: acordion para contenidos extensos que se pueden segmentar y divir para hacer más comoda la lectura -->
-            
-            <section class="seccion-herramienta container" id="formulario-container">
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-                        <div class="alinear">
-                        </div>
-                    </div>
+
+  <section class="visualizacion-acordion container">
+    <div class="row justify-content-end">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Haz click y reflexiona sobre lo que cambia:
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <div class="col-12 tabla">
+                  <form method="post" action="#formulario-container">
+                    {% csrf_token %}
+                    <table class="table table-responsive">
+                      <thead>
+                        <tr>
+                          <th scope="col">¿Cómo cambia el escenario si ahora imaginas que tienes 70 años?</th>
+                          <th scope="col">¿Cómo cambia el escenario si ahora imaginas que no tienes auto?</th>
+                          <th scope="col">¿Cómo cambia si no tienes ahorros o capacidad adquisitiva?</th>
+                          <th scope="col">¿Cambia si en tu comunidad no existen servicios de salud cerca?</th>
+                          <th scope="col">¿Cambia si eres una mujer cuidadora y no puedes acudir?</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          {% for field in form %}
+                          <td>
+                            {{ field }}
+                          </td>
+                          {% endfor %}
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button type="submit" class="btn-democraciakit">Guardar</button>
+                  </form>
                 </div>
-            </section>
-
-
-            <section class="visualizacion-acordion container">
-                <div class="row justify-content-end">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
-                        <div class="accordion" id="accordionPanelsStayOpenExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                        Haz click y reflexiona sobre lo que cambia:
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-                                    <div class="accordion-body">
-                                        <div class="col-12 tabla">
-                                            <form method="post" action="#formulario-container">
-                                                {% csrf_token %}
-                                                <table class="table table-responsive">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">¿Cómo cambia el escenario si ahora imaginas que tienes 70 años?</th>
-                                                            <th scope="col">¿Cómo cambia el escenario si ahora imaginas que no tienes auto?</th>
-                                                            <th scope="col">¿Cómo cambia si no tienes ahorros o capacidad adquisitiva?</th>
-                                                            <th scope="col">¿Cambia si en tu comunidad no existen servicios de salud cerca?</th>
-                                                            <th scope="col">¿Cambia si eres una mujer cuidadora y no puedes acudir?</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            {% for field in form %}
-                                                            <td>
-                                                                {{ field }}
-                                                            </td>
-                                                            {% endfor %}
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <button type="submit" class="btn-democraciakit">Guardar</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Componente: Contenido que continua relatando la herramienta -->
-            <section class="visualizacion-contenido-herramienta container">
-                <div class="row justify-content-end">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
-                        <p>Una misma situación puede generar distintos dolores y requerir distintas respuestas dependiendo desde dónde realizamos el análisis.</p>
-
-                        <p>El cruce de situaciones de riesgo, desventajas, discriminaciones y/o vulneraciones se conoce como <b>análisis de interseccionalidad</b> y es fundamental para el diseño de proyectos o políticas públicas.</p> 
-
-                        <p>En ese sentido, caracterizar a la comunidad afectada será fundamental para plantear una solución.</p> 
-                    </div>
-                </div>
-            </section>
-
-        <section class="visualizacion-ejemplo container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-                <h4>Síntesis</h4>
+              </div>
             </div>
-
-            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                <div class="ejemplo">
-                    <p>Aplicar el enfoque interseccional de las desigualdades en la construcción de tu proyecto significa poner atención al cruce de desigualdades de género, raza o pertenencia étnica, ciclo de vida, nivel de ingreso y discapacidad.</p>
-                </div>
-            </div>
+          </div>    
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="anadir-al-kit container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-               <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-               <h4>Avanzar</h4>
-                <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-                <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label" for="invalidCheck">
-                        Marca si terminaste la etapa
-                    </label>
-                    <div class="invalid-feedback">
-                        Debes marcar para guardar tu avance y recolectar los materiales
-                    </div>
-                </p>
-                <a href="{% url 'contenidos:etapa2-mapaafinidad' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
-                <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-            </div>
+  <!-- Componente: Contenido que continua relatando la herramienta -->
+  <section class="visualizacion-contenido-herramienta container">
+    <div class="row justify-content-end">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
+        <p>Una misma situación puede generar distintos dolores y requerir distintas respuestas dependiendo desde dónde realizamos el análisis.</p>
+
+        <p>El cruce de situaciones de riesgo, desventajas, discriminaciones y/o vulneraciones se conoce como <b>análisis de interseccionalidad</b> y es fundamental para el diseño de proyectos o políticas públicas.</p> 
+
+        <p>En ese sentido, caracterizar a la comunidad afectada será fundamental para plantear una solución.</p> 
+      </div>
+    </div>
+  </section>
+
+  <section class="visualizacion-ejemplo container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+        <h4>Síntesis</h4>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="ejemplo">
+          <p>Aplicar el enfoque interseccional de las desigualdades en la construcción de tu proyecto significa poner atención al cruce de desigualdades de género, raza o pertenencia étnica, ciclo de vida, nivel de ingreso y discapacidad.</p>
         </div>
-    </section>
-
+      </div>
+    </div>
+  </section>
 
 </main>    
 {% endblock %}

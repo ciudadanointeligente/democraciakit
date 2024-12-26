@@ -4,240 +4,221 @@
 
 {% block content %}
 <main>
-    <section class="accesos-directos">
-        <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
-        <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-    </section>
+  <section class="accesos-directos">
+    <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
+    <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
+  </section>
 
 
-        <section class="container header-section">
-            <div class="row">
-                <div class="col-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Etapa #1</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Definición inicial</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </section>
+  <section class="container header-section">
+    <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Etapa #1</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Definición inicial</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
 
 
-        <section class="volver-herramientas container">
-            <div class="row">
-                <div class="col-12">
-                    <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-                    <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
-                </div>
-            </div>
-        </section>
+  <section class="volver-herramientas container">
+    <div class="row">
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
+      </div>
+    </div>
+  </section>
 
 
-        <section class="seccion-herramienta container">
-            <div class="row">
+  <section class="seccion-herramienta container">
+    <div class="row">
 
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-                    <div class="alinear">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
 
-                        <!--Acá se va a simular la información en función de la etapa 1-->
+          <!--Acá se va a simular la información en función de la etapa 1-->
 
-                        <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                        <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
-                        <h3>Problemas</h3>
-                    </div>
-                    <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
-                </div>
-
-
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                    <div class="definicion">
-
-                        <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-                        <h4 class="metodologias">Metodologías</h4>
-
-                        <h3>Definición inicial</h3>
-                        <p><strong>¿Qué es realmente un problema?</strong></p>
-
-                        <p>Son situaciones que nos preocupan, dolores o síntomas de que <strong>algo no anda bien en nuestra comunidad.</strong> Generalmente, existirán grupos sociales a los que este dolor afecta directamente, impidiendo su completo ejercicio de la ciudadanía. </p>
-
-                        <p><strong>El problema</strong> tiene que poder enmarcarse en un momento y lugar determinado. Se puede entender como “el qué”, y responde a la pregunta: “¿qué es lo que queremos abordar?”</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
+          <h3>Problemas</h3>
+        </div>
+        <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
+      </div>
 
 
-        <!-- Componente: Ejemplos -->
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
 
-        <section class="visualizacion-ejemplo container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-                    <h4>Ejemplo</h4>
-                </div>
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+          <h4 class="metodologias">Metodologías</h4>
 
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                    <div class="ejemplo">
-                        <p>“En 2022, rellenos sanitarios de las comunas de Talcahuano, Hualpén y Lota generaron una emergencia sanitaria en el territorio, afectando a sus habitantes”</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <h3>Definición inicial</h3>
+          <p><strong>¿Qué es realmente un problema?</strong></p>
 
+          <p>Son situaciones que nos preocupan, dolores o síntomas de que <strong>algo no anda bien en nuestra comunidad.</strong> Generalmente, existirán grupos sociales a los que este dolor afecta directamente, impidiendo su completo ejercicio de la ciudadanía. </p>
 
-        <!--Componente: Tabla 1 todo en linea por definición -->
-        <section class="visualizacion-tabla container">
-            <div class="row">
-                <div class="col-12 tabla">
-                    <p class="descripcion">También puedes segmentar el problema de la siguiente manera:</p>
+          <p><strong>El problema</strong> tiene que poder enmarcarse en un momento y lugar determinado. Se puede entender como “el qué”, y responde a la pregunta: “¿qué es lo que queremos abordar?”</p>
+        </div>
+      </div>
 
-                    <table class="table table-responsive">
-                        <thead>
-                            <tr>
-                                <th scope="col">Quién</th>
-                                <th scope="col">Dónde</th>
-                                <th scope="col">Cuándo</th>
-                                <th scope="col">Dolor</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Población o comunidad</td>
-                                <td>Talcahuano, Hualpén, Lota y Florida</td>
-                                <td>2022</td>
-                                <td>Emergencia de salubridad y sanitaria</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+    </div>
+  </section>
 
 
-        <!-- Componente: Contenido que continua relatando la herramienta -->
-        <section class="visualizacion-contenido-herramienta container">
-            <div class="row justify-content-end">
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
-                    <p><strong>¿No tienes un problema claro?</strong></p>
-                    <p>Por tu trabajo, conocimientos o vivencias, probablemente sabes que dentro de un tema pueden <strong>haber múltiples dolores o problemas sociales.</strong> </p>
+  <!-- Componente: Ejemplos -->
 
-                    <p>Para empezar a identificar en qué área trabajar haz una lluvia de ideas y luego prioriza el que consideres más urgente. (Puedes revisar la sección de “Estrategias de priorización” para apoyarte con esto.)
-                    </p>
-                </div>
-            </div>
-        </section>
+  <section class="visualizacion-ejemplo container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+        <h4>Ejemplo</h4>
+      </div>
 
-
-        <!--Componente: Tabla 2 algunas cajas dentro de la tabla ocupan espacios diversos -->
-        <section class="visualizacion-tabla container">
-            <div class="row">
-                <div class="col-12 tabla">
-                    <table class="table table-responsive">
-                        <thead>
-                            <tr>
-                                <!-- Primera columna -->
-                                <th scope="col">Tema</th>
-                                <!-- Segunda columna que abarca el ancho completo -->
-                                <th scope="col" colspan="3">Dolores posibles dentro de la temática</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- La primera celda ocupa 2 filas -->
-                                <td rowspan="2" class="tema">Educación</td>
-                                <td>Brechas de aprendizaje</td>
-                                <td>Discriminación socioeconómica</td>
-                                <td>Lejanía hogar-escuela</td>
-                            </tr>
-
-                            <tr>
-                                <!-- Segunda fila solo tiene 3 columnas -->
-                                <td>Falta de infraestructura</td>
-                                <td>Capacitación a docentes</td>
-                                <td>Método educativo</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="ejemplo">
+          <p>“En 2022, rellenos sanitarios de las comunas de Talcahuano, Hualpén y Lota generaron una emergencia sanitaria en el territorio, afectando a sus habitantes”</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-        <!-- Componente interactivo para que el usuario complete información en tabla-->
+  <!--Componente: Tabla 1 todo en linea por definición -->
+  <section class="visualizacion-tabla container">
+    <div class="row">
+      <div class="col-12 tabla">
+        <p class="descripcion">También puedes segmentar el problema de la siguiente manera:</p>
 
-        <section id="formulario-container" class="componente-interactivo-form container-fluid">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">Quién</th>
+              <th scope="col">Dónde</th>
+              <th scope="col">Cuándo</th>
+              <th scope="col">Dolor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Población o comunidad</td>
+              <td>Talcahuano, Hualpén, Lota y Florida</td>
+              <td>2022</td>
+              <td>Emergencia de salubridad y sanitaria</td>
+            </tr>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 titulo">
-                        <h4>¡Ahora tu!</h4>
-                        <p>Sigue la tabla de redacción de problema para generar tu propia formulación inicial</p>
-                    </div>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-                    <div class="col-12 tabla">
-                        {% if messages %}
-                        <div class="messages">
-                            {% for message in messages %}
-                            <div {% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="alert alert-light text-center" role="alert">{{ message }} Recuerda que puedes revisar <a href="{% url 'contenidos:mikit' %}">Mi Kit</a> para ver todos tus materiales guardados. DemocraciaKit sólo guardará tus respuestas más recientes.</div></div>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        {% if messages %}
-                        {% else %}
-                        <form method="post" action="#formulario-container">
-                            {% csrf_token %}
-                            <table class="table table-responsive">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Quién</th>
-                                        <th scope="col">Dónde</th>
-                                        <th scope="col">Cuándo</th>
-                                        <th scope="col">Dolor</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        {% for field in form %}
-                                        <td>
-                                            {{ field }}
-                                        </td>
-                                        {% endfor %}
-                                    </tr>
-                                </tbody>
-                            </table>
-                            {% if messages %}
-                            {% else %}
-                            <button type="submit" class="btn-democraciakit">Guardar</button>
-                            {% endif %}
-                        </form>
-                            {% endif %}
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="anadir-al-kit container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-                   <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-                   <h4>Avanzar</h4>
-                    <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-                    <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck">
-                            Marca si terminaste la etapa
-                        </label>
-                        <div class="invalid-feedback">
-                            Debes marcar para guardar tu avance y recolectar los materiales
-                        </div>
-                    </p>
-                    <a href="{% url 'contenidos:etapa1-estrategia' %}"><button class="btn-democraciakit" >Añadir y avanzar</button></a>
-                    <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-                </div>
-            </div>
-        </section>
+
+  <!-- Componente: Contenido que continua relatando la herramienta -->
+  <section class="visualizacion-contenido-herramienta container">
+    <div class="row justify-content-end">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
+        <p><strong>¿No tienes un problema claro?</strong></p>
+        <p>Por tu trabajo, conocimientos o vivencias, probablemente sabes que dentro de un tema pueden <strong>haber múltiples dolores o problemas sociales.</strong> </p>
+
+        <p>Para empezar a identificar en qué área trabajar haz una lluvia de ideas y luego prioriza el que consideres más urgente. (Puedes revisar la sección de “Estrategias de priorización” para apoyarte con esto.)
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Componente: Tabla 2 algunas cajas dentro de la tabla ocupan espacios diversos -->
+  <section class="visualizacion-tabla container">
+    <div class="row">
+      <div class="col-12 tabla">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <!-- Primera columna -->
+              <th scope="col">Tema</th>
+              <!-- Segunda columna que abarca el ancho completo -->
+              <th scope="col" colspan="3">Dolores posibles dentro de la temática</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- La primera celda ocupa 2 filas -->
+              <td rowspan="2" class="tema">Educación</td>
+              <td>Brechas de aprendizaje</td>
+              <td>Discriminación socioeconómica</td>
+              <td>Lejanía hogar-escuela</td>
+            </tr>
+
+            <tr>
+              <!-- Segunda fila solo tiene 3 columnas -->
+              <td>Falta de infraestructura</td>
+              <td>Capacitación a docentes</td>
+              <td>Método educativo</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Componente interactivo para que el usuario complete información en tabla-->
+
+  <section id="formulario-container" class="componente-interactivo-form container-fluid">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 titulo">
+          <h4>¡Ahora tu!</h4>
+          <p>Sigue la tabla de redacción de problema para generar tu propia formulación inicial</p>
+        </div>
+
+        <div class="col-12 tabla">
+          {% if messages %}
+          <div class="messages">
+            {% for message in messages %}
+            <div {% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="alert alert-light text-center" role="alert">{{ message }} Recuerda que puedes revisar <a href="{% url 'contenidos:mikit' %}">Mi Kit</a> para ver todos tus materiales guardados. DemocraciaKit sólo guardará tus respuestas más recientes.</div></div>
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% if messages %}
+          {% else %}
+          <form method="post" action="#formulario-container">
+            {% csrf_token %}
+            <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th scope="col">Quién</th>
+                  <th scope="col">Dónde</th>
+                  <th scope="col">Cuándo</th>
+                  <th scope="col">Dolor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {% for field in form %}
+                  <td>
+                    {{ field }}
+                  </td>
+                  {% endfor %}
+                </tr>
+              </tbody>
+            </table>
+            {% if messages %}
+            {% else %}
+            <button type="submit" class="btn-democraciakit">Guardar</button>
+            {% endif %}
+          </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 {% endblock %}

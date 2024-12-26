@@ -4,163 +4,142 @@
 
 {% block content %}
 <main>
-    <section class="accesos-directos">
-        <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
-        <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-    </section>
+  <section class="accesos-directos">
+    <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
+    <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
+  </section>
 
 
-    <section class="container header-section">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                        <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                        <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Etapa #1</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Estrategias de priorización</li>
-                    </ol>
-                </nav>
-            </div>
+  <section class="container header-section">
+    <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Etapa #1</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Estrategias de priorización</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="volver-herramientas container">
+    <div class="row">
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="seccion-herramienta container">
+    <div class="row">
+
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
+
+          <!--Acá se va a simular la información en función de la etapa 1-->
+
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
+          <h3>Problemas</h3>
         </div>
-    </section>
+        <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
+      </div>
 
 
-    <section class="volver-herramientas container">
-        <div class="row">
-            <div class="col-12">
-                <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-                <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
-            </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
+
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+          <h4 class="recomendacion">Recomendaciones</h4>
+
+          <h3>Estrategias de priorización</h3>
+          <p>¿No sabes de qué manera priorizar el problema que vas a trabajar? Prueba con estas estrategias de priorización:</p>
         </div>
-    </section>
+      </div>
+
+    </div>
+  </section>
 
 
-    <section class="seccion-herramienta container">
-        <div class="row">
+  <!-- Componente: acordion para contenidos extensos que se pueden segmentar y divir para hacer más comoda la lectura -->
 
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-                <div class="alinear">
+  <section class="visualizacion-acordion container">
+    <div class="row justify-content-end">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
 
-                    <!--Acá se va a simular la información en función de la etapa 1-->
 
-                    <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                    <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
-                    <h3>Problemas</h3>
-                </div>
-                <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Priorización temática
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <p>Presta atención a tu de trabajo, nuestra organización, nuestra experiencia y tus redes cercanas, ya que estas tener temáticas más marcadas que te permitirán tener mayor afinidad y capacidades para abordar una problemática por sobre otra.</p>
+              </div>
             </div>
+          </div>
 
-
-            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                <div class="definicion">
-
-                    <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-                    <h4 class="recomendacion">Recomendaciones</h4>
-
-                    <h3>Estrategias de priorización</h3>
-                    <p>¿No sabes de qué manera priorizar el problema que vas a trabajar? Prueba con estas estrategias de priorización:</p>
-                </div>
+          <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                Mínimos democráticos
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+                <p>Recomendamos priorizar las necesidades que tengan relación directa con la calidad de vida de las personas, su seguridad y su capacidad de desenvolverse socialmente.</p>
+              </div>
             </div>
+          </div>
+          <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                Recomendaciones internacionales o académicas
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+              <div class="accordion-body">
+                <p>Investiga las agendas de desarrollo, recomendaciones de gobierno abierto de organismos internacionales o procesos de investigación y casos de éxito de la academia tienen lineamientos y guías que sirven para decidir por dónde comenzar un proyecto o política pública.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFor">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFor" aria-expanded="false" aria-controls="panelsStayOpen-collapseFor">
+                Priorización ciudadana
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFor" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFor">
+              <div class="accordion-body">
+                <p>Existen mecanismos donde puedes dar a la misma ciudadanía la posibilidad de priorizar problemáticas dentro de un número de alternativas. Algunas son:</p>
+                <ul>
+                  <li><p>Consultas ciudadanas</p></li>
+                  <li><p>Votos electrónicos o presenciales</p></li>
+                  <li><p>Mesas o espacios de consulta</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-
-    <!-- Componente: acordion para contenidos extensos que se pueden segmentar y divir para hacer más comoda la lectura -->
-
-    <section class="visualizacion-acordion container">
-        <div class="row justify-content-end">
-            <div class="col-12 col-sm-12 col-md-8 col-lg-9 acordion">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
-
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                Priorización temática
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                            <div class="accordion-body">
-                                <p>Presta atención a tu de trabajo, nuestra organización, nuestra experiencia y tus redes cercanas, ya que estas tener temáticas más marcadas que te permitirán tener mayor afinidad y capacidades para abordar una problemática por sobre otra.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                Mínimos democráticos
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                            <div class="accordion-body">
-                                <p>Recomendamos priorizar las necesidades que tengan relación directa con la calidad de vida de las personas, su seguridad y su capacidad de desenvolverse socialmente.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                Recomendaciones internacionales o académicas
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                            <div class="accordion-body">
-                                <p>Investiga las agendas de desarrollo, recomendaciones de gobierno abierto de organismos internacionales o procesos de investigación y casos de éxito de la academia tienen lineamientos y guías que sirven para decidir por dónde comenzar un proyecto o política pública.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- añadir cuantos sean necesarios para sumar contenido al acordion-->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingFor">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFor" aria-expanded="false" aria-controls="panelsStayOpen-collapseFor">
-                                Priorización ciudadana
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseFor" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFor">
-                            <div class="accordion-body">
-                                <p>Existen mecanismos donde puedes dar a la misma ciudadanía la posibilidad de priorizar problemáticas dentro de un número de alternativas. Algunas son:</p>
-                                <ul>
-                                    <li><p>Consultas ciudadanas</p></li>
-                                    <li><p>Votos electrónicos o presenciales</p></li>
-                                    <li><p>Mesas o espacios de consulta</p></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="anadir-al-kit container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-               <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-               <h4>Avanzar</h4>
-                <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-                <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label" for="invalidCheck">
-                        Marca si terminaste la etapa
-                    </label>
-                    <div class="invalid-feedback">
-                        Debes marcar para guardar tu avance y recolectar los materiales
-                    </div>
-                </p>
-                <a href="{% url 'contenidos:etapa1-sesgo' %}"><button class="btn-democraciakit" >Añadir y avanzar</button></a>
-                <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-            </div>
-        </div>
-    </section>
-
-    </main>
+</main>
 
 {% endblock %}

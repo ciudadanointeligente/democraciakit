@@ -26,7 +26,7 @@ def pdfmikit1(request):
     try:
         definicion_problema = Definicion1.objects.filter(usuario=user).latest()
     except Definicion1.DoesNotExist:
-        raise Http404("No tienes guardadas definiciones.")
+        return redirect("contenidos:etapa1")
 
     response = HttpResponse(content_type="application/pdf")
     response["Content-Disposition"] = 'attachment; filename="midemocraciakit.pdf"'

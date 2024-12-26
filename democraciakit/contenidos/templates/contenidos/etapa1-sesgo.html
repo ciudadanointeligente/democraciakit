@@ -5,161 +5,139 @@
 {% block content %}
 
 <main>
-    <section class="accesos-directos">
-        <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
-        <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-    </section>
+  <section class="accesos-directos">
+    <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
+    <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
+  </section>
 
 
-        <section class="container header-section">
-            <div class="row">
-                <div class="col-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Etapa #1</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Definición inicial</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </section>
+  <section class="container header-section">
+    <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa1' %}">Etapa #1</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Definición inicial</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
 
 
-        <section class="volver-herramientas container">
-            <div class="row">
-                <div class="col-12">
-                    <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-                    <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
-                </div>
-            </div>
-        </section>
+  <section class="volver-herramientas container">
+    <div class="row">
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa1' %}"> &lt; Volver a herramientas </a>
+      </div>
+    </div>
+  </section>
 
-        <section class="seccion-herramienta container">
-            <div class="row">
+  <section class="seccion-herramienta container">
+    <div class="row">
 
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-                    <div class="alinear">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
 
-                        <!--Acá se va a simular la información en función de la etapa 1-->
+          <!--Acá se va a simular la información en función de la etapa 1-->
 
-                        <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                        <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
-                        <h3>Problemas</h3>
-                    </div>
-                    <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
-                </div>
-
-
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                    <div class="definicion">
-
-                        <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-                        <h4 class="recomendacion">Recomendaciones</h4>
-
-                        <h3>Sesgo de solución</h3>
-                        <p>El sesgo de solución es una tendencia en la que las personas responden con <strong>la ausencia de algo</strong> como la solución a un problema. Este sesgo se encuentra presente de manera transversal en la sociedad y no tiene relación con la edad, la formación o el sector del que proviene la persona.</p>
-
-                        <p>El sesgo aparece cuando, al momento de preguntar <strong>¿Cuál es el problema?</strong>, las personas responden que “falta un acción, herramienta, insumo o proceso”, es decir, falta la solución.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero.png' %}" alt="Etapa 1 Problemas">
+          <h3>Problemas</h3>
+        </div>
+        <h2 class="pregunta">¿Qué <span>problema</span> vamos a solucionar?</h2>
+      </div>
 
 
-        <!-- Componente: Ejemplos -->
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
 
-        <section class="visualizacion-ejemplo container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-                    <h4>Ejemplo</h4>
-                </div>
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+          <h4 class="recomendacion">Recomendaciones</h4>
 
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-                    <div class="ejemplo">
-                        <p>Tres estudiantes de la Universidad de Antofagasta, están realizando una investigación sobre los problemas que enfrenta la Región. Le preguntan a la ciudadanía, entre otras cosas, <strong>“¿Cuál diría usted que es el mayor problema que enfrenta su comunidad?"</strong> Dentro de los resultados que recopilaron, están la siguientes respuestas:</p>
+          <h3>Sesgo de solución</h3>
+          <p>El sesgo de solución es una tendencia en la que las personas responden con <strong>la ausencia de algo</strong> como la solución a un problema. Este sesgo se encuentra presente de manera transversal en la sociedad y no tiene relación con la edad, la formación o el sector del que proviene la persona.</p>
 
-                        <p>“Acá lo que nos falta es un centro de salud.”</p>
-                        <p>“El problema es que está aumentando la delincuencia.”</p>
-                        <p>“Mire, yo creo que lo que más falta es que deberían multar por ensuciar.”
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <p>El sesgo aparece cuando, al momento de preguntar <strong>¿Cuál es el problema?</strong>, las personas responden que “falta un acción, herramienta, insumo o proceso”, es decir, falta la solución.</p>
+        </div>
+      </div>
 
-        <!-- Componente: Contenido que continua relatando la herramienta -->
-        <section class="visualizacion-contenido-herramienta container">
-            <div class="row justify-content-end">
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
-                    <p>En el ejemplo anterior, sólo una de las alternativas corresponde a un correcto enunciamiento del problema; <strong>“El problema es que está aumentando la delincuencia.”</strong> Las otras respuestas, son soluciones a un problema que está quedando <strong>implícito</strong> en la comunicación:</p>
-                </div>
-            </div>
-        </section>
+    </div>
+  </section>
 
 
+  <!-- Componente: Ejemplos -->
 
-        <!--Componente: Tabla 1 todo en linea por definición -->
-        <section class="visualizacion-tabla container">
-            <div class="row">
+  <section class="visualizacion-ejemplo container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+        <h4>Ejemplo</h4>
+      </div>
 
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
-                    <h4>Importante</h4>
-                    <p>Descubrir cuál es el verdadero problema detrás de las soluciones que se están proponiendo.</p>
-                </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="ejemplo">
+          <p>Tres estudiantes de la Universidad de Antofagasta, están realizando una investigación sobre los problemas que enfrenta la Región. Le preguntan a la ciudadanía, entre otras cosas, <strong>“¿Cuál diría usted que es el mayor problema que enfrenta su comunidad?"</strong> Dentro de los resultados que recopilaron, están la siguientes respuestas:</p>
 
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9 tabla">
+          <p>“Acá lo que nos falta es un centro de salud.”</p>
+          <p>“El problema es que está aumentando la delincuencia.”</p>
+          <p>“Mire, yo creo que lo que más falta es que deberían multar por ensuciar.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-                    <table class="table table-responsive">
-                        <thead>
-                            <tr>
-                                <th scope="col">Sesgo de Solución</th>
-                                <th scope="col">Verdadero Problema</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>“Acá lo que nos falta es un centro de salud.”</td>
-                                <td>“Los servicios de salud disponibles no logran abarcar las necesidades de la población”</td>
-                            </tr>
-
-                            <!-- añadir de estas cuantas sean necesarias -->
-                            <tr>
-                                <td>“Mire, yo creo que lo que más falta es que deberían multar por ensuciar.”</td>
-                                <td>“El espacio público es descuidado por la ciudadanía”</td>
-                            </tr>
-                            <!-- añadir de estas cuantas sean necesarias -->
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <section class="anadir-al-kit container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-                   <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-                   <h4>Avanzar</h4>
-                    <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-                    <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck">
-                            Marca si terminaste la etapa
-                        </label>
-                        <div class="invalid-feedback">
-                            Debes marcar para guardar tu avance y recolectar los materiales
-                        </div>
-                    </p>
-                    <a href="{% url 'contenidos:etapa2' %}"><button class="btn-democraciakit" >Añadir y avanzar</button></a>
-                    <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-                </div>
-            </div>
-        </section>
+  <!-- Componente: Contenido que continua relatando la herramienta -->
+  <section class="visualizacion-contenido-herramienta container">
+    <div class="row justify-content-end">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 definicion">
+        <p>En el ejemplo anterior, sólo una de las alternativas corresponde a un correcto enunciamiento del problema; <strong>“El problema es que está aumentando la delincuencia.”</strong> Las otras respuestas, son soluciones a un problema que está quedando <strong>implícito</strong> en la comunicación:</p>
+      </div>
+    </div>
+  </section>
 
 
 
+  <!--Componente: Tabla 1 todo en linea por definición -->
+  <section class="visualizacion-tabla container">
+    <div class="row">
+
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 titulo">
+        <h4>Importante</h4>
+        <p>Descubrir cuál es el verdadero problema detrás de las soluciones que se están proponiendo.</p>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 tabla">
+
+
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">Sesgo de Solución</th>
+              <th scope="col">Verdadero Problema</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>“Acá lo que nos falta es un centro de salud.”</td>
+              <td>“Los servicios de salud disponibles no logran abarcar las necesidades de la población”</td>
+            </tr>
+
+            <!-- añadir de estas cuantas sean necesarias -->
+            <tr>
+              <td>“Mire, yo creo que lo que más falta es que deberían multar por ensuciar.”</td>
+              <td>“El espacio público es descuidado por la ciudadanía”</td>
+            </tr>
+            <!-- añadir de estas cuantas sean necesarias -->
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
 </main>
 

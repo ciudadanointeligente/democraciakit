@@ -4,92 +4,71 @@
 
 {% block content %}
 <main>
-   
-<section class="accesos-directos">
+
+  <section class="accesos-directos">
     <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
     <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-</section>
+  </section>
 
 
-<section class="container header-section">
+  <section class="container header-section">
     <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa7' %}">Etapa #7</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Acciones de evaluación</li>
-                </ol>
-            </nav>
-        </div>
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa7' %}">Etapa #7</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Acciones de evaluación</li>
+          </ol>
+        </nav>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="volver-herramientas container">
+  <section class="volver-herramientas container">
     <div class="row">
-        <div class="col-12">
-            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa7' %}"> &lt; Volver a herramientas </a>
-        </div>
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa7' %}"> &lt; Volver a herramientas </a>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="seccion-herramienta container">
+  <section class="seccion-herramienta container">
     <div class="row">
 
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-            <div class="alinear">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
 
-                <!--Acá se va a simular la información en función de la etapa 1-->
+          <!--Acá se va a simular la información en función de la etapa 1-->
 
-                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero-7.png' %}" alt="Etapa 7 Evaluar">
-                <h3>Evaluar</h3>
-            </div>
-            <h2 class="pregunta">¿Cómo <span>evaluar</span> el impacto?</h2>
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero-7.png' %}" alt="Etapa 7 Evaluar">
+          <h3>Evaluar</h3>
         </div>
+        <h2 class="pregunta">¿Cómo <span>evaluar</span> el impacto?</h2>
+      </div>
 
 
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <div class="definicion">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
 
-                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-                <h4 class="recomendacion">Recomendaciones</h4>
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+          <h4 class="recomendacion">Recomendaciones</h4>
 
-                <h3>Acciones de evaluación</h3>
-                <ul>
-                    <li><strong>Entrevistas:</strong> Las entrevistas son un diálogo, por lo que es fundamental balancear la estructura con flexibilidad, jamás se debe corregir a la persona, si se incurre en errores, estos son evidencia que nos permiten diagnosticar cómo estamos entregando información y cómo las personas la reciben.</li>
-                    <li><strong>Grupo Focal:</strong> Consiste en generar una reunión en donde se comparte en torno a un tema en particular. El objetivo es comprender las percepciones, opiniones, ideas o actitudes en torno a un tema, los participantes se deben sentir libres de discutir desde sus propias perspectivas.</li>
-                    <li><strong>Cuestionarios:</strong> Conjunto de preguntas cerradas respecto de una o más variables a medir, las cuales se pueden realizar de forma electrónica enviándoles por ejemplo por correo electrónico, o presencialmente.</li>
-                </ul>
-            </div>
+          <h3>Acciones de evaluación</h3>
+          <ul>
+            <li><strong>Entrevistas:</strong> Las entrevistas son un diálogo, por lo que es fundamental balancear la estructura con flexibilidad, jamás se debe corregir a la persona, si se incurre en errores, estos son evidencia que nos permiten diagnosticar cómo estamos entregando información y cómo las personas la reciben.</li>
+            <li><strong>Grupo Focal:</strong> Consiste en generar una reunión en donde se comparte en torno a un tema en particular. El objetivo es comprender las percepciones, opiniones, ideas o actitudes en torno a un tema, los participantes se deben sentir libres de discutir desde sus propias perspectivas.</li>
+            <li><strong>Cuestionarios:</strong> Conjunto de preguntas cerradas respecto de una o más variables a medir, las cuales se pueden realizar de forma electrónica enviándoles por ejemplo por correo electrónico, o presencialmente.</li>
+          </ul>
         </div>
+      </div>
     </div>
-</section>
-
-
-<section class="anadir-al-kit container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-           <h4>Avanzar</h4>
-            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                    Marca si terminaste la etapa
-                </label>
-                <div class="invalid-feedback">
-                    Debes marcar para guardar tu avance y recolectar los materiales
-                </div>
-            </p>
-            <a href="{% url 'contenidos:etapa7-indicadores' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
-            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-        </div>
-    </div>
-</section>
+  </section>
 
 </main>
 

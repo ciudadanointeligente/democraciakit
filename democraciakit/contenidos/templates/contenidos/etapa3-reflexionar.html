@@ -4,114 +4,78 @@
 
 {% block content %}
 <main>
-   
-<section class="accesos-directos">
+
+  <section class="accesos-directos">
     <a href="{% url 'users:profile' %}" class="btn-rueda">{% if user.is_authenticated %}{{ user.frase }}{% endif %}  <img src="{% static 'img/icono-perfil.png' %}" class="icono" alt=""></a>
     <a href="{% url 'contenidos:mikit' %}" class="btn-kit">Mi Kit <img src="{% static 'img/icono-kit.png' %}" class="icono" alt=""></a>
-</section>
+  </section>
 
 
-<section class="container header-section">
+  <section class="container header-section">
     <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa3' %}">Etapa #3</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Reflexionar</li>
-                </ol>
-            </nav>
-        </div>
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:index' %}">Toolkit</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:rueda' %}">Etapas</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contenidos:etapa3' %}">Etapa #3</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Reflexionar</li>
+          </ol>
+        </nav>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="volver-herramientas container">
+  <section class="volver-herramientas container">
     <div class="row">
-        <div class="col-12">
-            <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-            <a href="{% url 'contenidos:etapa3' %}"> &lt; Volver a herramientas </a>
-        </div>
+      <div class="col-12">
+        <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
+        <a href="{% url 'contenidos:etapa3' %}"> &lt; Volver a herramientas </a>
+      </div>
     </div>
-</section>
+  </section>
 
 
-<section class="seccion-herramienta container">
+  <section class="seccion-herramienta container">
     <div class="row">
 
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
-            <div class="alinear">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 etapa-numero">
+        <div class="alinear">
 
-                <!--Acá se va a simular la información en función de la etapa 1-->
+          <!--Acá se va a simular la información en función de la etapa 1-->
 
-                <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
-                <img src="{% static 'img/etapa-numero-3.png' %}" alt="Etapa 3 Objetivos">
-                <h3>Objetivo</h3>
-                    </div>
-                <h2 class="pregunta">¿Cuál es nuestro <span>objetivo</span>?</h2>
+          <!--La imagen de la etapa debe ser seleccionada a través de las imagenes cargadas en la carpeta img que sigan la misma nomenclatura, solo que cambia el numero en función de la rueda y sus etapas-->
+          <img src="{% static 'img/etapa-numero-3.png' %}" alt="Etapa 3 Objetivos">
+          <h3>Objetivo</h3>
         </div>
+        <h2 class="pregunta">¿Cuál es nuestro <span>objetivo</span>?</h2>
+      </div>
 
 
-        <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-            <div class="definicion">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+        <div class="definicion">
 
-                <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
-                <h4 class="recomendacion">Recomendaciones</h4>
+          <!-- aca simulare las tres tipologias juntas, pero en efecto siempre una herramienta se mostrará solo por una de estas tres tipologías, pero siempre declará en esta zona la tipología para dar mayor información al usuario de lo que esta revisando-->
+          <h4 class="recomendacion">Recomendaciones</h4>
 
-                <h3>Para reflexionar</h3>
-                <p>Existen diversos puntos de vista que se pueden considerar a la hora de crear objetivos. Detente un momento a <strong>reflexionar</strong> sobre tus objetivos y si es que están respondiendo estas preguntas.</p>
-                <ul>
-                    <li>¿Los objetivos responden a las necesidades de mujeres, hombres, pueblos originarios, migrantes, otro/a?</li>
-                    <li>¿Especifican quiénes se espera que se beneficien?</li>
-                    <li>¿Existe igualdad en la participación?</li>
-                    <li>¿Apuntan a mejorar las condiciones de vida de todos y todas?</li>
-                    <li>¿Contribuyen a la igualdad de oportunidades y derechos?</li>
-                    <li>¿Qué caracteriza a mi comunidad?</li>
-                    <li>¿Qué podría dificultar o facilitar la realización de objetivos, al considerar el territorio en donde estamos?
-                    </li>
-                </ul>
-            </div>
+          <h3>Para reflexionar</h3>
+          <p>Existen diversos puntos de vista que se pueden considerar a la hora de crear objetivos. Detente un momento a <strong>reflexionar</strong> sobre tus objetivos y si es que están respondiendo estas preguntas.</p>
+          <ul>
+            <li>¿Los objetivos responden a las necesidades de mujeres, hombres, pueblos originarios, migrantes, otro/a?</li>
+            <li>¿Especifican quiénes se espera que se beneficien?</li>
+            <li>¿Existe igualdad en la participación?</li>
+            <li>¿Apuntan a mejorar las condiciones de vida de todos y todas?</li>
+            <li>¿Contribuyen a la igualdad de oportunidades y derechos?</li>
+            <li>¿Qué caracteriza a mi comunidad?</li>
+            <li>¿Qué podría dificultar o facilitar la realización de objetivos, al considerar el territorio en donde estamos?
+            </li>
+          </ul>
         </div>
+      </div>
 
     </div>
-</section>
-
-
-        <!-- <section class="componente-interactivo-form container-fluid">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 titulo">
-                        <h4>¡Ahora tu!</h4>
-                        <p>Descarga el recuadro y redacta tu objetivo</p>
-                    </div>
-                    <div class="col-12 btn-descargar">
-                        <a href="#" class="btn-democraciakit">Descargar</a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-
-<section class="anadir-al-kit container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-           <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-           <h4>Avanzar</h4>
-            <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-            <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                    Marca si terminaste la etapa
-                </label>
-                <div class="invalid-feedback">
-                    Debes marcar para guardar tu avance y recolectar los materiales
-                </div>
-            </p>
-            <a href="{% url 'contenidos:etapa3-3x3x3' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
-            <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-        </div>
-    </div>
-</section>
+  </section>
 
 </main>
 
