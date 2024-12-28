@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col-12">
         <!--Esta parte deberia poder programarse para que siempre vuelva a la herramienta correspondiente a la etapa que se esta navegando-->
-        <a href="{% url 'contenidos:etapa4' %}"> &lt; Volver a herramientas </a>
+        <a href="{% url 'contenidos:etapa4' %}"> &lt; Volver </a>
       </div>
     </div>
   </section>
@@ -89,26 +89,8 @@
   </section>
 
 
-  <section class="anadir-al-kit container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-sm-10 col-md-8 col-lg-5 contenido">
-        <img src="{% static 'img/anadir-al-kit.png' %}" alt="icono que referencia añadir al kit">
-        <h4>Avanzar</h4>
-        <p>Si completaste esta etapa puedes avanzar y sumar los materiales a tu kit descargable. Siempre puedes volver a revisar los contenidos de todas las etapas.</p>
-        <p><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-        <label class="form-check-label" for="invalidCheck">
-          Marca si terminaste la etapa
-        </label>
-        <div class="invalid-feedback">
-          Debes marcar para guardar tu avance y recolectar los materiales
-        </div>
-        </p>
-        <a href="{% url 'contenidos:etapa5' %}"><button class="btn-democraciakit">Añadir y avanzar</button></a>
-        <!-- <a href="#" class="btn-democraciakit">Añadir y avanzar</a> -->
-      </div>
-    </div>
-  </section>
-
+  
+<br><br><br>
 </main>
 
 {% endblock %}
