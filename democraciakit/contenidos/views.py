@@ -162,7 +162,7 @@ class Definicion1EditView(FormView):
     template_name = "contenidos/partials/definicionedit.html"
 
     def get_success_url(self):
-        return reverse("contenidos:mikit2") + "#swap1"
+        return reverse("contenidos:mikit") + "#swap1"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
@@ -178,7 +178,7 @@ class Causas2EditView(FormView):
     template_name = "contenidos/partials/causasedit.html"
 
     def get_success_url(self):
-        return reverse("contenidos:mikit2") + "#swap2"
+        return reverse("contenidos:mikit") + "#swap2"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
@@ -194,7 +194,7 @@ class ReflexionesEditView(FormView):
     template_name = "contenidos/partials/reflexionesedit.html"
 
     def get_success_url(self):
-        return reverse("contenidos:mikit2") + "#swap3"
+        return reverse("contenidos:mikit") + "#swap3"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
@@ -210,7 +210,7 @@ class MapaAfinidad2EditView(FormView):
     template_name = "contenidos/partials/mapaafinidadedit.html"
 
     def get_success_url(self):
-        return reverse("contenidos:mikit2") + "#swap4"
+        return reverse("contenidos:mikit") + "#swap4"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
@@ -226,7 +226,7 @@ class OportunidadesEditView(FormView):
     template_name = "contenidos/partials/oportunidades.html"
 
     def get_success_url(self):
-        return reverse("contenidos:mikit2") + "#swap5"
+        return reverse("contenidos:mikit") + "#swap5"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
@@ -242,7 +242,7 @@ class EventosEditView(FormView):
     template_name = "contenidos/partials/eventosedit.html"
 
     def get_success_url(self):
-        return reverse("contenidos:mikit2") + "#swap6"
+        return reverse("contenidos:mikit") + "#swap6"
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
