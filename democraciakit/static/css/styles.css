@@ -29,8 +29,8 @@ h3 {
   font-family: "Space Mono", monospace;
   font-size: 2rem;
   font-weight: 800;
-  padding-top:10px;
-  padding-bottom:10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   color: #000f74;
 }
 
@@ -234,12 +234,10 @@ a.btn-rosado:hover {
 header {
   background: #000f74;
   padding: 15px 0px !important;
-  background: linear-gradient(
-    180deg,
-    #000f74 5.73%,
-    rgba(0, 15, 116, 0.55) 50%,
-    rgba(0, 15, 116, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      #000f74 5.73%,
+      rgba(0, 15, 116, 0.55) 50%,
+      rgba(0, 15, 116, 0) 100%);
 }
 
 header nav ul.navbar-nav {
@@ -603,6 +601,7 @@ main {
 }
 
 @media (max-width: 991px) {
+
   .portada .iconos-derecha li,
   .portada .iconos-izquierda li {
     margin: 5px;
@@ -951,12 +950,7 @@ footer .creditos-fci img {
   margin-bottom: 15px;
 }
 
-.presentacion-toolkit
-  .modal
-  .modal-dialog
-  .modal-content
-  .modal-body
-  li::marker {
+.presentacion-toolkit .modal .modal-dialog .modal-content .modal-body li::marker {
   color: #d500f9;
 }
 
@@ -990,24 +984,13 @@ footer .creditos-fci img {
   text-align: center;
 }
 
-.presentacion-toolkit
-  .modal
-  .modal-dialog
-  .modal-content
-  .modal-body
-  .titular-destacado {
+.presentacion-toolkit .modal .modal-dialog .modal-content .modal-body .titular-destacado {
   color: #000f74;
   font-size: 1rem;
   margin-bottom: 15px;
 }
 
-.presentacion-toolkit
-  .modal
-  .modal-dialog
-  .modal-content
-  .modal-body
-  .titular-destacado
-  span {
+.presentacion-toolkit .modal .modal-dialog .modal-content .modal-body .titular-destacado span {
   display: initial;
   line-height: 1.8;
 }
@@ -1248,7 +1231,7 @@ footer .creditos-fci img {
   text-decoration: none;
 }
 
-.header-section .breadcrumb-item + .breadcrumb-item::before {
+.header-section .breadcrumb-item+.breadcrumb-item::before {
   color: #000f74;
   content: var(--bs-breadcrumb-divider, ">");
 }
@@ -1329,7 +1312,7 @@ footer .creditos-fci img {
 /* Botones de la rueda - estados*/
 
 .rueda-section .nav-pills .nav-link.active,
-.rueda-section .nav-pills .show > .nav-link {
+.rueda-section .nav-pills .show>.nav-link {
   color: transparent;
   background-color: transparent;
 }
@@ -1439,6 +1422,7 @@ footer .creditos-fci img {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 /* Adaptación rueda otras pantallas */
 
 /* @media 1200px {} */
@@ -1699,11 +1683,9 @@ footer .creditos-fci img {
 
 .siguiente-nivel {
   background: rgb(184, 238, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(184, 238, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 78%
-  );
+  background: linear-gradient(90deg,
+      rgba(184, 238, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 78%);
   position: relative;
   padding: 100px 0px;
 }
@@ -2541,7 +2523,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
 }
 
 .visualizacion-proyeccion-del-cambio {
-  width: 500px;
+  width: 100%;
   margin: 20px 0px;
 }
 
@@ -2581,7 +2563,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
   animation-timing-function: ease;
 }
 
-.modal > .modal-underlay {
+.modal>.modal-underlay {
   /* underlay takes up the entire viewport. This is only
 	required if you want to click to dismiss the popup */
   position: absolute;
@@ -2592,7 +2574,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
   right: 0px;
 }
 
-.modal > .modal-content {
+.modal>.modal-content {
   /* Position visible dialog near the top of the window */
   margin-top: 10vh;
 
@@ -2620,7 +2602,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
   animation-timing-function: ease;
 }
 
-.modal.closing > .modal-content {
+.modal.closing>.modal-content {
   /* Animate when closing */
   animation-name: zoomOut;
   animation-duration: 150ms;
@@ -2631,6 +2613,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -2640,6 +2623,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -2649,6 +2633,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
   0% {
     transform: scale(0.9);
   }
+
   100% {
     transform: scale(1);
   }
@@ -2658,6 +2643,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
   0% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(0.9);
   }
