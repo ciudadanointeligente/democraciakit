@@ -41,6 +41,7 @@ class Causas2(models.Model):
         verbose_name = "Etapa #2 - Identificación de causas"
         verbose_name_plural = "Etapa #2 - Identificación de causas"
         ordering = ["-fecha_causas2"]
+        get_latest_by = "fecha_causas2"
 
     def __str__(self):
         return (
@@ -64,6 +65,7 @@ class Inclusivo2(models.Model):
         verbose_name = "Etapa #2 - Enfoque inclusivo"
         verbose_name_plural = "Etapa #2 - Enfoque inclusivo"
         ordering = ["-fecha_inclusivo2"]
+        get_latest_by = "fecha_inclusivo2"
 
     def __str__(self):
         return f"{self.usuario.username} - enfoque inclusivo - {self.fecha_inclusivo2}"
@@ -85,6 +87,7 @@ class Mapadeafinidad2(models.Model):
         verbose_name = "Etapa #2 - Mapa de afinidad"
         verbose_name_plural = "Etapa #2 - Mapa de afinidad"
         ordering = ["-fecha_mapadeafinidad2"]
+        get_latest_by = "fecha_mapadeafinidad2"
 
     def __str__(self):
         return (

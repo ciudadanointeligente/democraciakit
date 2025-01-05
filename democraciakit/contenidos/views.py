@@ -11,11 +11,6 @@ from django.contrib.auth import login, logout, authenticate
 from django.views.generic import DetailView
 from django.contrib.auth import get_user_model
 from django.http import HttpResponse
-from reportlab.pdfgen import canvas
-from reportlab.lib.styles import ParagraphStyle
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Paragraph
-from reportlab.lib.styles import getSampleStyleSheet
 from django.http import Http404
 
 User = get_user_model()
@@ -28,39 +23,23 @@ def pdfmikit1(request):
     except Definicion1.DoesNotExist:
         return redirect("contenidos:etapa1")
 
-    response = HttpResponse(content_type="application/pdf")
-    response["Content-Disposition"] = 'attachment; filename="midemocraciakit.pdf"'
-    doc = SimpleDocTemplate(response, pagesize=letter)
-
-    styles = getSampleStyleSheet()
-    style = styles["Normal"]
-    story = []
-
     if definicion_problema:
         problema_uno = definicion_problema.uno
         problema_dos = definicion_problema.dos
         problema_tres = definicion_problema.tres
         problema_cuatro = definicion_problema.cuatro
 
-        t1 = f"Quién: {problema_uno}"
-        p1 = Paragraph(t1, style)
-
-        t2 = f"Dónde: {problema_dos}"
-        p2 = Paragraph(t2, style)
-
-        t3 = f"Cuándo: {problema_tres}"
-        p3 = Paragraph(t3, style)
-
-        t4 = f"Dolor: {problema_cuatro}"
-        p4 = Paragraph(t4, style)
-
-        story.extend([p1, p2, p3, p4])
-
-        doc.build(story)
-
-        return response
     else:
         return HttpResponse("No tienes guardadas definiciones.")
+
+
+class PDF1(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = "contenidos/pdf1.html"
+    context_object_name = "usuario"
+
+    def get_object(self):
+        return self.request.user
 
 
 class IndexView(TemplateView):
