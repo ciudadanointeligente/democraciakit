@@ -45,13 +45,8 @@ class InicioView(TemplateView):
     template_name = "contenidos/inicio.html"
 
 
-class DerechosView(LoginRequiredMixin, DetailView):
-    model = User
+class DerechosView(TemplateView):
     template_name = "contenidos/derechos.html"
-    context_object_name = "usuario"
-
-    def get_object(self):
-        return self.request.user
 
 
 class QueesView(TemplateView):
