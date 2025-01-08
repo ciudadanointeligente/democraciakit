@@ -16,26 +16,6 @@ from django.http import Http404
 User = get_user_model()
 
 
-class PDF1(LoginRequiredMixin, DetailView):
-    model = User
-    template_name = "contenidos/pdf1.html"
-    context_object_name = "usuario"
-
-    def get_object(self):
-        return self.request.user
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["definicion1_usuarios"] = (
-            self.object.definicion1_usuarios.all().order_by("-fecha_definicion1")
-        )
-        context["formulario_reciente1"] = self.object.definicion1_usuarios.order_by(
-            "-fecha_definicion1"
-        ).first()
-
-        return context
-
-
 class IndexView(LoginRequiredMixin, TemplateView):
     template_name = "contenidos/index.html"
     redirect_field_name = "contenidos/index.html"
@@ -99,6 +79,46 @@ class MikitView(LoginRequiredMixin, DetailView):
         context["formulario_reciente42"] = self.object.eventos4_usuarios.order_by(
             "-fecha_eventos4"
         ).first()
+        return context
+
+
+class PDF1(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = "contenidos/pdf1.html"
+    context_object_name = "usuario"
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["definicion1_usuarios"] = (
+            self.object.definicion1_usuarios.all().order_by("-fecha_definicion1")
+        )
+        context["formulario_reciente1"] = self.object.definicion1_usuarios.order_by(
+            "-fecha_definicion1"
+        ).first()
+
+        return context
+
+
+class PDF2(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = "contenidos/pdf2.html"
+    context_object_name = "usuario"
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["causas2_usuarios"] = self.object.causas2_usuarios.all().order_by(
+            "-fecha_causas2"
+        )
+        context["formulario_reciente2"] = self.object.causas2_usuarios.order_by(
+            "-fecha_causas2"
+        ).first()
+
         return context
 
 

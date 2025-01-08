@@ -1,43 +1,43 @@
 {% load static %}
 <!-- Cartilla para descargar -->
 <html lang="es">
-<head>
-  <title>Cartilla DemocraciaKit</title>
-</head>
-<body onload="window.print()">
+  <head>
+    <title>Cartilla DemocraciaKit</title>
+  </head>
+  <body onload="window.print()">
 
-<div class="boxpdf1">
-    <img src="{% static 'img/cabecera-card-kit.png' %}" class="cabecerapdf1">
-  <div class="cuadropdf1">
-  <div class="titulopdf1">
-    <h2>Definiciones</h2>
-  </div>
-  <div class="subtitulopdf1">Estas son las definiciones guardadas de tu problema</div>
-    {% if formulario_reciente1 %}
-    <div class="formulariorecientepdf1">
-    <h4>Quién:</h4>
-    <p>{{ formulario_reciente1.uno|linebreaks }}</p>
-    <h4>Dónde:</h4>
-    <p>{{ formulario_reciente1.dos|linebreaks }}</p>
-    <h4>Cuando:</h4>
-    <p>{{ formulario_reciente1.tres|linebreaks }}</p>
-    <h4>Dolor:</h4>
-    <p>{{ formulario_reciente1.cuatro|linebreaks }}</p>
-    {% endif %}
+    <div class="boxpdf1">
+      <img src="{% static 'img/cabecera-card-kit.png' %}" class="cabecerapdf1">
+      <div class="cuadropdf1">
+        <div class="titulopdf1">
+          <h2>Causas del problema</h2>
+        </div>
+        <div class="subtitulopdf1">Estas son las causas guardadas de tu problema</div>
+        {% if formulario_reciente2 %}
+        <div class="formulariorecientepdf1">
+          <h4>Causa #1:</h4>
+          <p>{{ formulario_reciente2.uno|linebreaks }}</p>
+          <h4>Causa #2:</h4>
+          <p>{{ formulario_reciente2.dos|linebreaks }}</p>
+          <h4>Causa #3:</h4>
+          <p>{{ formulario_reciente2.tres|linebreaks }}</p>
+          <h4>Causa #4:</h4>
+          <p>{{ formulario_reciente2.cuatro|linebreaks }}</p>
+          {% endif %}
+        </div>
+      </div>
+      <img src="{% static 'img/footer-card-kit.png' %}" class="cabecerapdf1">
     </div>
-  </div>
-    <img src="{% static 'img/footer-card-kit.png' %}" class="cabecerapdf1">
-</div>
-</body>
+  </body>
 </html>
 
 <style>
-  
-  .boxpdf1 {
-    width: 800px;
-    max-width: 700px;
-    margin: 1%;
-  }
+
+.boxpdf1 {
+  width: 800px;
+  max-width: 700px;
+  margin: 1%;
+}
 
   .cuadropdf1 {
     padding-left: 2%;
@@ -94,7 +94,7 @@
     margin-bottom: 0.2em;
     margin-top: 0.2em;
   }
-  
+
   .formulariorecientepdf1 {
     padding-left: 4%;
     padding-right: 4%;
