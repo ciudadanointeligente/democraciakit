@@ -1,0 +1,72 @@
+{% extends 'contenidos/base.html' %} {% load static %} {% load crispy_forms_tags
+%} {% block title %}Iniciar Sesión{% endblock %} {% block content %}
+
+<main>
+  <section class="container-fluid login form">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+          <h2>Iniciar sesión</h2>
+          <p>
+            Un viaje a través de <span>múltiples herramientas</span> que
+            permiten el diseño de un proyecto participativo.
+          </p>
+          <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Usuario o correo</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="username"
+                name="username"
+                aria-describedby="emailHelp"
+                placeholder="Ingresa aquí"
+              />
+              <div id="emailHelp" class="form-text">ejemplo@correo.com</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Contraseña</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Contraseña"
+              />
+            </div>
+            <button type="submit" class="btn-democraciakit mb-5">Entrar</button>
+          </form>
+          <div class="mb-3 recuperar">
+            <p>
+              ¿Aún no te has registrado?
+              <a href="{% url 'users:register' %}">&gt; hazlo aquí</a>
+            </p>
+          </div>
+          <div class="mb-3 recuperar">
+            <p>
+              <a href="{% url 'contenidos:derechos' %}"
+                >Protegemos tu privacidad y seguridad</a
+              >
+            </p>
+          </div>
+          <!-- <div class="mb-3 recuperar">
+                        <p>¿Olvidaste tu contraseña? <a href="{% url 'users:password_reset' %}" class="enlace-recuperar">&gt; Recuperar aquí</a></p>
+                    </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="img-decoracion">
+      <img
+        src="{% static 'img/rueda-mitad-decoracion.png' %}"
+        alt=""
+        class="img-decoracion-desktop"
+      />
+    </div>
+  </section>
+</main>
+{% endblock %}

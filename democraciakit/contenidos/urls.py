@@ -7,7 +7,6 @@ app_name = "contenidos"
 urlpatterns = [
     path("", views.IndexView.as_view(), name="index"),
     path("mikit/", views.MikitView.as_view(), name="mikit"),
-    path("mikit2/", views.MikitView2.as_view(), name="mikit2"),
     path("derechos/", views.DerechosView.as_view(), name="derechos"),
     path("rueda/", views.RuedaView.as_view(), name="rueda"),
     path("etapa1/", views.Etapa1View.as_view(), name="etapa1"),
