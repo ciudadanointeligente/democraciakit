@@ -149,6 +149,26 @@ class PDF3(LoginRequiredMixin, DetailView):
         return context
 
 
+class PDF4(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = "contenidos/pdf4.html"
+    context_object_name = "usuario"
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["mapadeafinidad2_usuarios"] = (
+            self.object.mapadeafinidad2_usuarios.all().order_by("-fecha_mapadeafinidad2")
+        )
+        context["formulario_reciente4"] = self.object.mapadeafinidad2_usuarios.order_by(
+            "-fecha_mapadeafinidad2"
+        ).first()
+
+        return context
+
+
 class Definicion1EditView(FormView):
     form_class = Definicion1Edit
     template_name = "contenidos/partials/definicionedit.html"
