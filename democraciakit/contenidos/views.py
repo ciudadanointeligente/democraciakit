@@ -43,42 +43,49 @@ class MikitView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         context["definicion1_usuarios"] = (
             self.object.definicion1_usuarios.all().order_by("-fecha_definicion1")
         )
         context["formulario_reciente1"] = self.object.definicion1_usuarios.order_by(
             "-fecha_definicion1"
         ).first()
+
         context["causas2_usuarios"] = self.object.causas2_usuarios.all().order_by(
             "-fecha_causas2"
         )
         context["formulario_reciente2"] = self.object.causas2_usuarios.order_by(
             "-fecha_causas2"
         ).first()
+
         context["inclusivo2_usuarios"] = self.object.inclusivo2_usuarios.all().order_by(
             "-fecha_inclusivo2"
         )
         context["formulario_reciente3"] = self.object.inclusivo2_usuarios.order_by(
             "-fecha_inclusivo2"
         ).first()
+
         context["mapadeafinidad2_usuarios"] = (
             self.object.mapadeafinidad2_usuarios.all().order_by("-fecha_mapadeafinidad2")
         )
         context["formulario_reciente4"] = self.object.mapadeafinidad2_usuarios.order_by(
             "-fecha_mapadeafinidad2"
         ).first()
+
         context["oportunidades4_usuarios"] = (
             self.object.oportunidades4_usuarios.all().order_by("-fecha_oportunidades4")
         )
         context["formulario_reciente41"] = self.object.oportunidades4_usuarios.order_by(
             "-fecha_oportunidades4"
         ).first()
+
         context["eventos4_usuarios"] = self.object.eventos4_usuarios.all().order_by(
             "-fecha_eventos4"
         )
         context["formulario_reciente42"] = self.object.eventos4_usuarios.order_by(
             "-fecha_eventos4"
         ).first()
+
         return context
 
 
@@ -117,6 +124,26 @@ class PDF2(LoginRequiredMixin, DetailView):
         )
         context["formulario_reciente2"] = self.object.causas2_usuarios.order_by(
             "-fecha_causas2"
+        ).first()
+
+        return context
+
+
+class PDF3(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = "contenidos/pdf3.html"
+    context_object_name = "usuario"
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["inclusivo2_usuarios"] = self.object.inclusivo2_usuarios.all().order_by(
+            "-fecha_inclusivo2"
+        )
+        context["formulario_reciente3"] = self.object.inclusivo2_usuarios.order_by(
+            "-fecha_inclusivo2"
         ).first()
 
         return context

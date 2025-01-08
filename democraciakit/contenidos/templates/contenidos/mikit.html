@@ -31,9 +31,8 @@
         <div class="col-12 col-sm-12 col-md-10 col-lg-8 kit">
           <img src="{% static 'img/icono-kit.png' %}" alt="Icono de Kit">
           <h3>Tu kit</h3>
-          <p class="pregunta"><span>{{user.frase}},</span> ¿Ya tienes todas las herramientas necesarias para tu proyecto?</p>
+          <p class="pregunta"><span>{{user.frase}},</span> ¿Ya tienes todas las herramientas necesarias para tu proyecto? Puedes revisar,  reescribir e imprimir para trabajar con tu grupo</p>
         </div>
-
       </div>
     </section>
 
@@ -155,6 +154,13 @@
                       hx-swap="innerHTML">
                 Reescribir las reflexiones
               </button>
+              </p>
+              <p>
+              <a href="{% url 'contenidos:pdf3' %}" 
+                 target="_blank" 
+                 class="btn btn-primary">
+                 Imprimir
+              </a>
               </p>
               <div class="collapse" id="collapseReflexiones">
                 <div class="cuadro">

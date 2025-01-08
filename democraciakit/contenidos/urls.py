@@ -131,4 +131,5 @@ urlpatterns = [
     path("logout/", views.logout_view, name="logout"),
     path("pdf1/", views.PDF1.as_view(), name="pdf1"),
     path("pdf2/", views.PDF2.as_view(), name="pdf2"),
+    path("pdf3/", views.PDF3.as_view(), name="pdf3"),
 ]
