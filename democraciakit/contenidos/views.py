@@ -41,6 +41,10 @@ class IndexView(LoginRequiredMixin, TemplateView):
     redirect_field_name = "contenidos/index.html"
 
 
+class InicioView(TemplateView):
+    template_name = "contenidos/inicio.html"
+
+
 class DerechosView(LoginRequiredMixin, DetailView):
     model = User
     template_name = "contenidos/derechos.html"

@@ -47,7 +47,6 @@
     <!-- HTMX -->
 
     <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/hyperscript.org@0.9.13"></script>
 
   </head>
 
@@ -65,7 +64,7 @@
                 <a href="{% url 'users:profile' %}" class="btn-rueda">
                   Mi Perfil</a> <a class="nav-link" href="{% url 'contenidos:logout' %}">Salir</a>
                 {% else %}
-                <a class="nav-link" href="{% url 'contenidos:index' %}">Inicio</a>
+                <a class="nav-link" href="{% url 'contenidos:inicio' %}">Inicio</a>
                 {% endif %}
               </li>
             </ul>
@@ -74,7 +73,7 @@
             <div class="row">
               <div class="d-flex flex-column justify-content-center align-items-center titulos-portada">
                 <p>Construye tu proyecto con</p>
-                <h1>DemocraciaKit</h1>
+                <a href="{% url 'contenidos:inicio' %}"><h1>DemocraciaKit</h1></a>
               </div>
             </div>
           </div>

@@ -11,6 +11,7 @@ urlpatterns = [
     path("rueda/", views.RuedaView.as_view(), name="rueda"),
     path("etapa1/", views.Etapa1View.as_view(), name="etapa1"),
     path("quees/", views.QueesView.as_view(), name="quees"),
+    path("inicio/", views.InicioView.as_view(), name="inicio"),
     path(
         "etapa1-conceptos/",
         views.Etapa1ConceptosView.as_view(),
