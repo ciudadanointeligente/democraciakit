@@ -16,23 +16,6 @@ from django.http import Http404
 User = get_user_model()
 
 
-def pdfmikit1(request):
-    user = request.user
-    try:
-        definicion_problema = Definicion1.objects.filter(usuario=user).latest()
-    except Definicion1.DoesNotExist:
-        return redirect("contenidos:etapa1")
-
-    if definicion_problema:
-        problema_uno = definicion_problema.uno
-        problema_dos = definicion_problema.dos
-        problema_tres = definicion_problema.tres
-        problema_cuatro = definicion_problema.cuatro
-
-    else:
-        return HttpResponse("No tienes guardadas definiciones.")
-
-
 class PDF1(LoginRequiredMixin, DetailView):
     model = User
     template_name = "contenidos/pdf1.html"
@@ -40,6 +23,17 @@ class PDF1(LoginRequiredMixin, DetailView):
 
     def get_object(self):
         return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["definicion1_usuarios"] = (
+            self.object.definicion1_usuarios.all().order_by("-fecha_definicion1")
+        )
+        context["formulario_reciente1"] = self.object.definicion1_usuarios.order_by(
+            "-fecha_definicion1"
+        ).first()
+
+        return context
 
 
 class IndexView(TemplateView):

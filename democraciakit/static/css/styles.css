@@ -234,10 +234,12 @@ a.btn-rosado:hover {
 header {
   background: #000f74;
   padding: 15px 0px !important;
-  background: linear-gradient(180deg,
-      #000f74 5.73%,
-      rgba(0, 15, 116, 0.55) 50%,
-      rgba(0, 15, 116, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    #000f74 5.73%,
+    rgba(0, 15, 116, 0.55) 50%,
+    rgba(0, 15, 116, 0) 100%
+  );
 }
 
 header nav ul.navbar-nav {
@@ -601,7 +603,6 @@ main {
 }
 
 @media (max-width: 991px) {
-
   .portada .iconos-derecha li,
   .portada .iconos-izquierda li {
     margin: 5px;
@@ -950,7 +951,12 @@ footer .creditos-fci img {
   margin-bottom: 15px;
 }
 
-.presentacion-toolkit .modal .modal-dialog .modal-content .modal-body li::marker {
+.presentacion-toolkit
+  .modal
+  .modal-dialog
+  .modal-content
+  .modal-body
+  li::marker {
   color: #d500f9;
 }
 
@@ -984,13 +990,24 @@ footer .creditos-fci img {
   text-align: center;
 }
 
-.presentacion-toolkit .modal .modal-dialog .modal-content .modal-body .titular-destacado {
+.presentacion-toolkit
+  .modal
+  .modal-dialog
+  .modal-content
+  .modal-body
+  .titular-destacado {
   color: #000f74;
   font-size: 1rem;
   margin-bottom: 15px;
 }
 
-.presentacion-toolkit .modal .modal-dialog .modal-content .modal-body .titular-destacado span {
+.presentacion-toolkit
+  .modal
+  .modal-dialog
+  .modal-content
+  .modal-body
+  .titular-destacado
+  span {
   display: initial;
   line-height: 1.8;
 }
@@ -1231,7 +1248,7 @@ footer .creditos-fci img {
   text-decoration: none;
 }
 
-.header-section .breadcrumb-item+.breadcrumb-item::before {
+.header-section .breadcrumb-item + .breadcrumb-item::before {
   color: #000f74;
   content: var(--bs-breadcrumb-divider, ">");
 }
@@ -1312,7 +1329,7 @@ footer .creditos-fci img {
 /* Botones de la rueda - estados*/
 
 .rueda-section .nav-pills .nav-link.active,
-.rueda-section .nav-pills .show>.nav-link {
+.rueda-section .nav-pills .show > .nav-link {
   color: transparent;
   background-color: transparent;
 }
@@ -1683,9 +1700,11 @@ footer .creditos-fci img {
 
 .siguiente-nivel {
   background: rgb(184, 238, 255);
-  background: linear-gradient(90deg,
-      rgba(184, 238, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 78%);
+  background: linear-gradient(
+    90deg,
+    rgba(184, 238, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 78%
+  );
   position: relative;
   padding: 100px 0px;
 }
@@ -2277,18 +2296,38 @@ footer .creditos-fci img {
 }
 
 .materiales-recopilados .etapa-documentos .materiales .box p a {
-  background: #d500f9;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
+  background: #0d6efd;
+  width: 90px;
+  height: 40;
+  border-radius: 10%;
   color: white;
-  display: flex;
+  display: block;
   justify-content: center;
   align-content: center;
   margin-left: 10px;
   font-size: 0.8rem;
   text-decoration: none;
   transition: 0.5s all;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.materiales-recopilados .etapa-documentos .materiales .box .metodologias p a {
+  background: #0d6efd;
+  width: 70px;
+  height: 20px;
+  border-radius: 100%;
+  color: white;
+  display: block;
+  justify-content: center;
+  align-content: center;
+  margin-left: 10px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: 0.5s all;
+  padding: 5px;
 }
 
 .materiales-recopilados .etapa-documentos .materiales .box p a:hover {
@@ -2563,9 +2602,9 @@ ul.visualizacion-criterio-smart-simbologia li span {
   animation-timing-function: ease;
 }
 
-.modal>.modal-underlay {
+.modal > .modal-underlay {
   /* underlay takes up the entire viewport. This is only
-	required if you want to click to dismiss the popup */
+required if you want to click to dismiss the popup */
   position: absolute;
   z-index: -1;
   top: 0px;
@@ -2574,7 +2613,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
   right: 0px;
 }
 
-.modal>.modal-content {
+.modal > .modal-content {
   /* Position visible dialog near the top of the window */
   margin-top: 10vh;
 
@@ -2602,7 +2641,7 @@ ul.visualizacion-criterio-smart-simbologia li span {
   animation-timing-function: ease;
 }
 
-.modal.closing>.modal-content {
+.modal.closing > .modal-content {
   /* Animate when closing */
   animation-name: zoomOut;
   animation-duration: 150ms;

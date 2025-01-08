@@ -67,6 +67,13 @@
                 Reescribir las definiciones
               </button>
               </p>
+              <p>
+              <a href="{% url 'contenidos:pdf1' %}" 
+                 target="_blank" 
+                 class="btn btn-primary">
+                 Imprimir
+              </a>
+              </p>
               <div class="collapse" id="collapseDefiniciones">
                 <div class="cuadro">
                   {% if formulario_reciente1 %}
@@ -77,7 +84,6 @@
                   {% endif %}
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
@@ -112,7 +118,7 @@
               </button>
               </p>
               <div class="collapse" id="collapseCausas">
-                  <div class="cuadro">
+                <div class="cuadro">
                   {% if formulario_reciente2 %}
                   <h4>Causa #1:</h4> <p>{{ formulario_reciente2.uno|linebreaks }}</p>
                   <h4>Causa #2:</h4> <p>{{ formulario_reciente2.dos|linebreaks }}</p>
@@ -177,36 +183,36 @@
               </button>
               </p>
               <div class="collapse" id="collapseMapaAfinidad">
-              <div class="cuadro">
-              {% if formulario_reciente4 %}
-              <h4>Quién:</h4> <p>{{ formulario_reciente4.uno|linebreaks }}</p>
-              <h4>Dónde:</h4> <p>{{ formulario_reciente4.dos|linebreaks }}</p>
-              <h4>Dolor:</h4> <p>{{ formulario_reciente4.tres|linebreaks }}</p>
-              <h4>Cuando:</h4><p>{{ formulario_reciente4.cuatro|linebreaks }}</p>
-              <h4>Causa:</h4> <p>{{ formulario_reciente4.cinco|linebreaks }}</p>
-              {% endif %}
+                <div class="cuadro">
+                  {% if formulario_reciente4 %}
+                  <h4>Quién:</h4> <p>{{ formulario_reciente4.uno|linebreaks }}</p>
+                  <h4>Dónde:</h4> <p>{{ formulario_reciente4.dos|linebreaks }}</p>
+                  <h4>Dolor:</h4> <p>{{ formulario_reciente4.tres|linebreaks }}</p>
+                  <h4>Cuando:</h4><p>{{ formulario_reciente4.cuatro|linebreaks }}</p>
+                  <h4>Causa:</h4> <p>{{ formulario_reciente4.cinco|linebreaks }}</p>
+                  {% endif %}
+                </div>
               </div>
-              </div>
+
+            </div>
 
           </div>
-
-        </div>
-      </div>
-
-      <div class="col-12 etapa-documentos">
-
-        <div class="etapa">
-          <img src="{% static 'img/etapa-numero-4.png' %}" alt="etapa 4: Contexto" class="etapa-numero">
-          <h3>Contexto</h3>
-          <p>¿Cuál es el <span>contexto</span> del problema?</p>
         </div>
 
-        <div class="materiales">
+        <div class="col-12 etapa-documentos">
 
-          <div id="swap5"></div>
-          <div class="box metodologias">
-            <h4 class="metodologias">Metodologías </h4>
-            <p>Estas son las opportunidades y amenazas que identificaste: </p>
+          <div class="etapa">
+            <img src="{% static 'img/etapa-numero-4.png' %}" alt="etapa 4: Contexto" class="etapa-numero">
+            <h3>Contexto</h3>
+            <p>¿Cuál es el <span>contexto</span> del problema?</p>
+          </div>
+
+          <div class="materiales">
+
+            <div id="swap5"></div>
+            <div class="box metodologias">
+              <h4 class="metodologias">Metodologías </h4>
+              <p>Estas son las opportunidades y amenazas que identificaste: </p>
               <p>
               <button class="btn btn-primary" 
                       type="button"
@@ -223,20 +229,20 @@
                 Reescribir
               </button>
               </p>
-            <div class="collapse" id="collapseOportunidades">
-            <div class="cuadro">
-            {% if formulario_reciente41 %}
-            <h4>Oportunidades:</h4> <p>{{ formulario_reciente41.uno|linebreaks }}</p>
-            <h4>Amenazas:</h4> <p>{{ formulario_reciente41.dos|linebreaks }}</p>
-            {% endif %}
+              <div class="collapse" id="collapseOportunidades">
+                <div class="cuadro">
+                  {% if formulario_reciente41 %}
+                  <h4>Oportunidades:</h4> <p>{{ formulario_reciente41.uno|linebreaks }}</p>
+                  <h4>Amenazas:</h4> <p>{{ formulario_reciente41.dos|linebreaks }}</p>
+                  {% endif %}
+                </div>
+              </div>
             </div>
-          </div>
-          </div>
 
-          <div id="swap6"></div>
-          <div class="box metodologias">
-            <h4 class="metodologias">Metodologías </h4>
-            <p>Los eventos y acciones que formulaste: </p>
+            <div id="swap6"></div>
+            <div class="box metodologias">
+              <h4 class="metodologias">Metodologías </h4>
+              <p>Los eventos y acciones que formulaste: </p>
               <p>
               <button class="btn btn-primary" 
                       type="button"
@@ -253,15 +259,15 @@
                 Reescribir
               </button>
               </p>
-            <div class="collapse" id="collapseEventos">
-            <div class="cuadro">
-            {% if formulario_reciente42 %}
-            <h4>Eventos:</h4> <p>{{ formulario_reciente42.uno|linebreaks }}</p>
-            <h4>Acciones:</h4> <p>{{ formulario_reciente42.dos|linebreaks }}</p>
-            {% endif %}
+              <div class="collapse" id="collapseEventos">
+                <div class="cuadro">
+                  {% if formulario_reciente42 %}
+                  <h4>Eventos:</h4> <p>{{ formulario_reciente42.uno|linebreaks }}</p>
+                  <h4>Acciones:</h4> <p>{{ formulario_reciente42.dos|linebreaks }}</p>
+                  {% endif %}
+                </div>
+              </div>
             </div>
-          </div>
-          </div>
           </div>
 
         </div>
@@ -270,6 +276,6 @@
     </section> 
   </main>
 
-{% endblock %}
+  {% endblock %}
 
 

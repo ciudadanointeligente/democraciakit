@@ -129,5 +129,5 @@ urlpatterns = [
     ),
     path("accounts/", include("django.contrib.auth.urls")),
     path("logout/", views.logout_view, name="logout"),
-    path("pdfmikit1/", views.pdfmikit1, name="pdfmikit1"),
+    path("pdf1/", views.PDF1.as_view(), name="pdf1"),
 ]
