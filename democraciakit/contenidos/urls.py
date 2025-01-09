@@ -133,4 +133,6 @@ urlpatterns = [
     path("pdf2/", views.PDF2.as_view(), name="pdf2"),
     path("pdf3/", views.PDF3.as_view(), name="pdf3"),
     path("pdf4/", views.PDF4.as_view(), name="pdf4"),
+    path("pdf5/", views.PDF5.as_view(), name="pdf5"),
+    path("pdf6/", views.PDF6.as_view(), name="pdf6"),
 ]

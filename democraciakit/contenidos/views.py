@@ -169,6 +169,46 @@ class PDF4(LoginRequiredMixin, DetailView):
         return context
 
 
+class PDF5(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = "contenidos/pdf5.html"
+    context_object_name = "usuario"
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["oportunidades4_usuarios"] = (
+            self.object.oportunidades4_usuarios.all().order_by("-fecha_oportunidades4")
+        )
+        context["formulario_reciente41"] = self.object.oportunidades4_usuarios.order_by(
+            "-fecha_oportunidades4"
+        ).first()
+
+        return context
+
+
+class PDF6(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = "contenidos/pdf6.html"
+    context_object_name = "usuario"
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["eventos4_usuarios"] = self.object.eventos4_usuarios.all().order_by(
+            "-fecha_eventos4"
+        )
+        context["formulario_reciente42"] = self.object.eventos4_usuarios.order_by(
+            "-fecha_eventos4"
+        ).first()
+
+        return context
+
+
 class Definicion1EditView(FormView):
     form_class = Definicion1Edit
     template_name = "contenidos/partials/definicionedit.html"
